@@ -1,0 +1,5 @@
+student_id,name,education_level,skills,completed_courses,projects,career_interests
+STU001,Rahul,Bachelor,"Python:3|SQL:3|Statistics:2|Data Visualization:2|Machine Learning:1","Introduction to Data Science|Python for Beginners","Data Visualization Dashboard|Sales Insights Report","Data Scientist|Data Analyst"
+STU002,Anita,Master,"Python:4|Machine Learning:3|Deep Learning:2|MLOps:1|Data Structures:3","ML Foundations|Neural Networks Basics","Image Classifier|Chatbot Prototype","AI Engineer|Data Scientist"
+STU003,Kiran,Bachelor,"Programming Fundamentals:4|Data Structures:3|Algorithms:2|Git:3|System Design:1","DSA Basics|Web Development","Task Manager App|REST API Service","Software Developer"
+STU004,Meera,Diploma,"Embedded Systems:3|Networking:2|C/C++:3|Python:2|Cloud Integration:1","Embedded C|IoT Fundamentals","Smart Home Sensor|Weather Station","IoT Engineer"

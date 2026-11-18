@@ -1,0 +1,2169 @@
+[
+  {
+    "id": "python-programming",
+    "subject": "Programming",
+    "title": "Python Programming",
+    "aliases": [
+      "python",
+      "python programming",
+      "python language",
+      "what is python",
+      "learn python",
+      "python basics",
+      "features of python",
+      "python data types",
+      "python lists",
+      "python dictionary",
+      "python tuples",
+      "list vs tuple",
+      "python functions",
+      "python oops",
+      "python libraries",
+      "applications of python"
+    ],
+    "simpleExplanation": "Python is a high-level, interpreted, general-purpose programming language known for its simple, readable syntax. It uses indentation instead of braces, is dynamically typed, and has a huge library ecosystem, which makes it the most popular language for data science, machine learning, automation and web backends.",
+    "analogy": "Python is like writing instructions in plain English: short, clear sentences that the computer follows line by line.",
+    "keyPoints": [
+      "Created by Guido van Rossum, first released in 1991.",
+      "Interpreted and dynamically typed: no compile step and no type declarations (x = 5).",
+      "Indentation defines code blocks.",
+      "Built-in data types: int, float, str, bool, list (mutable, ordered), tuple (immutable), set (unique items), dict (key-value pairs).",
+      "Supports procedural, object-oriented and functional programming.",
+      "Key libraries: NumPy, Pandas, Matplotlib (data); scikit-learn, TensorFlow, PyTorch (ML); Django, Flask, FastAPI (web).",
+      "pip installs packages; virtual environments (venv) isolate project dependencies."
+    ],
+    "steps": [
+      "Install Python from python.org and an editor such as VS Code.",
+      "Learn variables, data types, operators and input/output.",
+      "Learn conditions (if/elif/else) and loops (for, while).",
+      "Learn functions, lists, dictionaries and string methods.",
+      "Learn OOP (classes, objects, inheritance), file handling and exceptions.",
+      "Build small projects, then learn libraries for your field (Pandas for data, Flask for web)."
+    ],
+    "examples": [
+      "for i in range(5): print(i)  # prints 0 to 4",
+      "squares = [n * n for n in range(1, 6)]  # list comprehension: [1, 4, 9, 16, 25]",
+      "student = {'name': 'Asha', 'marks': 92}; print(student['marks'])"
+    ],
+    "formulas": [],
+    "workedExample": {
+      "problem": "Write a function that returns the average of a list of marks.",
+      "steps": [
+        "def average(marks):",
+        "    return sum(marks) / len(marks)",
+        "print(average([80, 90, 70]))"
+      ],
+      "answer": "80.0"
+    },
+    "practice": [
+      {
+        "question": "What is the output of print(type([1, 2]))?",
+        "hint": "Square brackets.",
+        "answer": "<class 'list'>"
+      },
+      {
+        "question": "Which data type stores key-value pairs?",
+        "hint": "Curly braces with colons.",
+        "answer": "Dictionary (dict)."
+      },
+      {
+        "question": "Write a list comprehension that keeps only even numbers from nums.",
+        "hint": "Use if inside.",
+        "answer": "[n for n in nums if n % 2 == 0]"
+      }
+    ],
+    "commonMistakes": [
+      "Mixing tabs and spaces in indentation.",
+      "Using a mutable default argument like def f(items=[]), which is shared between calls.",
+      "Confusing = (assignment) with == (comparison)."
+    ],
+    "followUps": [
+      "Python Libraries for Data Science (NumPy and Pandas)",
+      "Machine Learning",
+      "Data Scientist Career"
+    ],
+    "faq": [
+      {
+        "question": "What are the features of Python?",
+        "answer": "Simple and readable syntax, interpreted (runs line by line), dynamically typed, object-oriented, free and open source, portable across operating systems, huge standard library and third-party packages, supports many paradigms, and a very large community."
+      },
+      {
+        "question": "What is the difference between a list and a tuple?",
+        "answer": "A list is mutable (you can add, remove or change items) and uses square brackets [1, 2, 3]. A tuple is immutable (cannot be changed after creation), uses parentheses (1, 2, 3), is slightly faster, and can be used as a dictionary key."
+      },
+      {
+        "question": "What are the applications of Python?",
+        "answer": "Data science and analytics, machine learning and AI, web development (Django, Flask, FastAPI), automation and scripting, web scraping, IoT with Raspberry Pi, desktop apps, game development (Pygame), testing and cybersecurity tools."
+      },
+      {
+        "question": "What are the advantages and disadvantages of Python?",
+        "answer": "Advantages: easy to learn, fast to write, huge library ecosystem, cross-platform, strong community. Disadvantages: slower than compiled languages like C/C++, higher memory use, the GIL limits true multi-threading for CPU work, and it is less used for mobile apps."
+      },
+      {
+        "question": "What are the data types in Python?",
+        "answer": "Numeric: int, float, complex. Text: str. Boolean: bool. Sequences: list, tuple, range. Mapping: dict. Sets: set, frozenset. Binary: bytes, bytearray. None represents no value."
+      }
+    ]
+  },
+  {
+    "id": "javascript",
+    "subject": "Web Development",
+    "title": "JavaScript",
+    "aliases": [
+      "javascript",
+      "js",
+      "java script",
+      "what is javascript",
+      "es6",
+      "javascript basics",
+      "let var const",
+      "var let const",
+      "arrow functions",
+      "promises",
+      "async await",
+      "callback",
+      "closures",
+      "dom",
+      "dom manipulation",
+      "event loop",
+      "hoisting",
+      "features of javascript",
+      "java vs javascript"
+    ],
+    "simpleExplanation": "JavaScript is the programming language of the web. It runs in every browser to make pages interactive (buttons, forms, animations) and, with Node.js, it also runs on servers. It is dynamically typed, event-driven and single-threaded, using asynchronous code (callbacks, promises, async/await) for tasks like fetching data.",
+    "analogy": "If a web page is a house, HTML is the structure, CSS is the paint and furniture, and JavaScript is the electricity that makes things work when you press a switch.",
+    "keyPoints": [
+      "Variables: var (function-scoped, old), let (block-scoped, can change), const (block-scoped, cannot be reassigned).",
+      "Data types: number, string, boolean, null, undefined, bigint, symbol, and object (arrays, functions, objects).",
+      "Functions are first-class: can be stored in variables and passed as arguments; arrow functions: const add = (a, b) => a + b.",
+      "DOM manipulation: document.querySelector, addEventListener, changing innerText and styles.",
+      "Asynchronous: callbacks → Promises → async/await; the event loop runs callbacks when the call stack is empty.",
+      "ES6+ features: let/const, arrow functions, template literals, destructuring, spread/rest, modules, classes.",
+      "== compares after type conversion; === compares value and type (prefer ===)."
+    ],
+    "steps": [
+      "Learn variables, data types and operators.",
+      "Learn conditions, loops and functions.",
+      "Learn arrays and objects with methods like map, filter and reduce.",
+      "Learn DOM manipulation and events.",
+      "Learn asynchronous JavaScript: promises, async/await and fetch.",
+      "Move on to a framework (React) or the backend (Node.js)."
+    ],
+    "examples": [
+      "const doubled = [1, 2, 3].map((n) => n * 2);  // [2, 4, 6]",
+      "const res = await fetch('/api/roles'); const roles = await res.json();",
+      "button.addEventListener('click', () => alert('Clicked!'));"
+    ],
+    "formulas": [],
+    "workedExample": null,
+    "practice": [
+      {
+        "question": "What is the result of '5' == 5 and '5' === 5?",
+        "hint": "Type conversion.",
+        "answer": "true and false."
+      },
+      {
+        "question": "Can you reassign a const variable?",
+        "hint": "Constant binding.",
+        "answer": "No. (But the contents of a const object or array can still be changed.)"
+      },
+      {
+        "question": "Use filter to keep numbers greater than 10 in arr.",
+        "hint": "Callback returns true/false.",
+        "answer": "arr.filter((n) => n > 10)"
+      }
+    ],
+    "commonMistakes": [
+      "Using == instead of ===.",
+      "Forgetting await, so you get a Promise instead of the value.",
+      "Thinking Java and JavaScript are related; they are different languages."
+    ],
+    "followUps": [
+      "React",
+      "Node.js and Express",
+      "HTML and CSS"
+    ],
+    "faq": [
+      {
+        "question": "What is the difference between var, let and const?",
+        "answer": "var is function-scoped, can be redeclared and is hoisted with the value undefined. let is block-scoped and can be reassigned but not redeclared in the same scope. const is block-scoped and cannot be reassigned after declaration. Modern code uses const by default and let when the value must change."
+      },
+      {
+        "question": "What is the difference between Java and JavaScript?",
+        "answer": "Java is a compiled, statically typed, class-based language that runs on the JVM, used for Android, enterprise and backend systems. JavaScript is an interpreted, dynamically typed language that runs in browsers and on Node.js, used mainly for web development. Despite the similar name, they are unrelated."
+      },
+      {
+        "question": "How does async await work?",
+        "answer": "An async function always returns a Promise. Inside it, await pauses that function until the awaited Promise settles, then gives its value (or throws its error, which you catch with try/catch). The rest of the program keeps running meanwhile, so async/await makes asynchronous code read like normal top-to-bottom code."
+      },
+      {
+        "question": "What are the features of JavaScript?",
+        "answer": "Lightweight and interpreted, runs in all browsers, dynamically typed, event-driven, asynchronous with promises and async/await, first-class functions, prototype-based objects with class syntax, and usable on both frontend and backend (Node.js)."
+      },
+      {
+        "question": "How does the event loop work?",
+        "answer": "JavaScript runs one task at a time on the call stack. Slow operations (timers, network requests) are handed to the browser or Node.js; when they finish, their callbacks go into a queue. The event loop moves a queued callback onto the call stack whenever the stack is empty, with promise callbacks (microtasks) running before timer callbacks."
+      }
+    ]
+  },
+  {
+    "id": "html-css",
+    "subject": "Web Development",
+    "title": "HTML and CSS",
+    "aliases": [
+      "html",
+      "css",
+      "html and css",
+      "html css",
+      "html5",
+      "css3",
+      "semantic html",
+      "box model",
+      "css box model",
+      "flexbox",
+      "css grid",
+      "responsive design",
+      "media queries",
+      "tailwind",
+      "bootstrap"
+    ],
+    "simpleExplanation": "HTML (HyperText Markup Language) gives a web page its structure and content using tags like <h1>, <p>, <img> and <a>. CSS (Cascading Style Sheets) controls how it looks: colours, fonts, spacing and layout. Together with JavaScript they are the three core technologies of the web.",
+    "analogy": "HTML is the skeleton of a body, CSS is the clothes and appearance.",
+    "keyPoints": [
+      "HTML elements: headings (h1-h6), paragraphs, links, images, lists, tables, forms, div and span.",
+      "Semantic HTML5 tags: header, nav, main, section, article, footer (better for accessibility and SEO).",
+      "CSS selectors: element, .class, #id, descendant, pseudo-classes like :hover.",
+      "Box model: content → padding → border → margin.",
+      "Layout: Flexbox (one dimension) and CSS Grid (two dimensions).",
+      "Responsive design: relative units, media queries, mobile-first.",
+      "Frameworks: Tailwind CSS and Bootstrap speed up styling."
+    ],
+    "steps": [
+      "Write the page structure in HTML.",
+      "Link a CSS file or use a framework.",
+      "Style typography and colours.",
+      "Lay out sections with Flexbox or Grid.",
+      "Add media queries so it works on phones."
+    ],
+    "examples": [
+      "<button class=\"btn\">Save</button> with .btn { background: teal; padding: 8px 16px; }",
+      ".row { display: flex; gap: 16px; justify-content: space-between; }"
+    ],
+    "formulas": [],
+    "workedExample": null,
+    "practice": [
+      {
+        "question": "In the box model, what is between the content and the border?",
+        "hint": "Inner spacing.",
+        "answer": "Padding."
+      },
+      {
+        "question": "Which layout system is best for a two-dimensional page grid?",
+        "hint": "Rows and columns.",
+        "answer": "CSS Grid."
+      }
+    ],
+    "commonMistakes": [
+      "Using div for everything instead of semantic tags.",
+      "Forgetting the viewport meta tag, so mobile layouts break."
+    ],
+    "followUps": [
+      "JavaScript",
+      "React",
+      "Full Stack Development"
+    ],
+    "faq": [
+      {
+        "question": "What is the difference between HTML and CSS?",
+        "answer": "HTML is a markup language that defines the structure and content of a page (headings, paragraphs, images, forms). CSS is a style sheet language that defines the presentation of that content (colours, fonts, spacing, layout, animations). HTML says what is on the page; CSS says how it looks."
+      },
+      {
+        "question": "What is the difference between flexbox and grid?",
+        "answer": "Flexbox lays out items in one dimension, a row or a column, and is great for navbars, button groups and aligning items. CSS Grid lays out items in two dimensions, rows and columns together, and is great for whole page layouts and card grids. They are often used together."
+      }
+    ]
+  },
+  {
+    "id": "react",
+    "subject": "Web Development",
+    "title": "React",
+    "aliases": [
+      "react",
+      "reactjs",
+      "react js",
+      "react.js",
+      "what is react",
+      "react components",
+      "jsx",
+      "props",
+      "state in react",
+      "props vs state",
+      "react hooks",
+      "hooks",
+      "usestate",
+      "useeffect",
+      "virtual dom",
+      "react router",
+      "react lifecycle",
+      "advantages of react"
+    ],
+    "simpleExplanation": "React is a JavaScript library, made by Meta, for building user interfaces out of reusable components. Each component is a function that returns JSX (HTML-like code) describing what to show. When a component's state or props change, React efficiently updates only the parts of the page that changed using a virtual DOM.",
+    "analogy": "Like building with LEGO: small pieces (components) snap together into bigger pieces, and you can reuse the same piece many times.",
+    "keyPoints": [
+      "Component-based: UI is split into reusable function components.",
+      "JSX lets you write HTML-like markup inside JavaScript.",
+      "Props pass data from parent to child (read-only); state is data a component owns and can change.",
+      "Hooks: useState (state), useEffect (side effects like fetching), useContext, useMemo, useRef.",
+      "Virtual DOM: React compares the new and old virtual DOM and updates only what changed (reconciliation).",
+      "One-way data flow makes apps predictable.",
+      "Ecosystem: React Router (pages), Redux/Zustand (global state), Next.js (full-stack framework), Vite (build tool)."
+    ],
+    "steps": [
+      "Create a project: npm create vite@latest my-app -- --template react.",
+      "Write components that return JSX.",
+      "Pass data with props and manage changing data with useState.",
+      "Fetch data in useEffect.",
+      "Add routing and style with CSS or Tailwind."
+    ],
+    "examples": [
+      "function Counter() { const [count, setCount] = useState(0); return <button onClick={() => setCount(count + 1)}>{count}</button>; }",
+      "This project's frontend is built with React 19 and Vite."
+    ],
+    "formulas": [],
+    "workedExample": null,
+    "practice": [
+      {
+        "question": "Which hook stores a value that changes and re-renders the component?",
+        "hint": "use...State.",
+        "answer": "useState."
+      },
+      {
+        "question": "Can a child component change its props?",
+        "hint": "Read-only.",
+        "answer": "No. Props are read-only; the parent must pass a new value or a function to update its state."
+      }
+    ],
+    "commonMistakes": [
+      "Changing state directly (state.count++) instead of using the setter.",
+      "Forgetting the dependency array in useEffect, causing infinite loops.",
+      "Missing the key prop when rendering lists."
+    ],
+    "followUps": [
+      "JavaScript",
+      "Node.js and Express",
+      "Full Stack Development"
+    ],
+    "faq": [
+      {
+        "question": "What is the difference between props and state?",
+        "answer": "Props are inputs passed from a parent component to a child; they are read-only inside the child. State is data owned and managed by the component itself with useState; changing it re-renders the component. Props flow down, state lives inside."
+      },
+      {
+        "question": "What are React hooks?",
+        "answer": "Functions that let function components use React features. useState adds state, useEffect runs side effects such as fetching data or timers after render, useContext reads shared context, useRef keeps a mutable value or DOM reference, useMemo and useCallback cache values and functions for performance. Hooks must be called at the top level of a component."
+      },
+      {
+        "question": "What is the virtual DOM and how does it work?",
+        "answer": "The virtual DOM is a lightweight JavaScript copy of the real DOM. When state changes, React builds a new virtual DOM, compares it with the previous one (diffing), and applies only the minimal changes to the real DOM. This is faster than re-rendering the whole page."
+      },
+      {
+        "question": "What are the advantages of React?",
+        "answer": "Reusable components, fast updates through the virtual DOM, one-way data flow that is easy to debug, a huge ecosystem and community, strong job demand, and React Native for building mobile apps with the same skills."
+      }
+    ]
+  },
+  {
+    "id": "nodejs-express",
+    "subject": "Web Development",
+    "title": "Node.js and Express",
+    "aliases": [
+      "node.js",
+      "nodejs",
+      "node js",
+      "node",
+      "express",
+      "express.js",
+      "expressjs",
+      "what is node js",
+      "npm",
+      "middleware",
+      "express middleware",
+      "node js event loop",
+      "backend development",
+      "features of node js",
+      "advantages of node js"
+    ],
+    "simpleExplanation": "Node.js is a runtime that lets JavaScript run on servers, built on Chrome's V8 engine. It uses a non-blocking, event-driven model, so one process can handle many requests at once, which suits APIs and real-time apps. Express is a minimal Node.js framework for building web servers and REST APIs with routes and middleware.",
+    "analogy": "Node.js is like a waiter who takes an order, gives it to the kitchen and serves other tables while it cooks, instead of standing and waiting.",
+    "keyPoints": [
+      "Single-threaded event loop with non-blocking I/O.",
+      "npm is the package manager; package.json lists dependencies and scripts.",
+      "Modules: ES modules (import/export) or CommonJS (require).",
+      "Express routes: app.get('/path', handler), app.post, app.put, app.delete.",
+      "Middleware: functions (req, res, next) that run in order, e.g. JSON parsing, CORS, authentication, logging, error handling.",
+      "Works with databases like MongoDB (Mongoose), PostgreSQL and MySQL.",
+      "Not ideal for heavy CPU work (use worker threads or another service)."
+    ],
+    "steps": [
+      "Initialise a project: npm init -y, then npm install express.",
+      "Create the app: const app = express(); app.use(express.json());",
+      "Define routes for each endpoint.",
+      "Connect a database.",
+      "Start the server: app.listen(4000)."
+    ],
+    "examples": [
+      "app.get('/api/roles', async (req, res) => res.json(await Role.find()));",
+      "This project's backend is Node.js with Express and MongoDB."
+    ],
+    "formulas": [],
+    "workedExample": null,
+    "practice": [
+      {
+        "question": "What three arguments does Express middleware receive?",
+        "hint": "The last one passes control on.",
+        "answer": "req, res and next."
+      },
+      {
+        "question": "Which command installs a package?",
+        "hint": "Node package manager.",
+        "answer": "npm install <package-name>"
+      }
+    ],
+    "commonMistakes": [
+      "Blocking the event loop with heavy synchronous code.",
+      "Forgetting to call next() or send a response, so requests hang.",
+      "Committing secrets instead of keeping them in a .env file."
+    ],
+    "followUps": [
+      "REST APIs",
+      "JavaScript",
+      "Full Stack Development"
+    ],
+    "faq": [
+      {
+        "question": "What are the features of Node.js?",
+        "answer": "Runs JavaScript on the server, non-blocking asynchronous I/O, event-driven single-threaded model that handles many connections, very fast V8 engine, the npm ecosystem with millions of packages, cross-platform, and the same language for frontend and backend."
+      },
+      {
+        "question": "What is middleware in Express?",
+        "answer": "A function with access to the request, the response and next(), which runs between receiving a request and sending a response. Middleware can parse JSON bodies, check authentication, log requests, handle CORS or catch errors, and they run in the order they are added with app.use()."
+      },
+      {
+        "question": "What are the advantages and disadvantages of Node.js?",
+        "answer": "Advantages: high performance for I/O-heavy and real-time apps (chat, APIs), one language across the stack, huge npm ecosystem, easy scaling with microservices. Disadvantages: not suited for CPU-intensive tasks, callback/async complexity for beginners, and package quality varies."
+      }
+    ]
+  },
+  {
+    "id": "rest-api",
+    "subject": "Web Development",
+    "title": "REST APIs",
+    "aliases": [
+      "rest api",
+      "rest apis",
+      "restful api",
+      "rest",
+      "api",
+      "apis",
+      "what is an api",
+      "http methods",
+      "get vs post",
+      "put vs patch",
+      "http status codes",
+      "status codes",
+      "json",
+      "rest vs graphql",
+      "graphql",
+      "crud operations"
+    ],
+    "simpleExplanation": "An API (Application Programming Interface) lets two programs talk to each other. A REST API does this over HTTP: the client sends a request to a URL (an endpoint) with a method such as GET or POST, and the server replies with data, usually in JSON, plus a status code. REST APIs are stateless: each request carries everything the server needs.",
+    "analogy": "An API is like a restaurant menu and waiter: you order from a fixed list (endpoints), the waiter takes it to the kitchen (server) and brings back your food (response).",
+    "keyPoints": [
+      "HTTP methods map to CRUD: GET (read), POST (create), PUT/PATCH (update), DELETE (delete).",
+      "Resources are nouns in URLs: /api/students/42, not /getStudent.",
+      "Status codes: 200 OK, 201 Created, 400 Bad Request, 401 Unauthorized, 403 Forbidden, 404 Not Found, 500 Server Error.",
+      "Stateless: no client session is stored on the server; authentication via tokens (JWT) in headers.",
+      "Data format is usually JSON.",
+      "GraphQL is an alternative where the client asks for exactly the fields it needs from one endpoint."
+    ],
+    "steps": [
+      "Identify resources (users, courses, assignments).",
+      "Design endpoints and methods for each.",
+      "Implement handlers that validate input and return JSON with proper status codes.",
+      "Test with Postman, Thunder Client or curl.",
+      "Document the API (OpenAPI/Swagger)."
+    ],
+    "examples": [
+      "GET /api/roles returns the list of industry roles.",
+      "POST /api/quiz/generate with a JSON body creates a quiz."
+    ],
+    "formulas": [],
+    "workedExample": null,
+    "practice": [
+      {
+        "question": "Which status code means a resource was created?",
+        "hint": "2xx.",
+        "answer": "201 Created."
+      },
+      {
+        "question": "Which HTTP method should delete a record?",
+        "hint": "Obvious.",
+        "answer": "DELETE."
+      }
+    ],
+    "commonMistakes": [
+      "Returning 200 for errors.",
+      "Using verbs in URLs instead of HTTP methods."
+    ],
+    "followUps": [
+      "Node.js and Express",
+      "DNS and HTTP/HTTPS",
+      "Full Stack Development"
+    ],
+    "faq": [
+      {
+        "question": "What is the difference between GET and POST?",
+        "answer": "GET retrieves data; its parameters go in the URL, it should not change anything on the server, and it can be cached and bookmarked. POST sends data in the request body to create something or trigger an action; it changes server state, is not cached, and is used for forms and uploads."
+      },
+      {
+        "question": "What is the difference between PUT and PATCH?",
+        "answer": "PUT replaces the whole resource with the data sent (send every field). PATCH updates only the fields sent. Both are used for updates; PUT is idempotent by design."
+      },
+      {
+        "question": "What is the difference between REST and GraphQL?",
+        "answer": "REST exposes many endpoints, each returning a fixed shape of data, and uses HTTP methods and caching naturally. GraphQL exposes one endpoint where the client sends a query naming exactly the fields it wants, avoiding over-fetching and under-fetching, but it is more complex to set up and cache."
+      },
+      {
+        "question": "What are the HTTP status codes?",
+        "answer": "1xx informational; 2xx success (200 OK, 201 Created, 204 No Content); 3xx redirection (301 Moved Permanently, 304 Not Modified); 4xx client errors (400 Bad Request, 401 Unauthorized, 403 Forbidden, 404 Not Found, 429 Too Many Requests); 5xx server errors (500 Internal Server Error, 502 Bad Gateway, 503 Service Unavailable)."
+      }
+    ]
+  },
+  {
+    "id": "full-stack-development",
+    "subject": "Web Development",
+    "title": "Full Stack Development",
+    "aliases": [
+      "full stack development",
+      "full stack",
+      "fullstack",
+      "mern stack",
+      "mern",
+      "mean stack",
+      "frontend vs backend",
+      "front end vs back end",
+      "frontend and backend",
+      "web development",
+      "web development roadmap",
+      "full stack roadmap",
+      "tech stack"
+    ],
+    "simpleExplanation": "Full stack development means building both the frontend (what users see in the browser) and the backend (servers, APIs and databases) of an application, plus deploying it. A common stack is MERN: MongoDB, Express, React and Node.js, all using JavaScript.",
+    "analogy": "A full stack developer is like a builder who can do both the interior design of a house and its plumbing and wiring.",
+    "keyPoints": [
+      "Frontend: HTML, CSS, JavaScript and a framework (React, Angular, Vue).",
+      "Backend: server language and framework (Node.js/Express, Python/Django, Java/Spring Boot) and REST APIs.",
+      "Databases: SQL (MySQL, PostgreSQL) and NoSQL (MongoDB).",
+      "Popular stacks: MERN (MongoDB, Express, React, Node), MEAN (Angular instead of React), Django + React.",
+      "Also needed: Git, authentication (JWT, OAuth), testing, deployment (Render, Vercel, AWS, Docker).",
+      "This project itself is a MERN-style full stack app."
+    ],
+    "steps": [
+      "Learn HTML, CSS and JavaScript.",
+      "Learn React for the frontend.",
+      "Learn Node.js and Express for APIs.",
+      "Learn a database (MongoDB and SQL).",
+      "Learn Git, authentication and deployment.",
+      "Build and deploy 2-3 complete projects."
+    ],
+    "examples": [
+      "A student portal: React frontend, Express API, MongoDB database, deployed on Render.",
+      "An e-commerce site with product listing, cart, login and payments."
+    ],
+    "formulas": [],
+    "workedExample": null,
+    "practice": [
+      {
+        "question": "What does the M in MERN stand for?",
+        "hint": "Database.",
+        "answer": "MongoDB."
+      }
+    ],
+    "commonMistakes": [
+      "Learning many frameworks shallowly instead of building complete projects with one stack."
+    ],
+    "followUps": [
+      "React",
+      "Node.js and Express",
+      "Full Stack Developer Career"
+    ],
+    "faq": [
+      {
+        "question": "What is the difference between frontend and backend?",
+        "answer": "The frontend (client side) is everything the user sees and interacts with in the browser, built with HTML, CSS, JavaScript and frameworks like React. The backend (server side) handles business logic, databases, authentication and APIs, built with Node.js, Python, Java and databases like MongoDB or MySQL. The frontend calls the backend's APIs to get and save data."
+      },
+      {
+        "question": "What is the MERN stack?",
+        "answer": "MongoDB (NoSQL database), Express.js (backend web framework), React (frontend library) and Node.js (JavaScript runtime for the server). Its advantage is using JavaScript everywhere, with JSON data flowing naturally from the database to the UI."
+      },
+      {
+        "question": "What is the full stack developer roadmap?",
+        "answer": "1) HTML, CSS and responsive design. 2) JavaScript (ES6+, async, DOM). 3) Git and GitHub. 4) React. 5) Node.js and Express with REST APIs. 6) Databases: MongoDB and SQL. 7) Authentication (JWT). 8) Testing basics. 9) Deployment (Render, Vercel, Docker, AWS basics). 10) Build and deploy portfolio projects."
+      }
+    ]
+  },
+  {
+    "id": "c-cpp-programming",
+    "subject": "Programming",
+    "title": "C and C++ Programming",
+    "aliases": [
+      "c programming",
+      "c language",
+      "c/c++",
+      "c and c++",
+      "c++",
+      "cpp",
+      "c plus plus",
+      "c vs c++",
+      "difference between c and c++",
+      "pointers in c",
+      "structures in c",
+      "memory management in c",
+      "stl",
+      "features of c"
+    ],
+    "simpleExplanation": "C is a fast, low-level, procedural language that gives direct control over memory through pointers; it is used for operating systems, embedded systems and drivers. C++ extends C with object-oriented programming (classes, inheritance), templates and the Standard Template Library (STL), and is used for games, high-performance software and competitive programming.",
+    "analogy": "C is like driving a manual car: more control and speed, but you must handle everything yourself. C++ is the same car with extra features added.",
+    "keyPoints": [
+      "Both are compiled languages, producing fast machine code.",
+      "Pointers store memory addresses (int *p = &x;); * dereferences, & takes an address.",
+      "Manual memory: malloc/free in C, new/delete in C++ (or smart pointers).",
+      "C: procedural, structures (struct), functions, header files, used in embedded systems.",
+      "C++: classes and objects, inheritance, polymorphism, function and operator overloading, templates, exceptions.",
+      "STL: vector, list, map, set, stack, queue, and algorithms like sort.",
+      "Undefined behaviour (buffer overflows, dangling pointers) is a common source of bugs."
+    ],
+    "steps": [
+      "Learn data types, operators, input/output (printf/scanf, cin/cout).",
+      "Learn conditions, loops, functions and arrays.",
+      "Learn pointers, strings and structures.",
+      "Learn dynamic memory allocation.",
+      "For C++, learn OOP and the STL."
+    ],
+    "examples": [
+      "int a = 5; int *p = &a; printf(\"%d\", *p);  // prints 5",
+      "std::vector<int> v = {3, 1, 2}; std::sort(v.begin(), v.end());"
+    ],
+    "formulas": [],
+    "workedExample": null,
+    "practice": [
+      {
+        "question": "If int x = 10; int *p = &x; *p = 20; what is x?",
+        "hint": "p points to x.",
+        "answer": "20."
+      },
+      {
+        "question": "Which C function frees memory from malloc?",
+        "hint": "Opposite of allocate.",
+        "answer": "free()."
+      }
+    ],
+    "commonMistakes": [
+      "Forgetting to free memory (memory leak).",
+      "Accessing an array out of bounds.",
+      "Using a pointer after freeing it."
+    ],
+    "followUps": [
+      "Embedded Systems and Embedded C",
+      "Object-Oriented Programming (OOP)",
+      "Python Programming"
+    ],
+    "faq": [
+      {
+        "question": "What is the difference between C and C++?",
+        "answer": "C is a procedural language focused on functions; C++ supports both procedural and object-oriented programming with classes, inheritance and polymorphism. C++ adds function and operator overloading, references, templates, exception handling, namespaces and the STL. C uses malloc/free; C++ adds new/delete. C is common in embedded and OS code; C++ in games, browsers and high-performance apps."
+      },
+      {
+        "question": "What are the features of C?",
+        "answer": "Fast and efficient, close to hardware, portable, small set of keywords, rich operators, pointers for direct memory access, structured programming with functions, and a standard library; it is the base for many languages and operating systems."
+      }
+    ]
+  },
+  {
+    "id": "embedded-systems",
+    "subject": "Internet of Things",
+    "title": "Embedded Systems and Embedded C",
+    "aliases": [
+      "embedded systems",
+      "embedded system",
+      "embedded c",
+      "embedded programming",
+      "microcontroller",
+      "microcontrollers",
+      "microprocessor vs microcontroller",
+      "arduino",
+      "raspberry pi",
+      "esp32",
+      "esp8266",
+      "gpio",
+      "interrupts",
+      "uart",
+      "spi",
+      "i2c",
+      "rtos",
+      "real time operating system",
+      "firmware"
+    ],
+    "simpleExplanation": "An embedded system is a small computer built into a device to do a specific job, such as a washing machine controller, a smartwatch or a car's airbag system. It is usually built around a microcontroller and programmed in Embedded C, which is C with extensions for directly controlling hardware like pins, timers and sensors.",
+    "analogy": "If a general computer is a Swiss army knife, an embedded system is a single specialised tool built into a machine.",
+    "keyPoints": [
+      "Microcontroller (MCU) = CPU + RAM + flash + I/O on one chip (Arduino's ATmega328, ESP32, STM32); a microprocessor needs external memory and peripherals.",
+      "Embedded C: bit manipulation, registers, volatile variables, interrupts, limited memory.",
+      "GPIO pins read sensors and drive LEDs, motors and relays.",
+      "Communication protocols: UART (serial), SPI (fast, short distance), I2C (two wires, many devices).",
+      "Interrupts let hardware events run code immediately.",
+      "RTOS (FreeRTOS) schedules tasks with strict timing.",
+      "Boards: Arduino (beginner MCU), ESP32 (Wi-Fi + Bluetooth, popular for IoT), Raspberry Pi (a full Linux single-board computer)."
+    ],
+    "steps": [
+      "Choose a board (Arduino or ESP32).",
+      "Connect sensors and actuators to GPIO pins.",
+      "Write firmware in Embedded C/C++ (Arduino IDE or PlatformIO).",
+      "Upload it to the board and test with the serial monitor.",
+      "Add communication (Wi-Fi, MQTT) to make it an IoT device."
+    ],
+    "examples": [
+      "Blink an LED: pinMode(13, OUTPUT); digitalWrite(13, HIGH); delay(1000); digitalWrite(13, LOW);",
+      "Set bit 3 of a register: PORTB |= (1 << 3);"
+    ],
+    "formulas": [],
+    "workedExample": null,
+    "practice": [
+      {
+        "question": "Is Raspberry Pi a microcontroller?",
+        "hint": "It runs Linux.",
+        "answer": "No. It is a single-board computer with a microprocessor; Arduino is a microcontroller board."
+      },
+      {
+        "question": "Which protocol uses just two wires (SDA and SCL)?",
+        "hint": "Inter-Integrated Circuit.",
+        "answer": "I2C."
+      }
+    ],
+    "commonMistakes": [
+      "Forgetting the volatile keyword for variables changed inside interrupts.",
+      "Long delay() calls that block reading sensors."
+    ],
+    "followUps": [
+      "Internet of Things (IoT)",
+      "MQTT Protocol",
+      "C and C++ Programming"
+    ],
+    "faq": [
+      {
+        "question": "What is the difference between a microprocessor and a microcontroller?",
+        "answer": "A microprocessor is just a CPU and needs external RAM, storage and peripherals; it is powerful and used in PCs and Raspberry Pi. A microcontroller has CPU, RAM, flash memory and I/O peripherals on one chip; it is cheap, low-power and used in embedded devices like Arduino, appliances and sensors."
+      },
+      {
+        "question": "What is the difference between C and Embedded C?",
+        "answer": "C is a general-purpose language for computers with an operating system. Embedded C is C used to program microcontrollers: it works directly with hardware registers, fixed memory addresses, I/O ports and interrupts, under tight memory and timing limits, and is compiled with cross-compilers for a specific chip."
+      },
+      {
+        "question": "What are the applications of embedded systems?",
+        "answer": "Home appliances (washing machines, microwaves), consumer electronics (smartwatches, TVs), automobiles (ABS, airbags, engine control), medical devices (pacemakers), industrial automation, IoT sensors, drones and robotics."
+      }
+    ]
+  },
+  {
+    "id": "internet-of-things",
+    "subject": "Internet of Things",
+    "title": "Internet of Things (IoT)",
+    "aliases": [
+      "internet of things",
+      "iot",
+      "what is iot",
+      "iot architecture",
+      "layers of iot",
+      "iot protocols",
+      "iot devices",
+      "applications of iot",
+      "iot security",
+      "smart home",
+      "iiot",
+      "industrial iot",
+      "sensors and actuators",
+      "cloud integration",
+      "azure iot",
+      "aws iot"
+    ],
+    "simpleExplanation": "The Internet of Things is a network of physical devices (sensors, appliances, vehicles, machines) that collect data and exchange it over the internet, often with a cloud platform, so they can be monitored and controlled remotely and act automatically.",
+    "analogy": "IoT gives everyday objects senses (sensors), a voice (network) and a brain to talk to (cloud), so a fridge can tell your phone the milk is finished.",
+    "keyPoints": [
+      "Components: sensors/actuators, microcontroller, connectivity, cloud/backend, and an app or dashboard.",
+      "Common architecture layers: perception (sensors) → network (Wi-Fi, BLE, Zigbee, LoRaWAN, cellular) → processing/middleware (cloud, edge) → application.",
+      "Protocols: MQTT and CoAP (lightweight messaging), HTTP, BLE, Zigbee, LoRaWAN.",
+      "Cloud platforms: AWS IoT Core, Azure IoT Hub, Google Cloud IoT alternatives, ThingSpeak, Blynk.",
+      "Edge computing processes data near devices for low latency.",
+      "Challenges: security, power consumption, interoperability, scalability, privacy."
+    ],
+    "steps": [
+      "Sensors measure something (temperature, motion).",
+      "The microcontroller reads and processes the data.",
+      "It sends the data over a network using a protocol like MQTT.",
+      "The cloud stores, analyses and triggers rules.",
+      "An app shows dashboards and can send commands back to actuators."
+    ],
+    "examples": [
+      "Smart home lights controlled from a phone.",
+      "Soil-moisture sensors that switch on irrigation automatically.",
+      "Fitness bands sending health data to an app."
+    ],
+    "formulas": [],
+    "workedExample": null,
+    "practice": [
+      {
+        "question": "Name two lightweight protocols used in IoT.",
+        "hint": "One is publish/subscribe.",
+        "answer": "MQTT and CoAP."
+      },
+      {
+        "question": "Which IoT layer contains the sensors?",
+        "hint": "It perceives the world.",
+        "answer": "The perception (sensing) layer."
+      }
+    ],
+    "commonMistakes": [
+      "Leaving default passwords and unencrypted connections on devices."
+    ],
+    "followUps": [
+      "MQTT Protocol",
+      "Embedded Systems and Embedded C",
+      "Edge and Fog Computing"
+    ],
+    "faq": [
+      {
+        "question": "What is the architecture of IoT?",
+        "answer": "A common four-layer model: 1) Perception layer: sensors and actuators that sense and act on the physical world. 2) Network layer: transmits data using Wi-Fi, Bluetooth, Zigbee, LoRaWAN or cellular, through gateways. 3) Processing/middleware layer: cloud or edge servers that store, analyse and apply rules. 4) Application layer: dashboards and apps for users, such as smart home or smart agriculture apps. A three-layer version merges processing into application."
+      },
+      {
+        "question": "What are the applications of IoT?",
+        "answer": "Smart homes (lights, locks, thermostats), smart cities (traffic, parking, street lights), healthcare (wearables, remote patient monitoring), agriculture (soil sensors, automatic irrigation), industry (predictive maintenance, IIoT), logistics (fleet and asset tracking), and energy (smart meters, smart grids)."
+      },
+      {
+        "question": "What are the challenges of IoT?",
+        "answer": "Security vulnerabilities and weak device passwords, privacy of collected data, battery and power limits, many incompatible standards, unreliable connectivity, managing and updating millions of devices, and the cost of large-scale deployment."
+      },
+      {
+        "question": "What are the advantages and disadvantages of IoT?",
+        "answer": "Advantages: automation, real-time monitoring, remote control, data-driven decisions, efficiency and cost savings. Disadvantages: security and privacy risks, dependence on internet connectivity, complexity, compatibility issues and the cost of devices and maintenance."
+      }
+    ]
+  },
+  {
+    "id": "mqtt",
+    "subject": "Internet of Things",
+    "title": "MQTT Protocol",
+    "aliases": [
+      "mqtt",
+      "mqtt protocol",
+      "what is mqtt",
+      "mqtt broker",
+      "publish subscribe",
+      "publish/subscribe",
+      "pub sub",
+      "mqtt topics",
+      "mqtt qos",
+      "qos levels",
+      "mosquitto",
+      "hivemq",
+      "mqtt vs http",
+      "coap"
+    ],
+    "simpleExplanation": "MQTT (Message Queuing Telemetry Transport) is a lightweight publish/subscribe messaging protocol for IoT. Devices publish messages to named topics on a central server called a broker, and any client subscribed to a topic receives those messages. It runs over TCP, uses very little bandwidth and power, and works well on unreliable networks.",
+    "analogy": "Like a WhatsApp group: senders post to the group (topic) and everyone who joined (subscribed) gets the message, without the sender knowing who they are.",
+    "keyPoints": [
+      "Publisher, subscriber and broker (Mosquitto, HiveMQ, EMQX, AWS IoT Core).",
+      "Topics are hierarchical strings: home/livingroom/temperature; wildcards + (one level) and # (many levels).",
+      "QoS 0: at most once (fire and forget); QoS 1: at least once (may duplicate); QoS 2: exactly once (slowest).",
+      "Retained messages: the broker keeps the last message on a topic for new subscribers.",
+      "Last Will and Testament: the broker announces when a client disconnects unexpectedly.",
+      "Default ports: 1883 (plain), 8883 (TLS).",
+      "Much smaller headers than HTTP (as little as 2 bytes)."
+    ],
+    "steps": [
+      "Run or choose a broker.",
+      "A device connects and publishes, e.g. topic farm/field1/moisture, payload 42.",
+      "A dashboard subscribes to farm/+/moisture.",
+      "The broker forwards each message to all matching subscribers."
+    ],
+    "examples": [
+      "An ESP32 publishes temperature every minute; a Node.js app subscribes and stores readings.",
+      "A phone app publishes home/light1/set = ON and the light's controller, subscribed to that topic, turns on."
+    ],
+    "formulas": [],
+    "workedExample": null,
+    "practice": [
+      {
+        "question": "Which QoS level guarantees delivery exactly once?",
+        "hint": "Highest level.",
+        "answer": "QoS 2."
+      },
+      {
+        "question": "Does home/+/temperature match home/kitchen/temperature?",
+        "hint": "+ matches one level.",
+        "answer": "Yes."
+      }
+    ],
+    "commonMistakes": [
+      "Using QoS 2 everywhere, which adds unnecessary overhead.",
+      "Running a broker without authentication and TLS on the internet."
+    ],
+    "followUps": [
+      "Internet of Things (IoT)",
+      "Embedded Systems and Embedded C",
+      "REST APIs"
+    ],
+    "faq": [
+      {
+        "question": "What is the difference between MQTT and HTTP?",
+        "answer": "MQTT is publish/subscribe through a broker over a persistent TCP connection, with tiny headers, QoS levels and push delivery, ideal for low-power IoT devices on unreliable networks. HTTP is request/response, where the client must ask each time, with larger headers and more overhead; it suits web pages and REST APIs."
+      },
+      {
+        "question": "What are the QoS levels in MQTT?",
+        "answer": "QoS 0 (at most once): sent once with no acknowledgement; fastest but may be lost. QoS 1 (at least once): resent until acknowledged; may arrive more than once. QoS 2 (exactly once): a four-step handshake ensures one delivery; most reliable and slowest."
+      },
+      {
+        "question": "How does MQTT work?",
+        "answer": "Clients connect to a broker. Publishers send messages to a topic; subscribers register interest in topics (with optional wildcards). The broker receives each published message and pushes it to every subscriber of that topic. Publishers and subscribers never talk directly, which decouples devices from applications."
+      },
+      {
+        "question": "What are the components of MQTT?",
+        "answer": "The broker (central server that routes messages), clients that act as publishers and/or subscribers, topics (hierarchical channel names), messages (payload plus QoS and retain flag), and features like retained messages, persistent sessions and Last Will."
+      }
+    ]
+  },
+  {
+    "id": "data-visualization",
+    "subject": "Data Science",
+    "title": "Data Visualization",
+    "aliases": [
+      "data visualization",
+      "data visualisation",
+      "visualization",
+      "charts",
+      "types of charts",
+      "matplotlib",
+      "seaborn",
+      "plotly",
+      "power bi",
+      "tableau",
+      "dashboard",
+      "dashboards",
+      "histogram",
+      "scatter plot",
+      "bar chart",
+      "box plot",
+      "heatmap"
+    ],
+    "simpleExplanation": "Data visualization is presenting data as charts, graphs and dashboards so patterns, trends and outliers are easy to see. Choosing the right chart for the question is the key skill: bar charts compare categories, line charts show trends over time, scatter plots show relationships, and histograms show distributions.",
+    "analogy": "A good chart is like a map: instead of reading a list of thousands of coordinates, you see the whole picture at a glance.",
+    "keyPoints": [
+      "Bar chart: compare categories. Line chart: trends over time. Scatter plot: relationship between two numeric variables.",
+      "Histogram: distribution of one variable. Box plot: median, quartiles and outliers. Heatmap: values in a matrix such as a correlation matrix.",
+      "Pie charts only for a few parts of a whole; bar charts are usually clearer.",
+      "Python tools: Matplotlib, Seaborn, Plotly. BI tools: Power BI, Tableau, Looker Studio.",
+      "Good practice: clear title and axis labels, start bar axes at zero, few colours, label directly, avoid 3D effects.",
+      "Dashboards combine KPIs and charts for monitoring."
+    ],
+    "steps": [
+      "Decide the question the chart must answer.",
+      "Pick the chart type that fits the data and question.",
+      "Clean and aggregate the data.",
+      "Plot, then add titles, labels and units.",
+      "Remove clutter and highlight the key insight."
+    ],
+    "examples": [
+      "plt.plot(months, sales) for monthly sales trends.",
+      "A Power BI dashboard showing revenue by region and month."
+    ],
+    "formulas": [],
+    "workedExample": null,
+    "practice": [
+      {
+        "question": "Which chart shows the distribution of exam marks?",
+        "hint": "Bins.",
+        "answer": "A histogram (or a box plot)."
+      },
+      {
+        "question": "Which chart shows if study hours relate to marks?",
+        "hint": "Two numeric variables.",
+        "answer": "A scatter plot."
+      }
+    ],
+    "commonMistakes": [
+      "Truncating the y-axis of a bar chart, which exaggerates differences.",
+      "Using pie charts with many slices."
+    ],
+    "followUps": [
+      "Python Libraries for Data Science (NumPy and Pandas)",
+      "Mean, Median, Mode and Standard Deviation",
+      "Data Analyst Career"
+    ],
+    "faq": [
+      {
+        "question": "What are the types of charts?",
+        "answer": "Bar/column charts (compare categories), line charts (trends over time), scatter plots (relationships), histograms (distributions), box plots (spread and outliers), pie/donut charts (parts of a whole, few categories), heatmaps (matrix values, correlations), area charts (cumulative trends), and maps (geographic data)."
+      },
+      {
+        "question": "What are the tools for data visualization?",
+        "answer": "Python: Matplotlib, Seaborn, Plotly. R: ggplot2. Business intelligence: Power BI, Tableau, Looker Studio, Qlik. Web: D3.js, Chart.js. Spreadsheets: Excel and Google Sheets charts."
+      }
+    ]
+  },
+  {
+    "id": "python-data-science-libraries",
+    "subject": "Data Science",
+    "title": "Python Libraries for Data Science (NumPy and Pandas)",
+    "aliases": [
+      "pandas",
+      "numpy",
+      "numpy and pandas",
+      "pandas dataframe",
+      "dataframe",
+      "data frame",
+      "scikit-learn",
+      "sklearn",
+      "python libraries for data science",
+      "data science libraries",
+      "jupyter notebook",
+      "exploratory data analysis",
+      "eda",
+      "data wrangling"
+    ],
+    "simpleExplanation": "Data science in Python relies on a few core libraries. NumPy provides fast multi-dimensional arrays and maths. Pandas provides DataFrames, tables with labelled rows and columns, for loading, cleaning, filtering, grouping and joining data. Matplotlib/Seaborn plot it, and scikit-learn trains machine learning models.",
+    "analogy": "Pandas is like Excel inside Python, but able to handle millions of rows and automate every step.",
+    "keyPoints": [
+      "NumPy: ndarray, vectorised operations (no loops), broadcasting, linear algebra, random numbers.",
+      "Pandas: Series (one column) and DataFrame (table); read_csv, head, info, describe.",
+      "Selecting: df['col'], df.loc[rows, cols] by label, df.iloc by position, boolean filtering df[df.marks > 80].",
+      "Cleaning: isnull, fillna, dropna, drop_duplicates, astype.",
+      "Aggregating: groupby, agg, pivot_table, value_counts; combining: merge, concat.",
+      "scikit-learn: train_test_split, fit, predict, metrics; Jupyter notebooks for exploration."
+    ],
+    "steps": [
+      "Load data: df = pd.read_csv('students.csv').",
+      "Explore: df.head(), df.info(), df.describe().",
+      "Clean missing values and duplicates.",
+      "Transform and group: df.groupby('branch')['marks'].mean().",
+      "Visualise and model."
+    ],
+    "examples": [
+      "import numpy as np; np.array([1, 2, 3]) * 2  # array([2, 4, 6])",
+      "df[df['cgpa'] > 8].sort_values('cgpa', ascending=False)"
+    ],
+    "formulas": [],
+    "workedExample": null,
+    "practice": [
+      {
+        "question": "Which Pandas method gives count, mean, std, min and max for numeric columns?",
+        "hint": "Describe it.",
+        "answer": "df.describe()"
+      },
+      {
+        "question": "What is the difference between loc and iloc?",
+        "hint": "Label vs position.",
+        "answer": "loc selects by labels; iloc selects by integer positions."
+      }
+    ],
+    "commonMistakes": [
+      "Looping over rows instead of using vectorised operations.",
+      "Forgetting that most Pandas methods return a new DataFrame unless reassigned."
+    ],
+    "followUps": [
+      "Python Programming",
+      "Data Visualization",
+      "Data Preprocessing and Feature Engineering"
+    ],
+    "faq": [
+      {
+        "question": "What is the difference between NumPy and Pandas?",
+        "answer": "NumPy works with homogeneous numeric arrays (all values the same type) and is optimised for fast mathematical operations. Pandas is built on NumPy and works with labelled, tabular data (DataFrames) that can mix types per column, adding easy loading, cleaning, grouping, joining and time-series tools."
+      },
+      {
+        "question": "What are the steps of exploratory data analysis?",
+        "answer": "Understand the data's shape and types (info, head), check missing values and duplicates, get summary statistics (describe), look at distributions (histograms, box plots), check relationships (correlation, scatter plots), find outliers, and note insights and questions for modelling."
+      }
+    ]
+  },
+  {
+    "id": "excel-for-data-analysis",
+    "subject": "Data Science",
+    "title": "Excel for Data Analysis",
+    "aliases": [
+      "excel",
+      "ms excel",
+      "microsoft excel",
+      "excel formulas",
+      "vlookup",
+      "xlookup",
+      "pivot table",
+      "pivot tables",
+      "excel functions",
+      "conditional formatting",
+      "google sheets"
+    ],
+    "simpleExplanation": "Excel is a spreadsheet tool widely used by analysts to store, clean, calculate and summarise data. Key skills are formulas and functions (SUM, IF, VLOOKUP/XLOOKUP), sorting and filtering, pivot tables for quick summaries, charts and conditional formatting.",
+    "analogy": "Excel is a smart notebook where every cell can calculate from other cells automatically.",
+    "keyPoints": [
+      "Basic functions: SUM, AVERAGE, COUNT, MIN, MAX, ROUND.",
+      "Logic: IF, AND, OR, IFERROR; conditional totals: SUMIF(S), COUNTIF(S), AVERAGEIF(S).",
+      "Lookups: VLOOKUP, HLOOKUP, INDEX + MATCH, and XLOOKUP (modern, searches any direction).",
+      "Text: CONCAT, LEFT, RIGHT, MID, TRIM, TEXT; dates: TODAY, DATEDIF.",
+      "Pivot tables summarise large data by dragging fields; slicers filter them.",
+      "Absolute ($A$1) vs relative (A1) references when copying formulas.",
+      "Power Query cleans and combines data; charts and conditional formatting highlight insights."
+    ],
+    "steps": [
+      "Import or paste the data as a table.",
+      "Clean it (remove duplicates, trim text, fix types).",
+      "Add calculated columns with formulas.",
+      "Summarise with pivot tables.",
+      "Visualise with charts and share."
+    ],
+    "examples": [
+      "=XLOOKUP(A2, Students!A:A, Students!C:C) finds a student's marks by roll number.",
+      "=COUNTIF(D2:D100, \">=60\") counts students who passed."
+    ],
+    "formulas": [
+      {
+        "formula": "=VLOOKUP(value, table, column_index, FALSE)",
+        "meaning": "exact-match lookup in the first column of a table"
+      },
+      {
+        "formula": "=IF(condition, value_if_true, value_if_false)",
+        "meaning": "conditional result"
+      }
+    ],
+    "workedExample": null,
+    "practice": [
+      {
+        "question": "Which feature summarises sales by region and month without formulas?",
+        "hint": "Drag and drop fields.",
+        "answer": "A pivot table."
+      },
+      {
+        "question": "What does the $ do in $B$2?",
+        "hint": "Copying formulas.",
+        "answer": "It locks the column and row so the reference does not change when copied."
+      }
+    ],
+    "commonMistakes": [
+      "Using VLOOKUP without FALSE, which gives approximate matches.",
+      "Forgetting absolute references when copying formulas."
+    ],
+    "followUps": [
+      "Data Visualization",
+      "SQL (Structured Query Language)",
+      "Data Analyst Career"
+    ],
+    "faq": [
+      {
+        "question": "What is the difference between VLOOKUP and XLOOKUP?",
+        "answer": "VLOOKUP searches only the first column of a range and returns a value from a column to its right by index number, and breaks if columns are inserted. XLOOKUP searches any column and returns from any column (left or right), defaults to exact match, handles not-found values directly, and is more robust; it is available in newer Excel versions."
+      },
+      {
+        "question": "What are the most important Excel functions for data analysis?",
+        "answer": "SUM, AVERAGE, COUNT/COUNTA, IF, SUMIFS, COUNTIFS, AVERAGEIFS, XLOOKUP (or VLOOKUP and INDEX/MATCH), IFERROR, TEXT and date functions, UNIQUE, FILTER and SORT, plus pivot tables and Power Query."
+      }
+    ]
+  },
+  {
+    "id": "system-design",
+    "subject": "Software Engineering",
+    "title": "System Design",
+    "aliases": [
+      "system design",
+      "system design basics",
+      "high level design",
+      "hld",
+      "low level design",
+      "lld",
+      "caching",
+      "cache",
+      "database sharding",
+      "sharding",
+      "replication",
+      "cap theorem",
+      "message queue",
+      "rate limiting",
+      "design a url shortener"
+    ],
+    "simpleExplanation": "System design is planning how a software system's parts fit together so it is scalable, reliable, fast and maintainable: which services exist, how they communicate, where data is stored, and how the system handles growth and failures. High-level design shows components; low-level design shows classes, APIs and data models.",
+    "analogy": "Like a city plan: before building, you decide where roads, water lines and buildings go so the city still works when the population doubles.",
+    "keyPoints": [
+      "Start from requirements: functional (features) and non-functional (scale, latency, availability).",
+      "Building blocks: load balancers, application servers, databases, caches (Redis), CDNs, message queues (Kafka, RabbitMQ), object storage.",
+      "Scaling: vertical vs horizontal; stateless servers behind a load balancer.",
+      "Databases: SQL vs NoSQL, indexing, replication (read copies), sharding (splitting data across machines).",
+      "Caching reduces database load and latency; decide what to cache and when to invalidate.",
+      "CAP theorem: in a network partition, a distributed system must choose consistency or availability.",
+      "Also: rate limiting, monitoring, security, and back-of-the-envelope capacity estimates."
+    ],
+    "steps": [
+      "Clarify requirements and estimate scale (users, requests per second, storage).",
+      "Define APIs and the data model.",
+      "Draw the high-level architecture.",
+      "Deep-dive into bottlenecks: database, caching, scaling.",
+      "Discuss trade-offs, failures and monitoring."
+    ],
+    "examples": [
+      "URL shortener: API server, key generation, database of short→long URLs, cache for popular links, redirect with HTTP 301/302.",
+      "Chat app: WebSocket servers, message queue, database for history, push notifications."
+    ],
+    "formulas": [
+      {
+        "formula": "Requests per second ≈ daily requests / 86,400",
+        "meaning": "quick capacity estimate"
+      }
+    ],
+    "workedExample": {
+      "problem": "An app gets 8.64 million requests per day. Estimate average requests per second.",
+      "steps": [
+        "Seconds per day = 86,400",
+        "8,640,000 / 86,400"
+      ],
+      "answer": "About 100 requests per second on average (plan for peaks of several times that)."
+    },
+    "practice": [
+      {
+        "question": "What does a cache like Redis mainly improve?",
+        "hint": "Speed.",
+        "answer": "Read latency and database load, by serving frequently used data from memory."
+      }
+    ],
+    "commonMistakes": [
+      "Jumping into components before clarifying requirements and scale."
+    ],
+    "followUps": [
+      "Scalability, Elasticity and Load Balancing",
+      "Microservices Architecture",
+      "Database Management System (DBMS)"
+    ],
+    "faq": [
+      {
+        "question": "What is the difference between high level design and low level design?",
+        "answer": "High-level design (HLD) shows the overall architecture: main components and services, how they connect, databases, caches, queues and data flow. Low-level design (LLD) details each component: classes and their relationships, methods, API contracts, database schemas and design patterns."
+      },
+      {
+        "question": "What are the components of system design?",
+        "answer": "Clients, DNS, load balancers, web/application servers, databases (SQL/NoSQL with replication and sharding), caches, CDNs, message queues, object storage, search indexes, and monitoring/logging, plus security components like authentication and rate limiters."
+      },
+      {
+        "question": "What is the CAP theorem?",
+        "answer": "In a distributed data system you can guarantee at most two of Consistency (every read gets the latest write), Availability (every request gets a response) and Partition tolerance (it keeps working despite network splits). Since partitions happen, systems choose between CP (e.g. banking ledgers) and AP (e.g. social media feeds)."
+      }
+    ]
+  },
+  {
+    "id": "career-data-scientist",
+    "subject": "Careers",
+    "title": "Data Scientist Career",
+    "aliases": [
+      "data scientist",
+      "data science",
+      "data scientist role",
+      "data scientist career",
+      "how to become a data scientist",
+      "data scientist skills",
+      "data scientist roadmap",
+      "data science roadmap",
+      "data scientist salary",
+      "data scientist responsibilities",
+      "what does a data scientist do"
+    ],
+    "simpleExplanation": "A data scientist extracts insights from complex data and builds predictive models to help organisations make decisions. The work combines statistics, programming (mainly Python and SQL), machine learning and communication: asking the right question, cleaning data, modelling it and explaining the result to non-technical people.",
+    "analogy": "A data scientist is like a detective for data: gathering clues from messy records, testing theories and presenting evidence.",
+    "keyPoints": [
+      "Core skills (from this app's role data): Python (5/5), Machine Learning (5/5), Statistics (4/5), Data Visualization (4/5), SQL (4/5).",
+      "Preferred skills: Deep Learning, NLP, MLOps.",
+      "Tools: Pandas, NumPy, scikit-learn, TensorFlow, PyTorch, Jupyter, SQL databases, Power BI/Tableau.",
+      "Daily work: define problems, collect and clean data, exploratory analysis, feature engineering, modelling, evaluation, presenting insights, deploying models with engineers.",
+      "The app's role card lists a salary range of $120K–$180K (a US-style figure); pay in India for freshers is much lower and varies widely by company and city.",
+      "Related roles: data analyst (more reporting), ML engineer / AI engineer (more production engineering)."
+    ],
+    "steps": [
+      "Learn Python and SQL well.",
+      "Learn statistics and probability.",
+      "Learn data analysis and visualization (Pandas, Matplotlib, Seaborn).",
+      "Learn machine learning with scikit-learn.",
+      "Build 3-4 end-to-end projects on real datasets (Kaggle) and publish them on GitHub.",
+      "Learn deep learning, NLP and MLOps basics; practise case studies and interviews."
+    ],
+    "examples": [
+      "Predicting which customers will cancel a subscription (churn).",
+      "Analysing student performance data to find factors linked to failing a course."
+    ],
+    "formulas": [],
+    "workedExample": null,
+    "practice": [
+      {
+        "question": "Which two programming languages matter most for a data scientist?",
+        "hint": "One for analysis, one for databases.",
+        "answer": "Python and SQL."
+      }
+    ],
+    "commonMistakes": [
+      "Learning only algorithms without practising data cleaning, SQL and communicating results."
+    ],
+    "followUps": [
+      "Machine Learning",
+      "Python Programming",
+      "Mean, Median, Mode and Standard Deviation"
+    ],
+    "faq": [
+      {
+        "question": "What skills does a data scientist need?",
+        "answer": "Technical: Python, SQL, statistics and probability, machine learning, data cleaning and feature engineering, data visualization, and basics of deep learning, NLP and MLOps. Tools: Pandas, NumPy, scikit-learn, TensorFlow or PyTorch, Jupyter, Git, Power BI or Tableau. Soft skills: problem framing, business understanding and explaining results clearly."
+      },
+      {
+        "question": "How to become a data scientist?",
+        "answer": "1) Master Python and SQL. 2) Learn statistics. 3) Learn data analysis and visualization with Pandas and Seaborn. 4) Learn machine learning with scikit-learn. 5) Do end-to-end projects with real data and put them on GitHub with clear write-ups. 6) Learn deep learning and deployment basics. 7) Take internships, Kaggle competitions or research projects, and prepare for SQL, statistics and ML interview questions."
+      },
+      {
+        "question": "What are the responsibilities of a data scientist?",
+        "answer": "Understanding business problems, collecting and cleaning data, exploratory data analysis, building and evaluating predictive models, running experiments such as A/B tests, creating visualizations and dashboards, presenting insights to stakeholders, and working with engineers to deploy and monitor models."
+      },
+      {
+        "question": "What is the difference between a data scientist and a data analyst?",
+        "answer": "A data analyst mainly answers questions about what happened using SQL, Excel and dashboards. A data scientist goes further to predict what will happen, building statistical and machine learning models with Python. Data scientists need stronger programming, statistics and ML skills."
+      }
+    ]
+  },
+  {
+    "id": "career-ai-engineer",
+    "subject": "Careers",
+    "title": "AI Engineer Career",
+    "aliases": [
+      "ai engineer",
+      "ai engineering",
+      "ai engineer role",
+      "ai engineer career",
+      "how to become an ai engineer",
+      "ai engineer skills",
+      "ai engineer roadmap",
+      "ai engineer salary",
+      "ml engineer",
+      "machine learning engineer",
+      "machine learning engineer role",
+      "what does an ai engineer do"
+    ],
+    "simpleExplanation": "An AI engineer builds intelligent systems and puts machine learning models into real products. Compared with a data scientist, the focus is more on engineering: building model pipelines, deep learning models and LLM applications, deploying them as reliable, scalable services, and monitoring them in production (MLOps).",
+    "analogy": "If a data scientist designs the recipe, the AI engineer builds the restaurant kitchen that serves it to thousands of customers every day.",
+    "keyPoints": [
+      "Core skills (from this app's role data): Python (5/5), Machine Learning (5/5), Deep Learning (5/5), MLOps (4/5), Data Structures (4/5).",
+      "Preferred skills: NLP, Computer Vision, Cloud AI.",
+      "Tools: PyTorch, TensorFlow, Docker, Kubernetes, plus cloud ML services (SageMaker, Vertex AI, Azure ML) and LLM tools (Hugging Face, vector databases, RAG frameworks).",
+      "Work: train and fine-tune models, build APIs around them, optimise speed and cost, automate pipelines, monitor drift.",
+      "The app's role card lists a salary range of $130K–$200K (a US-style figure); actual pay depends heavily on country, company and experience.",
+      "Strong software engineering (data structures, Git, testing, APIs) matters as much as ML knowledge."
+    ],
+    "steps": [
+      "Learn Python, data structures and algorithms.",
+      "Learn ML fundamentals and deep learning (PyTorch or TensorFlow).",
+      "Learn NLP/computer vision and LLM application building (prompting, RAG, fine-tuning).",
+      "Learn deployment: FastAPI/Flask, Docker, Kubernetes, a cloud platform.",
+      "Learn MLOps: experiment tracking, CI/CD for models, monitoring.",
+      "Build and deploy projects such as a chatbot over your notes or an image classifier API."
+    ],
+    "examples": [
+      "Deploying a RAG chatbot that answers questions from company documents.",
+      "Serving a defect-detection CNN on a factory line."
+    ],
+    "formulas": [],
+    "workedExample": null,
+    "practice": [
+      {
+        "question": "Name two tools AI engineers use to deploy models.",
+        "hint": "Containers.",
+        "answer": "Docker and Kubernetes (also FastAPI, cloud ML services)."
+      }
+    ],
+    "commonMistakes": [
+      "Focusing only on model accuracy and ignoring latency, cost and monitoring in production."
+    ],
+    "followUps": [
+      "Neural Networks and Deep Learning",
+      "Transformers and Large Language Models",
+      "Machine Learning Workflow"
+    ],
+    "faq": [
+      {
+        "question": "What skills does an AI engineer need?",
+        "answer": "Python, data structures and algorithms, machine learning, deep learning (PyTorch or TensorFlow), NLP and computer vision, LLM application development (prompting, RAG, fine-tuning), APIs (FastAPI/Flask), Docker and Kubernetes, cloud platforms, MLOps (pipelines, experiment tracking, monitoring) and good software engineering practices."
+      },
+      {
+        "question": "How to become an AI engineer?",
+        "answer": "1) Build strong Python and DSA skills. 2) Learn ML and deep learning fundamentals. 3) Specialise in NLP, vision or LLM apps. 4) Learn to deploy models as APIs with Docker and the cloud. 5) Learn MLOps. 6) Build and deploy 2-3 real AI projects and show them on GitHub. 7) Apply for ML/AI internships and prepare for coding plus ML system design interviews."
+      },
+      {
+        "question": "What is the difference between an AI engineer and a data scientist?",
+        "answer": "Data scientists focus on analysis, experiments and building models to answer questions. AI engineers focus on building, deploying, scaling and maintaining AI systems in production, needing stronger software engineering, deep learning and MLOps skills. Many tasks overlap."
+      }
+    ]
+  },
+  {
+    "id": "career-full-stack-developer",
+    "subject": "Careers",
+    "title": "Full Stack Developer Career",
+    "aliases": [
+      "full stack developer",
+      "full stack engineer",
+      "full stack developer role",
+      "full stack developer career",
+      "how to become a full stack developer",
+      "full stack developer skills",
+      "full stack developer roadmap",
+      "full stack developer salary",
+      "web developer",
+      "what does a full stack developer do"
+    ],
+    "simpleExplanation": "A full stack developer creates robust web applications end to end: the user interface, the server and APIs, the database, and deployment. They are valued because they can take a feature from idea to production on their own.",
+    "analogy": "Like a general physician who can handle most problems across the whole body, calling specialists only for complex cases.",
+    "keyPoints": [
+      "Key skills shown on the role card: JavaScript, React and Node.js.",
+      "Also needed: HTML/CSS, REST APIs, a database (MongoDB and/or SQL), Git, authentication, testing and deployment.",
+      "Popular stacks: MERN, MEAN, Django + React, Spring Boot + React.",
+      "Work: building UI features, writing APIs, designing database schemas, fixing bugs, code reviews, deploying and monitoring.",
+      "The app's role card lists a salary range of $100K–$160K (a US-style figure); real pay varies by country, company and experience.",
+      "A strong portfolio of deployed projects matters more than certificates."
+    ],
+    "steps": [
+      "Learn HTML, CSS and JavaScript deeply.",
+      "Learn React.",
+      "Learn Node.js, Express and REST APIs.",
+      "Learn MongoDB and SQL.",
+      "Learn Git, authentication (JWT), and deployment (Render, Vercel, Docker).",
+      "Build and deploy 3 complete projects; practise DSA for interviews."
+    ],
+    "examples": [
+      "A college event management portal with login, registrations and an admin dashboard.",
+      "This Student Study Agent app (React + Express + MongoDB)."
+    ],
+    "formulas": [],
+    "workedExample": null,
+    "practice": [
+      {
+        "question": "Which three technologies are listed for the Full Stack Developer role in this app?",
+        "hint": "One language, one frontend library, one runtime.",
+        "answer": "JavaScript, React and Node.js."
+      }
+    ],
+    "commonMistakes": [
+      "Following tutorials without building original projects."
+    ],
+    "followUps": [
+      "Full Stack Development",
+      "React",
+      "Node.js and Express"
+    ],
+    "faq": [
+      {
+        "question": "What skills does a full stack developer need?",
+        "answer": "Frontend: HTML, CSS, JavaScript, React (or Angular/Vue), responsive design. Backend: Node.js with Express (or Python/Java), REST APIs, authentication. Databases: MongoDB and SQL. Tools: Git and GitHub, npm, Postman, Docker, cloud deployment. Plus problem solving, data structures and basic system design."
+      },
+      {
+        "question": "How to become a full stack developer?",
+        "answer": "Learn HTML/CSS → JavaScript → React → Node.js and Express → databases → Git, authentication and deployment. Build and deploy complete projects (for example a blog, an e-commerce store and a real-time chat), publish them on GitHub with live links, contribute to open source or internships, and practise DSA and project explanations for interviews."
+      },
+      {
+        "question": "What are the responsibilities of a full stack developer?",
+        "answer": "Building user interfaces, developing APIs and server logic, designing and managing databases, integrating third-party services, writing tests, fixing bugs, optimising performance and security, deploying applications and working with designers and product teams."
+      }
+    ]
+  },
+  {
+    "id": "career-iot-engineer",
+    "subject": "Careers",
+    "title": "IoT Engineer Career",
+    "aliases": [
+      "iot engineer",
+      "iot developer",
+      "iot engineer role",
+      "iot engineer career",
+      "how to become an iot engineer",
+      "iot engineer skills",
+      "iot engineer roadmap",
+      "iot engineer salary",
+      "embedded engineer",
+      "embedded systems engineer",
+      "what does an iot engineer do"
+    ],
+    "simpleExplanation": "An IoT engineer connects physical devices and builds smart systems: programming microcontrollers and sensors, connecting them to networks and the cloud, and building the dashboards and logic that use their data. The role mixes electronics, embedded programming, networking and cloud skills.",
+    "analogy": "An IoT engineer is like a translator between the physical world and the digital world.",
+    "keyPoints": [
+      "Core skills (from this app's role data): Embedded Systems (4/5), Networking (4/5), C/C++ (4/5), Python (3/5), Cloud Integration (3/5).",
+      "Preferred skills: MQTT, Edge AI, Security. The role card also shows Embedded C, Python and MQTT.",
+      "Tools: Arduino, Raspberry Pi, ESP32, Azure IoT, AWS IoT, Wireshark, PlatformIO.",
+      "Work: selecting sensors, writing firmware, setting up communication (Wi-Fi, BLE, LoRa, MQTT), cloud dashboards, securing devices, testing in real conditions.",
+      "The app's role card lists a salary range of $105K–$155K (a US-style figure); actual pay varies by country and industry.",
+      "Industries: smart homes, automotive, healthcare devices, agriculture, manufacturing (IIoT)."
+    ],
+    "steps": [
+      "Learn C/C++ and basic electronics (voltage, current, sensors).",
+      "Program Arduino and ESP32 boards (Embedded C).",
+      "Learn networking basics and IoT protocols (MQTT, HTTP, BLE).",
+      "Learn Python on Raspberry Pi.",
+      "Connect devices to a cloud platform and build dashboards.",
+      "Learn IoT security and build projects such as smart irrigation or home automation."
+    ],
+    "examples": [
+      "A smart irrigation system: soil sensor + ESP32 + MQTT + cloud dashboard + automatic pump control.",
+      "A wearable that sends heart-rate data to a mobile app."
+    ],
+    "formulas": [],
+    "workedExample": null,
+    "practice": [
+      {
+        "question": "Which messaging protocol is listed for the IoT Engineer role?",
+        "hint": "Publish/subscribe.",
+        "answer": "MQTT."
+      }
+    ],
+    "commonMistakes": [
+      "Ignoring power consumption and security until the end of a project."
+    ],
+    "followUps": [
+      "Internet of Things (IoT)",
+      "Embedded Systems and Embedded C",
+      "MQTT Protocol"
+    ],
+    "faq": [
+      {
+        "question": "What skills does an IoT engineer need?",
+        "answer": "Embedded C/C++, microcontrollers (Arduino, ESP32, STM32), electronics and sensors, communication protocols (UART, SPI, I2C, MQTT, BLE, Wi-Fi, LoRaWAN), networking, Python, Raspberry Pi and Linux, cloud IoT platforms (AWS IoT, Azure IoT Hub), edge computing, and device security."
+      },
+      {
+        "question": "How to become an IoT engineer?",
+        "answer": "1) Learn C and basic electronics. 2) Build Arduino projects with sensors and actuators. 3) Move to ESP32 for Wi-Fi projects. 4) Learn MQTT and connect devices to a cloud dashboard. 5) Learn Raspberry Pi and Python. 6) Learn IoT security and edge AI basics. 7) Document 3-4 complete projects with photos, circuits and code on GitHub."
+      },
+      {
+        "question": "What are the responsibilities of an IoT engineer?",
+        "answer": "Designing IoT solutions, selecting hardware and sensors, writing and updating firmware, implementing communication between devices and the cloud, building data pipelines and dashboards, securing devices and data, testing reliability and power use, and maintaining deployed devices."
+      }
+    ]
+  },
+  {
+    "id": "career-software-developer",
+    "subject": "Careers",
+    "title": "Software Developer Career",
+    "aliases": [
+      "software developer",
+      "software engineer",
+      "software developer role",
+      "software developer career",
+      "how to become a software developer",
+      "software developer skills",
+      "software engineer roadmap",
+      "sde",
+      "programming fundamentals",
+      "what does a software developer do",
+      "sdlc",
+      "software development life cycle",
+      "phases of sdlc",
+      "sdlc models"
+    ],
+    "simpleExplanation": "A software developer designs, writes, tests and maintains software applications and services. Strong programming fundamentals, data structures and algorithms, and good engineering habits (Git, testing, clean code) are the foundation, followed by system design as you grow.",
+    "analogy": "Like an architect and builder combined: planning the structure and then building it brick by brick, carefully testing each part.",
+    "keyPoints": [
+      "Core skills (from this app's role data): Programming Fundamentals (5/5), Data Structures (4/5), Algorithms (4/5), Git (4/5), System Design (3/5).",
+      "Preferred skills: Testing, CI/CD, Cloud. Tools: VS Code, GitHub, Docker, Node.js.",
+      "Programming fundamentals: variables, control flow, functions, OOP, recursion, complexity.",
+      "Interviews focus on DSA problems, projects, and for experienced roles, system design.",
+      "Software development life cycle: requirements → design → implementation → testing → deployment → maintenance."
+    ],
+    "steps": [
+      "Master one language (Java, C++, Python or JavaScript).",
+      "Learn data structures and algorithms; practise on LeetCode/GFG regularly.",
+      "Learn Git, OOP and testing.",
+      "Build projects (web, mobile or tools).",
+      "Learn system design basics and cloud deployment."
+    ],
+    "examples": [
+      "Building a REST API with tests and CI.",
+      "Solving 200+ DSA problems before placements."
+    ],
+    "formulas": [],
+    "workedExample": null,
+    "practice": [
+      {
+        "question": "Name the phases of the software development life cycle.",
+        "hint": "From idea to maintenance.",
+        "answer": "Requirements, design, implementation, testing, deployment and maintenance."
+      }
+    ],
+    "commonMistakes": [
+      "Switching languages constantly instead of going deep in one."
+    ],
+    "followUps": [
+      "Time Complexity and Big-O Notation",
+      "System Design",
+      "Git and Version Control"
+    ],
+    "faq": [
+      {
+        "question": "What skills does a software developer need?",
+        "answer": "Programming fundamentals in at least one language, data structures and algorithms, OOP, Git and GitHub, debugging and testing, databases and SQL, APIs, basic system design, CI/CD and cloud basics, plus communication and teamwork."
+      },
+      {
+        "question": "How to become a software developer?",
+        "answer": "Pick one language and master it, study data structures and algorithms with regular practice, learn Git and OOP, build 3-4 real projects, contribute to open source or do internships, learn system design basics, and prepare for coding interviews and project discussions."
+      },
+      {
+        "question": "What are the phases of the software development life cycle?",
+        "answer": "1) Requirement analysis. 2) Planning and design. 3) Implementation (coding). 4) Testing. 5) Deployment. 6) Maintenance. Models include Waterfall, Agile (Scrum), Spiral and V-model."
+      }
+    ]
+  },
+  {
+    "id": "career-data-analyst",
+    "subject": "Careers",
+    "title": "Data Analyst Career",
+    "aliases": [
+      "data analyst",
+      "data analyst role",
+      "data analyst career",
+      "how to become a data analyst",
+      "data analyst skills",
+      "data analyst roadmap",
+      "data analyst salary",
+      "business analyst",
+      "business intelligence",
+      "what does a data analyst do"
+    ],
+    "simpleExplanation": "A data analyst collects, cleans and analyses business data, then communicates findings through reports and dashboards so teams can make better decisions. The main tools are SQL, Excel, a BI tool such as Power BI or Tableau, and basic Python and statistics.",
+    "analogy": "A data analyst is like a translator who turns rows of numbers into a clear story that managers can act on.",
+    "keyPoints": [
+      "Core skills (from this app's role data): SQL (5/5), Excel (4/5), Data Visualization (4/5), Statistics (3/5), Python (3/5).",
+      "Preferred skills: Business Intelligence, Dashboarding, Storytelling. Tools: Power BI, Tableau, Pandas, Excel.",
+      "Work: writing SQL queries, cleaning data, building dashboards, tracking KPIs, ad-hoc analysis, presenting insights.",
+      "A beginner-friendly entry into data careers; many analysts later move into data science."
+    ],
+    "steps": [
+      "Learn Excel (formulas, pivot tables, charts).",
+      "Learn SQL thoroughly (joins, group by, window functions).",
+      "Learn Power BI or Tableau.",
+      "Learn basic statistics and Python with Pandas.",
+      "Build portfolio dashboards on real datasets and practise business case questions."
+    ],
+    "examples": [
+      "A sales dashboard showing revenue by region, product and month.",
+      "Analysing why student attendance dropped in a semester."
+    ],
+    "formulas": [],
+    "workedExample": null,
+    "practice": [
+      {
+        "question": "Which skill has the highest required level for the Data Analyst role in this app?",
+        "hint": "Databases.",
+        "answer": "SQL (5/5)."
+      }
+    ],
+    "commonMistakes": [
+      "Building complex dashboards without a clear business question."
+    ],
+    "followUps": [
+      "SQL (Structured Query Language)",
+      "Excel for Data Analysis",
+      "Data Visualization"
+    ],
+    "faq": [
+      {
+        "question": "What skills does a data analyst need?",
+        "answer": "SQL, Excel (formulas, pivot tables), data visualization with Power BI or Tableau, statistics, basic Python with Pandas, data cleaning, business understanding, and storytelling to explain findings to non-technical people."
+      },
+      {
+        "question": "How to become a data analyst?",
+        "answer": "Learn Excel → SQL → a BI tool (Power BI or Tableau) → statistics → Python with Pandas. Build 3-4 portfolio projects (for example sales, HR or student-performance dashboards) on public datasets, publish them with explanations, and practise SQL and case-study interview questions."
+      }
+    ]
+  },
+  {
+    "id": "java-programming",
+    "subject": "Programming",
+    "title": "Java Programming",
+    "aliases": [
+      "java",
+      "java language",
+      "core java",
+      "java basics",
+      "learn java",
+      "what is java",
+      "java programming language",
+      "features of java",
+      "jvm jdk jre",
+      "jdk vs jre vs jvm",
+      "java collections",
+      "java oop"
+    ],
+    "simpleExplanation": "Java is a general-purpose, object-oriented programming language. Java code is compiled into bytecode that runs on the Java Virtual Machine (JVM), so the same program runs on any operating system that has a JVM (\"write once, run anywhere\"). It is widely used for enterprise back-ends, Android apps, banking systems and big data tools.",
+    "analogy": "Bytecode is like a recipe written in a universal language: any kitchen (operating system) with the right translator (the JVM) can cook it.",
+    "keyPoints": [
+      "JDK (Java Development Kit) = tools to write and compile Java; JRE (Java Runtime Environment) = what is needed to run it; JVM = the engine that executes bytecode.",
+      "Everything lives inside classes; a program starts at public static void main(String[] args).",
+      "Statically typed: primitive types (int, double, char, boolean, long) and reference types (String, arrays, objects).",
+      "Object-oriented: classes, objects, inheritance (extends), interfaces (implements), polymorphism and encapsulation.",
+      "Automatic memory management through garbage collection.",
+      "Exceptions: checked exceptions must be handled with try/catch or declared with throws.",
+      "Collections framework: List (ArrayList, LinkedList), Set (HashSet, TreeSet), Map (HashMap, TreeMap).",
+      "Modern Java adds lambdas and streams (Java 8), var (Java 10) and records (Java 16)."
+    ],
+    "steps": [
+      "Install the JDK and an IDE such as IntelliJ IDEA.",
+      "Learn syntax, data types, operators, conditions and loops.",
+      "Learn classes, objects, constructors and the four OOP pillars.",
+      "Learn exception handling and the String class.",
+      "Learn the collections framework and generics.",
+      "Learn lambdas and streams, then build small projects."
+    ],
+    "examples": [
+      "public class Hello { public static void main(String[] args) { System.out.println(\"Hello, Java\"); } }",
+      "List<String> names = new ArrayList<>(); names.add(\"Asha\"); names.forEach(System.out::println);"
+    ],
+    "formulas": [],
+    "workedExample": null,
+    "practice": [
+      {
+        "question": "What is the difference between JDK, JRE and JVM?",
+        "hint": "Develop, run, execute.",
+        "answer": "The JDK contains the compiler and tools to develop Java programs, the JRE contains what is needed to run them, and the JVM is the part of the JRE that executes bytecode."
+      },
+      {
+        "question": "Which collection would you use to store unique values?",
+        "hint": "No duplicates.",
+        "answer": "A Set, such as HashSet."
+      }
+    ],
+    "commonMistakes": [
+      "Comparing strings with == instead of .equals().",
+      "Catching Exception everywhere and hiding real errors.",
+      "Ignoring NullPointerException risks; check for null or use Optional."
+    ],
+    "followUps": [
+      "Object-Oriented Programming (OOP)",
+      "Java Developer Career",
+      "Compiler vs Interpreter"
+    ],
+    "faq": [
+      {
+        "question": "What are the features of Java?",
+        "answer": "Java is object-oriented, platform independent (bytecode runs on the JVM), robust (strong typing, exception handling, garbage collection), secure, multithreaded, portable and has a very large standard library."
+      },
+      {
+        "question": "What is the difference between JDK, JRE and JVM?",
+        "answer": "JVM executes Java bytecode. JRE = JVM + core libraries, needed to run Java programs. JDK = JRE + development tools such as the javac compiler and debugger, needed to write Java programs."
+      },
+      {
+        "question": "Why is Java platform independent?",
+        "answer": "The compiler turns Java source code into bytecode instead of machine code. Each operating system has its own JVM that runs that same bytecode, so one compiled program runs everywhere a JVM exists."
+      },
+      {
+        "question": "What is the difference between an abstract class and an interface in Java?",
+        "answer": "An abstract class can have fields, constructors and both abstract and concrete methods, and a class can extend only one. An interface defines a contract of methods (with default and static methods allowed since Java 8) and a class can implement many interfaces."
+      }
+    ]
+  },
+  {
+    "id": "career-python-developer",
+    "subject": "Careers",
+    "title": "Python Developer Career",
+    "aliases": [
+      "python developer",
+      "python developer role",
+      "python developer career",
+      "how to become a python developer",
+      "python developer skills",
+      "python developer roadmap",
+      "python developer salary",
+      "what does a python developer do",
+      "python developer responsibilities",
+      "python backend developer",
+      "python engineer",
+      "django developer"
+    ],
+    "simpleExplanation": "A Python developer writes software in Python: web back-ends and APIs (Django, Flask, FastAPI), automation scripts, data tools and integrations. They design the server-side logic, connect to databases, write tests and deploy the code.",
+    "analogy": "A Python developer is like a skilled builder with one very versatile toolbox that works for houses, bridges and machines alike.",
+    "keyPoints": [
+      "Core skills (from this app's role data): Python (5/5), Data Structures (4/5), REST APIs (4/5), SQL (4/5), Git (4/5).",
+      "Preferred skills: Django, FastAPI, Testing.",
+      "Tools: VS Code, PyCharm, Postman, Docker, Git and GitHub.",
+      "Work: building APIs, writing business logic, database queries, automation, writing tests, code reviews and deployments.",
+      "The app's role card lists a salary range of $95K–$150K (a US-style figure); actual pay varies by country and experience.",
+      "Industries: web companies, fintech, data platforms, automation and DevOps teams."
+    ],
+    "steps": [
+      "Learn core Python: syntax, functions, OOP and file handling.",
+      "Practise data structures and algorithms, and learn Git.",
+      "Learn SQL and a database such as PostgreSQL or MySQL.",
+      "Build REST APIs with Django or FastAPI.",
+      "Learn testing with pytest, then Docker and deployment.",
+      "Publish 3-4 projects on GitHub and apply for internships or junior roles."
+    ],
+    "examples": [
+      "A blog or e-commerce API with authentication built in FastAPI.",
+      "A script that renames and organises thousands of files automatically."
+    ],
+    "formulas": [],
+    "workedExample": null,
+    "practice": [
+      {
+        "question": "Which two Python frameworks are listed as preferred skills for this role?",
+        "hint": "Both are web frameworks.",
+        "answer": "Django and FastAPI."
+      }
+    ],
+    "commonMistakes": [
+      "Only watching tutorials instead of building and deploying real projects.",
+      "Skipping tests and version control."
+    ],
+    "followUps": [
+      "Python Programming",
+      "REST APIs",
+      "Git and Version Control"
+    ],
+    "faq": [
+      {
+        "question": "What skills does a Python developer need?",
+        "answer": "Strong core Python and OOP, data structures and algorithms, a web framework (Django, Flask or FastAPI), REST API design, SQL and an ORM, Git, testing with pytest, basic Linux, and Docker for deployment."
+      },
+      {
+        "question": "How to become a Python developer?",
+        "answer": "1) Learn core Python and OOP. 2) Practise data structures and algorithms. 3) Learn Git and GitHub. 4) Learn SQL and a database. 5) Build REST APIs with Django or FastAPI. 6) Add tests and deploy with Docker. 7) Publish 3-4 complete projects and apply for internships or junior roles."
+      },
+      {
+        "question": "What are the responsibilities of a Python developer?",
+        "answer": "Writing and maintaining server-side code, building and documenting APIs, integrating databases and third-party services, writing automated tests, fixing bugs, reviewing code and deploying applications."
+      },
+      {
+        "question": "What is the salary of a Python developer?",
+        "answer": "This app's role card lists $95K–$150K, a US-style range. Pay depends on country, city, company and experience; entry-level salaries are lower and grow quickly with experience."
+      }
+    ]
+  },
+  {
+    "id": "career-java-developer",
+    "subject": "Careers",
+    "title": "Java Developer Career",
+    "aliases": [
+      "java developer",
+      "java developer role",
+      "java developer career",
+      "how to become a java developer",
+      "java developer skills",
+      "java developer roadmap",
+      "java developer salary",
+      "what does a java developer do",
+      "java developer responsibilities",
+      "java backend developer",
+      "java engineer",
+      "spring boot developer",
+      "java full stack developer"
+    ],
+    "simpleExplanation": "A Java developer builds applications in Java, most often enterprise back-end services with Spring Boot: banking systems, e-commerce platforms, booking systems and large internal tools. They design APIs, work with databases, write tests and keep large systems reliable.",
+    "analogy": "A Java developer is like an engineer building a bank vault: the structure must be strong, well organised and able to run for years.",
+    "keyPoints": [
+      "Core skills (from this app's role data): Java (5/5), OOP (5/5), Data Structures (4/5), Spring Boot (4/5), SQL (4/5).",
+      "Preferred skills: Microservices, Hibernate, Testing.",
+      "Tools: IntelliJ IDEA, Maven or Gradle, Spring Boot, JUnit, Git, Docker.",
+      "Work: building REST APIs, business logic, database access with JPA/Hibernate, unit and integration tests, microservices and deployments.",
+      "The app's role card lists a salary range of $95K–$155K (a US-style figure); actual pay varies by country and experience.",
+      "Industries: banking and finance, insurance, e-commerce, telecom, large enterprises and Android development."
+    ],
+    "steps": [
+      "Learn core Java: syntax, OOP, exceptions and strings.",
+      "Learn the collections framework, generics, lambdas and streams.",
+      "Practise data structures and algorithms in Java.",
+      "Learn SQL and JDBC, then Spring Boot with Spring Data JPA.",
+      "Learn testing with JUnit and Mockito, and the basics of microservices.",
+      "Deploy with Docker, publish projects on GitHub and apply for roles."
+    ],
+    "examples": [
+      "A library management REST API with Spring Boot and MySQL.",
+      "An order service and a payment service talking to each other as microservices."
+    ],
+    "formulas": [],
+    "workedExample": null,
+    "practice": [
+      {
+        "question": "Which framework is listed as a core skill for the Java Developer role?",
+        "hint": "It is the most popular Java framework.",
+        "answer": "Spring Boot."
+      }
+    ],
+    "commonMistakes": [
+      "Learning Spring before understanding core Java and OOP.",
+      "Ignoring testing and design principles in large codebases."
+    ],
+    "followUps": [
+      "Java Programming",
+      "Object-Oriented Programming (OOP)",
+      "Microservices Architecture"
+    ],
+    "faq": [
+      {
+        "question": "What skills does a Java developer need?",
+        "answer": "Core Java and OOP, collections and generics, lambdas and streams, data structures and algorithms, SQL and JDBC, Spring Boot and Spring Data JPA (Hibernate), REST APIs, JUnit and Mockito testing, Maven or Gradle, Git, and Docker and microservices for advanced roles."
+      },
+      {
+        "question": "How to become a Java developer?",
+        "answer": "1) Learn core Java and OOP. 2) Learn collections, generics and streams. 3) Practise DSA in Java. 4) Learn SQL and JDBC. 5) Learn Spring Boot and build REST APIs with a database. 6) Learn JUnit testing and basic microservices. 7) Deploy with Docker and publish 3-4 projects on GitHub. 8) Optional: Oracle Java SE certification."
+      },
+      {
+        "question": "What are the responsibilities of a Java developer?",
+        "answer": "Designing and building back-end services, writing business logic, integrating databases, building REST APIs, writing unit and integration tests, improving performance, fixing production issues and reviewing code."
+      },
+      {
+        "question": "What is the salary of a Java developer?",
+        "answer": "This app's role card lists $95K–$155K, a US-style range. Pay depends on country, company and experience; Spring Boot and microservices skills usually raise it."
+      }
+    ]
+  },
+  {
+    "id": "career-machine-learning-engineer",
+    "subject": "Careers",
+    "title": "Machine Learning Engineer Career",
+    "aliases": [
+      "machine learning engineer",
+      "machine learning engineer role",
+      "machine learning engineer career",
+      "how to become a machine learning engineer",
+      "machine learning engineer skills",
+      "machine learning engineer roadmap",
+      "machine learning engineer salary",
+      "what does a machine learning engineer do",
+      "machine learning engineer responsibilities",
+      "ml engineer",
+      "how to become an ml engineer",
+      "ml engineer skills",
+      "ml engineer roadmap",
+      "ml engineer salary",
+      "mlops engineer"
+    ],
+    "simpleExplanation": "A machine learning engineer builds, trains and deploys ML models so they work reliably in real products. Compared with a data scientist, the role focuses more on engineering: data pipelines, model serving, automation (MLOps), monitoring and scaling.",
+    "analogy": "A data scientist designs a new recipe; a machine learning engineer builds the factory that cooks it perfectly a million times a day.",
+    "keyPoints": [
+      "Core skills (from this app's role data): Python (5/5), Machine Learning (5/5), Statistics (4/5), Deep Learning (4/5), MLOps (4/5).",
+      "Preferred skills: Feature Engineering, Model Deployment, Cloud ML.",
+      "Tools: Scikit-learn, PyTorch or TensorFlow, MLflow, Docker, cloud ML platforms (SageMaker, Vertex AI, Azure ML).",
+      "Work: preparing data, training and tuning models, serving models behind APIs, automating retraining, monitoring accuracy and drift.",
+      "The app's role card lists a salary range of $125K–$190K (a US-style figure); actual pay varies by country and experience.",
+      "Industries: tech products, e-commerce recommendations, fintech fraud detection, healthcare and self-driving systems."
+    ],
+    "steps": [
+      "Learn Python, NumPy and Pandas.",
+      "Learn linear algebra, probability and statistics basics.",
+      "Learn core ML with scikit-learn: regression, classification, trees, clustering and evaluation.",
+      "Learn deep learning with PyTorch or TensorFlow.",
+      "Learn MLOps: model serving, Docker, MLflow, CI/CD and monitoring.",
+      "Build end-to-end projects that are deployed, not just notebooks."
+    ],
+    "examples": [
+      "A churn prediction model served as an API and retrained every week.",
+      "An image classifier deployed with Docker and monitored for drift."
+    ],
+    "formulas": [],
+    "workedExample": null,
+    "practice": [
+      {
+        "question": "Which skill most separates an ML engineer from a data scientist in this app's role data?",
+        "hint": "Production and automation.",
+        "answer": "MLOps (deploying, automating and monitoring models)."
+      }
+    ],
+    "commonMistakes": [
+      "Stopping at a notebook and never deploying a model.",
+      "Ignoring data quality and monitoring after deployment."
+    ],
+    "followUps": [
+      "Machine Learning",
+      "Machine Learning Workflow",
+      "Neural Networks and Deep Learning"
+    ],
+    "faq": [
+      {
+        "question": "What skills does a machine learning engineer need?",
+        "answer": "Python, NumPy and Pandas, statistics and linear algebra, ML algorithms and evaluation, feature engineering, deep learning with PyTorch or TensorFlow, SQL, MLOps (MLflow, Docker, CI/CD, model serving and monitoring) and a cloud ML platform."
+      },
+      {
+        "question": "How to become a machine learning engineer?",
+        "answer": "1) Learn Python and data libraries. 2) Learn maths and statistics basics. 3) Learn core ML with scikit-learn. 4) Learn deep learning. 5) Learn software engineering habits: Git, testing, APIs. 6) Learn MLOps: Docker, MLflow, model serving and monitoring. 7) Build 2-3 deployed end-to-end projects and share them on GitHub."
+      },
+      {
+        "question": "What is the difference between a data scientist and a machine learning engineer?",
+        "answer": "A data scientist focuses on analysing data, experiments and building models to answer questions. A machine learning engineer focuses on turning models into reliable production systems: pipelines, deployment, scaling, automation and monitoring."
+      },
+      {
+        "question": "What are the responsibilities of a machine learning engineer?",
+        "answer": "Building data and training pipelines, training and tuning models, deploying models as services, automating retraining, monitoring accuracy, latency and drift, and working with data scientists and software engineers."
+      }
+    ]
+  },
+  {
+    "id": "career-cloud-engineer",
+    "subject": "Careers",
+    "title": "Cloud Engineer Career",
+    "aliases": [
+      "cloud engineer",
+      "cloud engineer role",
+      "cloud engineer career",
+      "how to become a cloud engineer",
+      "cloud engineer skills",
+      "cloud engineer roadmap",
+      "cloud engineer salary",
+      "what does a cloud engineer do",
+      "cloud engineer responsibilities",
+      "cloud architect",
+      "aws engineer",
+      "azure engineer",
+      "devops cloud engineer",
+      "cloud computing career",
+      "cloud computing jobs"
+    ],
+    "simpleExplanation": "A cloud engineer designs, builds and runs infrastructure on cloud platforms such as AWS, Azure or Google Cloud: servers, networks, storage, databases, containers and security. They automate this infrastructure with code and keep systems scalable, secure and cost-efficient.",
+    "analogy": "A cloud engineer is like a city planner for a digital city: roads (networks), buildings (servers), security gates and utilities, all designed to grow when more people arrive.",
+    "keyPoints": [
+      "Core skills (from this app's role data): Cloud Platforms (5/5), Linux (4/5), Networking (4/5), Containers (4/5), Infrastructure as Code (4/5).",
+      "Preferred skills: Kubernetes, CI/CD, Cloud Security.",
+      "Tools: AWS, Azure, Google Cloud, Terraform, Docker, Kubernetes, GitHub Actions.",
+      "Work: designing cloud architecture, provisioning resources with Terraform, setting up networks and IAM, deploying containers, monitoring and cost control.",
+      "The app's role card lists a salary range of $110K–$170K (a US-style figure); actual pay varies by country and experience.",
+      "Industries: almost every company moving to the cloud, SaaS products, banking, healthcare and government."
+    ],
+    "steps": [
+      "Learn Linux and shell scripting.",
+      "Learn networking basics: IP addresses, subnets, DNS, HTTP and load balancers.",
+      "Learn one cloud provider deeply (AWS or Azure): compute, storage, IAM and VPCs.",
+      "Learn Docker and Kubernetes.",
+      "Learn Infrastructure as Code with Terraform, and CI/CD.",
+      "Earn an associate-level cloud certification and build hands-on projects."
+    ],
+    "examples": [
+      "Hosting a three-tier web app on AWS with a load balancer, auto scaling and a managed database.",
+      "Provisioning a whole environment from a Terraform file in minutes."
+    ],
+    "formulas": [],
+    "workedExample": null,
+    "practice": [
+      {
+        "question": "What does Infrastructure as Code mean?",
+        "hint": "Think Terraform.",
+        "answer": "Defining servers, networks and other cloud resources in code files so they can be created, versioned and repeated automatically."
+      }
+    ],
+    "commonMistakes": [
+      "Clicking everything manually in the console instead of automating with code.",
+      "Leaving resources running and getting unexpected bills."
+    ],
+    "followUps": [
+      "Cloud Computing",
+      "Cloud Providers: AWS, Azure and Google Cloud",
+      "Kubernetes and Container Orchestration"
+    ],
+    "faq": [
+      {
+        "question": "What skills does a cloud engineer need?",
+        "answer": "Linux, networking (TCP/IP, DNS, subnets, load balancing), at least one cloud platform (AWS, Azure or GCP), IAM and cloud security, Docker and Kubernetes, Terraform or another IaC tool, CI/CD, a scripting language such as Python or Bash, and monitoring and cost management."
+      },
+      {
+        "question": "How to become a cloud engineer?",
+        "answer": "1) Learn Linux and shell scripting. 2) Learn networking basics. 3) Pick AWS or Azure and learn compute, storage, IAM and networking. 4) Earn a fundamentals certification (AWS Cloud Practitioner or AZ-900), then an associate one. 5) Learn Docker and Kubernetes. 6) Learn Terraform and CI/CD. 7) Build and document 2-3 cloud projects."
+      },
+      {
+        "question": "Which certification is best for a cloud engineer?",
+        "answer": "Start with AWS Certified Cloud Practitioner or Microsoft Azure Fundamentals (AZ-900). Then move to AWS Solutions Architect - Associate, Azure Administrator (AZ-104) or Google Associate Cloud Engineer."
+      },
+      {
+        "question": "What are the responsibilities of a cloud engineer?",
+        "answer": "Designing and deploying cloud infrastructure, automating it with code, managing networks, access and security, running containers, monitoring performance and availability, handling incidents and optimising costs."
+      }
+    ]
+  },
+  {
+    "id": "career-sql-developer",
+    "subject": "Careers",
+    "title": "SQL Developer Career",
+    "aliases": [
+      "sql developer",
+      "sql developer role",
+      "sql developer career",
+      "how to become a sql developer",
+      "sql developer skills",
+      "sql developer roadmap",
+      "sql developer salary",
+      "what does a sql developer do",
+      "sql developer responsibilities",
+      "database developer",
+      "database engineer",
+      "pl/sql developer",
+      "database administrator",
+      "dba career"
+    ],
+    "simpleExplanation": "A SQL developer designs databases and writes the SQL that applications and reports depend on: tables, relationships, queries, views, stored procedures and data pipelines. They make sure data is correct, well organised and fast to query.",
+    "analogy": "A SQL developer is like a librarian who designs the shelves and catalogue so any book can be found in seconds.",
+    "keyPoints": [
+      "Core skills (from this app's role data): SQL (5/5), Database Design (4/5), Query Optimization (4/5), Data Modeling (4/5), ETL (3/5).",
+      "Preferred skills: Stored Procedures, Data Warehousing, Python.",
+      "Tools: MySQL, PostgreSQL, SQL Server, Oracle, Power BI.",
+      "Work: designing schemas, writing and tuning queries, creating views and stored procedures, building ETL jobs and supporting reports.",
+      "The app's role card lists a salary range of $85K–$135K (a US-style figure); actual pay varies by country and experience.",
+      "Industries: banking, retail, healthcare, government and any company with large amounts of business data."
+    ],
+    "steps": [
+      "Learn SQL basics: SELECT, WHERE, GROUP BY, joins, INSERT, UPDATE and DELETE.",
+      "Learn database design: ER diagrams, keys and normalisation.",
+      "Learn advanced SQL: subqueries, CTEs and window functions.",
+      "Learn indexes, query plans and performance tuning.",
+      "Learn stored procedures, triggers and transactions.",
+      "Learn ETL and data warehousing basics, and build portfolio projects."
+    ],
+    "examples": [
+      "Designing a hospital database with patients, doctors and appointments in 3NF.",
+      "Cutting a slow report query from 30 seconds to 1 second by adding the right index."
+    ],
+    "formulas": [],
+    "workedExample": null,
+    "practice": [
+      {
+        "question": "Which SQL feature lets you rank rows within groups without collapsing them?",
+        "hint": "OVER (PARTITION BY ...).",
+        "answer": "Window functions, such as RANK() or ROW_NUMBER() with OVER (PARTITION BY ...)."
+      }
+    ],
+    "commonMistakes": [
+      "Using SELECT * everywhere and fetching more data than needed.",
+      "Skipping indexes and normalisation, which leads to slow and inconsistent data."
+    ],
+    "followUps": [
+      "SQL (Structured Query Language)",
+      "Normalization",
+      "Indexing in Databases"
+    ],
+    "faq": [
+      {
+        "question": "What skills does a SQL developer need?",
+        "answer": "Strong SQL (joins, subqueries, CTEs, window functions), database design and normalisation, indexing and query optimisation, stored procedures, triggers and transactions, a major database (MySQL, PostgreSQL, SQL Server or Oracle), ETL and data warehousing basics, and reporting tools such as Power BI."
+      },
+      {
+        "question": "How to become a SQL developer?",
+        "answer": "1) Learn SQL basics and practise daily on SQLBolt or HackerRank. 2) Learn database design and normalisation. 3) Learn advanced SQL such as CTEs and window functions. 4) Learn indexing and query tuning. 5) Learn stored procedures and transactions. 6) Learn ETL and a reporting tool. 7) Build database projects and consider a certification such as Oracle Database SQL or Microsoft DP-300."
+      },
+      {
+        "question": "What is the difference between a SQL developer and a database administrator?",
+        "answer": "A SQL developer designs schemas and writes queries, procedures and ETL for applications and reports. A database administrator (DBA) keeps the database server healthy: installation, backups, security, performance, replication and upgrades."
+      },
+      {
+        "question": "What are the responsibilities of a SQL developer?",
+        "answer": "Designing and maintaining database schemas, writing and optimising queries, creating views and stored procedures, building ETL processes, ensuring data quality and integrity, and supporting developers and analysts with data."
+      }
+    ]
+  }
+]

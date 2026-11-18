@@ -1,0 +1,639 @@
+[
+  {
+    "id": "derivatives",
+    "subject": "Mathematics",
+    "title": "Derivatives (Differentiation)",
+    "aliases": ["derivative", "derivatives", "differentiation", "differentiate", "rate of change", "power rule", "chain rule", "calculus"],
+    "simpleExplanation": "A derivative measures how fast a quantity changes with respect to another, which is the slope of a curve at a point. If position changes with time, its derivative is velocity. Differentiation rules such as the power rule, product rule and chain rule let you find derivatives quickly.",
+    "analogy": "The speedometer of a car shows the derivative of distance with respect to time at that instant.",
+    "keyPoints": [
+      "Power rule: d/dx (xⁿ) = n·xⁿ⁻¹.",
+      "Derivative of a constant is 0.",
+      "Product rule: (uv)' = u'v + uv'. Quotient rule: (u/v)' = (u'v − uv') / v².",
+      "Chain rule: d/dx f(g(x)) = f'(g(x))·g'(x).",
+      "d/dx sin x = cos x, d/dx cos x = −sin x, d/dx eˣ = eˣ, d/dx ln x = 1/x."
+    ],
+    "steps": ["Identify the form of the function (power, product, quotient, composition).", "Apply the matching rule term by term.", "Simplify the result.", "Substitute x to find the slope at a point if needed."],
+    "examples": ["d/dx (3x² + 5x − 7) = 6x + 5.", "d/dx (2x + 1)³ = 3(2x + 1)² × 2 = 6(2x + 1)²."],
+    "formulas": [
+      { "formula": "d/dx (xⁿ) = n·xⁿ⁻¹", "meaning": "Power rule." },
+      { "formula": "f'(x) = lim(h→0) [f(x + h) − f(x)] / h", "meaning": "Definition of the derivative." }
+    ],
+    "workedExample": {
+      "problem": "Find the slope of y = x³ − 4x at x = 2.",
+      "steps": ["dy/dx = 3x² − 4.", "At x = 2: 3(4) − 4."],
+      "answer": "8."
+    },
+    "practice": [
+      { "question": "Differentiate y = 5x⁴ − 2x + 9.", "hint": "Power rule on each term.", "answer": "20x³ − 2." },
+      { "question": "Differentiate y = sin(3x).", "hint": "Chain rule.", "answer": "3cos(3x)." },
+      { "question": "Find dy/dx of y = x²·eˣ.", "hint": "Product rule.", "answer": "2x·eˣ + x²·eˣ = eˣ(x² + 2x)." }
+    ],
+    "commonMistakes": ["Forgetting to multiply by the inner derivative in the chain rule."],
+    "followUps": ["Integration", "Limits", "Maxima and minima"]
+  },
+  {
+    "id": "integration",
+    "subject": "Mathematics",
+    "title": "Integration",
+    "aliases": ["integration", "integral", "integrals", "integrate", "antiderivative", "definite integral", "area under curve"],
+    "simpleExplanation": "Integration is the reverse of differentiation. An indefinite integral finds a function whose derivative is the given function (plus a constant C). A definite integral from a to b gives the accumulated total, such as the area under a curve between a and b.",
+    "analogy": "If differentiation gives speed from distance, integration rebuilds total distance from speed over time.",
+    "keyPoints": [
+      "∫ xⁿ dx = xⁿ⁺¹/(n + 1) + C, for n ≠ −1.",
+      "∫ 1/x dx = ln|x| + C; ∫ eˣ dx = eˣ + C.",
+      "∫ sin x dx = −cos x + C; ∫ cos x dx = sin x + C.",
+      "Definite integral: ∫ₐᵇ f(x) dx = F(b) − F(a).",
+      "Techniques: substitution, integration by parts, partial fractions."
+    ],
+    "steps": ["Rewrite the integrand into standard forms.", "Integrate term by term using the rules.", "Add + C for indefinite integrals.", "For definite integrals, evaluate F(b) − F(a)."],
+    "examples": ["∫ (6x² + 2) dx = 2x³ + 2x + C."],
+    "formulas": [
+      { "formula": "∫ xⁿ dx = xⁿ⁺¹/(n + 1) + C", "meaning": "Power rule for integration." },
+      { "formula": "∫ u dv = uv − ∫ v du", "meaning": "Integration by parts." }
+    ],
+    "workedExample": {
+      "problem": "Evaluate ∫₀² 3x² dx.",
+      "steps": ["Antiderivative: x³.", "F(2) − F(0) = 8 − 0."],
+      "answer": "8."
+    },
+    "practice": [
+      { "question": "Find ∫ (4x³ − 2x) dx.", "hint": "Power rule.", "answer": "x⁴ − x² + C." },
+      { "question": "Evaluate ∫₁³ 2x dx.", "hint": "x² from 1 to 3.", "answer": "9 − 1 = 8." }
+    ],
+    "commonMistakes": ["Forgetting + C in indefinite integrals."],
+    "followUps": ["Derivatives", "Area under curves", "Differential equations"]
+  },
+  {
+    "id": "matrices",
+    "subject": "Mathematics",
+    "title": "Matrices and Determinants",
+    "aliases": ["matrix", "matrices", "determinant", "determinants", "inverse matrix", "matrix multiplication", "transpose"],
+    "simpleExplanation": "A matrix is a rectangular grid of numbers arranged in rows and columns. Matrices can be added (same size), multiplied (columns of the first equal rows of the second) and transposed. The determinant is a single number computed from a square matrix; if it is zero, the matrix has no inverse.",
+    "analogy": "A matrix is like a spreadsheet table that can be combined with other tables using fixed rules.",
+    "keyPoints": [
+      "Order m × n: m rows and n columns.",
+      "A (m × n) × B (n × p) gives an m × p matrix; AB ≠ BA in general.",
+      "2 × 2 determinant: |a b; c d| = ad − bc.",
+      "Inverse exists only when det ≠ 0: A⁻¹ = adj(A) / det(A).",
+      "Identity matrix I satisfies AI = IA = A."
+    ],
+    "steps": ["Check dimensions before multiplying.", "Each entry of AB = row of A · column of B (multiply and add).", "For a 2 × 2 inverse, swap a and d, negate b and c, and divide by ad − bc."],
+    "examples": ["[1 2; 3 4] × [5; 6] = [1·5 + 2·6; 3·5 + 4·6] = [17; 39]."],
+    "formulas": [
+      { "formula": "det[a b; c d] = ad − bc", "meaning": "Determinant of a 2 × 2 matrix." },
+      { "formula": "[a b; c d]⁻¹ = (1/(ad − bc)) [d −b; −c a]", "meaning": "Inverse of a 2 × 2 matrix." }
+    ],
+    "workedExample": {
+      "problem": "Find the determinant and inverse of A = [2 1; 5 3].",
+      "steps": ["det = 2 × 3 − 1 × 5 = 1.", "Swap and negate: [3 −1; −5 2].", "Divide by det = 1."],
+      "answer": "det = 1, A⁻¹ = [3 −1; −5 2]."
+    },
+    "practice": [
+      { "question": "Find the determinant of [4 2; 3 1].", "hint": "ad − bc.", "answer": "4 − 6 = −2." },
+      { "question": "Can a 2 × 3 matrix be multiplied by a 2 × 3 matrix?", "hint": "Inner dimensions.", "answer": "No. The first matrix's columns (3) must equal the second's rows (2)." }
+    ],
+    "commonMistakes": ["Assuming matrix multiplication is commutative."],
+    "followUps": ["Systems of linear equations", "Eigenvalues", "Vectors"]
+  },
+  {
+    "id": "probability",
+    "subject": "Mathematics",
+    "title": "Probability",
+    "aliases": ["probability", "conditional probability", "bayes theorem", "bayes", "independent events", "permutation", "combination", "permutations and combinations"],
+    "simpleExplanation": "Probability measures how likely an event is, from 0 (impossible) to 1 (certain). For equally likely outcomes, P(event) = favourable outcomes ÷ total outcomes. Rules handle combined events: add probabilities for 'or' (subtracting overlap) and multiply for 'and' when events are independent.",
+    "analogy": "If a bag has 3 red and 7 blue balls, your chance of picking red without looking is 3 out of 10.",
+    "keyPoints": [
+      "P(A) = favourable ÷ total; 0 ≤ P(A) ≤ 1; P(not A) = 1 − P(A).",
+      "P(A or B) = P(A) + P(B) − P(A and B).",
+      "Independent events: P(A and B) = P(A) × P(B).",
+      "Conditional: P(A|B) = P(A and B) ÷ P(B).",
+      "Combinations nCr = n! / (r!(n − r)!); permutations nPr = n! / (n − r)!."
+    ],
+    "steps": ["Define the sample space (all outcomes).", "Count favourable outcomes.", "Apply the right rule for 'and', 'or', 'not' or 'given'.", "Simplify the fraction."],
+    "examples": ["Probability of an even number on a die = 3/6 = 1/2.", "Two coin tosses both heads = 1/2 × 1/2 = 1/4."],
+    "formulas": [
+      { "formula": "P(A|B) = P(B|A)·P(A) / P(B)", "meaning": "Bayes' theorem." },
+      { "formula": "nCr = n! / (r!(n − r)!)", "meaning": "Ways to choose r items from n when order does not matter." }
+    ],
+    "workedExample": {
+      "problem": "Two cards are drawn from a 52-card deck without replacement. Find the probability that both are aces.",
+      "steps": ["P(first ace) = 4/52.", "P(second ace | first ace) = 3/51.", "Multiply: (4/52)(3/51) = 12/2652."],
+      "answer": "1/221 ≈ 0.0045."
+    },
+    "practice": [
+      { "question": "What is the probability of getting a sum of 7 with two dice?", "hint": "6 favourable out of 36.", "answer": "6/36 = 1/6." },
+      { "question": "How many ways can a committee of 3 be chosen from 8 people?", "hint": "8C3.", "answer": "56." }
+    ],
+    "commonMistakes": ["Adding probabilities of overlapping events without subtracting the overlap."],
+    "followUps": ["Mean, median and mode", "Statistics", "Bayes' theorem"]
+  },
+  {
+    "id": "statistics-central-tendency",
+    "subject": "Mathematics",
+    "title": "Mean, Median, Mode and Standard Deviation",
+    "aliases": ["mean", "median", "mode", "average", "standard deviation", "variance", "statistics", "central tendency"],
+    "simpleExplanation": "Mean, median and mode describe the centre of a data set. The mean is the average (sum ÷ count), the median is the middle value after sorting, and the mode is the most frequent value. Variance and standard deviation measure how spread out the values are from the mean.",
+    "analogy": "For a class's marks, the mean is the 'typical' score, the median is the student in the middle of the ranking, and the standard deviation tells you whether everyone scored similarly or very differently.",
+    "keyPoints": [
+      "Mean = Σx ÷ n; affected by outliers.",
+      "Median: middle value (average of the two middle values if n is even); robust to outliers.",
+      "Mode: most frequent value; a set can have none or several.",
+      "Variance σ² = Σ(x − mean)² ÷ n; standard deviation σ = √variance.",
+      "Empirical relation: Mode ≈ 3 Median − 2 Mean (moderately skewed data)."
+    ],
+    "steps": ["Sort the data.", "Mean: add all values and divide by the count.", "Median: pick the middle value.", "Mode: find the most frequent value.", "Standard deviation: square deviations from the mean, average them, take the square root."],
+    "examples": ["Data 2, 4, 4, 5, 10: mean 5, median 4, mode 4."],
+    "formulas": [
+      { "formula": "Mean x̄ = Σx / n", "meaning": "Arithmetic mean." },
+      { "formula": "σ = √(Σ(x − x̄)² / n)", "meaning": "Population standard deviation." }
+    ],
+    "workedExample": {
+      "problem": "Find the standard deviation of 2, 4, 4, 4, 5, 5, 7, 9.",
+      "steps": ["Mean = 40 / 8 = 5.", "Squared deviations: 9, 1, 1, 1, 0, 0, 4, 16; sum = 32.", "Variance = 32 / 8 = 4.", "σ = √4."],
+      "answer": "2."
+    },
+    "practice": [
+      { "question": "Find the median of 7, 3, 9, 1, 5, 11.", "hint": "Sort, then average the two middle values.", "answer": "Sorted 1, 3, 5, 7, 9, 11 → (5 + 7)/2 = 6." },
+      { "question": "Which measure is best for income data with a few very rich people?", "hint": "Robust to outliers.", "answer": "The median." }
+    ],
+    "commonMistakes": ["Finding the median without sorting the data first."],
+    "followUps": ["Probability", "Normal distribution", "Linear regression"]
+  },
+  {
+    "id": "quadratic-equations",
+    "subject": "Mathematics",
+    "title": "Quadratic Equations",
+    "aliases": ["quadratic equation", "quadratic equations", "quadratic formula", "discriminant", "roots of quadratic", "factorization"],
+    "simpleExplanation": "A quadratic equation has the form ax² + bx + c = 0 with a ≠ 0. It has at most two solutions (roots), found by factorizing, completing the square, or the quadratic formula. The discriminant D = b² − 4ac tells you the type of roots.",
+    "analogy": "The graph of a quadratic is a U-shaped parabola; the roots are where it crosses the x-axis.",
+    "keyPoints": [
+      "Quadratic formula: x = (−b ± √(b² − 4ac)) / 2a.",
+      "D > 0: two distinct real roots; D = 0: one repeated root; D < 0: no real roots (complex).",
+      "Sum of roots = −b/a; product of roots = c/a.",
+      "Vertex of y = ax² + bx + c is at x = −b/2a."
+    ],
+    "steps": ["Write the equation in the form ax² + bx + c = 0.", "Compute D = b² − 4ac.", "Apply the quadratic formula (or factorize if easy).", "Check by substituting the roots."],
+    "examples": ["x² − 5x + 6 = 0 factorizes to (x − 2)(x − 3) = 0, so x = 2 or 3."],
+    "formulas": [
+      { "formula": "x = (−b ± √(b² − 4ac)) / 2a", "meaning": "Quadratic formula." },
+      { "formula": "D = b² − 4ac", "meaning": "Discriminant." }
+    ],
+    "workedExample": {
+      "problem": "Solve 2x² + 3x − 2 = 0.",
+      "steps": ["a = 2, b = 3, c = −2.", "D = 9 + 16 = 25, √D = 5.", "x = (−3 ± 5) / 4."],
+      "answer": "x = 1/2 or x = −2."
+    },
+    "practice": [
+      { "question": "Solve x² − 7x + 12 = 0.", "hint": "Factors of 12 adding to 7.", "answer": "x = 3 or x = 4." },
+      { "question": "What kind of roots does x² + 2x + 5 = 0 have?", "hint": "Compute D.", "answer": "D = 4 − 20 = −16 < 0, so no real roots (two complex roots)." }
+    ],
+    "commonMistakes": ["Dividing by 2 only part of the numerator; the whole −b ± √D is divided by 2a."],
+    "followUps": ["Derivatives", "Matrices and determinants", "Probability"]
+  },
+  {
+    "id": "pythagoras",
+    "subject": "Mathematics",
+    "title": "Pythagoras Theorem and Trigonometry",
+    "aliases": ["pythagoras", "pythagoras theorem", "pythagorean theorem", "trigonometry", "sin cos tan", "trigonometric ratios", "right triangle"],
+    "simpleExplanation": "In a right-angled triangle, Pythagoras' theorem says the square of the hypotenuse (the longest side) equals the sum of the squares of the other two sides: c² = a² + b². Trigonometric ratios relate angles to side lengths: sin = opposite/hypotenuse, cos = adjacent/hypotenuse, tan = opposite/adjacent.",
+    "analogy": "A ladder leaning on a wall forms a right triangle; Pythagoras tells you how long the ladder must be.",
+    "keyPoints": [
+      "c² = a² + b², where c is the hypotenuse.",
+      "SOH-CAH-TOA: sin = O/H, cos = A/H, tan = O/A.",
+      "sin²θ + cos²θ = 1.",
+      "Common values: sin 30° = 1/2, cos 60° = 1/2, tan 45° = 1, sin 90° = 1."
+    ],
+    "steps": ["Identify the right angle and the hypotenuse.", "Use c² = a² + b² to find a missing side.", "For angles, pick the ratio that uses the two known sides.", "Use inverse trig (sin⁻¹, cos⁻¹, tan⁻¹) to find the angle."],
+    "examples": ["Sides 3 and 4 give hypotenuse 5 (9 + 16 = 25)."],
+    "formulas": [
+      { "formula": "c² = a² + b²", "meaning": "Pythagoras theorem." },
+      { "formula": "sin²θ + cos²θ = 1", "meaning": "Fundamental trigonometric identity." }
+    ],
+    "workedExample": {
+      "problem": "A 10 m ladder reaches 8 m up a wall. How far is its foot from the wall?",
+      "steps": ["10² = 8² + d².", "100 = 64 + d², so d² = 36."],
+      "answer": "6 m."
+    },
+    "practice": [
+      { "question": "Find the hypotenuse when the other sides are 5 cm and 12 cm.", "hint": "25 + 144.", "answer": "13 cm." },
+      { "question": "In a right triangle, opposite = 7 and hypotenuse = 14. Find the angle.", "hint": "sin θ = 1/2.", "answer": "30°." }
+    ],
+    "commonMistakes": ["Using Pythagoras on triangles that are not right-angled."],
+    "followUps": ["Quadratic equations", "Vectors", "Coordinate geometry"]
+  },
+  {
+    "id": "newtons-laws",
+    "subject": "Physics",
+    "title": "Newton's Laws of Motion",
+    "aliases": ["newton's laws", "newtons laws", "newton laws of motion", "laws of motion", "first law", "second law", "third law", "f = ma", "f=ma", "inertia", "force"],
+    "simpleExplanation": "Newton's three laws describe how forces affect motion. First law (inertia): an object stays at rest or keeps moving in a straight line at constant speed unless a net force acts on it. Second law: force equals mass times acceleration (F = ma). Third law: for every action there is an equal and opposite reaction.",
+    "analogy": "When a bus suddenly brakes you lurch forward (first law); pushing an empty trolley is easier than a full one (second law); a balloon flies forward as air rushes out backwards (third law).",
+    "keyPoints": [
+      "First law: inertia, the tendency to resist changes in motion.",
+      "Second law: F = ma; force is measured in newtons (1 N = 1 kg·m/s²).",
+      "Third law: action and reaction act on different bodies, equal in size and opposite in direction.",
+      "Weight W = mg, with g ≈ 9.8 m/s².",
+      "Momentum p = mv; force is the rate of change of momentum."
+    ],
+    "steps": ["Draw a free-body diagram showing all forces.", "Find the net force by adding forces with their directions.", "Apply F = ma to find acceleration or the unknown force.", "Use the equations of motion if velocity or distance is needed."],
+    "examples": ["Seat belts protect you because your body keeps moving when the car stops (inertia).", "A rocket pushes gas down; the gas pushes the rocket up."],
+    "formulas": [
+      { "formula": "F = m × a", "meaning": "Newton's second law." },
+      { "formula": "W = m × g", "meaning": "Weight of an object." },
+      { "formula": "p = m × v", "meaning": "Momentum." }
+    ],
+    "workedExample": {
+      "problem": "A 5 kg box is pushed with a net force of 20 N. Find its acceleration.",
+      "steps": ["Use F = ma.", "a = F / m = 20 / 5."],
+      "answer": "4 m/s²."
+    },
+    "practice": [
+      { "question": "What force is needed to accelerate a 1200 kg car at 2 m/s²?", "hint": "F = ma.", "answer": "2400 N." },
+      { "question": "What is the weight of a 60 kg person (g = 9.8 m/s²)?", "hint": "W = mg.", "answer": "588 N." },
+      { "question": "Why do action and reaction forces not cancel each other?", "hint": "Which bodies do they act on?", "answer": "They act on different bodies, so they cannot cancel." }
+    ],
+    "commonMistakes": ["Using the total force instead of the net force in F = ma.", "Confusing mass (kg) with weight (N)."],
+    "followUps": ["Equations of motion", "Work, energy and power", "Momentum"]
+  },
+  {
+    "id": "kinematics",
+    "subject": "Physics",
+    "title": "Speed, Velocity, Acceleration and Equations of Motion",
+    "aliases": ["speed", "velocity", "acceleration", "equations of motion", "kinematics", "distance and displacement", "distance", "displacement", "uniform acceleration", "suvat"],
+    "simpleExplanation": "Speed is how fast something moves (distance ÷ time). Velocity is speed in a given direction (displacement ÷ time). Acceleration is how fast velocity changes. For constant acceleration, three equations of motion link initial velocity u, final velocity v, acceleration a, time t and displacement s.",
+    "analogy": "Speed is what the speedometer shows; velocity adds where you are heading; acceleration is how hard you press the pedal.",
+    "keyPoints": [
+      "Distance is scalar; displacement is a vector (straight-line change in position).",
+      "Average speed = total distance ÷ total time.",
+      "Acceleration a = (v − u) / t, in m/s².",
+      "Equations: v = u + at; s = ut + ½at²; v² = u² + 2as.",
+      "Free fall: a = g ≈ 9.8 m/s² downward."
+    ],
+    "steps": ["List the known values (u, v, a, t, s) with units.", "Pick the equation that contains the unknown and the knowns.", "Substitute and solve.", "Check the units and the sign of the answer."],
+    "examples": ["A car going from 0 to 20 m/s in 5 s has a = 4 m/s²."],
+    "formulas": [
+      { "formula": "v = u + at", "meaning": "Final velocity after time t." },
+      { "formula": "s = ut + ½at²", "meaning": "Displacement after time t." },
+      { "formula": "v² = u² + 2as", "meaning": "Velocity without time." },
+      { "formula": "distance = speed × time", "meaning": "For constant speed." }
+    ],
+    "workedExample": {
+      "problem": "A car travels at 60 km/h for 2.5 hours. How far does it go?",
+      "steps": ["distance = speed × time.", "= 60 × 2.5."],
+      "answer": "150 km."
+    },
+    "practice": [
+      { "question": "A ball is dropped from rest. What is its speed after 3 s (g = 9.8 m/s²)?", "hint": "v = u + at with u = 0.", "answer": "29.4 m/s." },
+      { "question": "A cyclist accelerates from 2 m/s to 10 m/s over 16 m. Find the acceleration.", "hint": "v² = u² + 2as.", "answer": "100 = 4 + 32a → a = 3 m/s²." }
+    ],
+    "commonMistakes": ["Mixing units, such as km/h with seconds; convert km/h to m/s by dividing by 3.6."],
+    "followUps": ["Newton's laws of motion", "Work, energy and power", "Projectile motion"]
+  },
+  {
+    "id": "work-energy-power",
+    "subject": "Physics",
+    "title": "Work, Energy and Power",
+    "aliases": ["work", "energy", "power", "kinetic energy", "potential energy", "work energy theorem", "conservation of energy", "work energy and power"],
+    "simpleExplanation": "Work is done when a force moves an object in the direction of the force (W = F × d). Energy is the capacity to do work: kinetic energy is energy of motion (½mv²) and potential energy is stored energy due to height (mgh). Power is the rate of doing work (P = W/t). Energy is conserved: it changes form but the total stays the same.",
+    "analogy": "Lifting a school bag onto a shelf does work and stores potential energy; if it falls, that turns into kinetic energy.",
+    "keyPoints": [
+      "W = F × d × cos θ; unit joule (J).",
+      "Kinetic energy KE = ½mv².",
+      "Potential energy PE = mgh.",
+      "Power P = W / t; unit watt (W) = J/s.",
+      "Conservation of energy: total energy of an isolated system is constant."
+    ],
+    "steps": ["Identify the forces and displacement (for work) or mass, speed and height (for energy).", "Apply the matching formula.", "For energy conservation, set initial total energy equal to final total energy.", "Solve and check units."],
+    "examples": ["A 2 kg ball at 5 m height has PE = 2 × 9.8 × 5 = 98 J."],
+    "formulas": [
+      { "formula": "W = F × d × cos θ", "meaning": "Work done by a force." },
+      { "formula": "KE = ½ m v²", "meaning": "Kinetic energy." },
+      { "formula": "PE = m g h", "meaning": "Gravitational potential energy." },
+      { "formula": "P = W / t", "meaning": "Power." }
+    ],
+    "workedExample": {
+      "problem": "A 1 kg stone is dropped from 20 m. Find its speed just before hitting the ground (g = 10 m/s²).",
+      "steps": ["PE at top = mgh = 1 × 10 × 20 = 200 J.", "All PE becomes KE: ½ × 1 × v² = 200.", "v² = 400."],
+      "answer": "v = 20 m/s."
+    },
+    "practice": [
+      { "question": "Find the KE of a 1000 kg car moving at 10 m/s.", "hint": "½mv².", "answer": "50,000 J (50 kJ)." },
+      { "question": "A motor does 3000 J of work in 10 s. What is its power?", "hint": "P = W/t.", "answer": "300 W." }
+    ],
+    "commonMistakes": ["Forgetting to square the velocity in ½mv²."],
+    "followUps": ["Newton's laws of motion", "Equations of motion", "Momentum"]
+  },
+  {
+    "id": "ohms-law",
+    "subject": "Physics",
+    "title": "Ohm's Law and Electric Circuits",
+    "aliases": ["ohm's law", "ohms law", "ohm law", "resistance", "current", "voltage", "series and parallel", "resistors in series", "resistors in parallel", "electric circuit", "electricity"],
+    "simpleExplanation": "Ohm's law states that the current through a conductor is directly proportional to the voltage across it, at constant temperature: V = I × R. Voltage (V) is the push, current (I) is the flow of charge, and resistance (R) opposes the flow. Resistors add directly in series, while in parallel their reciprocals add.",
+    "analogy": "Water in a pipe: voltage is the water pressure, current is the flow rate, and resistance is how narrow the pipe is.",
+    "keyPoints": [
+      "V = IR; units: volt (V), ampere (A), ohm (Ω).",
+      "Series: R = R₁ + R₂ + ...; the same current flows through each resistor.",
+      "Parallel: 1/R = 1/R₁ + 1/R₂ + ...; the same voltage is across each branch.",
+      "Electrical power P = VI = I²R = V²/R.",
+      "Energy used = P × t (kWh for household bills)."
+    ],
+    "steps": ["Combine resistors into a single equivalent resistance.", "Use I = V / R to find the total current.", "Find voltages or currents in each part with V = IR.", "Find power with P = VI if needed."],
+    "examples": ["A 12 V battery across a 4 Ω resistor gives I = 3 A."],
+    "formulas": [
+      { "formula": "V = I × R", "meaning": "Ohm's law." },
+      { "formula": "R_series = R₁ + R₂ + ...", "meaning": "Resistors in series." },
+      { "formula": "1/R_parallel = 1/R₁ + 1/R₂ + ...", "meaning": "Resistors in parallel." },
+      { "formula": "P = V × I", "meaning": "Electrical power." }
+    ],
+    "workedExample": {
+      "problem": "Resistors of 6 Ω and 3 Ω are connected in parallel across a 12 V supply. Find the total current.",
+      "steps": ["1/R = 1/6 + 1/3 = 1/6 + 2/6 = 3/6, so R = 2 Ω.", "I = V / R = 12 / 2."],
+      "answer": "6 A."
+    },
+    "practice": [
+      { "question": "What current flows through a 10 Ω resistor connected to a 5 V supply?", "hint": "I = V/R.", "answer": "0.5 A." },
+      { "question": "Three 4 Ω resistors are in series. What is the total resistance?", "hint": "Add them.", "answer": "12 Ω." },
+      { "question": "A 60 W bulb runs on 240 V. What current does it draw?", "hint": "P = VI.", "answer": "0.25 A." }
+    ],
+    "commonMistakes": ["Adding resistances directly in parallel; use reciprocals."],
+    "followUps": ["Electric power", "Kirchhoff's laws", "Magnetism"]
+  },
+  {
+    "id": "atomic-structure",
+    "subject": "Chemistry",
+    "title": "Atomic Structure",
+    "aliases": ["atom", "atoms", "atomic structure", "structure of atom", "proton", "neutron", "electron", "isotopes", "atomic number", "mass number", "electron configuration"],
+    "simpleExplanation": "An atom has a tiny, dense nucleus containing protons (positive) and neutrons (neutral), surrounded by electrons (negative) in shells or orbitals. The atomic number (Z) is the number of protons and defines the element. The mass number (A) is protons plus neutrons. Isotopes are atoms of the same element with different numbers of neutrons.",
+    "analogy": "Like a stadium with a marble at the centre: the nucleus is tiny compared with the space where electrons move.",
+    "keyPoints": [
+      "Proton: +1 charge, mass ≈ 1 u. Neutron: 0 charge, mass ≈ 1 u. Electron: −1 charge, very small mass.",
+      "Atomic number Z = protons (= electrons in a neutral atom).",
+      "Mass number A = protons + neutrons; neutrons = A − Z.",
+      "Shell capacity 2n²: K = 2, L = 8, M = 18.",
+      "Isotopes: same Z, different A (for example, carbon-12 and carbon-14)."
+    ],
+    "steps": ["Read Z and A from the element's notation.", "Protons = Z; electrons = Z for a neutral atom.", "Neutrons = A − Z.", "Fill electrons into shells: 2, 8, 8 for the first 20 elements."],
+    "examples": ["Sodium (Z = 11, A = 23): 11 protons, 11 electrons, 12 neutrons; configuration 2, 8, 1."],
+    "formulas": [
+      { "formula": "Neutrons = A − Z", "meaning": "Mass number minus atomic number." },
+      { "formula": "Maximum electrons in shell n = 2n²", "meaning": "Bohr shell capacity." }
+    ],
+    "workedExample": {
+      "problem": "Find the protons, neutrons, electrons and electron configuration of chlorine (Z = 17, A = 35).",
+      "steps": ["Protons = 17 and electrons = 17.", "Neutrons = 35 − 17 = 18.", "Configuration: 2, 8, 7."],
+      "answer": "17 protons, 18 neutrons, 17 electrons; 2, 8, 7."
+    },
+    "practice": [
+      { "question": "How many neutrons are in carbon-14 (Z = 6)?", "hint": "A − Z.", "answer": "8." },
+      { "question": "Write the electron configuration of magnesium (Z = 12).", "hint": "2, 8, ...", "answer": "2, 8, 2." }
+    ],
+    "commonMistakes": ["Confusing the mass number with the number of neutrons."],
+    "followUps": ["Periodic table", "Chemical bonding", "Mole concept"]
+  },
+  {
+    "id": "periodic-table",
+    "subject": "Chemistry",
+    "title": "Periodic Table and Periodic Trends",
+    "aliases": ["periodic table", "periodic trends", "groups and periods", "atomic radius", "electronegativity", "ionization energy", "modern periodic law"],
+    "simpleExplanation": "The periodic table arranges elements by increasing atomic number. Rows are periods and columns are groups; elements in the same group have the same number of valence electrons, so they behave similarly. Properties change in regular patterns (periodic trends) across periods and down groups.",
+    "analogy": "Like a well-organized classroom seating chart where students with similar habits sit in the same column.",
+    "keyPoints": [
+      "Modern periodic law: properties are periodic functions of atomic number.",
+      "18 groups and 7 periods; blocks s, p, d and f.",
+      "Across a period (left → right): atomic radius decreases; ionization energy and electronegativity increase.",
+      "Down a group: atomic radius increases; ionization energy and electronegativity decrease.",
+      "Group 1: alkali metals; group 17: halogens; group 18: noble gases."
+    ],
+    "steps": ["Find the element's group and period.", "Valence electrons are linked to the group (groups 1–2 and 13–18).", "Apply the trend rules to compare elements.", "Explain trends using nuclear charge and the number of shells."],
+    "examples": ["Fluorine is the most electronegative element; caesium is among the most reactive metals."],
+    "formulas": [],
+    "workedExample": null,
+    "practice": [
+      { "question": "Which has a larger atomic radius: sodium or chlorine?", "hint": "Same period, left vs right.", "answer": "Sodium, because radius decreases across a period." },
+      { "question": "Why are noble gases unreactive?", "hint": "Valence shell.", "answer": "Their outer electron shell is full, so they do not need to gain, lose or share electrons." }
+    ],
+    "commonMistakes": ["Thinking atomic radius increases across a period; increasing nuclear charge pulls electrons closer."],
+    "followUps": ["Atomic structure", "Chemical bonding", "Acids and bases"]
+  },
+  {
+    "id": "chemical-bonding",
+    "subject": "Chemistry",
+    "title": "Chemical Bonding (Ionic and Covalent)",
+    "aliases": ["chemical bonding", "chemical bond", "ionic bond", "covalent bond", "metallic bond", "octet rule", "bonding", "hydrogen bond"],
+    "simpleExplanation": "Atoms bond to reach a stable electron arrangement, often eight outer electrons (the octet rule). In an ionic bond, one atom transfers electrons to another, forming oppositely charged ions that attract (for example, NaCl). In a covalent bond, atoms share electron pairs (for example, H₂O). Metallic bonds hold metal atoms in a 'sea' of shared electrons.",
+    "analogy": "Ionic bonding is like one friend giving a pen to another; covalent bonding is two friends sharing a pen.",
+    "keyPoints": [
+      "Ionic: metal + non-metal, electron transfer; high melting points; conduct when molten or dissolved.",
+      "Covalent: non-metal + non-metal, electron sharing; single, double or triple bonds.",
+      "Polar covalent bonds form when electronegativities differ (for example, H–Cl).",
+      "Metallic bonding explains conductivity and malleability of metals.",
+      "Hydrogen bonds are weaker attractions between molecules (water's high boiling point)."
+    ],
+    "steps": ["Identify whether the atoms are metals or non-metals.", "Metal + non-metal: show the electron transfer and the resulting ions.", "Non-metals: share electrons so each atom completes its octet.", "Draw the Lewis (dot-and-cross) structure."],
+    "examples": ["NaCl: Na loses 1 electron (Na⁺), Cl gains 1 electron (Cl⁻).", "CH₄: carbon shares 4 electron pairs with 4 hydrogen atoms."],
+    "formulas": [],
+    "workedExample": null,
+    "practice": [
+      { "question": "What type of bond is in MgO?", "hint": "Metal + non-metal.", "answer": "Ionic (Mg²⁺ and O²⁻)." },
+      { "question": "How many covalent bonds are in a nitrogen molecule (N₂)?", "hint": "Each N needs 3 electrons.", "answer": "One triple bond (three shared pairs)." }
+    ],
+    "commonMistakes": ["Saying ionic compounds conduct electricity as solids; they conduct only when molten or dissolved."],
+    "followUps": ["Periodic table", "Atomic structure", "Acids and bases"]
+  },
+  {
+    "id": "acids-bases",
+    "subject": "Chemistry",
+    "title": "Acids, Bases and pH",
+    "aliases": ["acid", "acids", "base", "bases", "acids and bases", "ph", "ph scale", "neutralization", "alkali", "salts"],
+    "simpleExplanation": "Acids release hydrogen ions (H⁺) in water and taste sour; bases release hydroxide ions (OH⁻) or accept H⁺ and feel soapy. The pH scale from 0 to 14 measures acidity: below 7 is acidic, 7 is neutral and above 7 is basic. An acid and a base react to form salt and water (neutralization).",
+    "analogy": "Antacid tablets neutralize excess stomach acid, the same way a base cancels an acid in a beaker.",
+    "keyPoints": [
+      "pH < 7 acidic, pH = 7 neutral, pH > 7 basic.",
+      "pH = −log[H⁺]; each pH unit is a tenfold change in acidity.",
+      "Neutralization: acid + base → salt + water (HCl + NaOH → NaCl + H₂O).",
+      "Indicators: litmus (red in acid, blue in base), phenolphthalein (pink in base).",
+      "Strong acids (HCl) ionize completely; weak acids (acetic acid) partially."
+    ],
+    "steps": ["Identify the acid and base.", "Write the neutralization equation and balance it.", "For pH, compute −log[H⁺].", "Interpret the result on the 0–14 scale."],
+    "examples": ["Lemon juice pH ≈ 2, pure water pH = 7, soap solution pH ≈ 10."],
+    "formulas": [
+      { "formula": "pH = −log₁₀[H⁺]", "meaning": "Definition of pH." },
+      { "formula": "pH + pOH = 14", "meaning": "At 25 °C." }
+    ],
+    "workedExample": {
+      "problem": "Find the pH of a solution with [H⁺] = 1 × 10⁻³ mol/L.",
+      "steps": ["pH = −log(10⁻³).", "= 3."],
+      "answer": "pH = 3 (acidic)."
+    },
+    "practice": [
+      { "question": "What is the pH of a solution with [H⁺] = 10⁻⁹ mol/L? Is it acidic or basic?", "hint": "−log.", "answer": "pH 9, basic." },
+      { "question": "Complete: H₂SO₄ + 2NaOH → ?", "hint": "Salt + water.", "answer": "Na₂SO₄ + 2H₂O." }
+    ],
+    "commonMistakes": ["Thinking pH 4 is only slightly more acidic than pH 5; it is ten times more acidic."],
+    "followUps": ["Chemical bonding", "Mole concept", "Periodic table"]
+  },
+  {
+    "id": "mole-concept",
+    "subject": "Chemistry",
+    "title": "Mole Concept",
+    "aliases": ["mole", "moles", "mole concept", "avogadro number", "avogadro's number", "molar mass", "stoichiometry", "molarity"],
+    "simpleExplanation": "A mole is a counting unit for particles, like a 'dozen' but much larger: 1 mole contains 6.022 × 10²³ particles (Avogadro's number). The molar mass is the mass of one mole of a substance in grams, equal to its formula mass in u. Moles connect mass, number of particles and gas volume.",
+    "analogy": "Just as a 'dozen eggs' always means 12, a 'mole of atoms' always means 6.022 × 10²³ atoms.",
+    "keyPoints": [
+      "1 mol = 6.022 × 10²³ particles.",
+      "Moles = mass ÷ molar mass.",
+      "Number of particles = moles × 6.022 × 10²³.",
+      "At STP, 1 mol of an ideal gas occupies 22.4 L.",
+      "Molarity M = moles of solute ÷ litres of solution."
+    ],
+    "steps": ["Find the molar mass by adding atomic masses.", "Convert mass to moles: n = m / M.", "Use mole ratios from the balanced equation.", "Convert back to mass, particles or volume as needed."],
+    "examples": ["Molar mass of H₂O = 2(1) + 16 = 18 g/mol, so 36 g of water is 2 mol."],
+    "formulas": [
+      { "formula": "n = m / M", "meaning": "Moles from mass and molar mass." },
+      { "formula": "N = n × 6.022 × 10²³", "meaning": "Number of particles." },
+      { "formula": "Molarity = n / V(L)", "meaning": "Concentration in mol/L." }
+    ],
+    "workedExample": {
+      "problem": "How many molecules are in 88 g of CO₂? (C = 12, O = 16)",
+      "steps": ["Molar mass = 12 + 2 × 16 = 44 g/mol.", "n = 88 / 44 = 2 mol.", "N = 2 × 6.022 × 10²³."],
+      "answer": "1.2044 × 10²⁴ molecules."
+    },
+    "practice": [
+      { "question": "How many moles are in 58.5 g of NaCl (Na = 23, Cl = 35.5)?", "hint": "Molar mass 58.5.", "answer": "1 mol." },
+      { "question": "What volume do 0.5 mol of a gas occupy at STP?", "hint": "22.4 L per mole.", "answer": "11.2 L." }
+    ],
+    "commonMistakes": ["Using atomic mass instead of molecular mass for compounds."],
+    "followUps": ["Atomic structure", "Acids and bases", "Chemical bonding"]
+  },
+  {
+    "id": "photosynthesis",
+    "subject": "Biology",
+    "title": "Photosynthesis",
+    "aliases": ["photosynthesis", "light reaction", "dark reaction", "calvin cycle", "chlorophyll", "chloroplast"],
+    "simpleExplanation": "Photosynthesis is the process by which green plants, algae and some bacteria use sunlight to make their own food. In the chloroplasts, chlorophyll absorbs light energy, which is used to convert carbon dioxide and water into glucose, releasing oxygen as a by-product.",
+    "analogy": "A leaf is a solar-powered kitchen: sunlight is the energy, CO₂ and water are the ingredients, glucose is the meal, and oxygen is the steam released.",
+    "keyPoints": [
+      "Equation: 6CO₂ + 6H₂O + light → C₆H₁₂O₆ + 6O₂.",
+      "Takes place in chloroplasts; chlorophyll absorbs mainly red and blue light.",
+      "Light-dependent reactions (thylakoids): split water, release O₂, make ATP and NADPH.",
+      "Light-independent reactions / Calvin cycle (stroma): fix CO₂ into glucose using ATP and NADPH.",
+      "Factors: light intensity, CO₂ concentration, temperature and water."
+    ],
+    "steps": ["Chlorophyll absorbs light energy.", "Water is split (photolysis), releasing oxygen.", "Light energy is stored as ATP and NADPH.", "In the Calvin cycle, CO₂ is fixed and converted into glucose."],
+    "examples": ["Bubbles from an aquatic plant (Hydrilla) in sunlight are oxygen from photosynthesis."],
+    "formulas": [{ "formula": "6CO₂ + 6H₂O → C₆H₁₂O₆ + 6O₂ (in light, with chlorophyll)", "meaning": "Overall photosynthesis equation." }],
+    "workedExample": null,
+    "practice": [
+      { "question": "Where does the oxygen released in photosynthesis come from?", "hint": "Photolysis.", "answer": "From the splitting of water molecules." },
+      { "question": "In which part of the chloroplast does the Calvin cycle happen?", "hint": "Not the thylakoids.", "answer": "The stroma." },
+      { "question": "Name two factors that affect the rate of photosynthesis.", "hint": "Limiting factors.", "answer": "Light intensity and CO₂ concentration (also temperature and water)." }
+    ],
+    "commonMistakes": ["Saying plants do photosynthesis instead of respiration; plants respire all the time, day and night."],
+    "followUps": ["Cellular respiration", "Cell structure", "Plant nutrition"]
+  },
+  {
+    "id": "respiration",
+    "subject": "Biology",
+    "title": "Cellular Respiration",
+    "aliases": ["respiration", "cellular respiration", "aerobic respiration", "anaerobic respiration", "glycolysis", "krebs cycle", "atp", "fermentation"],
+    "simpleExplanation": "Cellular respiration is how cells break down glucose to release energy stored as ATP. Aerobic respiration uses oxygen and produces carbon dioxide, water and a lot of ATP (about 36–38 per glucose). Anaerobic respiration happens without oxygen and produces much less ATP, with lactic acid (in muscles) or ethanol and CO₂ (in yeast).",
+    "analogy": "Respiration is like burning fuel in an engine, but done slowly in steps so the energy is captured as ATP instead of lost as heat.",
+    "keyPoints": [
+      "Aerobic: C₆H₁₂O₆ + 6O₂ → 6CO₂ + 6H₂O + energy (ATP).",
+      "Stages: glycolysis (cytoplasm), Krebs cycle (mitochondrial matrix), electron transport chain (inner membrane).",
+      "Mitochondria are the 'powerhouse of the cell'.",
+      "Anaerobic in muscles: glucose → lactic acid (causes cramps).",
+      "Anaerobic in yeast: glucose → ethanol + CO₂ (fermentation)."
+    ],
+    "steps": ["Glycolysis splits glucose into two pyruvate molecules (net 2 ATP).", "With oxygen, pyruvate enters the mitochondria and the Krebs cycle.", "The electron transport chain produces most ATP using oxygen.", "Without oxygen, pyruvate becomes lactic acid or ethanol."],
+    "examples": ["Muscle cramps after a sprint come from lactic acid build-up.", "Bread rises because yeast releases CO₂."],
+    "formulas": [{ "formula": "C₆H₁₂O₆ + 6O₂ → 6CO₂ + 6H₂O + ATP", "meaning": "Aerobic respiration." }],
+    "workedExample": null,
+    "practice": [
+      { "question": "Where does glycolysis take place?", "hint": "Not the mitochondria.", "answer": "In the cytoplasm." },
+      { "question": "What does yeast produce during anaerobic respiration?", "hint": "Used in baking and brewing.", "answer": "Ethanol and carbon dioxide." }
+    ],
+    "commonMistakes": ["Confusing respiration (energy release in cells) with breathing (gas exchange)."],
+    "followUps": ["Photosynthesis", "Cell structure", "Mitochondria"]
+  },
+  {
+    "id": "cell",
+    "subject": "Biology",
+    "title": "Cell Structure",
+    "aliases": ["cell", "cells", "cell structure", "plant cell", "animal cell", "prokaryotic", "eukaryotic", "cell organelles", "organelles", "mitochondria", "nucleus"],
+    "simpleExplanation": "The cell is the basic structural and functional unit of life. Prokaryotic cells (bacteria) have no nucleus or membrane-bound organelles; eukaryotic cells (plants, animals, fungi) have a nucleus and organelles. Plant cells also have a cell wall, chloroplasts and a large central vacuole, which animal cells lack.",
+    "analogy": "A cell is like a factory: the nucleus is the head office, mitochondria are power plants, ribosomes are assembly lines, and the cell membrane is the security gate.",
+    "keyPoints": [
+      "Nucleus: contains DNA and controls the cell.",
+      "Mitochondria: aerobic respiration and ATP production.",
+      "Ribosomes: protein synthesis. Endoplasmic reticulum and Golgi: make and package proteins and lipids.",
+      "Cell membrane: selectively permeable boundary.",
+      "Plant-only: cell wall (cellulose), chloroplasts, large vacuole."
+    ],
+    "steps": ["Decide whether the cell has a nucleus (prokaryotic or eukaryotic).", "List the organelles present.", "Match each organelle to its function.", "Compare plant and animal cells using the plant-only structures."],
+    "examples": ["Onion peel cells show a clear cell wall under a microscope; human cheek cells do not."],
+    "formulas": [],
+    "workedExample": null,
+    "practice": [
+      { "question": "Name three structures found in plant cells but not animal cells.", "hint": "Wall, green, storage.", "answer": "Cell wall, chloroplasts and a large central vacuole." },
+      { "question": "Which organelle is called the powerhouse of the cell?", "hint": "ATP.", "answer": "Mitochondria." }
+    ],
+    "commonMistakes": ["Saying animal cells have a cell wall; they have only a cell membrane."],
+    "followUps": ["Cell division (mitosis and meiosis)", "DNA", "Cellular respiration"]
+  },
+  {
+    "id": "cell-division",
+    "subject": "Biology",
+    "title": "Cell Division: Mitosis and Meiosis",
+    "aliases": ["mitosis", "meiosis", "cell division", "mitosis vs meiosis", "cell cycle", "phases of mitosis"],
+    "simpleExplanation": "Mitosis is cell division that produces two identical daughter cells with the same number of chromosomes as the parent; it is used for growth and repair. Meiosis produces four genetically different cells with half the number of chromosomes; it makes gametes (sperm and egg) for sexual reproduction.",
+    "analogy": "Mitosis is photocopying a document; meiosis is shuffling two decks and dealing out half-sized, mixed hands.",
+    "keyPoints": [
+      "Mitosis: 1 division → 2 identical diploid (2n) cells.",
+      "Meiosis: 2 divisions → 4 different haploid (n) cells.",
+      "Mitosis phases: prophase, metaphase, anaphase, telophase (PMAT), then cytokinesis.",
+      "Crossing over in meiosis I creates genetic variation.",
+      "Humans: body cells have 46 chromosomes; gametes have 23."
+    ],
+    "steps": ["Prophase: chromosomes condense and the nuclear membrane breaks down.", "Metaphase: chromosomes line up at the cell's equator.", "Anaphase: sister chromatids are pulled to opposite poles.", "Telophase: nuclear membranes re-form; cytokinesis splits the cell."],
+    "examples": ["Healing a cut uses mitosis; producing pollen uses meiosis."],
+    "formulas": [],
+    "workedExample": null,
+    "practice": [
+      { "question": "How many chromosomes does a human sperm cell have?", "hint": "Haploid.", "answer": "23." },
+      { "question": "In which phase do chromosomes line up at the middle of the cell?", "hint": "M for middle.", "answer": "Metaphase." }
+    ],
+    "commonMistakes": ["Thinking meiosis produces identical cells; crossing over and independent assortment make them different."],
+    "followUps": ["DNA", "Cell structure", "Genetics"]
+  },
+  {
+    "id": "dna",
+    "subject": "Biology",
+    "title": "DNA and Genes",
+    "aliases": ["dna", "rna", "genes", "gene", "double helix", "dna replication", "protein synthesis", "genetic code", "transcription", "translation"],
+    "simpleExplanation": "DNA (deoxyribonucleic acid) is the molecule that carries genetic instructions. It is a double helix of two strands made of nucleotides with bases A, T, G and C; A pairs with T and G pairs with C. A gene is a section of DNA that codes for a protein. DNA is transcribed into mRNA, which is translated into protein at the ribosome.",
+    "analogy": "DNA is a cookbook, a gene is one recipe, mRNA is a photocopy of the recipe taken to the kitchen (ribosome), and the protein is the dish.",
+    "keyPoints": [
+      "Base pairing: A–T and G–C (in RNA, A pairs with U).",
+      "Double helix structure described by Watson and Crick (1953).",
+      "Replication is semi-conservative: each new DNA has one old and one new strand.",
+      "Central dogma: DNA → RNA → protein.",
+      "A codon (3 bases) codes for one amino acid."
+    ],
+    "steps": ["Transcription: DNA is copied into mRNA in the nucleus.", "mRNA travels to a ribosome.", "Translation: tRNA brings amino acids matching each codon.", "Amino acids join to form a protein."],
+    "examples": ["If one DNA strand is ATGCCG, the complementary strand is TACGGC."],
+    "formulas": [{ "formula": "%A = %T and %G = %C", "meaning": "Chargaff's rule for double-stranded DNA." }],
+    "workedExample": {
+      "problem": "A DNA sample has 30% adenine. Find the percentage of guanine.",
+      "steps": ["A = T = 30%, so A + T = 60%.", "G + C = 40%, and G = C."],
+      "answer": "Guanine = 20%."
+    },
+    "practice": [
+      { "question": "Write the complementary strand of 5'-AACGTT-3'.", "hint": "A↔T, G↔C.", "answer": "3'-TTGCAA-5'." },
+      { "question": "What is the mRNA transcribed from the DNA template TACG?", "hint": "Use U instead of T.", "answer": "AUGC." }
+    ],
+    "commonMistakes": ["Using T instead of U when writing RNA sequences."],
+    "followUps": ["Cell division (mitosis and meiosis)", "Cell structure", "Genetics"]
+  }
+]

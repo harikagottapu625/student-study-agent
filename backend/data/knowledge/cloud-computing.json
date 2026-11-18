@@ -1,0 +1,1096 @@
+[
+  {
+    "id": "cloud-service-models",
+    "subject": "Cloud Computing",
+    "title": "Cloud Service Models (IaaS, PaaS, SaaS)",
+    "aliases": [
+      "cloud service models",
+      "service models",
+      "service models of cloud computing",
+      "iaas",
+      "paas",
+      "saas",
+      "iaas paas saas",
+      "iaas vs paas vs saas",
+      "infrastructure as a service",
+      "platform as a service",
+      "software as a service",
+      "faas",
+      "function as a service",
+      "xaas"
+    ],
+    "simpleExplanation": "Cloud services come in three main models. IaaS (Infrastructure as a Service) rents raw computing resources like virtual machines, storage and networks. PaaS (Platform as a Service) gives a ready platform to deploy code without managing servers. SaaS (Software as a Service) gives complete applications used through a browser.",
+    "analogy": "Pizza as a service: IaaS is renting a kitchen (you cook everything), PaaS is take-and-bake pizza (you just bake it), SaaS is pizza delivered to your door (you just eat).",
+    "keyPoints": [
+      "IaaS: you manage OS, runtime, apps and data; provider manages hardware, networking and virtualisation. Examples: AWS EC2, Azure Virtual Machines, Google Compute Engine.",
+      "PaaS: you manage only your application and data. Examples: Google App Engine, Heroku, Render, AWS Elastic Beanstalk, Azure App Service.",
+      "SaaS: provider manages everything; you just use the software. Examples: Gmail, Google Docs, Microsoft 365, Salesforce, Zoom.",
+      "FaaS / serverless: run individual functions on demand (AWS Lambda, Azure Functions).",
+      "Moving from IaaS to SaaS: less control and responsibility, more convenience.",
+      "Other 'as a service' offerings: DBaaS (MongoDB Atlas), STaaS (storage), AIaaS."
+    ],
+    "steps": [
+      "Decide how much control you need over the infrastructure.",
+      "Need full control of servers → IaaS.",
+      "Want to deploy code quickly without managing servers → PaaS.",
+      "Just need a working application → SaaS."
+    ],
+    "examples": [
+      "A startup hosts its backend on Render (PaaS) and stores data in MongoDB Atlas (DBaaS).",
+      "A college uses Google Workspace for email and documents (SaaS)."
+    ],
+    "formulas": [],
+    "workedExample": null,
+    "practice": [
+      {
+        "question": "AWS EC2 is which service model?",
+        "hint": "Virtual machines.",
+        "answer": "IaaS."
+      },
+      {
+        "question": "Heroku is which service model?",
+        "hint": "Deploy code, no servers to manage.",
+        "answer": "PaaS."
+      },
+      {
+        "question": "Zoom is which service model?",
+        "hint": "Ready-to-use app.",
+        "answer": "SaaS."
+      }
+    ],
+    "commonMistakes": [
+      "Calling every hosted app 'PaaS'; if users just use the finished software, it is SaaS."
+    ],
+    "followUps": [
+      "Cloud Deployment Models",
+      "Serverless Computing",
+      "Cloud Computing"
+    ],
+    "faq": [
+      {
+        "question": "What is the difference between IaaS, PaaS and SaaS?",
+        "answer": "IaaS provides virtual infrastructure (VMs, storage, networks) and the user manages the OS, middleware and apps; it gives the most control (AWS EC2). PaaS provides a managed platform where the user only deploys code and data (Heroku, Google App Engine). SaaS provides complete software over the internet and the user only uses it (Gmail, Salesforce). Control decreases and convenience increases from IaaS to SaaS."
+      },
+      {
+        "question": "What are the advantages of SaaS?",
+        "answer": "No installation or maintenance, accessible from any device with a browser, automatic updates, subscription pricing with low upfront cost, and easy scaling of users."
+      },
+      {
+        "question": "What are examples of IaaS, PaaS and SaaS?",
+        "answer": "IaaS: AWS EC2, Azure VMs, Google Compute Engine, DigitalOcean. PaaS: Google App Engine, Heroku, Render, AWS Elastic Beanstalk, Azure App Service. SaaS: Gmail, Google Docs, Microsoft 365, Dropbox, Salesforce, Zoom, Netflix."
+      }
+    ]
+  },
+  {
+    "id": "cloud-deployment-models",
+    "subject": "Cloud Computing",
+    "title": "Cloud Deployment Models",
+    "aliases": [
+      "cloud deployment models",
+      "deployment models",
+      "deployment models of cloud computing",
+      "public cloud",
+      "private cloud",
+      "hybrid cloud",
+      "community cloud",
+      "multi cloud",
+      "multicloud",
+      "types of cloud",
+      "public vs private cloud"
+    ],
+    "simpleExplanation": "Deployment models describe who owns and uses the cloud. A public cloud is shared and run by a provider for anyone; a private cloud is used by one organisation; a hybrid cloud combines public and private; a community cloud is shared by organisations with common needs; multi-cloud uses several public providers.",
+    "analogy": "Public cloud is like a public bus, private cloud is your own car, hybrid is driving to the station and then taking the train.",
+    "keyPoints": [
+      "Public cloud: owned by providers like AWS, Azure, Google Cloud; pay-as-you-go, highly scalable, lower cost, less control.",
+      "Private cloud: one organisation, on-premises or hosted; more control, security and compliance, but higher cost.",
+      "Hybrid cloud: sensitive workloads stay private while extra demand 'bursts' to the public cloud.",
+      "Community cloud: shared by organisations with similar requirements (e.g. government departments, hospitals).",
+      "Multi-cloud: using more than one public provider to avoid vendor lock-in and improve resilience."
+    ],
+    "steps": [
+      "Classify your data and workloads by sensitivity.",
+      "Check compliance and budget requirements.",
+      "Choose public for flexibility, private for control, hybrid for a mix."
+    ],
+    "examples": [
+      "A bank keeps customer records in a private cloud but runs its public website on AWS (hybrid).",
+      "Government community clouds such as MeghRaj in India."
+    ],
+    "formulas": [],
+    "workedExample": null,
+    "practice": [
+      {
+        "question": "Which model lets a company keep sensitive data on-premises but use public cloud for peaks?",
+        "hint": "A mix.",
+        "answer": "Hybrid cloud."
+      }
+    ],
+    "commonMistakes": [
+      "Confusing hybrid cloud (public + private) with multi-cloud (several public providers)."
+    ],
+    "followUps": [
+      "Cloud Service Models (IaaS, PaaS, SaaS)",
+      "Cloud Security",
+      "Cloud Computing"
+    ],
+    "faq": [
+      {
+        "question": "What is the difference between public and private cloud?",
+        "answer": "A public cloud is owned by a provider and shared by many customers over the internet; it is cheap, scalable and needs no hardware, but offers less control. A private cloud is dedicated to one organisation, giving more control, customisation and security, but it costs more and scales less easily."
+      },
+      {
+        "question": "What are the advantages of hybrid cloud?",
+        "answer": "Keeps sensitive data private while using cheap public resources, supports cloud bursting for peak demand, helps meet compliance rules, improves disaster recovery and allows a gradual move to the cloud."
+      }
+    ]
+  },
+  {
+    "id": "cloud-characteristics",
+    "subject": "Cloud Computing",
+    "title": "Characteristics and Benefits of Cloud Computing",
+    "aliases": [
+      "characteristics of cloud computing",
+      "features of cloud computing",
+      "essential characteristics of cloud",
+      "nist definition of cloud computing",
+      "advantages of cloud computing",
+      "benefits of cloud computing",
+      "disadvantages of cloud computing",
+      "on demand self service",
+      "broad network access",
+      "resource pooling",
+      "rapid elasticity",
+      "measured service",
+      "pay as you go"
+    ],
+    "simpleExplanation": "According to NIST, cloud computing has five essential characteristics: on-demand self-service, broad network access, resource pooling, rapid elasticity and measured service. These give benefits such as lower cost, scalability, reliability and global reach, along with challenges such as security, downtime and vendor lock-in.",
+    "analogy": "Like a utility such as electricity: available on demand, shared by many, grows with your needs, and billed by usage.",
+    "keyPoints": [
+      "On-demand self-service: users create resources themselves without contacting the provider.",
+      "Broad network access: available over the internet from phones, laptops and servers.",
+      "Resource pooling: providers serve many customers (multi-tenancy) from shared hardware.",
+      "Rapid elasticity: resources scale up and down quickly with demand.",
+      "Measured service: usage is metered and billed (pay-as-you-go).",
+      "Benefits: no upfront hardware cost (CapEx → OpEx), scalability, high availability, global data centres, automatic updates, disaster recovery.",
+      "Drawbacks: internet dependency, security and privacy risks, vendor lock-in, less control, unexpected bills."
+    ],
+    "steps": [],
+    "examples": [
+      "An e-commerce site adds servers automatically during a festival sale and removes them afterwards.",
+      "Students use Google Drive from any device."
+    ],
+    "formulas": [],
+    "workedExample": null,
+    "practice": [
+      {
+        "question": "Which characteristic lets resources grow and shrink with demand?",
+        "hint": "Elastic.",
+        "answer": "Rapid elasticity."
+      }
+    ],
+    "commonMistakes": [
+      "Thinking the cloud is always cheaper; idle or oversized resources can cost more than owning hardware."
+    ],
+    "followUps": [
+      "Scalability, Elasticity and Load Balancing",
+      "Cloud Service Models (IaaS, PaaS, SaaS)",
+      "Cloud Security"
+    ],
+    "faq": [
+      {
+        "question": "What are the advantages of cloud computing?",
+        "answer": "Lower cost (no hardware to buy, pay only for use), scalability and elasticity, high availability and reliability, access from anywhere, faster deployment, automatic updates and maintenance by the provider, built-in backup and disaster recovery, and easy collaboration."
+      },
+      {
+        "question": "What are the disadvantages of cloud computing?",
+        "answer": "Needs a reliable internet connection, security and privacy concerns, possible downtime of the provider, vendor lock-in, limited control over infrastructure, compliance issues for sensitive data, and costs that can grow if not monitored."
+      },
+      {
+        "question": "What are the characteristics of cloud computing?",
+        "answer": "The five NIST characteristics are on-demand self-service, broad network access, resource pooling (multi-tenancy), rapid elasticity and measured service (pay-as-you-go). Other commonly listed features are scalability, high availability, automatic maintenance and security."
+      }
+    ]
+  },
+  {
+    "id": "virtualization",
+    "subject": "Cloud Computing",
+    "title": "Virtualization and Hypervisors",
+    "aliases": [
+      "virtualization",
+      "virtualisation",
+      "virtual machine",
+      "virtual machines",
+      "vm",
+      "hypervisor",
+      "hypervisors",
+      "type 1 hypervisor",
+      "type 2 hypervisor",
+      "types of virtualization",
+      "vmware",
+      "virtualbox",
+      "kvm"
+    ],
+    "simpleExplanation": "Virtualization creates several virtual computers (virtual machines) on one physical machine. A layer of software called a hypervisor shares the real CPU, memory and storage among the VMs, and each VM runs its own operating system as if it had its own hardware. It is the core technology behind cloud computing.",
+    "analogy": "Like dividing one big house into several separate apartments, each with its own door and furniture.",
+    "keyPoints": [
+      "Type 1 (bare-metal) hypervisor runs directly on hardware: VMware ESXi, Microsoft Hyper-V, Xen, KVM. Used in data centres.",
+      "Type 2 (hosted) hypervisor runs on top of an OS: VirtualBox, VMware Workstation. Used on personal computers.",
+      "Types: server, storage, network, desktop and application virtualization.",
+      "Full virtualization, para-virtualization and hardware-assisted virtualization (Intel VT-x, AMD-V).",
+      "Benefits: better hardware utilisation, isolation, easy backup, snapshots and migration of VMs.",
+      "Drawbacks: performance overhead, and a single host failure affects many VMs."
+    ],
+    "steps": [
+      "Install a hypervisor on the physical server.",
+      "Create virtual machines and allocate CPU, RAM and disk.",
+      "Install a guest OS in each VM.",
+      "Run applications in each VM independently."
+    ],
+    "examples": [
+      "AWS EC2 instances are virtual machines on AWS servers.",
+      "Running Linux in VirtualBox on a Windows laptop."
+    ],
+    "formulas": [],
+    "workedExample": null,
+    "practice": [
+      {
+        "question": "Is VirtualBox a type 1 or type 2 hypervisor?",
+        "hint": "Runs on Windows/macOS.",
+        "answer": "Type 2 (hosted)."
+      }
+    ],
+    "commonMistakes": [
+      "Confusing virtual machines with containers; VMs virtualise hardware and include a full OS, containers share the host OS kernel."
+    ],
+    "followUps": [
+      "Containers and Docker",
+      "Cloud Service Models (IaaS, PaaS, SaaS)",
+      "Cloud Computing"
+    ],
+    "faq": [
+      {
+        "question": "What is the difference between type 1 and type 2 hypervisors?",
+        "answer": "A type 1 (bare-metal) hypervisor runs directly on the physical hardware, giving better performance and security; it is used in data centres (VMware ESXi, Hyper-V, KVM). A type 2 (hosted) hypervisor runs as an application on an existing OS; it is easier to set up but slower, and is used on personal computers (VirtualBox, VMware Workstation)."
+      },
+      {
+        "question": "What are the types of virtualization?",
+        "answer": "Server virtualization (many VMs on one server), storage virtualization (pooling disks into one logical storage), network virtualization (virtual networks, SDN), desktop virtualization (remote desktops, VDI), application virtualization (run apps without installing) and data virtualization."
+      },
+      {
+        "question": "What are the benefits of virtualization?",
+        "answer": "Better use of hardware, lower cost and power, isolation between workloads, quick creation and cloning of machines, snapshots and easy backup, live migration between hosts, and easier testing."
+      }
+    ]
+  },
+  {
+    "id": "containers-docker",
+    "subject": "Cloud Computing",
+    "title": "Containers and Docker",
+    "aliases": [
+      "container",
+      "containers",
+      "containerization",
+      "containerisation",
+      "docker",
+      "docker container",
+      "docker image",
+      "dockerfile",
+      "docker hub",
+      "containers vs virtual machines",
+      "container vs vm",
+      "docker vs vm"
+    ],
+    "simpleExplanation": "A container packages an application with its libraries and settings so it runs the same everywhere. Unlike a virtual machine, a container does not include a full operating system; containers share the host OS kernel, so they are lightweight and start in seconds. Docker is the most popular tool for building and running containers.",
+    "analogy": "Like a shipping container: whatever is inside, it can be loaded on any ship, train or truck in the same standard way.",
+    "keyPoints": [
+      "Docker image: a read-only template built from a Dockerfile.",
+      "Container: a running instance of an image.",
+      "Docker Hub / registries store and share images.",
+      "Containers are lighter, faster and more portable than VMs; VMs give stronger isolation.",
+      "Solves the 'works on my machine' problem.",
+      "Docker Compose runs multi-container apps; Kubernetes orchestrates containers at scale."
+    ],
+    "steps": [
+      "Write a Dockerfile describing the base image, files and start command.",
+      "Build the image: docker build -t myapp .",
+      "Run a container: docker run -p 4000:4000 myapp",
+      "Push the image to a registry and deploy it anywhere."
+    ],
+    "examples": [
+      "Packaging a Node.js backend with its dependencies into one image.",
+      "Running MongoDB locally with docker run mongo."
+    ],
+    "formulas": [],
+    "workedExample": null,
+    "practice": [
+      {
+        "question": "What is the difference between an image and a container?",
+        "hint": "Template vs running.",
+        "answer": "An image is the read-only template; a container is a running instance created from it."
+      }
+    ],
+    "commonMistakes": [
+      "Storing important data inside a container without a volume; it is lost when the container is removed."
+    ],
+    "followUps": [
+      "Kubernetes and Container Orchestration",
+      "Virtualization and Hypervisors",
+      "Microservices Architecture"
+    ],
+    "faq": [
+      {
+        "question": "What is the difference between containers and virtual machines?",
+        "answer": "Virtual machines virtualise hardware: each VM has its own full guest OS on a hypervisor, so they are heavy (GBs) and take minutes to start but are strongly isolated. Containers virtualise the operating system: they share the host OS kernel and package only the app and its dependencies, so they are lightweight (MBs), start in seconds and are very portable, with somewhat weaker isolation."
+      },
+      {
+        "question": "What are the advantages of Docker?",
+        "answer": "Consistent environments from development to production, fast startup, lightweight compared with VMs, easy scaling, version-controlled images, isolation between apps and a large library of ready images on Docker Hub."
+      }
+    ]
+  },
+  {
+    "id": "kubernetes",
+    "subject": "Cloud Computing",
+    "title": "Kubernetes and Container Orchestration",
+    "aliases": [
+      "kubernetes",
+      "k8s",
+      "container orchestration",
+      "orchestration",
+      "pod",
+      "pods",
+      "kubernetes cluster",
+      "kubernetes architecture",
+      "kubectl",
+      "eks",
+      "aks",
+      "gke"
+    ],
+    "simpleExplanation": "Kubernetes is an open-source system that automatically deploys, scales and manages containers across a cluster of machines. You describe the desired state (for example, 'run 3 copies of my app'), and Kubernetes keeps it that way, restarting failed containers and balancing traffic.",
+    "analogy": "Like an orchestra conductor making sure every musician (container) plays at the right time, and replacing anyone who stops.",
+    "keyPoints": [
+      "Cluster = control plane (API server, scheduler, controller manager, etcd) + worker nodes (kubelet, kube-proxy, container runtime).",
+      "Pod: the smallest unit, one or more containers sharing network and storage.",
+      "Deployment: keeps the desired number of pod replicas and handles rolling updates.",
+      "Service: a stable network address and load balancer for pods.",
+      "Features: self-healing, auto-scaling (HPA), rolling updates and rollbacks, service discovery, secrets management.",
+      "Managed services: Amazon EKS, Azure AKS, Google GKE."
+    ],
+    "steps": [
+      "Package the app as a container image.",
+      "Write a Deployment YAML with the image and replica count.",
+      "Apply it with kubectl apply -f deployment.yaml.",
+      "Expose it with a Service.",
+      "Kubernetes schedules, monitors and scales the pods."
+    ],
+    "examples": [
+      "Spotify and many large companies run microservices on Kubernetes.",
+      "Auto-scaling an API from 3 to 20 pods during heavy traffic."
+    ],
+    "formulas": [],
+    "workedExample": null,
+    "practice": [
+      {
+        "question": "What is the smallest deployable unit in Kubernetes?",
+        "hint": "Not a container.",
+        "answer": "A pod."
+      }
+    ],
+    "commonMistakes": [
+      "Thinking Kubernetes replaces Docker; Kubernetes orchestrates containers built with tools like Docker."
+    ],
+    "followUps": [
+      "Containers and Docker",
+      "Microservices Architecture",
+      "Scalability, Elasticity and Load Balancing"
+    ],
+    "faq": [
+      {
+        "question": "What is the difference between Docker and Kubernetes?",
+        "answer": "Docker builds and runs individual containers on a machine. Kubernetes manages many containers across many machines: scheduling, scaling, self-healing, load balancing and rolling updates. They work together: Docker (or another runtime) runs the containers that Kubernetes orchestrates."
+      },
+      {
+        "question": "What is the architecture of Kubernetes?",
+        "answer": "A control plane with the API server (entry point), etcd (cluster state store), scheduler (places pods on nodes) and controller manager (keeps desired state); and worker nodes with kubelet (runs pods), kube-proxy (networking) and a container runtime (containerd, Docker)."
+      }
+    ]
+  },
+  {
+    "id": "serverless-computing",
+    "subject": "Cloud Computing",
+    "title": "Serverless Computing",
+    "aliases": [
+      "serverless",
+      "serverless computing",
+      "serverless architecture",
+      "aws lambda",
+      "lambda function",
+      "azure functions",
+      "google cloud functions",
+      "cold start",
+      "event driven computing"
+    ],
+    "simpleExplanation": "Serverless computing lets you run code without managing any servers. You upload small functions, the provider runs them only when an event triggers them (an HTTP request, a file upload, a timer), scales them automatically and charges only for the time they actually run. Servers still exist, but the provider handles them.",
+    "analogy": "Like taking a taxi instead of owning a car: you pay only for each ride and never worry about maintenance or parking.",
+    "keyPoints": [
+      "Also called Function as a Service (FaaS): AWS Lambda, Azure Functions, Google Cloud Functions.",
+      "Event-driven: functions run in response to triggers.",
+      "Automatic scaling from zero to thousands of instances.",
+      "Billing per execution and duration, so idle time costs nothing.",
+      "Limitations: cold start delay, execution time limits, stateless functions, vendor lock-in, harder debugging.",
+      "Often combined with managed services (DynamoDB, S3, API Gateway)."
+    ],
+    "steps": [
+      "Write a function for a single task.",
+      "Configure its trigger (API, file upload, schedule).",
+      "Deploy it to the provider.",
+      "The provider runs and scales it on each event."
+    ],
+    "examples": [
+      "Resizing an image automatically when it is uploaded to S3.",
+      "Sending a reminder email every morning using a scheduled function."
+    ],
+    "formulas": [],
+    "workedExample": null,
+    "practice": [
+      {
+        "question": "What is a cold start?",
+        "hint": "First call after idle.",
+        "answer": "The extra delay when a function is invoked after being idle, because the provider must start a new execution environment."
+      }
+    ],
+    "commonMistakes": [
+      "Thinking serverless means there are no servers; the provider manages them for you."
+    ],
+    "followUps": [
+      "Cloud Service Models (IaaS, PaaS, SaaS)",
+      "Microservices Architecture",
+      "Cloud Providers: AWS, Azure and Google Cloud"
+    ],
+    "faq": [
+      {
+        "question": "What are the advantages and disadvantages of serverless computing?",
+        "answer": "Advantages: no server management, automatic scaling, pay only for execution time, faster development and built-in high availability. Disadvantages: cold start latency, execution time and memory limits, stateless design, vendor lock-in, and harder monitoring and debugging."
+      }
+    ]
+  },
+  {
+    "id": "cloud-storage",
+    "subject": "Cloud Computing",
+    "title": "Cloud Storage",
+    "aliases": [
+      "cloud storage",
+      "object storage",
+      "block storage",
+      "file storage",
+      "types of cloud storage",
+      "amazon s3",
+      "s3",
+      "s3 bucket",
+      "ebs",
+      "efs",
+      "google drive storage",
+      "storage as a service",
+      "data replication"
+    ],
+    "simpleExplanation": "Cloud storage keeps data on the provider's servers and makes it available over the internet. There are three main types: object storage for files and media (Amazon S3), block storage that acts like a hard disk for VMs (Amazon EBS), and file storage shared across machines with folders (Amazon EFS).",
+    "analogy": "Like a bank locker for your data: kept safe somewhere else, and you can access it whenever you need.",
+    "keyPoints": [
+      "Object storage: stores data as objects with metadata in buckets; massively scalable; good for images, videos, backups (S3, Azure Blob, Google Cloud Storage).",
+      "Block storage: raw volumes attached to a VM; low latency; good for databases and OS disks (EBS, Azure Disk).",
+      "File storage: shared file system with folders over NFS/SMB (EFS, Azure Files).",
+      "Data is replicated across devices and zones for durability (S3 offers 99.999999999% durability).",
+      "Storage classes trade cost for access speed (S3 Standard, Infrequent Access, Glacier for archives).",
+      "Security: encryption at rest and in transit, access policies."
+    ],
+    "steps": [],
+    "examples": [
+      "Netflix stores video files in Amazon S3.",
+      "A database server keeps its data on an EBS volume."
+    ],
+    "formulas": [],
+    "workedExample": null,
+    "practice": [
+      {
+        "question": "Which storage type is best for a website's images and backups?",
+        "hint": "Buckets.",
+        "answer": "Object storage (e.g. Amazon S3)."
+      }
+    ],
+    "commonMistakes": [
+      "Leaving storage buckets public by mistake, which has caused many data leaks."
+    ],
+    "followUps": [
+      "Cloud Security",
+      "Cloud Providers: AWS, Azure and Google Cloud",
+      "Virtualization and Hypervisors"
+    ],
+    "faq": [
+      {
+        "question": "What is the difference between object, block and file storage?",
+        "answer": "Object storage keeps data as objects with metadata in a flat namespace, is extremely scalable and accessed over HTTP (S3) — best for media and backups. Block storage splits data into fixed blocks presented as a disk to one server, giving low latency (EBS) — best for databases and OS disks. File storage organises data in folders and files shared by many machines over a network (EFS, NFS) — best for shared documents and home directories."
+      }
+    ]
+  },
+  {
+    "id": "cloud-security",
+    "subject": "Cloud Computing",
+    "title": "Cloud Security",
+    "aliases": [
+      "cloud security",
+      "security in cloud computing",
+      "shared responsibility model",
+      "iam",
+      "identity and access management",
+      "encryption in cloud",
+      "cloud security issues",
+      "cloud security challenges",
+      "data security in cloud",
+      "zero trust"
+    ],
+    "simpleExplanation": "Cloud security protects data, applications and infrastructure in the cloud. It follows the shared responsibility model: the provider secures the cloud itself (data centres, hardware, network), while the customer secures what they put in the cloud (data, user access, configuration, applications).",
+    "analogy": "Like renting a flat in a secure building: the owner provides guards and strong doors, but you must lock your own door and not share your keys.",
+    "keyPoints": [
+      "Shared responsibility: provider = security OF the cloud; customer = security IN the cloud.",
+      "Identity and Access Management (IAM): users, roles, least privilege, multi-factor authentication.",
+      "Encryption at rest and in transit (TLS); key management services (KMS).",
+      "Network security: firewalls, security groups, VPCs, DDoS protection.",
+      "Monitoring and logging: AWS CloudTrail, CloudWatch, Azure Monitor.",
+      "Threats: misconfiguration, data breaches, stolen credentials, insecure APIs, insider threats, DDoS.",
+      "Compliance standards: ISO 27001, SOC 2, GDPR, HIPAA."
+    ],
+    "steps": [
+      "Give each user only the access they need (least privilege) and enable MFA.",
+      "Encrypt sensitive data.",
+      "Restrict network access with security groups and private subnets.",
+      "Enable logging and alerts.",
+      "Audit configurations regularly."
+    ],
+    "examples": [
+      "Restricting a MongoDB Atlas cluster to a list of allowed IP addresses.",
+      "Using IAM roles instead of putting access keys in code."
+    ],
+    "formulas": [],
+    "workedExample": null,
+    "practice": [
+      {
+        "question": "Under the shared responsibility model, who secures user passwords and permissions in IaaS?",
+        "hint": "Security in the cloud.",
+        "answer": "The customer."
+      }
+    ],
+    "commonMistakes": [
+      "Assuming the provider is responsible for everything; most cloud breaches come from customer misconfiguration."
+    ],
+    "followUps": [
+      "Cloud Deployment Models",
+      "Cloud Storage",
+      "Cloud Networking (VPC, CDN, DNS)"
+    ],
+    "faq": [
+      {
+        "question": "What are the security issues in cloud computing?",
+        "answer": "Data breaches and leaks, misconfigured storage or permissions, weak identity management and stolen credentials, insecure APIs, account hijacking, insider threats, DDoS attacks, data loss, multi-tenancy risks and compliance or data-location concerns."
+      },
+      {
+        "question": "What is the shared responsibility model?",
+        "answer": "A framework that splits security duties. The provider is responsible for security of the cloud: physical data centres, hardware, networking and the virtualisation layer. The customer is responsible for security in the cloud: their data, identities and access, OS and application configuration, and encryption choices. The customer's share is largest in IaaS and smallest in SaaS."
+      }
+    ]
+  },
+  {
+    "id": "scalability-load-balancing",
+    "subject": "Cloud Computing",
+    "title": "Scalability, Elasticity and Load Balancing",
+    "aliases": [
+      "scalability",
+      "elasticity",
+      "scalability vs elasticity",
+      "load balancing",
+      "load balancer",
+      "auto scaling",
+      "autoscaling",
+      "horizontal scaling",
+      "vertical scaling",
+      "scale up vs scale out",
+      "high availability",
+      "fault tolerance"
+    ],
+    "simpleExplanation": "Scalability is a system's ability to handle more load by adding resources. Vertical scaling (scale up) makes one server bigger; horizontal scaling (scale out) adds more servers. Elasticity is scaling automatically up and down as demand changes. A load balancer spreads incoming requests across servers so none is overloaded.",
+    "analogy": "A restaurant can buy a bigger stove (vertical) or open more counters (horizontal); a host at the door (load balancer) sends each customer to a free counter.",
+    "keyPoints": [
+      "Vertical scaling: more CPU/RAM on one machine; simple but has a hardware limit and downtime.",
+      "Horizontal scaling: more machines; nearly unlimited and fault tolerant, but needs stateless design.",
+      "Elasticity = automatic, short-term scaling in both directions (auto scaling groups).",
+      "Load balancing algorithms: round robin, least connections, IP hash, weighted.",
+      "Health checks remove failed servers from rotation.",
+      "High availability uses redundancy across availability zones; fault tolerance keeps working despite failures."
+    ],
+    "steps": [
+      "Run the app on several identical servers.",
+      "Put a load balancer in front.",
+      "Configure auto scaling rules (e.g. add a server when CPU > 70%).",
+      "Remove servers when load drops."
+    ],
+    "examples": [
+      "AWS Elastic Load Balancer with an Auto Scaling Group.",
+      "IRCTC adding servers during Tatkal booking hours."
+    ],
+    "formulas": [],
+    "workedExample": null,
+    "practice": [
+      {
+        "question": "Adding more servers behind a load balancer is which type of scaling?",
+        "hint": "Out, not up.",
+        "answer": "Horizontal scaling (scale out)."
+      }
+    ],
+    "commonMistakes": [
+      "Using 'scalability' and 'elasticity' as synonyms; elasticity is automatic and works in both directions."
+    ],
+    "followUps": [
+      "Characteristics and Benefits of Cloud Computing",
+      "Kubernetes and Container Orchestration",
+      "Disaster Recovery and High Availability"
+    ],
+    "faq": [
+      {
+        "question": "What is the difference between scalability and elasticity?",
+        "answer": "Scalability is the ability of a system to grow to handle increased load, often planned for long-term growth. Elasticity is the ability to automatically add and remove resources in real time as demand rises and falls, so you pay only for what you need at each moment."
+      },
+      {
+        "question": "What is the difference between horizontal and vertical scaling?",
+        "answer": "Vertical scaling (scale up) adds more power (CPU, RAM) to an existing server; it is simple but limited and creates a single point of failure. Horizontal scaling (scale out) adds more servers and spreads load among them; it is more fault tolerant and scales further, but the app must be designed to run on many machines."
+      }
+    ]
+  },
+  {
+    "id": "cloud-providers",
+    "subject": "Cloud Computing",
+    "title": "Cloud Providers: AWS, Azure and Google Cloud",
+    "aliases": [
+      "cloud providers",
+      "aws",
+      "amazon web services",
+      "azure",
+      "microsoft azure",
+      "google cloud",
+      "gcp",
+      "google cloud platform",
+      "aws vs azure vs gcp",
+      "aws services",
+      "ec2",
+      "rds",
+      "dynamodb",
+      "regions and availability zones",
+      "availability zone"
+    ],
+    "simpleExplanation": "The three largest public cloud providers are Amazon Web Services (AWS), Microsoft Azure and Google Cloud Platform (GCP). They all offer computing, storage, databases, networking, AI and analytics services from data centres around the world, organised into regions and availability zones.",
+    "analogy": "Like big supermarket chains: each sells similar products under different brand names.",
+    "keyPoints": [
+      "AWS (launched 2006) is the market leader: EC2 (VMs), S3 (storage), RDS (SQL databases), DynamoDB (NoSQL), Lambda (serverless), VPC, CloudFront (CDN), IAM.",
+      "Azure: Virtual Machines, Blob Storage, Azure SQL, Cosmos DB, Azure Functions, strong integration with Microsoft products.",
+      "Google Cloud: Compute Engine, Cloud Storage, BigQuery (analytics), Cloud Functions, GKE, Vertex AI.",
+      "Region = geographic area; availability zone = one or more isolated data centres within a region.",
+      "Other providers: IBM Cloud, Oracle Cloud, Alibaba Cloud, DigitalOcean.",
+      "Certifications: AWS Cloud Practitioner, Azure AZ-900, Google Cloud Digital Leader."
+    ],
+    "steps": [],
+    "examples": [
+      "Netflix runs on AWS.",
+      "Many Indian companies use AWS Mumbai and Hyderabad regions to keep data in India."
+    ],
+    "formulas": [],
+    "workedExample": null,
+    "practice": [
+      {
+        "question": "Which AWS service provides virtual machines?",
+        "hint": "Elastic Compute Cloud.",
+        "answer": "Amazon EC2."
+      },
+      {
+        "question": "Which AWS service is object storage?",
+        "hint": "Simple Storage Service.",
+        "answer": "Amazon S3."
+      }
+    ],
+    "commonMistakes": [
+      "Confusing a region with an availability zone; a region contains several zones."
+    ],
+    "followUps": [
+      "Cloud Service Models (IaaS, PaaS, SaaS)",
+      "Cloud Storage",
+      "Serverless Computing"
+    ],
+    "faq": [
+      {
+        "question": "What are the main services of AWS?",
+        "answer": "Compute: EC2, Lambda, Elastic Beanstalk. Storage: S3, EBS, EFS, Glacier. Databases: RDS, Aurora, DynamoDB. Networking: VPC, Route 53, CloudFront, Elastic Load Balancing. Security: IAM, KMS. Monitoring: CloudWatch, CloudTrail. AI/ML: SageMaker."
+      },
+      {
+        "question": "What are equivalent services in AWS, Azure and Google Cloud?",
+        "answer": "Virtual machines: EC2 / Azure Virtual Machines / Compute Engine. Object storage: S3 / Blob Storage / Cloud Storage. Serverless: Lambda / Azure Functions / Cloud Functions. Managed Kubernetes: EKS / AKS / GKE. NoSQL: DynamoDB / Cosmos DB / Firestore. Data warehouse: Redshift / Synapse / BigQuery."
+      }
+    ]
+  },
+  {
+    "id": "cloud-networking",
+    "subject": "Cloud Computing",
+    "title": "Cloud Networking (VPC, CDN, DNS)",
+    "aliases": [
+      "cloud networking",
+      "vpc",
+      "virtual private cloud",
+      "public subnet",
+      "private subnet",
+      "security group",
+      "cdn",
+      "content delivery network",
+      "cloudfront",
+      "route 53",
+      "vpn in cloud",
+      "nat gateway"
+    ],
+    "simpleExplanation": "Cloud networking connects cloud resources securely. A Virtual Private Cloud (VPC) is your own isolated network inside the provider's cloud, divided into public and private subnets. Security groups act as firewalls, a CDN caches content close to users for speed, and DNS services route domain names to your resources.",
+    "analogy": "A VPC is like a gated community inside a big city: you decide the roads (subnets), the gates (gateways) and who is allowed in (security groups).",
+    "keyPoints": [
+      "VPC: isolated virtual network with your own IP range (CIDR block).",
+      "Public subnet has a route to an internet gateway (web servers); private subnet does not (databases).",
+      "NAT gateway lets private instances reach the internet without being reachable from it.",
+      "Security groups (instance-level, stateful) and network ACLs (subnet-level, stateless) control traffic.",
+      "CDN (CloudFront, Cloudflare, Azure CDN) serves cached content from edge locations to reduce latency.",
+      "VPN and dedicated links (AWS Direct Connect) connect on-premises networks to the cloud."
+    ],
+    "steps": [],
+    "examples": [
+      "Web servers in a public subnet, MongoDB in a private subnet reachable only from the web servers.",
+      "A CDN serving a college website's images from a nearby city."
+    ],
+    "formulas": [],
+    "workedExample": null,
+    "practice": [
+      {
+        "question": "Where should a database server usually be placed?",
+        "hint": "Not exposed.",
+        "answer": "In a private subnet."
+      }
+    ],
+    "commonMistakes": [
+      "Opening port 22 or database ports to 0.0.0.0/0 (the whole internet)."
+    ],
+    "followUps": [
+      "Cloud Security",
+      "Scalability, Elasticity and Load Balancing",
+      "DNS and HTTP/HTTPS"
+    ],
+    "faq": [
+      {
+        "question": "What is a CDN and why is it used?",
+        "answer": "A Content Delivery Network is a set of servers spread around the world that cache copies of static content (images, videos, scripts). Users get content from the nearest edge server, which reduces latency, lowers load on the origin server and protects against traffic spikes and DDoS attacks."
+      }
+    ]
+  },
+  {
+    "id": "microservices",
+    "subject": "Cloud Computing",
+    "title": "Microservices Architecture",
+    "aliases": [
+      "microservices",
+      "microservice",
+      "microservices architecture",
+      "monolithic architecture",
+      "monolith",
+      "monolithic vs microservices",
+      "api gateway",
+      "service oriented architecture",
+      "soa",
+      "cloud native"
+    ],
+    "simpleExplanation": "In a microservices architecture an application is built as a set of small, independent services, each doing one business function (users, orders, payments) and communicating through APIs. Each service can be developed, deployed and scaled on its own, unlike a monolith where everything is one big application.",
+    "analogy": "A monolith is a Swiss army knife; microservices are a toolbox of separate tools, each replaced or upgraded independently.",
+    "keyPoints": [
+      "Each service owns its own data and is deployed independently.",
+      "Communication via REST, gRPC or message queues (Kafka, RabbitMQ).",
+      "API gateway gives a single entry point and handles routing and authentication.",
+      "Benefits: independent scaling and deployment, fault isolation, freedom of technology per service.",
+      "Challenges: network complexity, distributed data consistency, monitoring and testing.",
+      "Usually deployed with containers and Kubernetes (cloud-native)."
+    ],
+    "steps": [],
+    "examples": [
+      "Netflix and Amazon split their platforms into hundreds of microservices.",
+      "A food delivery app with separate restaurant, order, payment and delivery-tracking services."
+    ],
+    "formulas": [],
+    "workedExample": null,
+    "practice": [
+      {
+        "question": "Name one advantage of microservices over a monolith.",
+        "hint": "Scaling.",
+        "answer": "Each service can be scaled or deployed independently (also fault isolation and technology freedom)."
+      }
+    ],
+    "commonMistakes": [
+      "Splitting a small app into too many services, adding complexity without benefit."
+    ],
+    "followUps": [
+      "Containers and Docker",
+      "Kubernetes and Container Orchestration",
+      "DevOps and CI/CD"
+    ],
+    "faq": [
+      {
+        "question": "What is the difference between monolithic and microservices architecture?",
+        "answer": "A monolith is one single codebase and deployable unit; it is simple to start but hard to scale parts separately, and one bug can bring down everything. Microservices split the app into small independent services with their own data that talk over APIs; they scale and deploy independently and isolate failures, but are more complex to build, test and monitor."
+      }
+    ]
+  },
+  {
+    "id": "devops-cicd",
+    "subject": "Cloud Computing",
+    "title": "DevOps and CI/CD",
+    "aliases": [
+      "devops",
+      "dev ops",
+      "ci/cd",
+      "ci cd",
+      "cicd",
+      "continuous integration",
+      "continuous delivery",
+      "continuous deployment",
+      "ci cd pipeline",
+      "jenkins",
+      "github actions",
+      "infrastructure as code",
+      "iac",
+      "terraform"
+    ],
+    "simpleExplanation": "DevOps is a culture and set of practices that brings development and operations teams together to deliver software faster and more reliably. CI/CD automates it: Continuous Integration builds and tests every code change automatically, and Continuous Delivery/Deployment automatically releases tested changes to production.",
+    "analogy": "Like an automated factory line: every new part is checked automatically and, if it passes, goes straight into the product.",
+    "keyPoints": [
+      "Lifecycle: plan → code → build → test → release → deploy → operate → monitor.",
+      "Continuous Integration: merge code often; each merge triggers an automatic build and tests.",
+      "Continuous Delivery: every passing build is ready to release with one click; Continuous Deployment releases automatically.",
+      "Tools: Git, GitHub Actions, Jenkins, GitLab CI, Docker, Kubernetes, Terraform, Ansible, Prometheus, Grafana.",
+      "Infrastructure as Code (IaC): define servers and networks in code (Terraform, CloudFormation).",
+      "Benefits: faster releases, fewer bugs, quick rollback, better collaboration."
+    ],
+    "steps": [
+      "Developer pushes code to Git.",
+      "CI server builds the app and runs tests.",
+      "If tests pass, an artefact or container image is created.",
+      "CD deploys it to staging and then production.",
+      "Monitoring tracks errors and performance."
+    ],
+    "examples": [
+      "This project uses a GitHub Actions workflow to build the frontend on every push.",
+      "Terraform scripts creating AWS servers automatically."
+    ],
+    "formulas": [],
+    "workedExample": null,
+    "practice": [
+      {
+        "question": "What is the difference between continuous delivery and continuous deployment?",
+        "hint": "Manual approval.",
+        "answer": "Continuous delivery keeps every change ready to release but needs a manual approval; continuous deployment releases every passing change to production automatically."
+      }
+    ],
+    "commonMistakes": [
+      "Thinking DevOps is just a tool; it is mainly a culture of collaboration and automation."
+    ],
+    "followUps": [
+      "Containers and Docker",
+      "Microservices Architecture",
+      "Git and Version Control"
+    ],
+    "faq": [
+      {
+        "question": "What are the benefits of DevOps?",
+        "answer": "Faster and more frequent releases, fewer failures and quicker recovery, automated testing and deployment, better collaboration between developers and operations, consistent environments and continuous feedback from monitoring."
+      }
+    ]
+  },
+  {
+    "id": "edge-fog-computing",
+    "subject": "Cloud Computing",
+    "title": "Edge and Fog Computing",
+    "aliases": [
+      "edge computing",
+      "fog computing",
+      "edge vs cloud",
+      "edge vs fog",
+      "edge computing vs cloud computing",
+      "iot and cloud",
+      "cloud iot"
+    ],
+    "simpleExplanation": "Edge computing processes data close to where it is produced (on devices or nearby gateways) instead of sending everything to a distant cloud data centre. Fog computing adds a middle layer of local nodes between devices and the cloud. Both reduce latency and bandwidth, which matters for IoT, self-driving cars and real-time apps.",
+    "analogy": "Like solving a simple problem yourself immediately instead of phoning the head office and waiting for a reply.",
+    "keyPoints": [
+      "Cloud: centralised, huge capacity, higher latency.",
+      "Edge: processing on or next to the device; lowest latency, works offline.",
+      "Fog: intermediate layer (routers, gateways, local servers) connecting edge and cloud.",
+      "Benefits: real-time response, less bandwidth, better privacy, offline operation.",
+      "Challenges: limited device resources, managing many distributed nodes, security of devices.",
+      "Usually combined: the edge handles urgent decisions, the cloud does heavy analytics and storage."
+    ],
+    "steps": [],
+    "examples": [
+      "A self-driving car must brake using on-board (edge) processing, not a cloud round trip.",
+      "Smart factory sensors filtering data locally and sending summaries to the cloud."
+    ],
+    "formulas": [],
+    "workedExample": null,
+    "practice": [
+      {
+        "question": "Why is edge computing used in self-driving cars?",
+        "hint": "Milliseconds.",
+        "answer": "Decisions must be made instantly; sending data to the cloud and back adds too much latency."
+      }
+    ],
+    "commonMistakes": [
+      "Thinking edge computing replaces the cloud; they work together."
+    ],
+    "followUps": [
+      "Cloud Computing",
+      "Cloud Networking (VPC, CDN, DNS)",
+      "Characteristics and Benefits of Cloud Computing"
+    ],
+    "faq": [
+      {
+        "question": "What is the difference between edge, fog and cloud computing?",
+        "answer": "Cloud computing processes data in large central data centres with high capacity but more latency. Edge computing processes data directly on or near the device for the lowest latency. Fog computing sits in between, using local network nodes like gateways to process and filter data before sending it to the cloud."
+      }
+    ]
+  },
+  {
+    "id": "disaster-recovery",
+    "subject": "Cloud Computing",
+    "title": "Disaster Recovery and High Availability",
+    "aliases": [
+      "disaster recovery",
+      "disaster recovery in cloud",
+      "backup and recovery",
+      "rto",
+      "rpo",
+      "rto and rpo",
+      "business continuity",
+      "failover",
+      "redundancy",
+      "sla",
+      "service level agreement",
+      "uptime"
+    ],
+    "simpleExplanation": "Disaster recovery (DR) is the plan for restoring systems and data after failures such as hardware crashes, cyber attacks or natural disasters. In the cloud, data and servers can be replicated to other availability zones or regions so the service fails over quickly. RTO and RPO measure how fast and how much data you can recover.",
+    "analogy": "Like keeping a spare key and important documents at a relative's house in another city in case your house is damaged.",
+    "keyPoints": [
+      "RTO (Recovery Time Objective): maximum acceptable downtime.",
+      "RPO (Recovery Point Objective): maximum acceptable data loss, measured in time.",
+      "DR strategies from cheapest to fastest: backup and restore, pilot light, warm standby, multi-site active-active.",
+      "High availability uses redundancy across availability zones with automatic failover.",
+      "SLA (Service Level Agreement) states the provider's uptime promise, e.g. 99.99%.",
+      "Test the DR plan regularly."
+    ],
+    "steps": [],
+    "examples": [
+      "Daily database snapshots copied to another region.",
+      "A multi-region active-active setup for a payment system."
+    ],
+    "formulas": [
+      {
+        "formula": "Allowed downtime per year = (1 − availability) × 365 × 24 hours",
+        "meaning": "converts an SLA percentage into hours"
+      }
+    ],
+    "workedExample": {
+      "problem": "An SLA promises 99.9% availability. How much downtime is allowed per year?",
+      "steps": [
+        "1 − 0.999 = 0.001",
+        "0.001 × 8760 hours = 8.76 hours"
+      ],
+      "answer": "About 8.76 hours per year."
+    },
+    "practice": [
+      {
+        "question": "If you can lose at most 1 hour of data, which objective is 1 hour?",
+        "hint": "Data loss.",
+        "answer": "RPO (Recovery Point Objective)."
+      }
+    ],
+    "commonMistakes": [
+      "Keeping backups in the same region or account as the main system."
+    ],
+    "followUps": [
+      "Scalability, Elasticity and Load Balancing",
+      "Cloud Storage",
+      "Cloud Security"
+    ],
+    "faq": [
+      {
+        "question": "What is the difference between RTO and RPO?",
+        "answer": "RTO (Recovery Time Objective) is how long the system can be down before it must be restored, e.g. 2 hours. RPO (Recovery Point Objective) is how much data, measured in time, you can afford to lose, e.g. the last 15 minutes. Lower RTO and RPO need more expensive DR strategies."
+      }
+    ]
+  },
+  {
+    "id": "cloud-pricing",
+    "subject": "Cloud Computing",
+    "title": "Cloud Pricing and Cost Models",
+    "aliases": [
+      "cloud pricing",
+      "cloud cost",
+      "pricing models in cloud",
+      "on demand instances",
+      "reserved instances",
+      "spot instances",
+      "capex vs opex",
+      "cloud cost optimization",
+      "finops",
+      "free tier"
+    ],
+    "simpleExplanation": "Cloud providers charge for what you use, mainly compute time, storage, and data transfer out of the cloud. Pricing options include on-demand (pay per hour/second), reserved or savings plans (discount for a 1-3 year commitment) and spot instances (cheap spare capacity that can be taken back). Cloud turns capital expenses into operating expenses.",
+    "analogy": "Like transport options: a taxi (on-demand), a monthly pass (reserved) or a cheap standby seat that may be cancelled (spot).",
+    "keyPoints": [
+      "On-demand: flexible, no commitment, highest price.",
+      "Reserved instances / savings plans: up to ~70% cheaper for long-term steady workloads.",
+      "Spot / preemptible instances: up to ~90% cheaper, but can be interrupted; good for batch jobs.",
+      "CapEx (buying hardware upfront) vs OpEx (paying monthly for usage).",
+      "Cost optimisation: right-size instances, shut down idle resources, use auto scaling, choose storage classes, set budgets and alerts.",
+      "Free tiers let students learn at no cost (AWS, Azure, Google Cloud)."
+    ],
+    "steps": [],
+    "examples": [
+      "Running training jobs on spot instances to save money.",
+      "A company buys reserved instances for its always-on database."
+    ],
+    "formulas": [],
+    "workedExample": {
+      "problem": "An on-demand VM costs ₹10 per hour. A reserved plan gives a 40% discount. What is the monthly cost (730 hours) for each?",
+      "steps": [
+        "On-demand: 10 × 730 = ₹7,300",
+        "Reserved: 7,300 × 0.6 = ₹4,380"
+      ],
+      "answer": "₹7,300 on-demand vs ₹4,380 reserved, saving ₹2,920 per month."
+    },
+    "practice": [
+      {
+        "question": "Which pricing model suits a batch job that can be interrupted?",
+        "hint": "Cheapest.",
+        "answer": "Spot (preemptible) instances."
+      }
+    ],
+    "commonMistakes": [
+      "Forgetting that data transfer out of the cloud is billed."
+    ],
+    "followUps": [
+      "Characteristics and Benefits of Cloud Computing",
+      "Cloud Providers: AWS, Azure and Google Cloud",
+      "Scalability, Elasticity and Load Balancing"
+    ],
+    "faq": [
+      {
+        "question": "What is the difference between CapEx and OpEx in cloud computing?",
+        "answer": "CapEx (capital expenditure) is buying servers and data centre equipment upfront, which is a large one-time cost. OpEx (operational expenditure) is paying regularly for the cloud resources you use. Cloud computing shifts IT spending from CapEx to OpEx, lowering the entry cost and matching spending to actual use."
+      }
+    ]
+  }
+]

@@ -1,0 +1,1216 @@
+[
+  {
+    "id": "artificial-intelligence",
+    "subject": "Artificial Intelligence",
+    "title": "Artificial Intelligence (AI)",
+    "aliases": [
+      "artificial intelligence",
+      "ai",
+      "what is ai",
+      "intro to ai",
+      "introduction to artificial intelligence",
+      "artificial intelligence basics",
+      "types of ai",
+      "types of artificial intelligence",
+      "applications of ai",
+      "applications of artificial intelligence",
+      "history of ai",
+      "narrow ai",
+      "general ai",
+      "strong ai",
+      "weak ai",
+      "agi",
+      "super ai"
+    ],
+    "simpleExplanation": "Artificial Intelligence is the field of computer science that builds systems able to perform tasks that normally need human intelligence, such as understanding language, recognising images, making decisions, solving problems and learning from experience. AI systems perceive their environment, reason about it and act to reach a goal.",
+    "analogy": "AI is like teaching a new employee: you either give them a rulebook (rule-based AI) or show them many past examples so they learn the pattern themselves (machine learning).",
+    "keyPoints": [
+      "Narrow (weak) AI does one task well (chess, face unlock, spam filters); all AI in use today is narrow.",
+      "General AI (AGI, strong AI) would match humans across any intellectual task; it does not exist yet.",
+      "Super AI would exceed human intelligence in every area; it is hypothetical.",
+      "By functionality: reactive machines, limited memory, theory of mind and self-aware AI.",
+      "Main branches: machine learning, deep learning, natural language processing, computer vision, robotics, expert systems, fuzzy logic and planning.",
+      "Approaches: symbolic AI (rules and logic) and statistical/connectionist AI (learning from data)."
+    ],
+    "steps": [
+      "Perceive: collect input from sensors, text, images or data.",
+      "Represent: store knowledge as rules, facts, graphs or learned model weights.",
+      "Reason or infer: use search, logic or a trained model to decide what is true or what to do.",
+      "Act: produce an output such as an answer, a prediction or a robot movement.",
+      "Learn: improve from feedback or new data."
+    ],
+    "examples": [
+      "Voice assistants (Siri, Alexa) use speech recognition and NLP.",
+      "Netflix and YouTube recommendations use machine learning.",
+      "Self-driving cars combine computer vision, planning and control.",
+      "ChatGPT and other chatbots are generative AI based on large language models."
+    ],
+    "formulas": [],
+    "workedExample": null,
+    "practice": [
+      {
+        "question": "Is a chess-playing program narrow AI or general AI?",
+        "hint": "Can it do anything other than chess?",
+        "answer": "Narrow AI: it performs a single task."
+      },
+      {
+        "question": "Name four branches of AI.",
+        "hint": "Think language, images, learning, robots.",
+        "answer": "Machine learning, natural language processing, computer vision and robotics (also expert systems, fuzzy logic, planning)."
+      },
+      {
+        "question": "What is the difference between AI and machine learning?",
+        "hint": "One is a subset of the other.",
+        "answer": "AI is the broad goal of intelligent machines; machine learning is one way to achieve it, where the system learns patterns from data instead of being explicitly programmed."
+      }
+    ],
+    "commonMistakes": [
+      "Treating AI and machine learning as the same thing; ML is a subset of AI.",
+      "Believing current AI systems understand or think like humans; they are narrow and pattern-based."
+    ],
+    "followUps": [
+      "Machine Learning",
+      "Intelligent Agents",
+      "Natural Language Processing (NLP)"
+    ],
+    "faq": [
+      {
+        "question": "What are the types of AI?",
+        "answer": "By capability: narrow (weak) AI that does one task, general AI (AGI) that would match humans on any task, and super AI that would surpass humans. By functionality: reactive machines (no memory, e.g. Deep Blue), limited memory (most modern AI, e.g. self-driving cars), theory of mind (would understand emotions; research stage) and self-aware AI (hypothetical)."
+      },
+      {
+        "question": "What are the applications of AI?",
+        "answer": "Healthcare (diagnosis from scans, drug discovery), finance (fraud detection, credit scoring), e-commerce (recommendations), transport (self-driving cars, route optimisation), education (personal tutors), agriculture (crop disease detection), customer service (chatbots), security (face recognition) and manufacturing (predictive maintenance, robots)."
+      },
+      {
+        "question": "What are the advantages of AI?",
+        "answer": "It works 24/7 without fatigue, reduces human error, handles huge amounts of data quickly, automates repetitive tasks, helps in dangerous jobs (mining, space) and supports faster decision making."
+      },
+      {
+        "question": "What are the disadvantages of AI?",
+        "answer": "High development cost, job displacement for routine work, bias learned from data, lack of transparency (black-box decisions), privacy concerns, dependence on data quality and no real common sense or creativity."
+      },
+      {
+        "question": "What is the difference between AI, machine learning and deep learning?",
+        "answer": "AI is the broad field of making machines intelligent. Machine learning is a subset of AI where systems learn from data. Deep learning is a subset of machine learning that uses neural networks with many layers, and works best with very large data such as images, audio and text."
+      },
+      {
+        "question": "What is the history of AI?",
+        "answer": "1950: Alan Turing proposed the Turing Test. 1956: the term 'Artificial Intelligence' was coined by John McCarthy at the Dartmouth conference. 1960s-70s: early rule-based programs, followed by 'AI winters' when funding fell. 1980s: expert systems. 1997: IBM Deep Blue beat chess champion Kasparov. 2012: deep learning breakthrough in image recognition. 2016: AlphaGo beat Lee Sedol. 2020s: large language models and generative AI (GPT, ChatGPT)."
+      },
+      {
+        "question": "Who is the father of AI?",
+        "answer": "John McCarthy, who coined the term 'Artificial Intelligence' in 1956 and created the LISP language. Alan Turing is also called a founding father for his 1950 paper on machine intelligence."
+      }
+    ]
+  },
+  {
+    "id": "intelligent-agents",
+    "subject": "Artificial Intelligence",
+    "title": "Intelligent Agents",
+    "aliases": [
+      "intelligent agent",
+      "intelligent agents",
+      "agents in ai",
+      "ai agent",
+      "types of agents",
+      "peas",
+      "peas description",
+      "rational agent",
+      "agent environment",
+      "simple reflex agent",
+      "model based agent",
+      "goal based agent",
+      "utility based agent",
+      "learning agent"
+    ],
+    "simpleExplanation": "An intelligent agent is anything that perceives its environment through sensors and acts on it through actuators to achieve goals. A rational agent chooses the action that is expected to give the best outcome based on what it has perceived so far.",
+    "analogy": "A thermostat is a very simple agent: its sensor reads the temperature and its actuator switches the heater on or off to keep the room at the target.",
+    "keyPoints": [
+      "Agent = architecture + agent program; agent function maps percept sequences to actions.",
+      "PEAS describes a task: Performance measure, Environment, Actuators, Sensors.",
+      "Simple reflex agent: acts on the current percept with condition-action rules.",
+      "Model-based reflex agent: keeps an internal state of the world.",
+      "Goal-based agent: chooses actions that reach a goal (uses search and planning).",
+      "Utility-based agent: chooses the action with the highest expected utility (best, not just any goal).",
+      "Learning agent: improves its performance over time using feedback (critic, learning element, problem generator)."
+    ],
+    "steps": [
+      "Sense the environment (percept).",
+      "Update internal state if it has one.",
+      "Decide an action using rules, goals or utility.",
+      "Act on the environment through actuators.",
+      "Repeat, and learn from the results if it is a learning agent."
+    ],
+    "examples": [
+      "Self-driving car PEAS: Performance = safety, speed, comfort; Environment = roads, traffic, pedestrians; Actuators = steering, brake, accelerator; Sensors = cameras, LIDAR, GPS.",
+      "A robot vacuum cleaner is a model-based agent that remembers which areas are cleaned."
+    ],
+    "formulas": [],
+    "workedExample": null,
+    "practice": [
+      {
+        "question": "Write the PEAS for a medical diagnosis system.",
+        "hint": "Who is affected, what does it act with?",
+        "answer": "Performance: correct diagnosis, patient health, cost; Environment: patient, hospital staff; Actuators: display of questions, tests, diagnoses; Sensors: keyboard entry of symptoms and test results."
+      },
+      {
+        "question": "Which agent type keeps track of the world it cannot currently see?",
+        "hint": "It has an internal model.",
+        "answer": "Model-based reflex agent."
+      }
+    ],
+    "commonMistakes": [
+      "Confusing goal-based with utility-based agents: goal-based asks 'is the goal reached?', utility-based asks 'how good is this outcome?'.",
+      "Forgetting that the performance measure is defined by the designer, not by the agent."
+    ],
+    "followUps": [
+      "Search Algorithms in AI",
+      "Artificial Intelligence (AI)",
+      "Reinforcement Learning"
+    ],
+    "faq": [
+      {
+        "question": "What are the types of agents?",
+        "answer": "Simple reflex agents (condition-action rules on the current percept), model-based reflex agents (keep internal state), goal-based agents (plan to reach goals), utility-based agents (maximise expected utility) and learning agents (improve with experience)."
+      },
+      {
+        "question": "What are the types of environments?",
+        "answer": "Fully vs partially observable, deterministic vs stochastic, episodic vs sequential, static vs dynamic, discrete vs continuous, single-agent vs multi-agent, and known vs unknown. Example: chess is fully observable, deterministic, sequential, static, discrete and multi-agent; taxi driving is partially observable, stochastic, sequential, dynamic and continuous."
+      },
+      {
+        "question": "What is a rational agent?",
+        "answer": "An agent that, for every possible percept sequence, selects the action expected to maximise its performance measure, given its percepts and built-in knowledge. Rational does not mean all-knowing; it means doing the best with available information."
+      }
+    ]
+  },
+  {
+    "id": "ai-search-algorithms",
+    "subject": "Artificial Intelligence",
+    "title": "Search Algorithms in AI",
+    "aliases": [
+      "search algorithms in ai",
+      "search algorithm",
+      "searching in ai",
+      "uninformed search",
+      "informed search",
+      "blind search",
+      "heuristic search",
+      "heuristic",
+      "heuristic function",
+      "a star",
+      "a* search",
+      "a star algorithm",
+      "best first search",
+      "greedy best first search",
+      "uniform cost search",
+      "iterative deepening",
+      "hill climbing",
+      "state space search",
+      "problem solving agent",
+      "a* algorithm",
+      "a*"
+    ],
+    "simpleExplanation": "Many AI problems are solved by searching a state space: from a start state, apply actions until a goal state is found. Uninformed (blind) search uses no extra knowledge about where the goal is. Informed (heuristic) search uses a heuristic function h(n) that estimates the cost from a state to the goal, so it explores promising states first.",
+    "analogy": "Uninformed search is like looking for a friend's house by trying every street in order; informed search is like using the house number and direction signs to head the right way.",
+    "keyPoints": [
+      "A search problem has: initial state, actions, transition model, goal test and path cost.",
+      "Uninformed: Breadth-First Search (complete, optimal for equal step costs), Depth-First Search (low memory, not optimal), Uniform Cost Search (expands lowest path cost g(n)), Depth-Limited and Iterative Deepening DFS.",
+      "Informed: Greedy Best-First Search expands the lowest h(n); A* expands the lowest f(n) = g(n) + h(n).",
+      "A* is optimal if the heuristic is admissible (never overestimates) and, for graph search, consistent.",
+      "Local search (hill climbing, simulated annealing, genetic algorithms) keeps one or a few states and improves them; it can get stuck in local maxima.",
+      "Measured by completeness, optimality, time complexity and space complexity."
+    ],
+    "steps": [
+      "Put the start state in the frontier (open list).",
+      "Remove the best node from the frontier (order depends on the algorithm).",
+      "If it is the goal, return the path.",
+      "Otherwise expand it: generate its successors and add new ones to the frontier.",
+      "Repeat until the goal is found or the frontier is empty."
+    ],
+    "examples": [
+      "Google Maps style route finding uses A* with straight-line distance as the heuristic.",
+      "The 8-puzzle uses A* with the Manhattan distance heuristic."
+    ],
+    "formulas": [
+      {
+        "formula": "f(n) = g(n) + h(n)",
+        "meaning": "A* evaluation: cost so far plus estimated cost to goal"
+      },
+      {
+        "formula": "BFS time and space = O(b^d)",
+        "meaning": "b = branching factor, d = depth of the shallowest goal"
+      },
+      {
+        "formula": "DFS space = O(b·m)",
+        "meaning": "m = maximum depth"
+      }
+    ],
+    "workedExample": {
+      "problem": "From S, node A has g = 2 and h = 5; node B has g = 4 and h = 1. Which does A* expand next?",
+      "steps": [
+        "f(A) = 2 + 5 = 7",
+        "f(B) = 4 + 1 = 5",
+        "A* picks the node with the smallest f."
+      ],
+      "answer": "B, because f(B) = 5 < f(A) = 7."
+    },
+    "practice": [
+      {
+        "question": "Which uninformed search is complete and optimal when all steps cost the same?",
+        "hint": "It explores level by level.",
+        "answer": "Breadth-First Search."
+      },
+      {
+        "question": "What makes a heuristic admissible?",
+        "hint": "Compare with the true cost.",
+        "answer": "It never overestimates the true cost to reach the goal: h(n) ≤ h*(n)."
+      },
+      {
+        "question": "Why can hill climbing fail?",
+        "hint": "Think about peaks.",
+        "answer": "It can get stuck at a local maximum, plateau or ridge because it only moves to better neighbours."
+      }
+    ],
+    "commonMistakes": [
+      "Thinking greedy best-first search is optimal; it ignores the cost already paid g(n).",
+      "Using a heuristic that overestimates, which can make A* return a non-optimal path."
+    ],
+    "followUps": [
+      "Game Playing: Minimax and Alpha-Beta Pruning",
+      "Graphs and Graph Traversal (BFS and DFS)",
+      "Intelligent Agents"
+    ],
+    "faq": [
+      {
+        "question": "What is the difference between uninformed and informed search?",
+        "answer": "Uninformed (blind) search such as BFS, DFS and uniform cost search uses only the problem definition, with no idea how close a state is to the goal. Informed (heuristic) search such as greedy best-first and A* uses a heuristic h(n) estimating distance to the goal, so it usually finds the goal much faster."
+      },
+      {
+        "question": "What is a heuristic?",
+        "answer": "A heuristic h(n) is a rule of thumb that estimates the cost from state n to the goal, for example straight-line distance in route finding or the number of misplaced tiles in the 8-puzzle. Good heuristics are cheap to compute and close to the real cost."
+      },
+      {
+        "question": "How does the A* algorithm work?",
+        "answer": "A* keeps a priority queue ordered by f(n) = g(n) + h(n), where g(n) is the cost from the start and h(n) is the estimated cost to the goal. It repeatedly expands the node with the lowest f, updates its neighbours' costs and stops when the goal is removed from the queue. With an admissible heuristic, the path found is optimal."
+      },
+      {
+        "question": "Compare BFS and DFS.",
+        "answer": "BFS explores level by level using a queue; it is complete and optimal for equal step costs but needs O(b^d) memory. DFS goes deep using a stack or recursion; it needs only O(b·m) memory but is not optimal and can loop forever in infinite spaces."
+      }
+    ]
+  },
+  {
+    "id": "game-playing-minimax",
+    "subject": "Artificial Intelligence",
+    "title": "Game Playing: Minimax and Alpha-Beta Pruning",
+    "aliases": [
+      "minimax",
+      "minimax algorithm",
+      "alpha beta pruning",
+      "alpha-beta pruning",
+      "alpha beta",
+      "game playing",
+      "game playing in ai",
+      "adversarial search",
+      "game tree"
+    ],
+    "simpleExplanation": "Two-player games like chess or tic-tac-toe are solved with adversarial search. Minimax assumes both players play perfectly: MAX picks the move with the highest value and MIN picks the move with the lowest value, and values are passed up the game tree from the leaves. Alpha-beta pruning gives the same answer as minimax but skips branches that cannot change the decision.",
+    "analogy": "Minimax is like planning a chess move by asking: 'If I do this, what is the worst my opponent can do to me?', and choosing the move whose worst case is best.",
+    "keyPoints": [
+      "Game tree: nodes are positions, edges are moves, leaves have utility values.",
+      "MAX levels take the maximum of children; MIN levels take the minimum.",
+      "Minimax time complexity is O(b^m) where b is branching factor and m is depth.",
+      "Alpha = best value MAX can guarantee so far; beta = best value MIN can guarantee so far.",
+      "Prune a branch when alpha ≥ beta.",
+      "With perfect move ordering alpha-beta is O(b^(m/2)), letting the search go about twice as deep.",
+      "Real games use a depth limit with an evaluation function instead of searching to the end."
+    ],
+    "steps": [
+      "Generate the game tree to a depth limit.",
+      "Score the leaf positions with the utility or evaluation function.",
+      "Propagate values upward: max at MAX nodes, min at MIN nodes.",
+      "With alpha-beta, keep alpha and beta while searching and stop exploring a branch once alpha ≥ beta.",
+      "Choose the root move with the best backed-up value."
+    ],
+    "examples": [
+      "IBM Deep Blue used minimax with alpha-beta pruning and a hand-made evaluation function to beat Kasparov in 1997.",
+      "Tic-tac-toe can be solved completely with minimax; perfect play always ends in a draw."
+    ],
+    "formulas": [
+      {
+        "formula": "Minimax time = O(b^m)",
+        "meaning": "b = legal moves per position, m = depth"
+      },
+      {
+        "formula": "Alpha-beta best case = O(b^(m/2))",
+        "meaning": "with perfect move ordering"
+      }
+    ],
+    "workedExample": {
+      "problem": "MAX root has two MIN children. MIN child 1 leaves: 3, 5. MIN child 2 leaves: 2, 9. What is the minimax value and which branch is pruned?",
+      "steps": [
+        "MIN child 1 = min(3, 5) = 3, so alpha at root becomes 3.",
+        "MIN child 2 sees leaf 2 first: its value will be ≤ 2.",
+        "Since 2 ≤ alpha = 3, MAX will never choose this child, so leaf 9 is pruned.",
+        "Root = max(3, ≤2) = 3."
+      ],
+      "answer": "Minimax value 3 (choose child 1); the leaf 9 is pruned."
+    },
+    "practice": [
+      {
+        "question": "Does alpha-beta pruning change the result of minimax?",
+        "hint": "It only skips work.",
+        "answer": "No. It returns exactly the same value; it only avoids exploring irrelevant branches."
+      },
+      {
+        "question": "When is a branch pruned?",
+        "hint": "Compare alpha and beta.",
+        "answer": "When alpha ≥ beta at a node."
+      }
+    ],
+    "commonMistakes": [
+      "Forgetting that alpha is updated only at MAX nodes and beta only at MIN nodes.",
+      "Thinking pruning loses accuracy; it does not."
+    ],
+    "followUps": [
+      "Search Algorithms in AI",
+      "Reinforcement Learning",
+      "Artificial Intelligence (AI)"
+    ],
+    "faq": [
+      {
+        "question": "What is the difference between minimax and alpha-beta pruning?",
+        "answer": "Both give the same best move. Minimax explores the whole game tree (O(b^m)); alpha-beta keeps two bounds, alpha and beta, and skips branches that cannot affect the final decision, so it explores far fewer nodes (as low as O(b^(m/2)))."
+      },
+      {
+        "question": "What is an evaluation function?",
+        "answer": "A function that estimates how good a non-final game position is for MAX, used when the search stops at a depth limit. In chess it might add material values (queen 9, rook 5, etc.) plus positional factors."
+      }
+    ]
+  },
+  {
+    "id": "knowledge-representation",
+    "subject": "Artificial Intelligence",
+    "title": "Knowledge Representation and Logic",
+    "aliases": [
+      "knowledge representation",
+      "knowledge representation in ai",
+      "propositional logic",
+      "first order logic",
+      "first-order logic",
+      "predicate logic",
+      "fol",
+      "inference in ai",
+      "resolution",
+      "forward chaining",
+      "backward chaining",
+      "semantic network",
+      "frames",
+      "ontology",
+      "knowledge base in ai",
+      "reasoning in ai"
+    ],
+    "simpleExplanation": "Knowledge representation is how an AI system stores facts about the world so it can reason with them. Common forms are logic (propositional and first-order), rules, semantic networks, frames and ontologies. Inference methods such as forward chaining, backward chaining and resolution derive new facts from known ones.",
+    "analogy": "It is like a detective's notebook: facts and rules are written in a precise form so new conclusions can be deduced step by step.",
+    "keyPoints": [
+      "Propositional logic uses true/false statements joined by AND, OR, NOT, IMPLIES and IFF.",
+      "First-order (predicate) logic adds objects, predicates, functions and quantifiers ∀ (for all) and ∃ (there exists).",
+      "Forward chaining is data-driven: start from facts and apply rules until the goal appears.",
+      "Backward chaining is goal-driven: start from the goal and look for rules and facts that prove it.",
+      "Resolution proves a statement by showing its negation leads to a contradiction (uses CNF).",
+      "Semantic networks represent knowledge as a graph of concepts and relations (is-a, has-a); frames store objects as slots and values.",
+      "Good representation is expressive, efficient and handles uncertainty when needed."
+    ],
+    "steps": [
+      "Identify the objects, properties and relations in the domain.",
+      "Choose a representation (logic, rules, network, frames).",
+      "Encode the facts and rules in the knowledge base.",
+      "Apply an inference method to answer queries."
+    ],
+    "examples": [
+      "FOL: ∀x Human(x) → Mortal(x); Human(Socrates); therefore Mortal(Socrates).",
+      "Expert systems like MYCIN stored medical knowledge as IF-THEN rules and used backward chaining."
+    ],
+    "formulas": [
+      {
+        "formula": "P → Q ≡ ¬P ∨ Q",
+        "meaning": "implication rewritten for resolution"
+      },
+      {
+        "formula": "Modus ponens: P, P → Q ⊢ Q",
+        "meaning": "if P is true and P implies Q, then Q is true"
+      }
+    ],
+    "workedExample": null,
+    "practice": [
+      {
+        "question": "Which chaining starts from the goal?",
+        "hint": "It works backwards.",
+        "answer": "Backward chaining."
+      },
+      {
+        "question": "Write 'Every student likes AI' in first-order logic.",
+        "hint": "Use ∀ and →.",
+        "answer": "∀x Student(x) → Likes(x, AI)."
+      }
+    ],
+    "commonMistakes": [
+      "Using ∧ instead of → with ∀ (∀x Student(x) ∧ Likes(x, AI) wrongly says everything is a student).",
+      "Mixing up forward (data-driven) and backward (goal-driven) chaining."
+    ],
+    "followUps": [
+      "Expert Systems",
+      "Probabilistic Reasoning and Bayesian Networks",
+      "Artificial Intelligence (AI)"
+    ],
+    "faq": [
+      {
+        "question": "What is the difference between forward and backward chaining?",
+        "answer": "Forward chaining starts with known facts and applies rules to derive new facts until the goal is reached (data-driven, used in monitoring and planning). Backward chaining starts with the goal and works backwards to find rules and facts that support it (goal-driven, used in diagnosis and expert systems like MYCIN)."
+      },
+      {
+        "question": "What is the difference between propositional and first-order logic?",
+        "answer": "Propositional logic only has whole statements that are true or false (P, Q) and cannot talk about objects inside them. First-order logic adds objects, predicates, functions and quantifiers (∀, ∃), so it can express general rules like 'all humans are mortal'."
+      },
+      {
+        "question": "What are the types of knowledge?",
+        "answer": "Declarative (facts: 'Paris is in France'), procedural (how to do something), meta-knowledge (knowledge about knowledge), heuristic (rules of thumb from experience) and structural (relationships between concepts)."
+      }
+    ]
+  },
+  {
+    "id": "expert-systems",
+    "subject": "Artificial Intelligence",
+    "title": "Expert Systems",
+    "aliases": [
+      "expert system",
+      "expert systems",
+      "rule based system",
+      "inference engine",
+      "components of expert system",
+      "mycin",
+      "dendral"
+    ],
+    "simpleExplanation": "An expert system is an AI program that copies the decision-making of a human expert in a narrow field, using a knowledge base of facts and IF-THEN rules plus an inference engine that applies those rules to the user's problem.",
+    "analogy": "It is like a doctor's knowledge written down as a giant rulebook, with a clerk (the inference engine) who follows the rules to reach a diagnosis.",
+    "keyPoints": [
+      "Components: knowledge base, inference engine, user interface, explanation facility and knowledge acquisition module.",
+      "The knowledge engineer collects rules from domain experts.",
+      "The inference engine uses forward or backward chaining.",
+      "The explanation facility tells the user why a conclusion was reached.",
+      "Examples: MYCIN (blood infections), DENDRAL (chemical structures), XCON (computer configuration).",
+      "Limitations: hard to build and update the rules, no common sense, works only in a narrow domain."
+    ],
+    "steps": [
+      "The user enters facts through the interface.",
+      "The inference engine matches facts with rules in the knowledge base.",
+      "Matching rules fire and add new facts.",
+      "The system gives a conclusion and an explanation."
+    ],
+    "examples": [
+      "Rule: IF fever AND rash THEN suspect measles.",
+      "Loan approval systems that use bank rules to accept or reject applications."
+    ],
+    "formulas": [],
+    "workedExample": null,
+    "practice": [
+      {
+        "question": "Which component applies the rules?",
+        "hint": "The 'brain' of the system.",
+        "answer": "The inference engine."
+      },
+      {
+        "question": "Name one famous expert system.",
+        "hint": "Medical, 1970s.",
+        "answer": "MYCIN."
+      }
+    ],
+    "commonMistakes": [
+      "Saying expert systems learn by themselves; classic expert systems only use hand-written rules."
+    ],
+    "followUps": [
+      "Knowledge Representation and Logic",
+      "Fuzzy Logic",
+      "Machine Learning"
+    ],
+    "faq": [
+      {
+        "question": "What are the components of an expert system?",
+        "answer": "1) Knowledge base: facts and rules from experts. 2) Inference engine: applies rules using forward or backward chaining. 3) User interface: lets users enter facts and see answers. 4) Explanation facility: explains how a result was reached. 5) Knowledge acquisition module: helps add and update knowledge."
+      },
+      {
+        "question": "What are the advantages and disadvantages of expert systems?",
+        "answer": "Advantages: consistent answers, available any time, preserves expert knowledge, explains its reasoning, cheaper than a human expert. Disadvantages: costly to build, difficult to maintain rules, no learning or common sense, fails outside its narrow domain."
+      }
+    ]
+  },
+  {
+    "id": "natural-language-processing",
+    "subject": "Artificial Intelligence",
+    "title": "Natural Language Processing (NLP)",
+    "aliases": [
+      "natural language processing",
+      "nlp",
+      "text processing",
+      "tokenization",
+      "stemming",
+      "lemmatization",
+      "stop words",
+      "bag of words",
+      "tf-idf",
+      "tfidf",
+      "word embeddings",
+      "word2vec",
+      "sentiment analysis",
+      "named entity recognition",
+      "ner",
+      "pos tagging",
+      "machine translation",
+      "steps in nlp",
+      "phases of nlp"
+    ],
+    "simpleExplanation": "Natural Language Processing is the branch of AI that lets computers understand, interpret and generate human language in text or speech. It turns words into numbers a model can work with, then performs tasks such as translation, sentiment analysis, question answering and chatbots.",
+    "analogy": "NLP is like teaching a foreigner a language: first split sentences into words, learn grammar and word meanings, then understand context and reply.",
+    "keyPoints": [
+      "Phases: lexical analysis, syntactic analysis (parsing), semantic analysis (meaning), discourse integration and pragmatic analysis (intended meaning).",
+      "Preprocessing: tokenization, lowercasing, stop-word removal, stemming (cut to root: 'running' → 'run') and lemmatization (dictionary form: 'better' → 'good').",
+      "Text representation: bag of words, TF-IDF, word embeddings (Word2Vec, GloVe) and contextual embeddings (BERT).",
+      "Tasks: sentiment analysis, named entity recognition, POS tagging, machine translation, summarisation, question answering, speech recognition.",
+      "Modern NLP uses transformer models such as BERT and GPT.",
+      "Challenges: ambiguity, sarcasm, context, multiple languages and slang."
+    ],
+    "steps": [
+      "Collect and clean the text.",
+      "Tokenize and normalise (lowercase, remove stop words, stem or lemmatize).",
+      "Convert text to numbers (TF-IDF or embeddings).",
+      "Train or apply a model for the task.",
+      "Evaluate (accuracy, F1, BLEU for translation)."
+    ],
+    "examples": [
+      "Gmail spam filter and smart reply.",
+      "Google Translate, Alexa voice commands and ChatGPT."
+    ],
+    "formulas": [
+      {
+        "formula": "TF-IDF(t, d) = TF(t, d) × log(N / DF(t))",
+        "meaning": "term frequency in the document times inverse document frequency across N documents"
+      }
+    ],
+    "workedExample": {
+      "problem": "A word appears 3 times in a 100-word document and in 10 of 1000 documents. Find TF-IDF (log base 10).",
+      "steps": [
+        "TF = 3 / 100 = 0.03",
+        "IDF = log10(1000 / 10) = log10(100) = 2",
+        "TF-IDF = 0.03 × 2"
+      ],
+      "answer": "0.06"
+    },
+    "practice": [
+      {
+        "question": "What is the difference between stemming and lemmatization?",
+        "hint": "One uses a dictionary.",
+        "answer": "Stemming chops word endings by rules ('studies' → 'studi'); lemmatization uses vocabulary and grammar to return the real base word ('studies' → 'study')."
+      },
+      {
+        "question": "Which NLP task finds names of people, places and organisations?",
+        "hint": "Entities.",
+        "answer": "Named Entity Recognition (NER)."
+      }
+    ],
+    "commonMistakes": [
+      "Removing stop words for every task; for sentiment, words like 'not' change the meaning.",
+      "Thinking bag of words keeps word order; it does not."
+    ],
+    "followUps": [
+      "Transformers and Large Language Models",
+      "Recurrent Neural Networks (RNN and LSTM)",
+      "Generative AI"
+    ],
+    "faq": [
+      {
+        "question": "What are the phases of NLP?",
+        "answer": "1) Lexical analysis: split text into words and sentences. 2) Syntactic analysis: check grammar and build a parse tree. 3) Semantic analysis: find the literal meaning. 4) Discourse integration: use the meaning of earlier sentences. 5) Pragmatic analysis: understand the intended meaning in context."
+      },
+      {
+        "question": "What are the applications of NLP?",
+        "answer": "Chatbots and virtual assistants, machine translation, sentiment analysis of reviews, spam detection, text summarisation, speech recognition, search engines, grammar checkers and resume screening."
+      },
+      {
+        "question": "What is tokenization?",
+        "answer": "Splitting text into smaller units called tokens, usually words or subwords. 'I love AI' becomes ['I', 'love', 'AI']. Large language models use subword tokens so they can handle unknown words."
+      }
+    ]
+  },
+  {
+    "id": "computer-vision",
+    "subject": "Artificial Intelligence",
+    "title": "Computer Vision",
+    "aliases": [
+      "computer vision",
+      "image processing",
+      "image recognition",
+      "image classification",
+      "object detection",
+      "image segmentation",
+      "face recognition",
+      "yolo",
+      "opencv",
+      "ocr"
+    ],
+    "simpleExplanation": "Computer vision is the field of AI that enables computers to understand images and videos: recognising objects, faces, text and scenes. Images are grids of pixel numbers, and models (today mostly convolutional neural networks and vision transformers) learn patterns such as edges, shapes and objects from them.",
+    "analogy": "Like a child learning to recognise a cat: first noticing lines and colours, then ears and whiskers, and finally the whole cat.",
+    "keyPoints": [
+      "An image is a matrix of pixels (grayscale: one value; colour: RGB channels).",
+      "Tasks: image classification (what is it?), object detection (what and where? bounding boxes), segmentation (which pixels belong to which object), face recognition, OCR, pose estimation.",
+      "Classic techniques: filtering, edge detection (Sobel, Canny), feature descriptors (SIFT, HOG).",
+      "Deep learning: CNNs (ResNet, VGG), detectors (YOLO, Faster R-CNN), segmentation (U-Net, Mask R-CNN).",
+      "Data augmentation (flip, rotate, crop) helps models generalise.",
+      "Tools: OpenCV, PyTorch, TensorFlow."
+    ],
+    "steps": [
+      "Acquire images and label them.",
+      "Preprocess: resize, normalise and augment.",
+      "Extract features or train a CNN.",
+      "Predict class, boxes or masks.",
+      "Evaluate with accuracy, IoU or mAP."
+    ],
+    "examples": [
+      "Phone face unlock and Google Lens.",
+      "Medical X-ray analysis, number-plate recognition, crop disease detection."
+    ],
+    "formulas": [
+      {
+        "formula": "IoU = area of overlap / area of union",
+        "meaning": "how well a predicted box matches the true box"
+      }
+    ],
+    "workedExample": null,
+    "practice": [
+      {
+        "question": "What is the difference between classification and object detection?",
+        "hint": "Where is the object?",
+        "answer": "Classification gives one label for the whole image; detection finds each object's label and its location as a bounding box."
+      },
+      {
+        "question": "Which neural network type is most used for images?",
+        "hint": "Uses filters.",
+        "answer": "Convolutional Neural Networks (CNNs)."
+      }
+    ],
+    "commonMistakes": [
+      "Training on too few images without augmentation, causing overfitting."
+    ],
+    "followUps": [
+      "Convolutional Neural Networks (CNN)",
+      "Neural Networks and Deep Learning",
+      "Artificial Intelligence (AI)"
+    ],
+    "faq": [
+      {
+        "question": "What are the applications of computer vision?",
+        "answer": "Face recognition, self-driving cars (lane and pedestrian detection), medical imaging, surveillance, OCR for documents, quality inspection in factories, retail checkout without cashiers, agriculture (plant disease detection) and AR filters."
+      }
+    ]
+  },
+  {
+    "id": "fuzzy-logic",
+    "subject": "Artificial Intelligence",
+    "title": "Fuzzy Logic",
+    "aliases": [
+      "fuzzy logic",
+      "fuzzy set",
+      "fuzzy sets",
+      "membership function",
+      "fuzzification",
+      "defuzzification",
+      "fuzzy inference system"
+    ],
+    "simpleExplanation": "Fuzzy logic handles partial truth: instead of only true (1) or false (0), a statement can be true to a degree between 0 and 1. It lets machines reason with vague human terms like 'warm', 'fast' or 'slightly high'.",
+    "analogy": "A dimmer switch instead of an on/off switch: the light can be 30% or 70% on.",
+    "keyPoints": [
+      "A fuzzy set gives each element a membership degree μ(x) between 0 and 1.",
+      "Membership functions can be triangular, trapezoidal or Gaussian.",
+      "Fuzzy inference steps: fuzzification → rule evaluation (IF-THEN) → aggregation → defuzzification.",
+      "Fuzzy AND = min, fuzzy OR = max, NOT = 1 − μ.",
+      "Common defuzzification: centroid (centre of gravity).",
+      "Used in control systems: washing machines, AC, camera autofocus, braking systems."
+    ],
+    "steps": [
+      "Fuzzify crisp inputs into membership degrees.",
+      "Apply fuzzy IF-THEN rules.",
+      "Combine the outputs of all rules.",
+      "Defuzzify into one crisp output value."
+    ],
+    "examples": [
+      "IF temperature is hot AND humidity is high THEN fan speed is fast.",
+      "Washing machines choose wash time from how dirty and how full the load is."
+    ],
+    "formulas": [
+      {
+        "formula": "μ(A AND B) = min(μA, μB); μ(A OR B) = max(μA, μB); μ(NOT A) = 1 − μA",
+        "meaning": "standard fuzzy operators"
+      }
+    ],
+    "workedExample": {
+      "problem": "Temperature is 'hot' with μ = 0.7 and humidity is 'high' with μ = 0.4. How strongly does the rule 'IF hot AND high THEN fan fast' fire?",
+      "steps": [
+        "Fuzzy AND uses the minimum.",
+        "min(0.7, 0.4) = 0.4"
+      ],
+      "answer": "The rule fires with strength 0.4."
+    },
+    "practice": [
+      {
+        "question": "What is the fuzzy OR of 0.3 and 0.8?",
+        "hint": "Maximum.",
+        "answer": "0.8."
+      }
+    ],
+    "commonMistakes": [
+      "Confusing fuzzy membership with probability; membership measures degree of truth, not chance."
+    ],
+    "followUps": [
+      "Expert Systems",
+      "Knowledge Representation and Logic",
+      "Artificial Intelligence (AI)"
+    ],
+    "faq": [
+      {
+        "question": "What is the difference between fuzzy logic and boolean logic?",
+        "answer": "Boolean (crisp) logic allows only 0 or 1: a room is hot or not hot. Fuzzy logic allows any degree between 0 and 1: a room can be 0.7 hot. This matches how people describe the world and gives smoother control."
+      },
+      {
+        "question": "What are the advantages of fuzzy logic?",
+        "answer": "Handles imprecise and uncertain data, easy to understand rules in human terms, needs no exact mathematical model, gives smooth control, cheap to implement in hardware."
+      }
+    ]
+  },
+  {
+    "id": "genetic-algorithms",
+    "subject": "Artificial Intelligence",
+    "title": "Genetic Algorithms",
+    "aliases": [
+      "genetic algorithm",
+      "genetic algorithms",
+      "evolutionary algorithm",
+      "evolutionary computing",
+      "crossover",
+      "mutation",
+      "fitness function",
+      "selection in genetic algorithm",
+      "chromosome"
+    ],
+    "simpleExplanation": "A genetic algorithm is an optimisation method inspired by natural evolution. It keeps a population of candidate solutions (chromosomes), scores them with a fitness function, and creates better generations through selection, crossover and mutation.",
+    "analogy": "Like breeding the fastest racehorses: keep the best, combine their traits, add small random changes, and repeat for many generations.",
+    "keyPoints": [
+      "Chromosome = encoded solution (often a bit string); gene = one part of it.",
+      "Fitness function measures how good a solution is.",
+      "Selection: roulette wheel, tournament or rank selection picks parents.",
+      "Crossover combines two parents (single-point, two-point, uniform).",
+      "Mutation randomly flips genes to keep diversity and avoid local optima.",
+      "Stops after a number of generations or when fitness stops improving.",
+      "Used for scheduling, route planning (TSP), design optimisation and feature selection."
+    ],
+    "steps": [
+      "Create a random initial population.",
+      "Evaluate the fitness of each individual.",
+      "Select parents based on fitness.",
+      "Apply crossover and mutation to produce children.",
+      "Replace the population and repeat until the stop condition."
+    ],
+    "examples": [
+      "Single-point crossover of 11001 and 00110 after position 2 gives 11110 and 00001.",
+      "NASA used a genetic algorithm to design an antenna for a spacecraft."
+    ],
+    "formulas": [
+      {
+        "formula": "P(select i) = fitness(i) / Σ fitness",
+        "meaning": "roulette wheel selection probability"
+      }
+    ],
+    "workedExample": {
+      "problem": "Fitness values are A = 2, B = 3, C = 5. Find each selection probability with roulette wheel selection.",
+      "steps": [
+        "Total fitness = 2 + 3 + 5 = 10",
+        "P(A) = 2/10, P(B) = 3/10, P(C) = 5/10"
+      ],
+      "answer": "A = 0.2, B = 0.3, C = 0.5"
+    },
+    "practice": [
+      {
+        "question": "Why is mutation needed?",
+        "hint": "Diversity.",
+        "answer": "It introduces new genetic material so the population does not get stuck in a local optimum."
+      }
+    ],
+    "commonMistakes": [
+      "Setting the mutation rate too high, which turns the search into random guessing."
+    ],
+    "followUps": [
+      "Search Algorithms in AI",
+      "Machine Learning",
+      "Artificial Intelligence (AI)"
+    ],
+    "faq": [
+      {
+        "question": "What are the operators of a genetic algorithm?",
+        "answer": "Selection (choose fitter parents), crossover (combine parts of two parents to make children) and mutation (randomly change some genes). Elitism is often added to copy the best individuals unchanged into the next generation."
+      }
+    ]
+  },
+  {
+    "id": "probabilistic-reasoning",
+    "subject": "Artificial Intelligence",
+    "title": "Probabilistic Reasoning and Bayesian Networks",
+    "aliases": [
+      "probabilistic reasoning",
+      "bayesian network",
+      "bayesian networks",
+      "bayes network",
+      "belief network",
+      "bayes theorem in ai",
+      "uncertainty in ai",
+      "reasoning under uncertainty",
+      "hidden markov model",
+      "hmm",
+      "markov model"
+    ],
+    "simpleExplanation": "Real-world information is uncertain, so AI often reasons with probabilities. Bayes' theorem updates a belief when new evidence arrives. A Bayesian network is a directed acyclic graph where nodes are random variables and edges show direct dependencies, each node having a conditional probability table.",
+    "analogy": "Like a doctor who starts with how common a disease is, then updates that belief after seeing a test result.",
+    "keyPoints": [
+      "Bayes' theorem: P(A|B) = P(B|A) × P(A) / P(B).",
+      "Prior P(A) is the belief before evidence; posterior P(A|B) is the belief after evidence.",
+      "Bayesian network: DAG + conditional probability tables (CPTs).",
+      "It represents the full joint distribution compactly using conditional independence.",
+      "Inference can be exact (variable elimination) or approximate (sampling).",
+      "Hidden Markov Models handle sequences with hidden states (speech recognition, POS tagging)."
+    ],
+    "steps": [
+      "Identify the random variables.",
+      "Draw edges from causes to effects (a DAG).",
+      "Fill in conditional probability tables.",
+      "Use Bayes' rule or network inference to answer queries."
+    ],
+    "examples": [
+      "Classic network: Burglary and Earthquake both cause Alarm; Alarm causes John calls and Mary calls.",
+      "Spam filters use Bayes' theorem on word probabilities."
+    ],
+    "formulas": [
+      {
+        "formula": "P(A|B) = P(B|A) · P(A) / P(B)",
+        "meaning": "Bayes' theorem"
+      },
+      {
+        "formula": "P(X1..Xn) = Π P(Xi | Parents(Xi))",
+        "meaning": "joint probability in a Bayesian network"
+      }
+    ],
+    "workedExample": {
+      "problem": "1% of people have a disease. The test detects it 90% of the time and gives a false positive 5% of the time. If a person tests positive, what is the chance they have the disease?",
+      "steps": [
+        "P(D) = 0.01, P(+|D) = 0.9, P(+|not D) = 0.05",
+        "P(+) = 0.9×0.01 + 0.05×0.99 = 0.009 + 0.0495 = 0.0585",
+        "P(D|+) = 0.009 / 0.0585"
+      ],
+      "answer": "About 0.154, i.e. 15.4%."
+    },
+    "practice": [
+      {
+        "question": "What does an edge in a Bayesian network mean?",
+        "hint": "Dependency.",
+        "answer": "The parent node directly influences the child node's probability."
+      }
+    ],
+    "commonMistakes": [
+      "Ignoring the prior (base rate), which makes rare events seem far more likely after a positive test."
+    ],
+    "followUps": [
+      "Naive Bayes Classifier",
+      "Probability",
+      "Knowledge Representation and Logic"
+    ],
+    "faq": [
+      {
+        "question": "Why do we need probabilistic reasoning in AI?",
+        "answer": "Because agents rarely have complete or certain information: sensors are noisy, the world is unpredictable and rules have exceptions. Probability lets an agent measure how likely each possibility is and make the best decision under uncertainty."
+      }
+    ]
+  },
+  {
+    "id": "generative-ai",
+    "subject": "Artificial Intelligence",
+    "title": "Generative AI",
+    "aliases": [
+      "generative ai",
+      "gen ai",
+      "genai",
+      "generative models",
+      "gan",
+      "gans",
+      "generative adversarial network",
+      "diffusion model",
+      "diffusion models",
+      "vae",
+      "variational autoencoder",
+      "text to image",
+      "deepfake"
+    ],
+    "simpleExplanation": "Generative AI creates new content such as text, images, audio, video or code that resembles its training data. It learns the patterns of the data and then produces new samples. Main model families are large language models (text), GANs, VAEs and diffusion models (images).",
+    "analogy": "Like an art student who studies thousands of paintings and then paints a new picture in a similar style.",
+    "keyPoints": [
+      "Discriminative models classify (cat or dog?); generative models create new data.",
+      "GAN: a generator makes fake samples and a discriminator tries to spot them; both improve by competing.",
+      "VAE: encodes data into a latent space and decodes samples from it.",
+      "Diffusion models (Stable Diffusion, DALL·E) learn to remove noise step by step to create images.",
+      "Large language models (GPT, Claude, Gemini) generate text by predicting the next token.",
+      "Concerns: hallucinations, deepfakes, copyright, bias and misuse."
+    ],
+    "steps": [
+      "Collect a large dataset.",
+      "Train a generative model to learn the data distribution.",
+      "Give a prompt or random noise as input.",
+      "The model generates new content.",
+      "Review and refine the output (human feedback, filters)."
+    ],
+    "examples": [
+      "ChatGPT writing an essay; GitHub Copilot writing code.",
+      "Midjourney and DALL·E creating images from text prompts."
+    ],
+    "formulas": [],
+    "workedExample": null,
+    "practice": [
+      {
+        "question": "What are the two networks in a GAN?",
+        "hint": "One creates, one judges.",
+        "answer": "The generator and the discriminator."
+      },
+      {
+        "question": "What is a hallucination in generative AI?",
+        "hint": "Confident but wrong.",
+        "answer": "When the model produces fluent content that is false or made up."
+      }
+    ],
+    "commonMistakes": [
+      "Trusting generated facts without checking; models can hallucinate."
+    ],
+    "followUps": [
+      "Transformers and Large Language Models",
+      "Neural Networks and Deep Learning",
+      "AI Ethics and Responsible AI"
+    ],
+    "faq": [
+      {
+        "question": "What are the applications of generative AI?",
+        "answer": "Chatbots and writing assistants, code generation, image and video creation, music generation, drug and molecule design, data augmentation for training, personalised marketing content and game asset creation."
+      },
+      {
+        "question": "How does a GAN work?",
+        "answer": "The generator turns random noise into a fake sample; the discriminator receives real and fake samples and predicts which is real. The generator is trained to fool the discriminator and the discriminator is trained to catch it. Over time the generator produces very realistic samples."
+      }
+    ]
+  },
+  {
+    "id": "transformers-llm",
+    "subject": "Artificial Intelligence",
+    "title": "Transformers and Large Language Models",
+    "aliases": [
+      "transformer",
+      "transformers",
+      "transformer model",
+      "attention mechanism",
+      "self attention",
+      "self-attention",
+      "large language model",
+      "large language models",
+      "llm",
+      "llms",
+      "gpt",
+      "bert",
+      "chatgpt",
+      "prompt engineering",
+      "fine tuning",
+      "fine-tuning",
+      "rag",
+      "retrieval augmented generation"
+    ],
+    "simpleExplanation": "A transformer is a neural network architecture that uses self-attention to look at all words in a sentence at once and decide which words matter most to each other. Large language models (LLMs) such as GPT are huge transformers trained on massive text to predict the next token, which lets them answer questions, write and summarise.",
+    "analogy": "Self-attention is like reading a sentence and, for each word, highlighting the other words that help explain it ('it' → which noun does it refer to?).",
+    "keyPoints": [
+      "Introduced in the 2017 paper 'Attention Is All You Need'.",
+      "Self-attention uses Query, Key and Value vectors to weigh every token against every other token.",
+      "Multi-head attention learns several kinds of relationships in parallel; positional encoding adds word order.",
+      "Encoder-only models (BERT) are good for understanding; decoder-only models (GPT) are good for generation; encoder-decoder models (T5) for translation.",
+      "LLM training: pre-training on huge text, then fine-tuning and RLHF (reinforcement learning from human feedback).",
+      "Prompt engineering shapes outputs; RAG adds retrieved documents to the prompt to reduce hallucinations.",
+      "Transformers process tokens in parallel, so they train faster than RNNs."
+    ],
+    "steps": [
+      "Split text into tokens and convert them to embeddings.",
+      "Add positional encodings.",
+      "Pass through stacked attention and feed-forward layers.",
+      "The output layer gives probabilities for the next token.",
+      "Generate text token by token."
+    ],
+    "examples": [
+      "ChatGPT, Claude and Gemini are decoder-style LLMs.",
+      "Google Search uses BERT to understand queries."
+    ],
+    "formulas": [
+      {
+        "formula": "Attention(Q, K, V) = softmax(QKᵀ / √d_k) · V",
+        "meaning": "scaled dot-product attention"
+      }
+    ],
+    "workedExample": null,
+    "practice": [
+      {
+        "question": "Why are transformers faster to train than RNNs?",
+        "hint": "Sequential vs parallel.",
+        "answer": "They process all tokens of a sequence in parallel instead of one step at a time."
+      },
+      {
+        "question": "What does RAG add to an LLM?",
+        "hint": "Retrieval.",
+        "answer": "Relevant documents retrieved from a knowledge source are added to the prompt so the answer is grounded in real information."
+      }
+    ],
+    "commonMistakes": [
+      "Thinking LLMs look facts up; without RAG they generate from patterns learned in training."
+    ],
+    "followUps": [
+      "Natural Language Processing (NLP)",
+      "Generative AI",
+      "Recurrent Neural Networks (RNN and LSTM)"
+    ],
+    "faq": [
+      {
+        "question": "What is the difference between BERT and GPT?",
+        "answer": "BERT is an encoder-only transformer that reads text in both directions and is trained by filling in masked words; it is best for understanding tasks like classification and search. GPT is a decoder-only transformer that reads left to right and predicts the next word; it is best for generating text."
+      },
+      {
+        "question": "What is prompt engineering?",
+        "answer": "Designing the input to an LLM so it gives better output: giving clear instructions, context, examples (few-shot prompting), a role, the desired format, and asking it to reason step by step."
+      },
+      {
+        "question": "What is fine-tuning?",
+        "answer": "Taking a pre-trained model and training it further on a smaller, task-specific dataset so it performs better on that task or style, instead of training a model from scratch."
+      }
+    ]
+  },
+  {
+    "id": "ai-ethics",
+    "subject": "Artificial Intelligence",
+    "title": "AI Ethics and Responsible AI",
+    "aliases": [
+      "ai ethics",
+      "ethics in ai",
+      "responsible ai",
+      "ai bias",
+      "bias in ai",
+      "explainable ai",
+      "xai",
+      "fairness in ai",
+      "ai safety",
+      "risks of ai",
+      "challenges of ai"
+    ],
+    "simpleExplanation": "AI ethics is about building and using AI so it is fair, safe, transparent, private and accountable. Because AI learns from data and can affect jobs, loans, hiring and justice, its mistakes and biases can harm people at scale.",
+    "analogy": "Like traffic rules for cars: the technology is powerful and useful, but it needs rules so it does not hurt people.",
+    "keyPoints": [
+      "Bias: models trained on biased data can discriminate (e.g. hiring tools favouring one gender).",
+      "Transparency and explainability (XAI): people should understand why a decision was made (LIME, SHAP).",
+      "Privacy: personal data must be collected and used lawfully (GDPR, India's DPDP Act).",
+      "Accountability: humans remain responsible for AI decisions.",
+      "Safety and robustness: AI should behave reliably and resist misuse (deepfakes, misinformation).",
+      "Societal impact: job displacement, environmental cost of training large models."
+    ],
+    "steps": [
+      "Check training data for bias and representativeness.",
+      "Measure fairness across groups.",
+      "Make models explainable and document them.",
+      "Protect user data and get consent.",
+      "Keep human oversight and monitor after deployment."
+    ],
+    "examples": [
+      "Amazon scrapped a hiring tool in 2018 that penalised resumes containing the word 'women's'.",
+      "Face recognition systems have shown higher error rates for darker skin tones."
+    ],
+    "formulas": [],
+    "workedExample": null,
+    "practice": [
+      {
+        "question": "What is explainable AI?",
+        "hint": "Why did it decide that?",
+        "answer": "Methods that make an AI model's decisions understandable to humans."
+      }
+    ],
+    "commonMistakes": [
+      "Assuming an algorithm is neutral just because it is mathematical; it inherits bias from its data."
+    ],
+    "followUps": [
+      "Artificial Intelligence (AI)",
+      "Generative AI",
+      "Machine Learning"
+    ],
+    "faq": [
+      {
+        "question": "What are the principles of responsible AI?",
+        "answer": "Fairness, transparency and explainability, privacy and security, accountability, reliability and safety, inclusiveness and human oversight."
+      }
+    ]
+  },
+  {
+    "id": "turing-test",
+    "subject": "Artificial Intelligence",
+    "title": "Turing Test",
+    "aliases": [
+      "turing test",
+      "imitation game",
+      "chinese room",
+      "alan turing"
+    ],
+    "simpleExplanation": "The Turing Test, proposed by Alan Turing in 1950, checks whether a machine can show intelligent behaviour indistinguishable from a human. A human judge chats by text with a hidden human and a hidden machine; if the judge cannot reliably tell which is the machine, the machine passes.",
+    "analogy": "Like a blind taste test: if you cannot tell the copy from the original, the copy is considered just as good.",
+    "keyPoints": [
+      "Introduced in the paper 'Computing Machinery and Intelligence' (1950), originally called the imitation game.",
+      "Three participants: interrogator, human and machine, communicating only by text.",
+      "It tests behaviour, not whether the machine truly understands.",
+      "Searle's Chinese Room argument says passing the test does not prove understanding.",
+      "CAPTCHA is a 'reverse Turing test' used to tell humans from bots."
+    ],
+    "steps": [
+      "The interrogator asks questions by text.",
+      "The human and the machine both answer.",
+      "The interrogator guesses which is the machine.",
+      "If the machine is mistaken for the human often enough, it passes."
+    ],
+    "examples": [
+      "ELIZA (1966) fooled some users with simple pattern matching.",
+      "CAPTCHAs on websites."
+    ],
+    "formulas": [],
+    "workedExample": null,
+    "practice": [
+      {
+        "question": "Who proposed the Turing Test and when?",
+        "hint": "1950.",
+        "answer": "Alan Turing, in 1950."
+      }
+    ],
+    "commonMistakes": [
+      "Thinking passing the Turing Test proves a machine is conscious."
+    ],
+    "followUps": [
+      "Artificial Intelligence (AI)",
+      "Natural Language Processing (NLP)",
+      "AI Ethics and Responsible AI"
+    ],
+    "faq": [
+      {
+        "question": "What are the limitations of the Turing Test?",
+        "answer": "It measures only imitation of human conversation, not real understanding (Chinese Room argument); a machine can pass by tricks; it ignores non-language intelligence such as vision or physical skills; and results depend on the judge."
+      }
+    ]
+  }
+]

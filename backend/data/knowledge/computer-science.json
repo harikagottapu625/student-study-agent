@@ -1,0 +1,2622 @@
+[
+  {
+    "id": "dbms",
+    "subject": "DBMS",
+    "title": "Database Management System (DBMS)",
+    "aliases": [
+      "dbms",
+      "database management system",
+      "database",
+      "databases",
+      "rdbms",
+      "relational database"
+    ],
+    "simpleExplanation": "A DBMS is software that stores, organizes and manages data so many users and programs can create, read, update and delete it safely. Instead of keeping data in scattered files, a DBMS keeps it in one place, controls who can access it, prevents duplicate or inconsistent data, and recovers it after crashes. A relational DBMS (RDBMS) such as MySQL, PostgreSQL or Oracle stores data in tables made of rows and columns, and you talk to it using SQL.",
+    "analogy": "A DBMS is like a well-run library. The books are the data, the catalogue is the index, the librarian enforces rules about who can borrow what, and the record book makes sure two people cannot borrow the same copy at the same time.",
+    "keyPoints": [
+      "Data is stored in tables (relations): rows are records, columns are attributes.",
+      "Reduces redundancy and inconsistency compared with plain file systems.",
+      "Provides security, concurrency control, backup and recovery.",
+      "Uses SQL for defining (DDL) and manipulating (DML) data.",
+      "Examples: MySQL, PostgreSQL, Oracle, SQL Server, MongoDB (NoSQL)."
+    ],
+    "steps": [
+      "Data is described by a schema: the tables, columns, data types and constraints.",
+      "Users or applications send queries (usually SQL) to the DBMS.",
+      "The query processor parses and optimizes the query to find the fastest way to run it.",
+      "The storage manager reads or writes the data on disk, using indexes to find rows quickly.",
+      "The transaction manager makes sure changes follow ACID rules, even when many users work at once."
+    ],
+    "examples": [
+      "A college stores students, courses and marks in tables and joins them to print a report card.",
+      "A bank uses a DBMS so that a money transfer either fully happens or does not happen at all."
+    ],
+    "formulas": [],
+    "workedExample": {
+      "problem": "Why is a DBMS better than storing student records in separate Excel files per department?",
+      "steps": [
+        "Separate files duplicate the same student details, so updates must be made in many places.",
+        "Duplicates drift apart and become inconsistent.",
+        "A DBMS stores each student once and links other tables to it with keys.",
+        "It also enforces access control and lets many staff update data at the same time safely."
+      ],
+      "answer": "A DBMS removes redundancy, keeps data consistent, and adds security, concurrency and recovery."
+    },
+    "practice": [
+      {
+        "question": "Name two problems of a traditional file system that a DBMS solves.",
+        "hint": "Think about duplicate copies of data.",
+        "answer": "Data redundancy and inconsistency (also: poor security, no concurrency control, difficult recovery)."
+      },
+      {
+        "question": "What is the difference between DDL and DML?",
+        "hint": "One defines structure, one changes data.",
+        "answer": "DDL (CREATE, ALTER, DROP) defines the schema; DML (SELECT, INSERT, UPDATE, DELETE) works with the data."
+      },
+      {
+        "question": "Give an example of an RDBMS and a NoSQL database.",
+        "hint": "One uses tables, one uses documents.",
+        "answer": "RDBMS: MySQL or PostgreSQL. NoSQL: MongoDB."
+      }
+    ],
+    "commonMistakes": [
+      "Confusing a database (the data) with a DBMS (the software that manages it).",
+      "Thinking every DBMS is relational; NoSQL systems like MongoDB are also DBMSs."
+    ],
+    "followUps": [
+      "Normalization",
+      "SQL",
+      "ACID properties"
+    ]
+  },
+  {
+    "id": "sql",
+    "subject": "DBMS",
+    "title": "SQL (Structured Query Language)",
+    "aliases": [
+      "sql",
+      "structured query language",
+      "sql queries",
+      "select query"
+    ],
+    "simpleExplanation": "SQL is the standard language used to talk to relational databases. You use it to create tables, insert and change data, and ask questions (queries) such as 'show all students with more than 80 marks'. SQL is declarative: you say what result you want, and the database works out how to get it.",
+    "analogy": "SQL is like ordering at a restaurant: you say what you want ('two dosas, no onions'), not how the kitchen should cook it.",
+    "keyPoints": [
+      "DDL: CREATE, ALTER, DROP define the structure.",
+      "DML: SELECT, INSERT, UPDATE, DELETE work with data.",
+      "DCL: GRANT, REVOKE control permissions; TCL: COMMIT, ROLLBACK control transactions.",
+      "WHERE filters rows, GROUP BY groups them, HAVING filters groups, ORDER BY sorts.",
+      "JOIN combines rows from related tables."
+    ],
+    "steps": [
+      "FROM picks the table(s) and JOINs them.",
+      "WHERE removes rows that do not match the condition.",
+      "GROUP BY groups the remaining rows; aggregate functions (COUNT, SUM, AVG) run per group.",
+      "HAVING filters the groups.",
+      "SELECT chooses the columns, then ORDER BY sorts and LIMIT trims the result."
+    ],
+    "examples": [
+      "SELECT name, marks FROM students WHERE marks > 80 ORDER BY marks DESC;",
+      "SELECT dept, AVG(marks) FROM students GROUP BY dept HAVING AVG(marks) > 70;"
+    ],
+    "formulas": [],
+    "workedExample": {
+      "problem": "Write a query to count students in each department.",
+      "steps": [
+        "Use the students table.",
+        "Group rows by department.",
+        "Count rows in each group."
+      ],
+      "answer": "SELECT dept, COUNT(*) AS total FROM students GROUP BY dept;"
+    },
+    "practice": [
+      {
+        "question": "What is the difference between WHERE and HAVING?",
+        "hint": "Rows versus groups.",
+        "answer": "WHERE filters individual rows before grouping; HAVING filters groups after GROUP BY."
+      },
+      {
+        "question": "Write a query to list the 3 highest-paid employees.",
+        "hint": "Sort, then limit.",
+        "answer": "SELECT * FROM employees ORDER BY salary DESC LIMIT 3;"
+      },
+      {
+        "question": "Which command removes a table completely?",
+        "hint": "It is DDL.",
+        "answer": "DROP TABLE table_name;"
+      }
+    ],
+    "commonMistakes": [
+      "Using WHERE with aggregate functions such as COUNT; use HAVING instead.",
+      "Forgetting the WHERE clause in UPDATE or DELETE, which changes every row."
+    ],
+    "followUps": [
+      "Joins in SQL",
+      "Normalization",
+      "Indexing"
+    ]
+  },
+  {
+    "id": "normalization",
+    "subject": "DBMS",
+    "title": "Normalization",
+    "aliases": [
+      "normalization",
+      "normalisation",
+      "normal forms",
+      "1nf",
+      "2nf",
+      "3nf",
+      "bcnf",
+      "first normal form",
+      "second normal form",
+      "third normal form"
+    ],
+    "simpleExplanation": "Normalization is the process of organizing tables to reduce duplicate data and avoid update problems (anomalies). You split a large table into smaller related tables so each fact is stored once. The steps are called normal forms: 1NF, 2NF, 3NF and BCNF.",
+    "analogy": "It is like organizing a messy cupboard into labelled boxes: shirts in one box, books in another, so you never keep two copies of the same thing in different places.",
+    "keyPoints": [
+      "1NF: every column holds atomic (single) values and there are no repeating groups.",
+      "2NF: in 1NF and every non-key column depends on the whole primary key (no partial dependency).",
+      "3NF: in 2NF and no non-key column depends on another non-key column (no transitive dependency).",
+      "BCNF: for every functional dependency X → Y, X must be a super key.",
+      "Normalization removes insertion, update and deletion anomalies."
+    ],
+    "steps": [
+      "List the functional dependencies (which columns determine which).",
+      "Make values atomic to reach 1NF.",
+      "Move columns that depend on part of a composite key into their own table (2NF).",
+      "Move columns that depend on other non-key columns into their own table (3NF).",
+      "Check every determinant is a super key for BCNF."
+    ],
+    "examples": [
+      "Table (StudentID, CourseID, StudentName, CourseName): StudentName depends only on StudentID, so split into Students, Courses and Enrolments tables for 2NF.",
+      "Table (EmpID, DeptID, DeptName): DeptName depends on DeptID, not EmpID, so move it to a Departments table for 3NF."
+    ],
+    "formulas": [
+      {
+        "formula": "X → Y",
+        "meaning": "Functional dependency: the value of X determines the value of Y."
+      }
+    ],
+    "workedExample": {
+      "problem": "Normalize Orders(OrderID, CustomerID, CustomerCity, ProductID, Qty) with key (OrderID, ProductID).",
+      "steps": [
+        "CustomerID and CustomerCity depend only on OrderID, which is part of the key: a partial dependency.",
+        "Split into Orders(OrderID, CustomerID) and OrderItems(OrderID, ProductID, Qty) for 2NF.",
+        "CustomerCity depends on CustomerID, a non-key column: a transitive dependency.",
+        "Move it to Customers(CustomerID, CustomerCity) for 3NF."
+      ],
+      "answer": "Customers(CustomerID, CustomerCity), Orders(OrderID, CustomerID), OrderItems(OrderID, ProductID, Qty)."
+    },
+    "practice": [
+      {
+        "question": "Which normal form removes transitive dependencies?",
+        "hint": "It comes after 2NF.",
+        "answer": "Third normal form (3NF)."
+      },
+      {
+        "question": "What is a partial dependency?",
+        "hint": "Think of composite keys.",
+        "answer": "A non-key column that depends on only part of a composite primary key."
+      },
+      {
+        "question": "Name the three anomalies normalization prevents.",
+        "hint": "Insert, change, remove.",
+        "answer": "Insertion, update and deletion anomalies."
+      }
+    ],
+    "commonMistakes": [
+      "Thinking 2NF matters for tables with a single-column key; partial dependency needs a composite key.",
+      "Over-normalizing read-heavy tables; sometimes denormalization is used for performance."
+    ],
+    "followUps": [
+      "Functional dependency",
+      "Keys in DBMS",
+      "ER model"
+    ]
+  },
+  {
+    "id": "dbms-keys",
+    "subject": "DBMS",
+    "title": "Keys in DBMS (Primary, Foreign, Candidate)",
+    "aliases": [
+      "primary key",
+      "foreign key",
+      "candidate key",
+      "super key",
+      "composite key",
+      "keys in dbms",
+      "keys"
+    ],
+    "simpleExplanation": "A key is a column (or set of columns) that identifies rows. A primary key uniquely identifies each row and cannot be NULL. A foreign key is a column in one table that refers to the primary key of another table, linking them. Candidate keys are all column sets that could be the primary key; a super key is any set that uniquely identifies rows, even with extra columns.",
+    "analogy": "A primary key is like your roll number: unique to you. A foreign key is your roll number written on an exam sheet, linking that sheet back to you.",
+    "keyPoints": [
+      "Primary key: unique and NOT NULL, one per table.",
+      "Foreign key: refers to a primary key in another table and enforces referential integrity.",
+      "Candidate key: a minimal super key; one is chosen as the primary key.",
+      "Composite key: a key made of two or more columns.",
+      "Super key: any set of columns that uniquely identifies a row."
+    ],
+    "steps": [
+      "Find column sets that uniquely identify a row (super keys).",
+      "Remove extra columns to get minimal ones (candidate keys).",
+      "Choose one candidate key as the primary key.",
+      "Add foreign keys in related tables that point to this primary key."
+    ],
+    "examples": [
+      "Students(RollNo PRIMARY KEY, Name, Email UNIQUE): RollNo and Email are both candidate keys.",
+      "Marks(RollNo FOREIGN KEY → Students.RollNo, Subject, Score) with composite key (RollNo, Subject)."
+    ],
+    "formulas": [],
+    "workedExample": null,
+    "practice": [
+      {
+        "question": "Can a primary key contain NULL values?",
+        "hint": "Think uniqueness and identification.",
+        "answer": "No. A primary key must be unique and NOT NULL."
+      },
+      {
+        "question": "What does referential integrity mean?",
+        "hint": "Foreign keys.",
+        "answer": "A foreign key value must match an existing primary key value in the referenced table (or be NULL)."
+      }
+    ],
+    "commonMistakes": [
+      "Thinking a table can have several primary keys; it has one, which may be composite.",
+      "Confusing a super key with a candidate key; candidate keys are minimal."
+    ],
+    "followUps": [
+      "Normalization",
+      "ER model",
+      "Joins in SQL"
+    ]
+  },
+  {
+    "id": "acid",
+    "subject": "DBMS",
+    "title": "Transactions and ACID Properties",
+    "aliases": [
+      "acid",
+      "acid properties",
+      "transaction",
+      "transactions",
+      "atomicity",
+      "consistency",
+      "isolation",
+      "durability"
+    ],
+    "simpleExplanation": "A transaction is a group of database operations treated as one unit, such as 'debit account A and credit account B'. ACID describes the guarantees a transaction gives: Atomicity (all or nothing), Consistency (rules stay valid), Isolation (concurrent transactions do not interfere), and Durability (committed changes survive crashes).",
+    "analogy": "Paying at a shop: either the money leaves your account and the shop receives it, or nothing happens. You never lose money halfway.",
+    "keyPoints": [
+      "Atomicity: every operation in the transaction happens, or none does (rollback).",
+      "Consistency: the database moves from one valid state to another.",
+      "Isolation: concurrent transactions behave as if run one after another.",
+      "Durability: once committed, changes are saved even after a power failure.",
+      "COMMIT saves a transaction; ROLLBACK undoes it."
+    ],
+    "steps": [
+      "BEGIN the transaction.",
+      "Run the operations (for example, debit and credit).",
+      "If every step succeeds, COMMIT; otherwise ROLLBACK.",
+      "The log lets the DBMS redo committed work and undo incomplete work after a crash."
+    ],
+    "examples": [
+      "Bank transfer of ₹500 from A to B.",
+      "Booking the last train seat: isolation stops two people booking it at once."
+    ],
+    "formulas": [],
+    "workedExample": null,
+    "practice": [
+      {
+        "question": "Which ACID property is violated if a crash after COMMIT loses the data?",
+        "hint": "Permanence.",
+        "answer": "Durability."
+      },
+      {
+        "question": "What does ROLLBACK do?",
+        "hint": "Undo.",
+        "answer": "It undoes all changes made by the current transaction since it began."
+      }
+    ],
+    "commonMistakes": [
+      "Confusing consistency (valid rules) with isolation (no interference)."
+    ],
+    "followUps": [
+      "Concurrency control",
+      "Deadlock",
+      "Indexing"
+    ]
+  },
+  {
+    "id": "sql-joins",
+    "subject": "DBMS",
+    "title": "Joins in SQL",
+    "aliases": [
+      "join",
+      "joins",
+      "inner join",
+      "left join",
+      "right join",
+      "outer join",
+      "full join",
+      "sql joins"
+    ],
+    "simpleExplanation": "A join combines rows from two tables using a related column, usually a foreign key. INNER JOIN keeps only matching rows. LEFT JOIN keeps every row from the left table and fills NULL where there is no match. RIGHT JOIN does the same for the right table, and FULL OUTER JOIN keeps all rows from both.",
+    "analogy": "Matching a class attendance list with a fee list by roll number: inner join shows students on both lists, left join shows everyone in attendance even if fees are missing.",
+    "keyPoints": [
+      "INNER JOIN: only rows that match in both tables.",
+      "LEFT JOIN: all rows from the left table plus matches.",
+      "RIGHT JOIN: all rows from the right table plus matches.",
+      "FULL OUTER JOIN: all rows from both tables.",
+      "CROSS JOIN: every combination (Cartesian product)."
+    ],
+    "steps": [
+      "Pick the two tables.",
+      "Choose the matching columns (ON clause).",
+      "Choose the join type based on which unmatched rows you need.",
+      "Select the columns you want."
+    ],
+    "examples": [
+      "SELECT s.name, m.score FROM students s INNER JOIN marks m ON s.roll = m.roll;",
+      "SELECT s.name, m.score FROM students s LEFT JOIN marks m ON s.roll = m.roll; -- includes students with no marks"
+    ],
+    "formulas": [
+      {
+        "formula": "rows(CROSS JOIN) = rows(A) × rows(B)",
+        "meaning": "A cross join pairs every row of A with every row of B."
+      }
+    ],
+    "workedExample": null,
+    "practice": [
+      {
+        "question": "Which join lists all customers, including those who never ordered?",
+        "hint": "Keep the left table.",
+        "answer": "customers LEFT JOIN orders."
+      },
+      {
+        "question": "Table A has 4 rows and B has 5. How many rows does A CROSS JOIN B return?",
+        "hint": "Multiply.",
+        "answer": "20 rows."
+      }
+    ],
+    "commonMistakes": [
+      "Forgetting the ON condition, which produces a huge cross join."
+    ],
+    "followUps": [
+      "SQL",
+      "Keys in DBMS",
+      "Indexing"
+    ]
+  },
+  {
+    "id": "indexing",
+    "subject": "DBMS",
+    "title": "Indexing in Databases",
+    "aliases": [
+      "index",
+      "indexing",
+      "b tree",
+      "b+ tree",
+      "clustered index",
+      "database index"
+    ],
+    "simpleExplanation": "An index is an extra data structure (usually a B+ tree) that lets the database find rows quickly without scanning the whole table. It speeds up searches and sorting on the indexed column, but uses extra storage and slows down inserts and updates because the index must also be updated.",
+    "analogy": "The index at the back of a textbook: you jump straight to the right page instead of reading every page.",
+    "keyPoints": [
+      "Speeds up SELECT queries with WHERE, JOIN and ORDER BY on indexed columns.",
+      "Most databases use B+ trees; hash indexes suit exact-match lookups.",
+      "Clustered index: table rows are physically stored in index order (one per table).",
+      "Non-clustered index: a separate structure pointing to rows.",
+      "Trade-off: faster reads, slower writes, extra space."
+    ],
+    "steps": [
+      "Find slow queries and the columns they filter on.",
+      "Create an index on those columns.",
+      "Check the query plan to confirm the index is used.",
+      "Avoid indexing columns that change constantly or have few distinct values."
+    ],
+    "examples": [
+      "CREATE INDEX idx_email ON users(email);"
+    ],
+    "formulas": [
+      {
+        "formula": "Search cost ≈ O(log n) with a B+ tree vs O(n) for a full scan",
+        "meaning": "Indexes turn linear scans into logarithmic lookups."
+      }
+    ],
+    "workedExample": null,
+    "practice": [
+      {
+        "question": "Why not index every column?",
+        "hint": "Think about writes.",
+        "answer": "Each index uses space and must be updated on every insert, update and delete, slowing writes."
+      },
+      {
+        "question": "How many clustered indexes can a table have?",
+        "hint": "Rows can only be sorted one way.",
+        "answer": "One."
+      }
+    ],
+    "commonMistakes": [
+      "Assuming indexes always help; on small tables or low-selectivity columns a full scan can be faster."
+    ],
+    "followUps": [
+      "B+ tree",
+      "SQL",
+      "Normalization"
+    ]
+  },
+  {
+    "id": "er-model",
+    "subject": "DBMS",
+    "title": "ER Model (Entity-Relationship Diagram)",
+    "aliases": [
+      "er model",
+      "er diagram",
+      "entity relationship",
+      "entity relationship diagram",
+      "erd",
+      "entity",
+      "cardinality"
+    ],
+    "simpleExplanation": "The ER model is a way to design a database visually before creating tables. Entities are real-world things (Student, Course), attributes are their properties (name, credits), and relationships show how entities connect (a student enrolls in courses). Cardinality says how many: one-to-one, one-to-many or many-to-many.",
+    "analogy": "An ER diagram is the architect's blueprint; the tables are the building.",
+    "keyPoints": [
+      "Entity: rectangle. Attribute: ellipse. Relationship: diamond.",
+      "Key attribute is underlined; multivalued attributes use a double ellipse.",
+      "Weak entity (double rectangle) depends on another entity for its identity.",
+      "Cardinality: 1:1, 1:N, M:N.",
+      "An M:N relationship becomes a separate table when converted to relations."
+    ],
+    "steps": [
+      "Identify entities from the requirements (nouns).",
+      "List attributes and choose a key for each entity.",
+      "Identify relationships (verbs) and their cardinality.",
+      "Convert to tables: entities become tables, 1:N adds a foreign key, M:N gets its own table."
+    ],
+    "examples": [
+      "Student —enrolls— Course is M:N, so create Enrolment(StudentID, CourseID)."
+    ],
+    "formulas": [],
+    "workedExample": null,
+    "practice": [
+      {
+        "question": "How is a many-to-many relationship converted into tables?",
+        "hint": "A middle table.",
+        "answer": "Create a separate table containing the primary keys of both entities as foreign keys."
+      },
+      {
+        "question": "What is a weak entity?",
+        "hint": "It has no full key of its own.",
+        "answer": "An entity that cannot be uniquely identified by its own attributes and depends on an owner entity."
+      }
+    ],
+    "commonMistakes": [
+      "Storing an M:N relationship as a foreign key in one table."
+    ],
+    "followUps": [
+      "Keys in DBMS",
+      "Normalization",
+      "SQL"
+    ]
+  },
+  {
+    "id": "operating-system",
+    "subject": "Operating Systems",
+    "title": "Operating System",
+    "aliases": [
+      "operating system",
+      "os",
+      "what is os",
+      "functions of os",
+      "kernel"
+    ],
+    "simpleExplanation": "An operating system (OS) is the software that manages a computer's hardware and provides services to programs. It decides which program runs on the CPU, gives memory to programs, manages files and devices, and provides a user interface. Examples are Windows, Linux, macOS and Android.",
+    "analogy": "The OS is like a hotel manager: it assigns rooms (memory), schedules staff (CPU time), keeps records (files), and stops guests from entering each other's rooms (protection).",
+    "keyPoints": [
+      "Process management: creating, scheduling and ending programs.",
+      "Memory management: allocating and protecting RAM, virtual memory.",
+      "File system management: organizing data on disks.",
+      "Device management: drivers and I/O.",
+      "Security and protection; the kernel is the core part running in privileged mode."
+    ],
+    "steps": [
+      "The bootloader loads the kernel into memory.",
+      "The kernel initializes hardware and drivers.",
+      "User programs request services through system calls.",
+      "The scheduler shares CPU time among processes.",
+      "The OS handles interrupts from devices."
+    ],
+    "examples": [
+      "Opening a file in Notepad triggers system calls to the file system.",
+      "Android schedules apps and manages battery and memory on phones."
+    ],
+    "formulas": [],
+    "workedExample": null,
+    "practice": [
+      {
+        "question": "List any four functions of an operating system.",
+        "hint": "CPU, memory, files, devices.",
+        "answer": "Process management, memory management, file management, device management (also security and UI)."
+      },
+      {
+        "question": "What is a system call?",
+        "hint": "Programs asking the kernel.",
+        "answer": "The way a program requests a service from the OS kernel, such as reading a file."
+      }
+    ],
+    "commonMistakes": [
+      "Thinking the OS is just the desktop interface; the kernel does most of the work."
+    ],
+    "followUps": [
+      "Process vs thread",
+      "CPU scheduling",
+      "Deadlock"
+    ]
+  },
+  {
+    "id": "process-thread",
+    "subject": "Operating Systems",
+    "title": "Process vs Thread",
+    "aliases": [
+      "process",
+      "thread",
+      "process vs thread",
+      "multithreading",
+      "process states",
+      "pcb",
+      "process control block",
+      "context switch"
+    ],
+    "simpleExplanation": "A process is a program in execution with its own memory space. A thread is a smaller unit of execution inside a process; threads of the same process share its memory and files, so they are cheaper to create and switch between. A process moves through states: new, ready, running, waiting and terminated.",
+    "analogy": "A process is a restaurant kitchen; threads are the cooks working in the same kitchen, sharing ingredients and tools.",
+    "keyPoints": [
+      "Each process has its own address space; threads share the process's memory.",
+      "The OS stores process details in a Process Control Block (PCB).",
+      "Context switching saves one process's state and loads another's.",
+      "Thread switching is faster than process switching.",
+      "Process states: New → Ready → Running → Waiting → Terminated."
+    ],
+    "steps": [
+      "A program is loaded and becomes a new process.",
+      "It waits in the ready queue for the CPU.",
+      "The scheduler dispatches it to running.",
+      "If it needs I/O it moves to waiting, then back to ready.",
+      "It terminates when finished."
+    ],
+    "examples": [
+      "A web browser runs each tab as a process; inside a tab, threads handle rendering and networking."
+    ],
+    "formulas": [],
+    "workedExample": null,
+    "practice": [
+      {
+        "question": "Why are threads called lightweight processes?",
+        "hint": "Sharing.",
+        "answer": "They share the process's memory and resources, so creating and switching them costs less."
+      },
+      {
+        "question": "What is stored in a PCB?",
+        "hint": "Everything needed to resume a process.",
+        "answer": "Process ID, state, program counter, registers, memory information, open files and scheduling information."
+      }
+    ],
+    "commonMistakes": [
+      "Thinking threads have separate memory; they share the heap and global data (each has its own stack)."
+    ],
+    "followUps": [
+      "CPU scheduling",
+      "Deadlock",
+      "Semaphores"
+    ]
+  },
+  {
+    "id": "cpu-scheduling",
+    "subject": "Operating Systems",
+    "title": "CPU Scheduling Algorithms",
+    "aliases": [
+      "cpu scheduling",
+      "scheduling algorithms",
+      "fcfs",
+      "sjf",
+      "round robin",
+      "priority scheduling",
+      "waiting time",
+      "turnaround time"
+    ],
+    "simpleExplanation": "CPU scheduling decides which ready process gets the CPU next. Common algorithms are First-Come-First-Served (FCFS), Shortest Job First (SJF), Priority scheduling and Round Robin (each process gets a fixed time slice). Algorithms are compared using waiting time, turnaround time and response time.",
+    "analogy": "Like a single ticket counter: FCFS serves people in arrival order, SJF serves the quickest requests first, and Round Robin gives everyone two minutes in turn.",
+    "keyPoints": [
+      "FCFS: simple but short jobs can wait behind long ones (convoy effect).",
+      "SJF: lowest average waiting time, but needs burst times and can starve long jobs.",
+      "Priority: highest priority first; aging prevents starvation.",
+      "Round Robin: time quantum; fair and good for time-sharing systems.",
+      "Preemptive algorithms can interrupt a running process."
+    ],
+    "steps": [
+      "List processes with arrival and burst times.",
+      "Draw the Gantt chart using the algorithm's rule.",
+      "Completion time = when each process finishes.",
+      "Turnaround time = completion − arrival.",
+      "Waiting time = turnaround − burst; average them."
+    ],
+    "examples": [
+      "Round Robin with quantum 2 ms on P1(5), P2(3): P1 2, P2 2, P1 2, P2 1, P1 1."
+    ],
+    "formulas": [
+      {
+        "formula": "Turnaround Time = Completion Time − Arrival Time",
+        "meaning": "Total time from arrival to finish."
+      },
+      {
+        "formula": "Waiting Time = Turnaround Time − Burst Time",
+        "meaning": "Time spent waiting in the ready queue."
+      }
+    ],
+    "workedExample": {
+      "problem": "FCFS with P1 (burst 5), P2 (burst 3), P3 (burst 2), all arriving at 0. Find average waiting time.",
+      "steps": [
+        "Order: P1 0–5, P2 5–8, P3 8–10.",
+        "Waiting: P1 = 0, P2 = 5, P3 = 8.",
+        "Average = (0 + 5 + 8) / 3."
+      ],
+      "answer": "13 / 3 ≈ 4.33 units."
+    },
+    "practice": [
+      {
+        "question": "Same processes with SJF (non-preemptive): what is the average waiting time?",
+        "hint": "Run P3, P2, P1.",
+        "answer": "P3 0, P2 2, P1 5 → (0 + 2 + 5)/3 ≈ 2.33 units."
+      },
+      {
+        "question": "Which algorithm can cause starvation and how is it fixed?",
+        "hint": "Priority.",
+        "answer": "Priority scheduling (and SJF); aging gradually raises the priority of waiting processes."
+      }
+    ],
+    "commonMistakes": [
+      "Forgetting to subtract arrival time when processes arrive at different times."
+    ],
+    "followUps": [
+      "Process vs thread",
+      "Deadlock",
+      "Operating system"
+    ]
+  },
+  {
+    "id": "deadlock",
+    "subject": "Operating Systems",
+    "title": "Deadlock",
+    "aliases": [
+      "deadlock",
+      "deadlocks",
+      "banker's algorithm",
+      "bankers algorithm",
+      "coffman conditions",
+      "deadlock prevention",
+      "deadlock avoidance"
+    ],
+    "simpleExplanation": "A deadlock happens when a set of processes are all waiting for resources held by each other, so none of them can continue. It needs four conditions at the same time: mutual exclusion, hold and wait, no preemption, and circular wait. Systems handle deadlocks by preventing a condition, avoiding unsafe states (Banker's algorithm), or detecting and recovering.",
+    "analogy": "Two cars meet on a one-lane bridge from opposite ends; each waits for the other to reverse, so neither moves.",
+    "keyPoints": [
+      "Mutual exclusion: a resource can be used by one process at a time.",
+      "Hold and wait: a process holds one resource while waiting for another.",
+      "No preemption: resources cannot be forcibly taken away.",
+      "Circular wait: P1 waits for P2, P2 waits for P1 (or a longer cycle).",
+      "Banker's algorithm grants requests only if the system stays in a safe state."
+    ],
+    "steps": [
+      "Check whether all four Coffman conditions can occur.",
+      "Prevention: break one condition, such as ordering resources to stop circular wait.",
+      "Avoidance: run the Banker's safety check before granting a request.",
+      "Detection: look for cycles in the resource-allocation graph, then recover by killing or rolling back a process."
+    ],
+    "examples": [
+      "Process A locks the printer and waits for the scanner; process B locks the scanner and waits for the printer."
+    ],
+    "formulas": [
+      {
+        "formula": "Need = Max − Allocation",
+        "meaning": "Remaining resources each process may still request (Banker's algorithm)."
+      }
+    ],
+    "workedExample": null,
+    "practice": [
+      {
+        "question": "Name the four necessary conditions for deadlock.",
+        "hint": "Coffman.",
+        "answer": "Mutual exclusion, hold and wait, no preemption, circular wait."
+      },
+      {
+        "question": "How does resource ordering prevent deadlock?",
+        "hint": "Which condition does it break?",
+        "answer": "Processes request resources in a fixed order, so a circular wait cannot form."
+      }
+    ],
+    "commonMistakes": [
+      "Confusing deadlock with starvation; in starvation the system progresses but one process waits forever."
+    ],
+    "followUps": [
+      "Semaphores",
+      "CPU scheduling",
+      "Process vs thread"
+    ]
+  },
+  {
+    "id": "paging",
+    "subject": "Operating Systems",
+    "title": "Paging and Virtual Memory",
+    "aliases": [
+      "paging",
+      "virtual memory",
+      "page fault",
+      "page table",
+      "page replacement",
+      "lru",
+      "fifo page replacement",
+      "segmentation"
+    ],
+    "simpleExplanation": "Paging splits a program's memory into fixed-size pages and physical RAM into frames of the same size, so a program does not need one continuous block of memory. A page table maps pages to frames. Virtual memory keeps only the needed pages in RAM and the rest on disk; when a missing page is accessed, a page fault loads it, possibly replacing another page (FIFO, LRU, Optimal).",
+    "analogy": "A book (program) is stored as loose pages in any free slots of a shelf (RAM); the table of contents (page table) tells you where each page is.",
+    "keyPoints": [
+      "Logical address = page number + offset; physical address = frame number + offset.",
+      "Paging removes external fragmentation (internal fragmentation can still occur).",
+      "A TLB caches recent page-table entries for speed.",
+      "Page fault: the page is not in RAM and must be loaded from disk.",
+      "Thrashing: too many page faults, so the system spends time swapping instead of working."
+    ],
+    "steps": [
+      "Split the logical address into page number and offset.",
+      "Look up the frame number in the page table (or TLB).",
+      "If the page is absent, raise a page fault and load it from disk.",
+      "If RAM is full, choose a victim page using FIFO, LRU or Optimal.",
+      "Form the physical address from frame number and offset."
+    ],
+    "examples": [
+      "With 4 KB pages, address 8200 is page 2 (8200 ÷ 4096), offset 8."
+    ],
+    "formulas": [
+      {
+        "formula": "Page number = ⌊address ÷ page size⌋, offset = address mod page size",
+        "meaning": "How a logical address is split."
+      },
+      {
+        "formula": "Number of pages = logical address space ÷ page size",
+        "meaning": "Size of the page table."
+      }
+    ],
+    "workedExample": {
+      "problem": "FIFO with 3 frames for the reference string 1, 2, 3, 4, 1, 2. Count page faults.",
+      "steps": [
+        "1, 2, 3 load into empty frames: 3 faults.",
+        "4 replaces 1 (oldest): fault 4.",
+        "1 replaces 2: fault 5.",
+        "2 replaces 3: fault 6."
+      ],
+      "answer": "6 page faults."
+    },
+    "practice": [
+      {
+        "question": "With a page size of 1 KB, what are the page number and offset of address 3500?",
+        "hint": "Divide by 1024.",
+        "answer": "Page 3 (3500 ÷ 1024 = 3.4), offset 3500 − 3072 = 428."
+      },
+      {
+        "question": "What is thrashing?",
+        "hint": "Too many faults.",
+        "answer": "When a system spends more time swapping pages than executing processes because of excessive page faults."
+      }
+    ],
+    "commonMistakes": [
+      "Mixing up pages (logical memory) and frames (physical memory)."
+    ],
+    "followUps": [
+      "Operating system",
+      "Process vs thread",
+      "Cache memory"
+    ]
+  },
+  {
+    "id": "semaphore",
+    "subject": "Operating Systems",
+    "title": "Semaphores and Mutex (Process Synchronization)",
+    "aliases": [
+      "semaphore",
+      "semaphores",
+      "mutex",
+      "critical section",
+      "race condition",
+      "process synchronization",
+      "synchronization",
+      "producer consumer"
+    ],
+    "simpleExplanation": "When processes or threads share data, running them at the same time can corrupt it (a race condition). The code that touches shared data is the critical section. A mutex is a lock that lets only one thread enter at a time. A semaphore is an integer counter with two atomic operations, wait (P) and signal (V), used to control access to a limited number of resources.",
+    "analogy": "A mutex is the single key to a washroom. A counting semaphore is a parking lot display showing how many spaces are free.",
+    "keyPoints": [
+      "Race condition: the result depends on the timing of threads.",
+      "Critical section solutions need mutual exclusion, progress and bounded waiting.",
+      "wait(S): decrement S; block if it would go below 0. signal(S): increment S and wake a waiting process.",
+      "Binary semaphore (0 or 1) behaves like a mutex; counting semaphores allow N users.",
+      "Classic problems: producer-consumer, readers-writers, dining philosophers."
+    ],
+    "steps": [
+      "Identify shared data and the critical section.",
+      "Initialize a semaphore or mutex.",
+      "Call wait/lock before entering the critical section.",
+      "Call signal/unlock when leaving it."
+    ],
+    "examples": [
+      "Two threads incrementing a shared counter without a lock can lose updates."
+    ],
+    "formulas": [],
+    "workedExample": null,
+    "practice": [
+      {
+        "question": "What is a race condition?",
+        "hint": "Timing.",
+        "answer": "When the outcome depends on the unpredictable order in which threads access shared data."
+      },
+      {
+        "question": "What value should a semaphore have for 3 identical printers?",
+        "hint": "Counting semaphore.",
+        "answer": "Initialize it to 3."
+      }
+    ],
+    "commonMistakes": [
+      "Forgetting to release a lock, which blocks other threads forever."
+    ],
+    "followUps": [
+      "Deadlock",
+      "Process vs thread",
+      "Operating system"
+    ]
+  },
+  {
+    "id": "big-o",
+    "subject": "Data Structures & Algorithms",
+    "title": "Time Complexity and Big-O Notation",
+    "aliases": [
+      "big o",
+      "big-o",
+      "big o notation",
+      "time complexity",
+      "space complexity",
+      "asymptotic notation",
+      "complexity analysis"
+    ],
+    "simpleExplanation": "Big-O notation describes how an algorithm's running time (or memory) grows as the input size n grows, ignoring constants. O(1) is constant, O(log n) logarithmic, O(n) linear, O(n log n) typical for good sorting, and O(n²) quadratic. It helps you compare algorithms for large inputs.",
+    "analogy": "Finding a name in a phone book: reading every page is O(n); opening the middle and halving each time is O(log n).",
+    "keyPoints": [
+      "Order of growth: O(1) < O(log n) < O(n) < O(n log n) < O(n²) < O(2ⁿ) < O(n!).",
+      "Drop constants and lower-order terms: 3n² + 5n + 2 is O(n²).",
+      "Big-O is an upper bound, Ω (Omega) a lower bound, Θ (Theta) a tight bound.",
+      "Nested loops over n usually give O(n²).",
+      "Halving the problem each step gives O(log n)."
+    ],
+    "steps": [
+      "Count how many times the main operation runs in terms of n.",
+      "Add costs of sequential parts; multiply costs of nested loops.",
+      "Keep only the fastest-growing term.",
+      "Drop constant factors."
+    ],
+    "examples": [
+      "A single loop from 1 to n: O(n).",
+      "Binary search: O(log n).",
+      "Bubble sort: O(n²)."
+    ],
+    "formulas": [
+      {
+        "formula": "T(n) = 3n² + 5n + 2 ⇒ O(n²)",
+        "meaning": "Only the dominant term matters for large n."
+      }
+    ],
+    "workedExample": {
+      "problem": "Find the complexity of: for i in 1..n: for j in 1..n: print(i, j).",
+      "steps": [
+        "The inner loop runs n times for each outer iteration.",
+        "The outer loop runs n times.",
+        "Total = n × n operations."
+      ],
+      "answer": "O(n²)."
+    },
+    "practice": [
+      {
+        "question": "What is the complexity of a loop where i doubles each time until it reaches n?",
+        "hint": "1, 2, 4, 8...",
+        "answer": "O(log n)."
+      },
+      {
+        "question": "Simplify O(5n + n log n + 100).",
+        "hint": "Dominant term.",
+        "answer": "O(n log n)."
+      }
+    ],
+    "commonMistakes": [
+      "Adding complexities of nested loops instead of multiplying them."
+    ],
+    "followUps": [
+      "Binary search",
+      "Sorting algorithms",
+      "Recursion"
+    ]
+  },
+  {
+    "id": "array",
+    "subject": "Data Structures & Algorithms",
+    "title": "Arrays",
+    "aliases": [
+      "array",
+      "arrays",
+      "1d array",
+      "2d array"
+    ],
+    "simpleExplanation": "An array stores elements of the same type in continuous memory locations, each accessed by an index starting at 0. Reading or updating any element by index is O(1), but inserting or deleting in the middle is O(n) because elements must shift.",
+    "analogy": "A row of numbered lockers: you can open locker 5 directly, but adding a new locker in the middle means moving everything after it.",
+    "keyPoints": [
+      "Fixed size in many languages (static arrays); dynamic arrays like Python lists grow automatically.",
+      "Index access: O(1). Search in unsorted array: O(n).",
+      "Insertion or deletion in the middle: O(n).",
+      "2D arrays store matrices in row-major or column-major order."
+    ],
+    "steps": [
+      "Declare the array with a size or initial values.",
+      "Access elements using arr[i].",
+      "Traverse with a loop from 0 to n − 1."
+    ],
+    "examples": [
+      "marks = [78, 85, 92]; marks[1] is 85."
+    ],
+    "formulas": [
+      {
+        "formula": "Address(A[i]) = Base + i × size_of_element",
+        "meaning": "How the computer finds element i in O(1)."
+      }
+    ],
+    "workedExample": {
+      "problem": "An int array starts at address 1000 and each int is 4 bytes. What is the address of A[5]?",
+      "steps": [
+        "Address = Base + i × size.",
+        "= 1000 + 5 × 4."
+      ],
+      "answer": "1020."
+    },
+    "practice": [
+      {
+        "question": "Why is inserting at the start of an array O(n)?",
+        "hint": "Shifting.",
+        "answer": "Every existing element must shift one position to the right."
+      },
+      {
+        "question": "Base address 2000, element size 8 bytes. Address of A[10]?",
+        "hint": "Base + i × size.",
+        "answer": "2000 + 80 = 2080."
+      }
+    ],
+    "commonMistakes": [
+      "Off-by-one errors: the last index is n − 1, not n."
+    ],
+    "followUps": [
+      "Linked list",
+      "Binary search",
+      "Big-O notation"
+    ]
+  },
+  {
+    "id": "linked-list",
+    "subject": "Data Structures & Algorithms",
+    "title": "Linked List",
+    "aliases": [
+      "linked list",
+      "linked lists",
+      "singly linked list",
+      "doubly linked list",
+      "circular linked list"
+    ],
+    "simpleExplanation": "A linked list is a chain of nodes where each node stores data and a pointer to the next node. Nodes can be anywhere in memory, so inserting or deleting at a known position is O(1), but finding the i-th element takes O(n) because you must walk from the head.",
+    "analogy": "A treasure hunt: each clue tells you where the next clue is hidden. To reach clue 10 you must follow clues 1 to 9.",
+    "keyPoints": [
+      "Singly linked: next pointer only. Doubly linked: next and previous pointers.",
+      "Circular linked list: the last node points back to the first.",
+      "Access by position: O(n). Insert/delete at head: O(1).",
+      "Uses extra memory for pointers but grows without resizing."
+    ],
+    "steps": [
+      "Create a node with data and next = null.",
+      "To insert at the head: newNode.next = head; head = newNode.",
+      "To traverse: start at head and follow next until null.",
+      "To delete a node: point the previous node's next to the node after it."
+    ],
+    "examples": [
+      "Browser history back/forward uses a doubly linked list.",
+      "Music playlists that loop use circular lists."
+    ],
+    "formulas": [],
+    "workedExample": null,
+    "practice": [
+      {
+        "question": "What is the time complexity of inserting at the head of a singly linked list?",
+        "hint": "No shifting.",
+        "answer": "O(1)."
+      },
+      {
+        "question": "Give one advantage of a doubly linked list over a singly linked list.",
+        "hint": "Direction.",
+        "answer": "It can be traversed backwards, and deleting a given node is easier because you have the previous pointer."
+      }
+    ],
+    "commonMistakes": [
+      "Losing the rest of the list by changing head before saving the next pointer."
+    ],
+    "followUps": [
+      "Stack",
+      "Queue",
+      "Arrays"
+    ]
+  },
+  {
+    "id": "stack",
+    "subject": "Data Structures & Algorithms",
+    "title": "Stack",
+    "aliases": [
+      "stack",
+      "stacks",
+      "lifo",
+      "push pop",
+      "stack data structure"
+    ],
+    "simpleExplanation": "A stack is a linear data structure that follows Last-In-First-Out (LIFO): the last element added is the first removed. Its main operations are push (add on top), pop (remove from top) and peek (look at the top). All are O(1).",
+    "analogy": "A stack of plates: you add and remove plates only from the top.",
+    "keyPoints": [
+      "LIFO order.",
+      "push, pop and peek run in O(1).",
+      "Overflow: pushing onto a full stack; underflow: popping an empty stack.",
+      "Used for function calls, undo, expression evaluation and bracket matching."
+    ],
+    "steps": [
+      "Keep a pointer called top.",
+      "push: increase top and place the element.",
+      "pop: return the element at top and decrease top.",
+      "Check for underflow before popping."
+    ],
+    "examples": [
+      "Checking balanced brackets in '(a+[b*c])'.",
+      "The call stack stores active function calls during recursion."
+    ],
+    "formulas": [],
+    "workedExample": {
+      "problem": "Evaluate the postfix expression 2 3 + 4 *.",
+      "steps": [
+        "Push 2, push 3.",
+        "'+': pop 3 and 2, push 5.",
+        "Push 4.",
+        "'*': pop 4 and 5, push 20."
+      ],
+      "answer": "20."
+    },
+    "practice": [
+      {
+        "question": "After push(1), push(2), pop(), push(3), what is on top?",
+        "hint": "Track step by step.",
+        "answer": "3."
+      },
+      {
+        "question": "Evaluate postfix 5 1 2 + 4 * + 3 -.",
+        "hint": "Use a stack.",
+        "answer": "14."
+      }
+    ],
+    "commonMistakes": [
+      "Popping operands in the wrong order for subtraction and division in postfix evaluation."
+    ],
+    "followUps": [
+      "Queue",
+      "Recursion",
+      "Linked list"
+    ]
+  },
+  {
+    "id": "queue",
+    "subject": "Data Structures & Algorithms",
+    "title": "Queue",
+    "aliases": [
+      "queue",
+      "queues",
+      "fifo",
+      "circular queue",
+      "priority queue",
+      "deque",
+      "enqueue dequeue"
+    ],
+    "simpleExplanation": "A queue follows First-In-First-Out (FIFO): elements are added at the rear (enqueue) and removed from the front (dequeue). Variants include the circular queue (reuses empty space), deque (add/remove at both ends) and priority queue (highest priority leaves first, usually built with a heap).",
+    "analogy": "A queue at a ticket counter: the first person in line is served first.",
+    "keyPoints": [
+      "FIFO order; enqueue and dequeue are O(1).",
+      "Circular queue avoids wasted space in array-based queues.",
+      "Priority queue with a binary heap: insert and remove in O(log n).",
+      "Used in CPU scheduling, printers and BFS graph traversal."
+    ],
+    "steps": [
+      "Keep front and rear pointers.",
+      "enqueue: add at rear and move rear forward.",
+      "dequeue: remove at front and move front forward.",
+      "In a circular queue, move pointers with (index + 1) mod size."
+    ],
+    "examples": [
+      "Printer job queue.",
+      "Breadth-first search uses a queue to visit nodes level by level."
+    ],
+    "formulas": [
+      {
+        "formula": "rear = (rear + 1) mod size",
+        "meaning": "How a circular queue wraps around."
+      }
+    ],
+    "workedExample": null,
+    "practice": [
+      {
+        "question": "After enqueue(1), enqueue(2), dequeue(), enqueue(3), which element is at the front?",
+        "hint": "FIFO.",
+        "answer": "2."
+      },
+      {
+        "question": "Which data structure does BFS use?",
+        "hint": "Level by level.",
+        "answer": "A queue."
+      }
+    ],
+    "commonMistakes": [
+      "Mixing up stack (LIFO) and queue (FIFO)."
+    ],
+    "followUps": [
+      "Stack",
+      "Graph traversal (BFS and DFS)",
+      "CPU scheduling"
+    ]
+  },
+  {
+    "id": "binary-search",
+    "subject": "Data Structures & Algorithms",
+    "title": "Binary Search",
+    "aliases": [
+      "binary search",
+      "binary searching",
+      "searching algorithm",
+      "linear search"
+    ],
+    "simpleExplanation": "Binary search finds an element in a sorted array by repeatedly checking the middle element and discarding half of the remaining range. Because the range halves every step, it takes O(log n) time, much faster than linear search's O(n).",
+    "analogy": "Guessing a number between 1 and 100 when told 'higher' or 'lower': always guess the middle.",
+    "keyPoints": [
+      "Works only on sorted data.",
+      "Time: O(log n); linear search is O(n).",
+      "mid = low + (high − low) / 2 avoids integer overflow.",
+      "Stop when low > high (element not found)."
+    ],
+    "steps": [
+      "Set low = 0 and high = n − 1.",
+      "Compute mid.",
+      "If arr[mid] equals the target, return mid.",
+      "If the target is smaller, set high = mid − 1; otherwise low = mid + 1.",
+      "Repeat while low ≤ high."
+    ],
+    "examples": [
+      "Searching 23 in [2, 5, 8, 12, 16, 23, 38]: mid 12 → right half, mid 23 → found."
+    ],
+    "formulas": [
+      {
+        "formula": "Maximum comparisons ≈ ⌊log₂ n⌋ + 1",
+        "meaning": "Steps needed in the worst case."
+      }
+    ],
+    "workedExample": {
+      "problem": "How many comparisons does binary search need at most for 1,000 elements?",
+      "steps": [
+        "log₂ 1000 ≈ 9.97.",
+        "⌊9.97⌋ + 1 = 10."
+      ],
+      "answer": "About 10 comparisons."
+    },
+    "practice": [
+      {
+        "question": "Why can't binary search be used on an unsorted array?",
+        "hint": "Discarding halves.",
+        "answer": "It relies on order to know which half can be discarded."
+      },
+      {
+        "question": "Maximum comparisons for 1 million sorted elements?",
+        "hint": "log₂(10⁶) ≈ 19.9.",
+        "answer": "About 20."
+      }
+    ],
+    "commonMistakes": [
+      "Writing low < high instead of low ≤ high and missing the last element."
+    ],
+    "followUps": [
+      "Big-O notation",
+      "Sorting algorithms",
+      "Binary search tree"
+    ]
+  },
+  {
+    "id": "sorting",
+    "subject": "Data Structures & Algorithms",
+    "title": "Sorting Algorithms",
+    "aliases": [
+      "sorting",
+      "sorting algorithms",
+      "bubble sort",
+      "merge sort",
+      "quick sort",
+      "quicksort",
+      "insertion sort",
+      "selection sort",
+      "heap sort"
+    ],
+    "simpleExplanation": "Sorting arranges elements in order. Simple algorithms like bubble, selection and insertion sort take O(n²) time. Efficient ones like merge sort and heap sort take O(n log n), and quick sort is O(n log n) on average (O(n²) in the worst case). Merge sort and quick sort use divide and conquer.",
+    "analogy": "Merge sort is like sorting exam papers by splitting the pile among friends, each sorting a small pile, then merging the sorted piles.",
+    "keyPoints": [
+      "Bubble sort: swap adjacent elements; O(n²).",
+      "Insertion sort: good for small or nearly sorted data; O(n²) worst, O(n) best.",
+      "Merge sort: divide, sort halves, merge; O(n log n) always; needs O(n) extra space.",
+      "Quick sort: choose a pivot and partition; O(n log n) average, O(n²) worst.",
+      "Stable sorts (merge, insertion, bubble) keep equal elements in their original order."
+    ],
+    "steps": [
+      "Merge sort: split the array into two halves.",
+      "Recursively sort each half.",
+      "Merge the two sorted halves by repeatedly taking the smaller front element."
+    ],
+    "examples": [
+      "Merge sort on [38, 27, 43, 3]: [38, 27] → [27, 38]; [43, 3] → [3, 43]; merge → [3, 27, 38, 43]."
+    ],
+    "formulas": [
+      {
+        "formula": "Merge sort: T(n) = 2T(n/2) + O(n) = O(n log n)",
+        "meaning": "Two half-size subproblems plus linear merging."
+      }
+    ],
+    "workedExample": null,
+    "practice": [
+      {
+        "question": "Which sorting algorithm has O(n log n) time in the worst case?",
+        "hint": "Not quick sort.",
+        "answer": "Merge sort (also heap sort)."
+      },
+      {
+        "question": "When does quick sort reach O(n²)?",
+        "hint": "Bad pivots.",
+        "answer": "When the pivot is always the smallest or largest element, for example on an already sorted array with a first-element pivot."
+      }
+    ],
+    "commonMistakes": [
+      "Assuming quick sort is always O(n log n)."
+    ],
+    "followUps": [
+      "Big-O notation",
+      "Recursion",
+      "Binary search"
+    ]
+  },
+  {
+    "id": "recursion",
+    "subject": "Data Structures & Algorithms",
+    "title": "Recursion",
+    "aliases": [
+      "recursion",
+      "recursive function",
+      "recursive",
+      "base case"
+    ],
+    "simpleExplanation": "Recursion is when a function solves a problem by calling itself on a smaller version of the same problem. Every recursive function needs a base case that stops the calls, and a recursive case that moves toward the base case. Each call is stored on the call stack until it returns.",
+    "analogy": "Standing in a long queue and asking the person ahead 'what is your position?'. Each person asks the one ahead, until the first person says '1', and the answers pass back adding 1 each time.",
+    "keyPoints": [
+      "Base case: the simplest input answered directly.",
+      "Recursive case: calls itself with a smaller input.",
+      "Missing or wrong base case causes infinite recursion and stack overflow.",
+      "Recursion uses O(depth) stack space.",
+      "Many recursive problems can also be solved with loops."
+    ],
+    "steps": [
+      "Define the problem in terms of a smaller version of itself.",
+      "Write the base case.",
+      "Write the recursive call that shrinks the input.",
+      "Trust the smaller call and combine its result."
+    ],
+    "examples": [
+      "factorial(n) = n × factorial(n − 1), factorial(0) = 1.",
+      "fib(n) = fib(n − 1) + fib(n − 2) with fib(0) = 0, fib(1) = 1."
+    ],
+    "formulas": [
+      {
+        "formula": "n! = n × (n − 1)!, 0! = 1",
+        "meaning": "Recursive definition of factorial."
+      }
+    ],
+    "workedExample": {
+      "problem": "Trace factorial(4).",
+      "steps": [
+        "factorial(4) = 4 × factorial(3).",
+        "factorial(3) = 3 × factorial(2).",
+        "factorial(2) = 2 × factorial(1) = 2 × 1 × factorial(0).",
+        "factorial(0) = 1, so the results multiply back: 1 × 1 × 2 × 3 × 4."
+      ],
+      "answer": "24."
+    },
+    "practice": [
+      {
+        "question": "What happens if a recursive function has no base case?",
+        "hint": "The stack.",
+        "answer": "It calls itself forever until a stack overflow error occurs."
+      },
+      {
+        "question": "Write a recursive definition for the sum of 1 to n.",
+        "hint": "sum(n) = n + ...",
+        "answer": "sum(n) = n + sum(n − 1), with sum(0) = 0."
+      }
+    ],
+    "commonMistakes": [
+      "Recursing on the same input instead of a smaller one."
+    ],
+    "followUps": [
+      "Stack",
+      "Dynamic programming",
+      "Sorting algorithms"
+    ]
+  },
+  {
+    "id": "trees-bst",
+    "subject": "Data Structures & Algorithms",
+    "title": "Trees and Binary Search Trees",
+    "aliases": [
+      "tree",
+      "trees",
+      "binary tree",
+      "binary search tree",
+      "bst",
+      "tree traversal",
+      "inorder",
+      "preorder",
+      "postorder",
+      "avl tree"
+    ],
+    "simpleExplanation": "A tree is a hierarchical data structure of nodes connected by edges, with one root at the top. In a binary tree each node has at most two children. A binary search tree (BST) keeps left-child values smaller and right-child values larger than the node, so search, insert and delete take O(log n) on a balanced tree.",
+    "analogy": "A family tree or a company organization chart: one head at the top, branches below.",
+    "keyPoints": [
+      "Root, parent, child, leaf, height and depth are basic terms.",
+      "Traversals: inorder (left, root, right), preorder (root, left, right), postorder (left, right, root).",
+      "Inorder traversal of a BST gives sorted order.",
+      "Balanced BST (AVL, red-black): O(log n); skewed BST: O(n).",
+      "A binary tree of height h has at most 2^(h+1) − 1 nodes."
+    ],
+    "steps": [
+      "BST insert: start at the root.",
+      "If the value is smaller go left, otherwise go right.",
+      "Repeat until you reach an empty spot.",
+      "Place the new node there."
+    ],
+    "examples": [
+      "Insert 50, 30, 70, 20, 40 into a BST: 30 and 70 are children of 50; 20 and 40 are children of 30."
+    ],
+    "formulas": [
+      {
+        "formula": "Max nodes in a binary tree of height h = 2^(h+1) − 1",
+        "meaning": "Height counted from 0 at the root."
+      }
+    ],
+    "workedExample": null,
+    "practice": [
+      {
+        "question": "Which traversal of a BST prints values in sorted order?",
+        "hint": "Left, root, right.",
+        "answer": "Inorder traversal."
+      },
+      {
+        "question": "What is the preorder traversal of the BST built from 50, 30, 70, 20, 40?",
+        "hint": "Root first.",
+        "answer": "50, 30, 20, 40, 70."
+      }
+    ],
+    "commonMistakes": [
+      "Assuming every BST is O(log n); inserting sorted data creates a skewed O(n) tree."
+    ],
+    "followUps": [
+      "Graph traversal (BFS and DFS)",
+      "Recursion",
+      "Binary search"
+    ]
+  },
+  {
+    "id": "graphs",
+    "subject": "Data Structures & Algorithms",
+    "title": "Graphs and Graph Traversal (BFS and DFS)",
+    "aliases": [
+      "graph",
+      "graphs",
+      "bfs",
+      "dfs",
+      "breadth first search",
+      "depth first search",
+      "graph traversal",
+      "dijkstra",
+      "shortest path",
+      "adjacency matrix",
+      "adjacency list"
+    ],
+    "simpleExplanation": "A graph is a set of vertices (nodes) connected by edges. Graphs can be directed or undirected, and weighted or unweighted. Breadth-first search (BFS) explores neighbours level by level using a queue and finds shortest paths in unweighted graphs. Depth-first search (DFS) goes as deep as possible along one path using a stack or recursion. Dijkstra's algorithm finds shortest paths in graphs with non-negative weights.",
+    "analogy": "A city map: places are vertices and roads are edges. BFS is like ripples spreading out; DFS is like exploring a maze one corridor at a time.",
+    "keyPoints": [
+      "Representations: adjacency matrix (O(V²) space) or adjacency list (O(V + E)).",
+      "BFS uses a queue; DFS uses a stack or recursion.",
+      "Both BFS and DFS run in O(V + E) with adjacency lists.",
+      "BFS gives the shortest path by edge count in unweighted graphs.",
+      "Dijkstra: shortest paths with non-negative weights, using a priority queue."
+    ],
+    "steps": [
+      "BFS: put the start vertex in a queue and mark it visited.",
+      "Remove the front vertex and visit each unvisited neighbour.",
+      "Mark neighbours visited and add them to the queue.",
+      "Repeat until the queue is empty."
+    ],
+    "examples": [
+      "Social networks find 'friends of friends' with BFS.",
+      "Google Maps uses shortest-path algorithms related to Dijkstra."
+    ],
+    "formulas": [
+      {
+        "formula": "Max edges in a simple undirected graph = V(V − 1) / 2",
+        "meaning": "Every pair of vertices connected once."
+      }
+    ],
+    "workedExample": null,
+    "practice": [
+      {
+        "question": "Which traversal finds the shortest path in an unweighted graph?",
+        "hint": "Level by level.",
+        "answer": "BFS."
+      },
+      {
+        "question": "How many edges can a simple undirected graph with 6 vertices have at most?",
+        "hint": "V(V − 1)/2.",
+        "answer": "15."
+      }
+    ],
+    "commonMistakes": [
+      "Forgetting to mark vertices as visited, causing infinite loops on cycles."
+    ],
+    "followUps": [
+      "Queue",
+      "Stack",
+      "Trees and binary search trees"
+    ]
+  },
+  {
+    "id": "hashing",
+    "subject": "Data Structures & Algorithms",
+    "title": "Hashing and Hash Tables",
+    "aliases": [
+      "hashing",
+      "hash table",
+      "hash map",
+      "hashmap",
+      "hash function",
+      "collision",
+      "chaining",
+      "open addressing"
+    ],
+    "simpleExplanation": "Hashing converts a key into an array index using a hash function, so you can store and find values in O(1) average time. When two keys map to the same index (a collision), the table resolves it with chaining (a list at each slot) or open addressing (probe for another empty slot).",
+    "analogy": "Assigning lockers by the last two digits of a roll number: you go straight to the locker instead of searching all of them.",
+    "keyPoints": [
+      "Average insert, search and delete: O(1); worst case O(n) with many collisions.",
+      "Common hash function: h(k) = k mod table_size.",
+      "Chaining stores colliding keys in a linked list at the slot.",
+      "Open addressing: linear probing, quadratic probing, double hashing.",
+      "Load factor = items ÷ table size; tables resize when it gets high."
+    ],
+    "steps": [
+      "Compute index = h(key).",
+      "If the slot is empty, store the item.",
+      "If occupied, resolve the collision (chain or probe).",
+      "To search, compute h(key) and check that slot or its chain."
+    ],
+    "examples": [
+      "Python dictionaries and Java HashMap are hash tables."
+    ],
+    "formulas": [
+      {
+        "formula": "h(k) = k mod m; load factor α = n / m",
+        "meaning": "Division-method hash and table fullness."
+      }
+    ],
+    "workedExample": {
+      "problem": "Insert keys 15, 25 and 35 into a table of size 10 using h(k) = k mod 10 and linear probing.",
+      "steps": [
+        "15 mod 10 = 5 → slot 5.",
+        "25 mod 10 = 5 → collision, try 6 → slot 6.",
+        "35 mod 10 = 5 → 5 and 6 full, try 7 → slot 7."
+      ],
+      "answer": "15 at 5, 25 at 6, 35 at 7."
+    },
+    "practice": [
+      {
+        "question": "Using h(k) = k mod 7, where does key 50 go?",
+        "hint": "50 ÷ 7.",
+        "answer": "Slot 1 (50 = 7 × 7 + 1)."
+      },
+      {
+        "question": "What is a collision?",
+        "hint": "Two keys, one slot.",
+        "answer": "When two different keys hash to the same index."
+      }
+    ],
+    "commonMistakes": [
+      "Assuming hash tables are always O(1); poor hash functions cause many collisions."
+    ],
+    "followUps": [
+      "Arrays",
+      "Linked list",
+      "Big-O notation"
+    ]
+  },
+  {
+    "id": "dynamic-programming",
+    "subject": "Data Structures & Algorithms",
+    "title": "Dynamic Programming",
+    "aliases": [
+      "dynamic programming",
+      "dp",
+      "memoization",
+      "tabulation",
+      "knapsack",
+      "overlapping subproblems",
+      "optimal substructure"
+    ],
+    "simpleExplanation": "Dynamic programming (DP) solves problems by breaking them into overlapping subproblems, solving each subproblem once, and storing the result to reuse it. It works when a problem has optimal substructure (the best answer is built from best answers to subproblems). Memoization is top-down (recursion plus a cache); tabulation is bottom-up (fill a table).",
+    "analogy": "Writing down answers to sums you have already worked out, so you never redo the same calculation.",
+    "keyPoints": [
+      "Needs overlapping subproblems and optimal substructure.",
+      "Memoization: recursion with a cache. Tabulation: iterative table filling.",
+      "Turns exponential recursion like naive Fibonacci (O(2ⁿ)) into O(n).",
+      "Classic problems: Fibonacci, 0/1 knapsack, longest common subsequence, coin change."
+    ],
+    "steps": [
+      "Define the state: what dp[i] means.",
+      "Write the recurrence relation between states.",
+      "Set base cases.",
+      "Choose an order to fill the table (or memoize).",
+      "Read the final answer from the table."
+    ],
+    "examples": [
+      "fib with a table: dp[0] = 0, dp[1] = 1, dp[i] = dp[i − 1] + dp[i − 2]."
+    ],
+    "formulas": [
+      {
+        "formula": "dp[i] = dp[i − 1] + dp[i − 2]",
+        "meaning": "Fibonacci recurrence."
+      }
+    ],
+    "workedExample": {
+      "problem": "Find the number of ways to climb 4 stairs taking 1 or 2 steps at a time.",
+      "steps": [
+        "ways(1) = 1, ways(2) = 2.",
+        "ways(n) = ways(n − 1) + ways(n − 2).",
+        "ways(3) = 3, ways(4) = 5."
+      ],
+      "answer": "5 ways."
+    },
+    "practice": [
+      {
+        "question": "What is the difference between memoization and tabulation?",
+        "hint": "Top-down vs bottom-up.",
+        "answer": "Memoization caches results of recursive calls (top-down); tabulation fills a table iteratively from base cases (bottom-up)."
+      },
+      {
+        "question": "How many ways are there to climb 5 stairs with 1 or 2 steps?",
+        "hint": "Continue the sequence.",
+        "answer": "8."
+      }
+    ],
+    "commonMistakes": [
+      "Using DP when subproblems do not overlap; plain divide and conquer is enough then."
+    ],
+    "followUps": [
+      "Recursion",
+      "Big-O notation",
+      "Graphs"
+    ]
+  },
+  {
+    "id": "osi-model",
+    "subject": "Computer Networks",
+    "title": "OSI Model",
+    "aliases": [
+      "osi model",
+      "osi",
+      "osi layers",
+      "7 layers",
+      "seven layers",
+      "network layers"
+    ],
+    "simpleExplanation": "The OSI model is a 7-layer framework that explains how data travels across a network. From bottom to top: Physical, Data Link, Network, Transport, Session, Presentation and Application. Each layer has a specific job and communicates with the layers directly above and below it.",
+    "analogy": "Sending a parcel: you write a letter (application), pack it (presentation), label it (network address), choose a courier service (transport), and the truck carries it (physical).",
+    "keyPoints": [
+      "Layer 1 Physical: bits over cables or radio.",
+      "Layer 2 Data Link: frames, MAC addresses, switches.",
+      "Layer 3 Network: packets, IP addresses, routing, routers.",
+      "Layer 4 Transport: segments, ports, TCP/UDP, reliability.",
+      "Layers 5–7: Session (connections), Presentation (encryption, format), Application (HTTP, FTP, DNS)."
+    ],
+    "steps": [
+      "The sender's data moves down from layer 7 to layer 1, each layer adding a header (encapsulation).",
+      "Bits travel over the medium.",
+      "The receiver passes data up from layer 1 to layer 7, each layer removing its header (decapsulation)."
+    ],
+    "examples": [
+      "Mnemonic (bottom to top): 'Please Do Not Throw Sausage Pizza Away'."
+    ],
+    "formulas": [],
+    "workedExample": null,
+    "practice": [
+      {
+        "question": "At which OSI layer do routers work?",
+        "hint": "IP addresses.",
+        "answer": "Layer 3, the Network layer."
+      },
+      {
+        "question": "Which layer is responsible for end-to-end reliable delivery?",
+        "hint": "TCP.",
+        "answer": "Layer 4, the Transport layer."
+      }
+    ],
+    "commonMistakes": [
+      "Mixing up switches (layer 2, MAC) and routers (layer 3, IP)."
+    ],
+    "followUps": [
+      "TCP vs UDP",
+      "IP addressing",
+      "DNS"
+    ]
+  },
+  {
+    "id": "tcp-udp",
+    "subject": "Computer Networks",
+    "title": "TCP vs UDP",
+    "aliases": [
+      "tcp",
+      "udp",
+      "tcp vs udp",
+      "three way handshake",
+      "tcp ip",
+      "tcp/ip",
+      "transport layer"
+    ],
+    "simpleExplanation": "TCP and UDP are transport-layer protocols. TCP is connection-oriented and reliable: it sets up a connection with a three-way handshake, numbers packets, resends lost ones and delivers them in order. UDP is connectionless and does none of this, so it is faster with less overhead, which suits video calls, gaming and DNS.",
+    "analogy": "TCP is a registered post with delivery confirmation; UDP is dropping flyers in letterboxes: fast, but no guarantee every one arrives.",
+    "keyPoints": [
+      "TCP: reliable, ordered, flow control and congestion control.",
+      "TCP three-way handshake: SYN → SYN-ACK → ACK.",
+      "UDP: no connection, no guarantee, lower latency.",
+      "TCP uses: web (HTTP/HTTPS), email, file transfer.",
+      "UDP uses: live streaming, online games, DNS, VoIP."
+    ],
+    "steps": [
+      "Client sends SYN.",
+      "Server replies with SYN-ACK.",
+      "Client sends ACK; the connection is established and data can flow."
+    ],
+    "examples": [
+      "Loading a web page uses TCP; a WhatsApp video call mostly uses UDP."
+    ],
+    "formulas": [],
+    "workedExample": null,
+    "practice": [
+      {
+        "question": "Why do online games prefer UDP?",
+        "hint": "Speed versus reliability.",
+        "answer": "Low latency matters more than resending old packets; a late packet is useless."
+      },
+      {
+        "question": "Name the three steps of the TCP handshake.",
+        "hint": "SYN...",
+        "answer": "SYN, SYN-ACK, ACK."
+      }
+    ],
+    "commonMistakes": [
+      "Thinking UDP is 'bad'; it is the right choice when speed matters more than reliability."
+    ],
+    "followUps": [
+      "OSI model",
+      "IP addressing",
+      "HTTP and HTTPS"
+    ]
+  },
+  {
+    "id": "ip-addressing",
+    "subject": "Computer Networks",
+    "title": "IP Addressing and Subnetting",
+    "aliases": [
+      "ip address",
+      "ip addressing",
+      "ipv4",
+      "ipv6",
+      "subnet",
+      "subnetting",
+      "subnet mask",
+      "cidr"
+    ],
+    "simpleExplanation": "An IP address uniquely identifies a device on a network. IPv4 addresses are 32 bits written as four numbers (for example, 192.168.1.10); IPv6 addresses are 128 bits. A subnet mask (or CIDR suffix like /24) splits an address into a network part and a host part, which lets large networks be divided into smaller subnets.",
+    "analogy": "An IP address is like a postal address: the network part is the street, and the host part is the house number.",
+    "keyPoints": [
+      "IPv4: 32 bits, about 4.3 billion addresses; IPv6: 128 bits.",
+      "Private ranges: 10.0.0.0/8, 172.16.0.0/12, 192.168.0.0/16.",
+      "/24 means the first 24 bits are the network part (mask 255.255.255.0).",
+      "Usable hosts per subnet = 2^(host bits) − 2 (network and broadcast addresses).",
+      "Network address: all host bits 0; broadcast: all host bits 1."
+    ],
+    "steps": [
+      "Find the number of host bits: 32 − prefix length.",
+      "Hosts = 2^(host bits) − 2.",
+      "Network address: AND the IP with the mask.",
+      "Broadcast address: set all host bits to 1."
+    ],
+    "examples": [
+      "192.168.1.0/24 has 254 usable hosts: 192.168.1.1 to 192.168.1.254."
+    ],
+    "formulas": [
+      {
+        "formula": "Usable hosts = 2^(32 − prefix) − 2",
+        "meaning": "Hosts available in an IPv4 subnet."
+      }
+    ],
+    "workedExample": {
+      "problem": "How many usable hosts are in a /26 subnet?",
+      "steps": [
+        "Host bits = 32 − 26 = 6.",
+        "2⁶ = 64.",
+        "64 − 2 = 62."
+      ],
+      "answer": "62 usable hosts."
+    },
+    "practice": [
+      {
+        "question": "How many usable hosts does a /28 subnet have?",
+        "hint": "4 host bits.",
+        "answer": "14."
+      },
+      {
+        "question": "What is the subnet mask for /24?",
+        "hint": "24 ones.",
+        "answer": "255.255.255.0."
+      }
+    ],
+    "commonMistakes": [
+      "Forgetting to subtract 2 for the network and broadcast addresses."
+    ],
+    "followUps": [
+      "OSI model",
+      "TCP vs UDP",
+      "DNS"
+    ]
+  },
+  {
+    "id": "dns-http",
+    "subject": "Computer Networks",
+    "title": "DNS and HTTP/HTTPS",
+    "aliases": [
+      "dns",
+      "domain name system",
+      "http",
+      "https",
+      "http vs https",
+      "ssl",
+      "tls",
+      "how the web works",
+      "what happens when you type a url"
+    ],
+    "simpleExplanation": "DNS (Domain Name System) translates human-friendly names like google.com into IP addresses that computers use. HTTP is the protocol browsers use to request and receive web pages. HTTPS is HTTP encrypted with TLS, so data cannot be read or changed in transit, and the site's identity is verified with a certificate.",
+    "analogy": "DNS is the phone's contact list (name → number); HTTP is the conversation; HTTPS is the same conversation in a sealed, tamper-proof envelope.",
+    "keyPoints": [
+      "DNS lookup: browser cache → OS → resolver → root → TLD → authoritative server.",
+      "HTTP methods: GET (read), POST (create), PUT/PATCH (update), DELETE (remove).",
+      "Status codes: 200 OK, 301 redirect, 404 not found, 500 server error.",
+      "HTTP uses port 80; HTTPS uses port 443.",
+      "HTTP is stateless; cookies and sessions remember users."
+    ],
+    "steps": [
+      "You type a URL; the browser asks DNS for the IP address.",
+      "The browser opens a TCP connection (and a TLS handshake for HTTPS).",
+      "It sends an HTTP request.",
+      "The server returns a response with a status code and HTML.",
+      "The browser renders the page and fetches its images, CSS and scripts."
+    ],
+    "examples": [
+      "GET /index.html → 200 OK with the page content."
+    ],
+    "formulas": [],
+    "workedExample": null,
+    "practice": [
+      {
+        "question": "What does a 404 status code mean?",
+        "hint": "Missing.",
+        "answer": "The requested resource was not found."
+      },
+      {
+        "question": "Which port does HTTPS use by default?",
+        "hint": "Secure web.",
+        "answer": "443."
+      }
+    ],
+    "commonMistakes": [
+      "Thinking HTTPS hides which website you visit; it encrypts the content, but the domain can still be seen."
+    ],
+    "followUps": [
+      "TCP vs UDP",
+      "OSI model",
+      "IP addressing"
+    ]
+  },
+  {
+    "id": "oop",
+    "subject": "Programming",
+    "title": "Object-Oriented Programming (OOP)",
+    "aliases": [
+      "oop",
+      "oops",
+      "object oriented programming",
+      "object-oriented programming",
+      "class and object",
+      "classes and objects",
+      "pillars of oop"
+    ],
+    "simpleExplanation": "Object-oriented programming organizes code around objects: bundles of data (attributes) and behaviour (methods). A class is the blueprint; an object is an instance made from it. OOP has four pillars: encapsulation, abstraction, inheritance and polymorphism. Java, C++, Python and C# support OOP.",
+    "analogy": "A class is a cookie cutter; objects are the cookies. Every cookie has the same shape but can have different toppings (attribute values).",
+    "keyPoints": [
+      "Class: blueprint. Object: instance with its own data.",
+      "Encapsulation: keep data private and expose it through methods.",
+      "Abstraction: show only essential features and hide details.",
+      "Inheritance: a child class reuses and extends a parent class.",
+      "Polymorphism: one interface, many forms (overloading and overriding)."
+    ],
+    "steps": [
+      "Identify real-world entities and make them classes.",
+      "Add attributes (data) and methods (behaviour).",
+      "Hide internal data with private fields (encapsulation).",
+      "Reuse common code through inheritance.",
+      "Override methods to change behaviour in subclasses (polymorphism)."
+    ],
+    "examples": [
+      "class Car { private int speed; void accelerate() { speed += 10; } } — Car myCar = new Car();"
+    ],
+    "formulas": [],
+    "workedExample": null,
+    "practice": [
+      {
+        "question": "What is the difference between a class and an object?",
+        "hint": "Blueprint vs instance.",
+        "answer": "A class is a template that defines attributes and methods; an object is a concrete instance created from it."
+      },
+      {
+        "question": "Name the four pillars of OOP.",
+        "hint": "E, A, I, P.",
+        "answer": "Encapsulation, abstraction, inheritance and polymorphism."
+      }
+    ],
+    "commonMistakes": [
+      "Confusing abstraction (hiding complexity) with encapsulation (protecting data)."
+    ],
+    "followUps": [
+      "Inheritance",
+      "Polymorphism",
+      "Encapsulation and abstraction"
+    ]
+  },
+  {
+    "id": "inheritance",
+    "subject": "Programming",
+    "title": "Inheritance",
+    "aliases": [
+      "inheritance",
+      "types of inheritance",
+      "multiple inheritance",
+      "multilevel inheritance",
+      "inheritance in java",
+      "inheritance in python",
+      "super keyword",
+      "extends"
+    ],
+    "simpleExplanation": "Inheritance lets a new class (child or subclass) take on the attributes and methods of an existing class (parent or superclass), and then add or change behaviour. It promotes code reuse and models 'is-a' relationships, such as 'a Dog is an Animal'.",
+    "analogy": "Children inherit features from their parents but can also have their own unique traits.",
+    "keyPoints": [
+      "Types: single, multilevel, hierarchical, multiple and hybrid.",
+      "Java does not support multiple inheritance of classes (it uses interfaces); C++ and Python do.",
+      "The child can override parent methods.",
+      "super (Java/Python) calls the parent's constructor or methods.",
+      "Represents an 'is-a' relationship."
+    ],
+    "steps": [
+      "Create a parent class with common features.",
+      "Declare a child class that extends it (Java: extends; Python: class Dog(Animal)).",
+      "Add new members or override methods in the child.",
+      "Call parent behaviour with super when needed."
+    ],
+    "examples": [
+      "class Animal { void eat() {} } class Dog extends Animal { void bark() {} } — a Dog can both eat() and bark()."
+    ],
+    "formulas": [],
+    "workedExample": null,
+    "practice": [
+      {
+        "question": "Why doesn't Java allow multiple inheritance of classes?",
+        "hint": "Diamond problem.",
+        "answer": "To avoid ambiguity (the diamond problem) when two parents have the same method; Java uses interfaces instead."
+      },
+      {
+        "question": "What kind of relationship does inheritance model?",
+        "hint": "Two words.",
+        "answer": "An 'is-a' relationship."
+      }
+    ],
+    "commonMistakes": [
+      "Using inheritance for 'has-a' relationships; use composition instead (a Car has an Engine)."
+    ],
+    "followUps": [
+      "Polymorphism",
+      "Object-oriented programming",
+      "Encapsulation and abstraction"
+    ]
+  },
+  {
+    "id": "polymorphism",
+    "subject": "Programming",
+    "title": "Polymorphism",
+    "aliases": [
+      "polymorphism",
+      "method overloading",
+      "method overriding",
+      "overloading",
+      "overriding",
+      "runtime polymorphism",
+      "compile time polymorphism"
+    ],
+    "simpleExplanation": "Polymorphism means 'many forms': the same method name can behave differently depending on the object or arguments. Compile-time polymorphism is method overloading (same name, different parameters). Runtime polymorphism is method overriding (a subclass provides its own version of a parent method, chosen when the program runs).",
+    "analogy": "The word 'open' means different actions for a door, a file and a bank account, yet the instruction is the same.",
+    "keyPoints": [
+      "Overloading: same method name, different parameter lists, resolved at compile time.",
+      "Overriding: same signature in parent and child, resolved at runtime.",
+      "A parent reference can point to a child object: Animal a = new Dog();",
+      "Enables writing general code that works with many types."
+    ],
+    "steps": [
+      "Define a method in the parent class.",
+      "Override it in each subclass.",
+      "Call the method through a parent-type reference.",
+      "The actual object's version runs (dynamic dispatch)."
+    ],
+    "examples": [
+      "add(int a, int b) and add(double a, double b) is overloading.",
+      "Shape.area() overridden in Circle and Rectangle is overriding."
+    ],
+    "formulas": [],
+    "workedExample": null,
+    "practice": [
+      {
+        "question": "Is changing only the return type enough to overload a method in Java?",
+        "hint": "Parameters.",
+        "answer": "No. Overloaded methods must differ in their parameter lists."
+      },
+      {
+        "question": "Animal a = new Dog(); a.sound(); — which sound() runs if Dog overrides it?",
+        "hint": "Runtime type.",
+        "answer": "Dog's sound(), because overriding is resolved at runtime."
+      }
+    ],
+    "commonMistakes": [
+      "Confusing overloading (same class, different parameters) with overriding (subclass, same signature)."
+    ],
+    "followUps": [
+      "Inheritance",
+      "Object-oriented programming",
+      "Encapsulation and abstraction"
+    ]
+  },
+  {
+    "id": "encapsulation-abstraction",
+    "subject": "Programming",
+    "title": "Encapsulation and Abstraction",
+    "aliases": [
+      "encapsulation",
+      "abstraction",
+      "data hiding",
+      "abstract class",
+      "interface",
+      "access modifiers",
+      "getters and setters"
+    ],
+    "simpleExplanation": "Encapsulation bundles data and the methods that use it inside a class and restricts direct access to the data (using private fields with getters and setters). Abstraction hides complex implementation details and shows only what the user needs, using abstract classes and interfaces.",
+    "analogy": "A car's engine is encapsulated under the bonnet; abstraction is the steering wheel and pedals that let you drive without knowing how the engine works.",
+    "keyPoints": [
+      "Encapsulation: private data + public methods; protects data from invalid changes.",
+      "Access modifiers: private, protected, public (and default in Java).",
+      "Abstraction: focus on what an object does, not how.",
+      "Abstract classes can have some implementation; interfaces define a contract.",
+      "Both reduce complexity and make code easier to change."
+    ],
+    "steps": [
+      "Make fields private.",
+      "Provide public getter and setter methods with validation.",
+      "Define abstract methods or interfaces for behaviour users need.",
+      "Implement the details in concrete classes."
+    ],
+    "examples": [
+      "BankAccount with private balance and deposit()/withdraw() methods that reject negative amounts."
+    ],
+    "formulas": [],
+    "workedExample": null,
+    "practice": [
+      {
+        "question": "How does encapsulation protect data?",
+        "hint": "Private fields.",
+        "answer": "Fields are private, so other code must use methods that can validate changes."
+      },
+      {
+        "question": "Can you create an object of an abstract class?",
+        "hint": "Incomplete blueprint.",
+        "answer": "No. You can only create objects of concrete subclasses."
+      }
+    ],
+    "commonMistakes": [
+      "Making every field public and losing the benefits of encapsulation."
+    ],
+    "followUps": [
+      "Object-oriented programming",
+      "Inheritance",
+      "Polymorphism"
+    ]
+  },
+  {
+    "id": "compiler-interpreter",
+    "subject": "Programming",
+    "title": "Compiler vs Interpreter",
+    "aliases": [
+      "compiler",
+      "interpreter",
+      "compiler vs interpreter",
+      "compilation",
+      "phases of compiler",
+      "bytecode",
+      "jvm"
+    ],
+    "simpleExplanation": "A compiler translates the whole program into machine code before it runs, producing an executable (C, C++). An interpreter translates and runs the program line by line (Python, JavaScript). Java uses both: it compiles to bytecode, which the JVM interprets or just-in-time compiles.",
+    "analogy": "A compiler is translating a whole book before anyone reads it; an interpreter is a live translator speaking sentence by sentence.",
+    "keyPoints": [
+      "Compiled programs usually run faster; interpreted programs are easier to test interactively.",
+      "Compilers report all errors after scanning the whole program; interpreters stop at the first error.",
+      "Compiler phases: lexical analysis, syntax analysis, semantic analysis, intermediate code, optimization, code generation.",
+      "Java: javac → bytecode → JVM (interpreter + JIT compiler)."
+    ],
+    "steps": [
+      "Lexical analysis splits code into tokens.",
+      "Syntax analysis builds a parse tree using grammar rules.",
+      "Semantic analysis checks types and meaning.",
+      "Intermediate code is generated and optimized.",
+      "Target machine code is generated."
+    ],
+    "examples": [
+      "gcc compiles hello.c into an executable; python hello.py interprets the script."
+    ],
+    "formulas": [],
+    "workedExample": null,
+    "practice": [
+      {
+        "question": "Which phase of a compiler produces tokens?",
+        "hint": "First phase.",
+        "answer": "Lexical analysis."
+      },
+      {
+        "question": "Is Python compiled or interpreted?",
+        "hint": "Line by line.",
+        "answer": "Interpreted (CPython compiles to bytecode internally, then interprets it)."
+      }
+    ],
+    "commonMistakes": [
+      "Saying Java is purely interpreted; it is compiled to bytecode first."
+    ],
+    "followUps": [
+      "Object-oriented programming",
+      "Big-O notation",
+      "Operating system"
+    ]
+  },
+  {
+    "id": "machine-learning",
+    "subject": "Machine Learning",
+    "title": "Machine Learning",
+    "aliases": [
+      "machine learning",
+      "ml",
+      "what is machine learning",
+      "types of machine learning",
+      "machine learning algorithms",
+      "applications of machine learning",
+      "advantages of machine learning",
+      "machine learning vs deep learning"
+    ],
+    "simpleExplanation": "Machine learning is a branch of AI where computers learn patterns from data instead of being explicitly programmed with rules. In supervised learning the model learns from labelled examples (inputs with correct answers). In unsupervised learning it finds structure in unlabelled data, such as groups. In reinforcement learning an agent learns by trial and error using rewards.",
+    "analogy": "Teaching a child to recognize fruits by showing many labelled pictures (supervised), letting them sort unlabelled toys into groups (unsupervised), or rewarding them for good moves in a game (reinforcement).",
+    "keyPoints": [
+      "Supervised: classification (spam or not) and regression (house price).",
+      "Unsupervised: clustering (customer groups) and dimensionality reduction.",
+      "Reinforcement: agent, environment, actions and rewards.",
+      "Data is split into training and test sets to check generalization.",
+      "Common algorithms: linear regression, decision trees, k-means, neural networks."
+    ],
+    "steps": [
+      "Collect and clean data.",
+      "Choose features and split into training and test sets.",
+      "Choose a model and train it on the training data.",
+      "Evaluate on the test data (accuracy, precision, RMSE).",
+      "Tune and deploy."
+    ],
+    "examples": [
+      "Email spam filters (supervised classification).",
+      "Netflix recommendations.",
+      "Grouping customers by shopping behaviour (clustering)."
+    ],
+    "formulas": [
+      {
+        "formula": "Accuracy = correct predictions ÷ total predictions",
+        "meaning": "A basic measure for classification models."
+      }
+    ],
+    "workedExample": null,
+    "practice": [
+      {
+        "question": "Is predicting house prices classification or regression?",
+        "hint": "Continuous output.",
+        "answer": "Regression, because the output is a continuous number."
+      },
+      {
+        "question": "Which type of learning groups customers without labels?",
+        "hint": "No answers given.",
+        "answer": "Unsupervised learning (clustering)."
+      }
+    ],
+    "commonMistakes": [
+      "Testing a model on the same data it was trained on, which hides overfitting."
+    ],
+    "followUps": [
+      "Supervised Learning",
+      "Unsupervised Learning",
+      "Reinforcement Learning"
+    ],
+    "faq": [
+      {
+        "question": "What are the types of machine learning?",
+        "answer": "Supervised learning (learns from labelled data: classification and regression), unsupervised learning (finds patterns in unlabelled data: clustering, dimensionality reduction, association), reinforcement learning (learns by trial and error from rewards) and semi-supervised learning (a few labels plus many unlabelled examples). Self-supervised learning, used to pre-train large language models, creates labels from the data itself."
+      },
+      {
+        "question": "What are the applications of machine learning?",
+        "answer": "Recommendation systems (Netflix, Amazon), spam and fraud detection, image and speech recognition, medical diagnosis, self-driving cars, price prediction, chatbots and language translation, credit scoring and predictive maintenance."
+      },
+      {
+        "question": "What are the advantages and disadvantages of machine learning?",
+        "answer": "Advantages: learns patterns humans cannot see, improves with more data, automates decisions at scale, adapts to new data. Disadvantages: needs lots of good-quality data, can be a black box, can learn bias from data, is expensive to train, and can overfit."
+      },
+      {
+        "question": "What is the difference between machine learning and deep learning?",
+        "answer": "Machine learning includes many algorithms (linear regression, decision trees, SVM) that often need hand-made features and work with moderate data. Deep learning is a subset that uses multi-layer neural networks to learn features automatically; it needs much more data and computing power (GPUs) but performs best on images, audio and text."
+      },
+      {
+        "question": "What is the difference between AI and machine learning?",
+        "answer": "AI is the broad goal of building machines that act intelligently, which can include hand-written rules. Machine learning is a subset of AI in which the machine learns rules from data instead of being explicitly programmed."
+      },
+      {
+        "question": "What are the most common machine learning algorithms?",
+        "answer": "Linear regression, logistic regression, decision trees, random forest, support vector machines, K-nearest neighbours, Naive Bayes, K-means clustering, PCA, gradient boosting (XGBoost) and neural networks."
+      }
+    ],
+    "version": 3
+  },
+  {
+    "id": "overfitting",
+    "subject": "Machine Learning",
+    "title": "Overfitting and Underfitting",
+    "aliases": [
+      "overfitting",
+      "underfitting",
+      "bias variance",
+      "bias-variance tradeoff",
+      "regularization",
+      "cross validation"
+    ],
+    "simpleExplanation": "Overfitting happens when a model learns the training data too closely, including noise, so it performs well on training data but badly on new data. Underfitting happens when a model is too simple to capture the pattern, so it performs badly everywhere. The goal is a balance (the bias-variance trade-off).",
+    "analogy": "Overfitting is memorizing last year's question paper word for word and failing when questions change; underfitting is not studying enough to answer anything.",
+    "keyPoints": [
+      "Overfitting: low training error, high test error (high variance).",
+      "Underfitting: high training and test error (high bias).",
+      "Fixes for overfitting: more data, regularization (L1/L2), dropout, simpler model, early stopping.",
+      "Fixes for underfitting: more features, a more complex model, longer training.",
+      "Cross-validation checks performance on unseen data."
+    ],
+    "steps": [
+      "Compare training and validation errors.",
+      "If training error is low but validation error high, reduce complexity or add regularization.",
+      "If both are high, increase model capacity or improve features.",
+      "Use k-fold cross-validation to confirm."
+    ],
+    "examples": [
+      "A degree-15 polynomial passing through every training point but swinging wildly between them."
+    ],
+    "formulas": [
+      {
+        "formula": "Loss = Error + λ × Σw²",
+        "meaning": "L2 regularization penalizes large weights to reduce overfitting."
+      }
+    ],
+    "workedExample": null,
+    "practice": [
+      {
+        "question": "Training accuracy 99%, test accuracy 65%. What is happening?",
+        "hint": "Big gap.",
+        "answer": "Overfitting."
+      },
+      {
+        "question": "Give two ways to reduce overfitting.",
+        "hint": "Data or penalties.",
+        "answer": "Get more training data; use regularization (also dropout, early stopping, simpler models)."
+      }
+    ],
+    "commonMistakes": [
+      "Judging a model only by training accuracy."
+    ],
+    "followUps": [
+      "Machine learning",
+      "Linear regression",
+      "Neural networks"
+    ],
+    "faq": [
+      {
+        "question": "What is the difference between overfitting and underfitting?",
+        "answer": "Overfitting: the model memorises the training data including noise, so training accuracy is high but test accuracy is low (high variance). Underfitting: the model is too simple to capture the pattern, so both training and test accuracy are low (high bias). The goal is a balanced model that generalises well."
+      },
+      {
+        "question": "How do you prevent overfitting?",
+        "answer": "Use more training data, simplify the model, apply regularisation (L1/L2), use dropout in neural networks, stop training early, use cross-validation, prune decision trees, use ensembles like random forest and remove irrelevant features."
+      },
+      {
+        "question": "What is cross validation?",
+        "answer": "A way to estimate how well a model generalises. In k-fold cross-validation the data is split into k parts; the model is trained on k-1 parts and tested on the remaining part, repeated k times so every part is used for testing once, and the scores are averaged."
+      },
+      {
+        "question": "What is the bias-variance tradeoff?",
+        "answer": "Bias is error from overly simple assumptions (underfitting); variance is error from being too sensitive to the training data (overfitting). Making a model more complex lowers bias but raises variance, so the best model balances the two to minimise total error."
+      },
+      {
+        "question": "What is the difference between L1 and L2 regularization?",
+        "answer": "L1 (Lasso) adds the sum of absolute weights to the loss and can push some weights to exactly zero, performing feature selection. L2 (Ridge) adds the sum of squared weights and shrinks all weights smoothly without making them zero."
+      }
+    ],
+    "version": 3
+  },
+  {
+    "id": "neural-network",
+    "subject": "Machine Learning",
+    "title": "Neural Networks and Deep Learning",
+    "aliases": [
+      "neural network",
+      "neural networks",
+      "deep learning",
+      "ann",
+      "artificial neural network",
+      "perceptron",
+      "multilayer perceptron",
+      "mlp",
+      "backpropagation",
+      "back propagation",
+      "activation function",
+      "activation functions",
+      "relu",
+      "softmax",
+      "dropout",
+      "epoch",
+      "deep neural network",
+      "layers of neural network"
+    ],
+    "simpleExplanation": "A neural network is a machine learning model made of layers of connected 'neurons'. Each neuron multiplies its inputs by weights, adds a bias, and passes the result through an activation function. The network learns by adjusting weights to reduce error, using backpropagation and gradient descent. Deep learning uses networks with many layers.",
+    "analogy": "Like a team of people each making a small judgement and passing it on; over many examples, each person learns how much to trust each input.",
+    "keyPoints": [
+      "Layers: input, hidden and output.",
+      "Neuron output = activation(Σ wᵢxᵢ + b).",
+      "Activation functions: ReLU, sigmoid, tanh, softmax.",
+      "Training: forward pass, compute loss, backpropagation, update weights.",
+      "CNNs suit images; RNNs and Transformers suit sequences and text."
+    ],
+    "steps": [
+      "Pass inputs forward through the layers to get a prediction.",
+      "Compute the loss between prediction and true value.",
+      "Backpropagate to find how each weight affects the loss.",
+      "Update weights with gradient descent.",
+      "Repeat over many examples (epochs)."
+    ],
+    "examples": [
+      "Face unlock on phones (CNN).",
+      "ChatGPT-style language models (Transformers)."
+    ],
+    "formulas": [
+      {
+        "formula": "y = f(Σ wᵢxᵢ + b)",
+        "meaning": "Output of a single neuron with activation f."
+      },
+      {
+        "formula": "w ← w − η × ∂L/∂w",
+        "meaning": "Gradient descent update with learning rate η."
+      }
+    ],
+    "workedExample": {
+      "problem": "A neuron has inputs x = (2, 3), weights w = (0.5, −1), bias 1 and ReLU activation. Find the output.",
+      "steps": [
+        "Weighted sum = 0.5 × 2 + (−1) × 3 + 1.",
+        "= 1 − 3 + 1 = −1.",
+        "ReLU(−1) = max(0, −1)."
+      ],
+      "answer": "0."
+    },
+    "practice": [
+      {
+        "question": "What does ReLU output for an input of 4.2? And for −3?",
+        "hint": "max(0, x).",
+        "answer": "4.2 and 0."
+      },
+      {
+        "question": "Which architecture is most common for image recognition?",
+        "hint": "Convolutions.",
+        "answer": "Convolutional neural networks (CNNs)."
+      }
+    ],
+    "commonMistakes": [
+      "Choosing a very high learning rate, which makes training unstable."
+    ],
+    "followUps": [
+      "Convolutional Neural Networks (CNN)",
+      "Recurrent Neural Networks (RNN and LSTM)",
+      "Gradient Descent"
+    ],
+    "faq": [
+      {
+        "question": "What are activation functions?",
+        "answer": "Functions applied to each neuron's weighted sum to add non-linearity, so the network can learn complex patterns. Common ones: sigmoid (0 to 1, used for binary output), tanh (-1 to 1), ReLU (max(0, x), the default for hidden layers, fast and avoids vanishing gradients), Leaky ReLU, and softmax (turns outputs into class probabilities for multi-class output)."
+      },
+      {
+        "question": "How does backpropagation work?",
+        "answer": "After a forward pass computes the output and the loss, backpropagation uses the chain rule to compute the gradient of the loss with respect to every weight, starting from the output layer and moving backwards. Gradient descent then updates each weight in the direction that reduces the loss. This repeats over many epochs."
+      },
+      {
+        "question": "What are the layers of a neural network?",
+        "answer": "An input layer that receives the features, one or more hidden layers where neurons compute weighted sums plus activation functions, and an output layer that gives the prediction. A network with many hidden layers is called a deep neural network."
+      },
+      {
+        "question": "What is the difference between deep learning and machine learning?",
+        "answer": "Deep learning is a subset of machine learning that uses neural networks with many layers. It learns features automatically from raw data and excels with large datasets of images, audio and text, but needs more data and GPU computing. Traditional machine learning often relies on hand-engineered features and works well on smaller, tabular data."
+      },
+      {
+        "question": "What are the applications of deep learning?",
+        "answer": "Image recognition, face recognition, speech recognition and voice assistants, machine translation, chatbots and large language models, self-driving cars, medical image analysis and recommendation systems."
+      },
+      {
+        "question": "What is a perceptron?",
+        "answer": "The simplest neural network unit: it computes a weighted sum of inputs plus a bias and applies a step function to output 0 or 1. A single perceptron can only learn linearly separable problems (it cannot learn XOR); stacking perceptrons in layers (multilayer perceptron) solves that."
+      }
+    ],
+    "version": 3
+  },
+  {
+    "id": "linear-regression",
+    "subject": "Machine Learning",
+    "title": "Linear Regression",
+    "aliases": [
+      "linear regression",
+      "regression",
+      "least squares",
+      "line of best fit",
+      "mse",
+      "mean squared error"
+    ],
+    "simpleExplanation": "Linear regression predicts a continuous value by fitting a straight line through data: y = mx + c (or y = w·x + b with many features). The best line minimizes the mean squared error between predicted and actual values, usually found with the least-squares formula or gradient descent.",
+    "analogy": "Drawing the straight line through a scatter of points that stays as close as possible to all of them.",
+    "keyPoints": [
+      "Model: ŷ = mx + c (simple) or ŷ = w₁x₁ + ... + wₙxₙ + b (multiple).",
+      "Cost: mean squared error.",
+      "Slope m shows how much y changes per unit of x.",
+      "Assumes a linear relationship; sensitive to outliers.",
+      "Evaluate with R², MSE or RMSE."
+    ],
+    "steps": [
+      "Plot the data to check it looks roughly linear.",
+      "Compute the slope m and intercept c (least squares).",
+      "Predict with ŷ = mx + c.",
+      "Measure error with MSE or R²."
+    ],
+    "examples": [
+      "Predicting marks from hours studied."
+    ],
+    "formulas": [
+      {
+        "formula": "m = Σ(x − x̄)(y − ȳ) / Σ(x − x̄)², c = ȳ − m·x̄",
+        "meaning": "Least-squares slope and intercept."
+      },
+      {
+        "formula": "MSE = (1/n) Σ (y − ŷ)²",
+        "meaning": "Average squared prediction error."
+      }
+    ],
+    "workedExample": {
+      "problem": "Fit a line to points (1, 2), (2, 4), (3, 6).",
+      "steps": [
+        "x̄ = 2, ȳ = 4.",
+        "Σ(x − x̄)(y − ȳ) = (−1)(−2) + 0 + (1)(2) = 4.",
+        "Σ(x − x̄)² = 1 + 0 + 1 = 2, so m = 2.",
+        "c = 4 − 2 × 2 = 0."
+      ],
+      "answer": "y = 2x."
+    },
+    "practice": [
+      {
+        "question": "Using y = 2x + 1, predict y when x = 5.",
+        "hint": "Substitute.",
+        "answer": "11."
+      },
+      {
+        "question": "Predictions (3, 5) for actual values (2, 5). What is the MSE?",
+        "hint": "Average of squared errors.",
+        "answer": "((3 − 2)² + 0²)/2 = 0.5."
+      }
+    ],
+    "commonMistakes": [
+      "Using linear regression for yes/no outcomes; use logistic regression for classification."
+    ],
+    "followUps": [
+      "Machine learning",
+      "Overfitting and underfitting",
+      "Mean, median and mode"
+    ],
+    "faq": [
+      {
+        "question": "What are the assumptions of linear regression?",
+        "answer": "A linear relationship between features and target, independent errors, constant variance of errors (homoscedasticity), normally distributed errors, and no strong multicollinearity between features."
+      },
+      {
+        "question": "What is the difference between simple and multiple linear regression?",
+        "answer": "Simple linear regression uses one feature: y = mx + c. Multiple linear regression uses several features: y = b0 + b1x1 + b2x2 + ... + bnxn."
+      }
+    ],
+    "version": 3
+  },
+  {
+    "id": "cloud-computing",
+    "subject": "Cloud Computing",
+    "title": "Cloud Computing",
+    "aliases": [
+      "cloud computing",
+      "cloud",
+      "what is cloud computing",
+      "introduction to cloud computing",
+      "cloud computing basics",
+      "applications of cloud computing",
+      "how cloud computing works",
+      "cloud architecture",
+      "cloud computing architecture"
+    ],
+    "simpleExplanation": "Cloud computing means renting computing resources (servers, storage, databases, software) over the internet instead of owning them. You pay for what you use and can scale up or down quickly. Service models are IaaS (virtual machines), PaaS (platforms to deploy code) and SaaS (ready-to-use software like Gmail).",
+    "analogy": "Like using electricity from the grid instead of running your own generator: you pay per unit and get more when you need it.",
+    "keyPoints": [
+      "IaaS: rent virtual machines and storage (AWS EC2, Azure VMs).",
+      "PaaS: deploy code without managing servers (Heroku, Render, Google App Engine).",
+      "SaaS: use complete applications (Gmail, Google Docs).",
+      "Deployment models: public, private, hybrid cloud.",
+      "Benefits: scalability, pay-as-you-go, reliability; risks: security, vendor lock-in."
+    ],
+    "steps": [
+      "Choose a provider and service model.",
+      "Create resources (VM, database, storage).",
+      "Deploy your application.",
+      "Monitor usage and scale resources as demand changes."
+    ],
+    "examples": [
+      "This project's backend can be deployed on Render (PaaS) with MongoDB Atlas (database as a service)."
+    ],
+    "formulas": [],
+    "workedExample": null,
+    "practice": [
+      {
+        "question": "Is Google Docs IaaS, PaaS or SaaS?",
+        "hint": "Ready-to-use software.",
+        "answer": "SaaS."
+      },
+      {
+        "question": "What is the main advantage of pay-as-you-go pricing?",
+        "hint": "Cost.",
+        "answer": "You pay only for resources you actually use, with no large upfront hardware cost."
+      }
+    ],
+    "commonMistakes": [
+      "Thinking 'cloud' means data has no physical location; it lives in real data centres."
+    ],
+    "followUps": [
+      "Cloud Service Models (IaaS, PaaS, SaaS)",
+      "Cloud Deployment Models",
+      "Virtualization and Hypervisors"
+    ],
+    "faq": [
+      {
+        "question": "What is the architecture of cloud computing?",
+        "answer": "Cloud architecture has a front end (client devices, browsers and apps the user interacts with) and a back end (servers, storage, virtual machines, databases, management software, security and the network that connects them), linked over the internet. Virtualisation and a management layer let many users share the back-end resources."
+      },
+      {
+        "question": "What are the applications of cloud computing?",
+        "answer": "Online storage and backup (Google Drive, Dropbox), web and mobile app hosting, email and office tools (Gmail, Microsoft 365), video streaming (Netflix), big data analytics, AI and machine learning training, online education, e-commerce, healthcare records and IoT data processing."
+      },
+      {
+        "question": "How does cloud computing work?",
+        "answer": "Providers run huge data centres full of servers. Virtualisation divides these servers into virtual machines and storage pools shared by many customers. Users request resources through a web console or API, use them over the internet, and pay for what they use; the provider handles hardware, power, cooling and maintenance."
+      },
+      {
+        "question": "What is the difference between cloud computing and traditional computing?",
+        "answer": "Traditional (on-premises) computing means buying and maintaining your own servers upfront with fixed capacity. Cloud computing means renting resources over the internet on demand, scaling instantly and paying only for usage, while the provider manages the hardware."
+      }
+    ],
+    "version": 3
+  },
+  {
+    "id": "git",
+    "subject": "Computing",
+    "title": "Git and Version Control",
+    "aliases": [
+      "git",
+      "github",
+      "version control",
+      "git commands",
+      "branch",
+      "merge",
+      "commit"
+    ],
+    "simpleExplanation": "Git is a version control system that records changes to files over time, so you can see history, undo mistakes and work in parallel on branches. A commit is a saved snapshot. Branches let you develop features separately and merge them back. GitHub hosts Git repositories online for collaboration.",
+    "analogy": "Git is like saving numbered checkpoints in a game: you can always go back, or try a different path on a separate save slot (branch).",
+    "keyPoints": [
+      "git init, git add, git commit -m, git status, git log.",
+      "Branch: git branch / git checkout -b feature; merge with git merge.",
+      "Remote: git push and git pull sync with GitHub.",
+      "Staging area: git add chooses what goes into the next commit.",
+      "Merge conflicts happen when two branches change the same lines."
+    ],
+    "steps": [
+      "git init (or git clone) to start.",
+      "Edit files, then git add to stage them.",
+      "git commit -m \"message\" to save a snapshot.",
+      "git push to upload to GitHub.",
+      "Use branches for features and merge when ready."
+    ],
+    "examples": [
+      "git checkout -b login-page; ...; git commit -m \"Add login form\"; git push origin login-page."
+    ],
+    "formulas": [],
+    "workedExample": null,
+    "practice": [
+      {
+        "question": "Which command stages a file for the next commit?",
+        "hint": "Two words.",
+        "answer": "git add <file>."
+      },
+      {
+        "question": "What is the difference between git pull and git push?",
+        "hint": "Direction.",
+        "answer": "git pull downloads and merges remote changes; git push uploads your commits to the remote."
+      }
+    ],
+    "commonMistakes": [
+      "Committing secrets such as .env files; add them to .gitignore."
+    ],
+    "followUps": [
+      "Cloud computing",
+      "Object-oriented programming",
+      "Compiler vs interpreter"
+    ]
+  }
+]

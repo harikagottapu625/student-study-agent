@@ -1,0 +1,1376 @@
+[
+  {
+    "id": "supervised-learning",
+    "subject": "Machine Learning",
+    "title": "Supervised Learning",
+    "aliases": [
+      "supervised learning",
+      "supervised machine learning",
+      "classification and regression",
+      "classification vs regression",
+      "labelled data",
+      "labeled data",
+      "classification",
+      "types of supervised learning"
+    ],
+    "simpleExplanation": "In supervised learning the model learns from labelled examples: each input comes with the correct output. It learns a mapping from inputs to outputs so it can predict the output for new inputs. If the output is a category it is classification; if it is a number it is regression.",
+    "analogy": "Like studying with an answer key: you practise questions, check the correct answers, and learn to answer new questions on the exam.",
+    "keyPoints": [
+      "Training data has features (X) and labels (y).",
+      "Classification predicts categories (spam/not spam, disease yes/no).",
+      "Regression predicts continuous values (house price, temperature).",
+      "Algorithms: linear and logistic regression, decision trees, random forest, SVM, KNN, Naive Bayes, neural networks.",
+      "Data is split into training, validation and test sets.",
+      "Classification metrics: accuracy, precision, recall, F1; regression metrics: MAE, MSE, RMSE, R²."
+    ],
+    "steps": [
+      "Collect labelled data.",
+      "Clean data and choose features.",
+      "Split into training and test sets.",
+      "Train the model on the training set.",
+      "Evaluate on the test set and tune.",
+      "Deploy and predict on new data."
+    ],
+    "examples": [
+      "Email spam detection (classification).",
+      "Predicting a student's exam score from study hours (regression)."
+    ],
+    "formulas": [],
+    "workedExample": null,
+    "practice": [
+      {
+        "question": "Predicting tomorrow's rainfall in mm is classification or regression?",
+        "hint": "Is the output a number?",
+        "answer": "Regression."
+      },
+      {
+        "question": "Name three supervised learning algorithms.",
+        "hint": "Trees, lines, neighbours.",
+        "answer": "Decision tree, logistic regression, K-nearest neighbours (also SVM, Naive Bayes, random forest)."
+      }
+    ],
+    "commonMistakes": [
+      "Evaluating on the training data instead of unseen test data.",
+      "Calling logistic regression a regression algorithm; it is used for classification."
+    ],
+    "followUps": [
+      "Unsupervised Learning",
+      "Model Evaluation Metrics",
+      "Decision Trees"
+    ],
+    "faq": [
+      {
+        "question": "What is the difference between supervised and unsupervised learning?",
+        "answer": "Supervised learning uses labelled data (inputs with correct answers) to predict outputs, e.g. classification and regression. Unsupervised learning uses unlabelled data and finds hidden structure on its own, e.g. clustering customers or reducing dimensions. Supervised is evaluated against known answers; unsupervised has no answer key."
+      },
+      {
+        "question": "What is the difference between classification and regression?",
+        "answer": "Classification predicts a discrete category (yes/no, cat/dog/bird) and is evaluated with accuracy, precision, recall and F1. Regression predicts a continuous number (price, marks) and is evaluated with MAE, MSE, RMSE and R²."
+      },
+      {
+        "question": "What are the advantages and disadvantages of supervised learning?",
+        "answer": "Advantages: clear goal, accurate predictions, easy to measure performance. Disadvantages: needs a lot of labelled data, which is costly and slow to create; cannot discover unknown categories; can overfit."
+      },
+      {
+        "question": "What are the types of supervised learning?",
+        "answer": "Classification (binary like spam or not, multi-class like digit recognition 0-9, multi-label like tagging a photo with several objects) and regression (simple linear, multiple linear, polynomial)."
+      }
+    ]
+  },
+  {
+    "id": "unsupervised-learning",
+    "subject": "Machine Learning",
+    "title": "Unsupervised Learning",
+    "aliases": [
+      "unsupervised learning",
+      "unsupervised machine learning",
+      "unlabelled data",
+      "unlabeled data",
+      "association rules",
+      "association rule mining",
+      "apriori",
+      "apriori algorithm",
+      "market basket analysis",
+      "anomaly detection",
+      "types of unsupervised learning"
+    ],
+    "simpleExplanation": "Unsupervised learning finds patterns in data that has no labels. The model groups similar items, reduces the number of features, or finds rules and unusual points, without being told the correct answers.",
+    "analogy": "Like sorting a box of mixed buttons by colour and size without anyone telling you the categories.",
+    "keyPoints": [
+      "Clustering groups similar data: K-means, hierarchical clustering, DBSCAN.",
+      "Dimensionality reduction compresses features: PCA, t-SNE, autoencoders.",
+      "Association rules find items that occur together: Apriori, FP-Growth (support, confidence, lift).",
+      "Anomaly detection finds unusual points: fraud, faults.",
+      "Harder to evaluate because there is no ground truth (use silhouette score, inertia, domain checks)."
+    ],
+    "steps": [
+      "Collect unlabelled data.",
+      "Scale and clean the features.",
+      "Choose an algorithm (clustering, reduction, association).",
+      "Run it and inspect the groups or patterns.",
+      "Interpret and validate with domain knowledge."
+    ],
+    "examples": [
+      "Customer segmentation for marketing.",
+      "Market basket analysis: people who buy bread often buy butter."
+    ],
+    "formulas": [
+      {
+        "formula": "Support(A) = transactions containing A / total transactions",
+        "meaning": "how often an itemset appears"
+      },
+      {
+        "formula": "Confidence(A → B) = Support(A ∪ B) / Support(A)",
+        "meaning": "how often B is bought when A is bought"
+      },
+      {
+        "formula": "Lift(A → B) = Confidence(A → B) / Support(B)",
+        "meaning": "> 1 means A and B occur together more than by chance"
+      }
+    ],
+    "workedExample": {
+      "problem": "Out of 100 transactions, 20 contain bread, 10 contain bread and butter, and 25 contain butter. Find support, confidence and lift for bread → butter.",
+      "steps": [
+        "Support(bread, butter) = 10/100 = 0.1",
+        "Confidence = 0.1 / 0.2 = 0.5",
+        "Lift = 0.5 / 0.25 = 2"
+      ],
+      "answer": "Support 0.1, confidence 0.5, lift 2 (bread buyers are twice as likely to buy butter)."
+    },
+    "practice": [
+      {
+        "question": "Is customer segmentation supervised or unsupervised?",
+        "hint": "Are the groups known beforehand?",
+        "answer": "Unsupervised (clustering)."
+      }
+    ],
+    "commonMistakes": [
+      "Forgetting to scale features before distance-based clustering."
+    ],
+    "followUps": [
+      "K-Means and Clustering",
+      "Principal Component Analysis (PCA)",
+      "Supervised Learning"
+    ],
+    "faq": [
+      {
+        "question": "What are the types of unsupervised learning?",
+        "answer": "Clustering (K-means, hierarchical, DBSCAN), dimensionality reduction (PCA, t-SNE, autoencoders), association rule learning (Apriori, FP-Growth) and anomaly detection (isolation forest, one-class SVM)."
+      },
+      {
+        "question": "What are the applications of unsupervised learning?",
+        "answer": "Customer segmentation, recommendation systems, market basket analysis, fraud and anomaly detection, document topic grouping, image compression and data visualisation."
+      }
+    ]
+  },
+  {
+    "id": "reinforcement-learning",
+    "subject": "Machine Learning",
+    "title": "Reinforcement Learning",
+    "aliases": [
+      "reinforcement learning",
+      "rl",
+      "q learning",
+      "q-learning",
+      "reward",
+      "markov decision process",
+      "mdp",
+      "exploration vs exploitation",
+      "policy",
+      "deep reinforcement learning",
+      "dqn"
+    ],
+    "simpleExplanation": "In reinforcement learning an agent learns by trial and error. It takes actions in an environment, receives rewards or penalties, and learns a policy (which action to take in each state) that maximises total reward over time.",
+    "analogy": "Like training a dog with treats: good actions get a reward, bad ones do not, and the dog gradually learns what to do.",
+    "keyPoints": [
+      "Elements: agent, environment, state, action, reward, policy, value function.",
+      "Modelled as a Markov Decision Process (states, actions, transition probabilities, rewards, discount factor γ).",
+      "Exploration (try new actions) vs exploitation (use the best known action); ε-greedy balances them.",
+      "Q-learning learns the value Q(s, a) of each action in each state.",
+      "Deep RL uses neural networks (DQN) for large state spaces.",
+      "Used in games (AlphaGo), robotics, self-driving and recommendation."
+    ],
+    "steps": [
+      "Observe the current state.",
+      "Choose an action (explore or exploit).",
+      "Receive a reward and the next state.",
+      "Update the policy or Q-values.",
+      "Repeat for many episodes."
+    ],
+    "examples": [
+      "AlphaGo learned to beat world champions at Go.",
+      "A robot learning to walk by being rewarded for moving forward without falling."
+    ],
+    "formulas": [
+      {
+        "formula": "Q(s,a) ← Q(s,a) + α [r + γ · max Q(s',a') − Q(s,a)]",
+        "meaning": "Q-learning update; α = learning rate, γ = discount factor"
+      }
+    ],
+    "workedExample": {
+      "problem": "Q(s,a) = 2, reward r = 5, γ = 0.9, max Q(s',a') = 10, α = 0.5. Find the new Q(s,a).",
+      "steps": [
+        "Target = 5 + 0.9 × 10 = 14",
+        "Error = 14 − 2 = 12",
+        "New Q = 2 + 0.5 × 12"
+      ],
+      "answer": "8"
+    },
+    "practice": [
+      {
+        "question": "What does the discount factor γ control?",
+        "hint": "Future vs now.",
+        "answer": "How much future rewards count compared with immediate rewards."
+      }
+    ],
+    "commonMistakes": [
+      "Confusing reinforcement learning with supervised learning; RL has no labelled correct actions, only rewards."
+    ],
+    "followUps": [
+      "Intelligent Agents",
+      "Supervised Learning",
+      "Game Playing: Minimax and Alpha-Beta Pruning"
+    ],
+    "faq": [
+      {
+        "question": "What is the difference between reinforcement learning and supervised learning?",
+        "answer": "Supervised learning learns from labelled examples with the correct answer given for each input. Reinforcement learning has no correct answers; the agent learns from rewards received after its actions, and the effect of an action may only show much later."
+      },
+      {
+        "question": "What is exploration vs exploitation?",
+        "answer": "Exploitation means choosing the action currently believed best; exploration means trying other actions to discover better ones. An agent must balance both; ε-greedy picks a random action with probability ε and the best action otherwise."
+      }
+    ]
+  },
+  {
+    "id": "logistic-regression",
+    "subject": "Machine Learning",
+    "title": "Logistic Regression",
+    "aliases": [
+      "logistic regression",
+      "sigmoid function",
+      "sigmoid",
+      "binary classification",
+      "log loss",
+      "cross entropy",
+      "binary cross entropy"
+    ],
+    "simpleExplanation": "Logistic regression is a classification algorithm that predicts the probability that an input belongs to a class. It computes a weighted sum of features and passes it through the sigmoid function, which squashes any number into a probability between 0 and 1; above a threshold (usually 0.5) it predicts class 1.",
+    "analogy": "Like a judge turning a total score of evidence into a percentage chance of guilt, then deciding guilty if it is above 50%.",
+    "keyPoints": [
+      "Used for binary classification (spam/not spam, pass/fail); softmax extends it to many classes.",
+      "z = w·x + b; p = sigmoid(z) = 1 / (1 + e^(−z)).",
+      "Trained by minimising log loss (binary cross-entropy) with gradient descent.",
+      "Decision boundary is linear in the features.",
+      "Coefficients are interpretable: a positive weight increases the odds of class 1.",
+      "Regularisation (L1/L2) prevents overfitting."
+    ],
+    "steps": [
+      "Compute z = w·x + b.",
+      "Apply the sigmoid to get a probability.",
+      "Compare with the threshold to choose the class.",
+      "Measure log loss and update weights with gradient descent."
+    ],
+    "examples": [
+      "Predicting whether a student passes from study hours and attendance.",
+      "Predicting whether a bank customer will default on a loan."
+    ],
+    "formulas": [
+      {
+        "formula": "σ(z) = 1 / (1 + e^(−z))",
+        "meaning": "sigmoid function"
+      },
+      {
+        "formula": "Log loss = −[y log(p) + (1 − y) log(1 − p)]",
+        "meaning": "loss for one example"
+      }
+    ],
+    "workedExample": {
+      "problem": "w = 0.8, b = −4 and a student studied x = 6 hours. What is the probability of passing?",
+      "steps": [
+        "z = 0.8 × 6 − 4 = 0.8",
+        "σ(0.8) = 1 / (1 + e^(−0.8)) = 1 / (1 + 0.449)",
+        "= 0.69"
+      ],
+      "answer": "About 0.69, so the model predicts 'pass' with a 0.5 threshold."
+    },
+    "practice": [
+      {
+        "question": "What is σ(0)?",
+        "hint": "e^0 = 1.",
+        "answer": "0.5."
+      },
+      {
+        "question": "Is logistic regression used for classification or regression?",
+        "hint": "Despite the name.",
+        "answer": "Classification."
+      }
+    ],
+    "commonMistakes": [
+      "Using mean squared error instead of log loss for training.",
+      "Assuming it can learn non-linear boundaries without adding non-linear features."
+    ],
+    "followUps": [
+      "Linear Regression",
+      "Model Evaluation Metrics",
+      "Gradient Descent"
+    ],
+    "faq": [
+      {
+        "question": "What is the difference between linear and logistic regression?",
+        "answer": "Linear regression predicts a continuous value with a straight line and uses mean squared error. Logistic regression predicts a probability between 0 and 1 using the sigmoid function, is used for classification, and uses log loss."
+      }
+    ]
+  },
+  {
+    "id": "decision-tree",
+    "subject": "Machine Learning",
+    "title": "Decision Trees",
+    "aliases": [
+      "decision tree",
+      "decision trees",
+      "id3",
+      "cart",
+      "c4.5",
+      "entropy",
+      "information gain",
+      "gini index",
+      "gini impurity",
+      "pruning in decision tree",
+      "tree pruning"
+    ],
+    "simpleExplanation": "A decision tree predicts by asking a series of yes/no questions about the features. Each internal node tests a feature, each branch is an answer, and each leaf gives a class or value. The tree is built by choosing, at every node, the split that best separates the data (highest information gain or lowest Gini impurity).",
+    "analogy": "Like the game of 20 questions: each question narrows down the possibilities until you reach the answer.",
+    "keyPoints": [
+      "Works for classification and regression.",
+      "ID3 uses entropy and information gain; CART uses Gini impurity; C4.5 uses gain ratio.",
+      "Easy to understand and visualise; needs little data preparation (no scaling).",
+      "Deep trees overfit; control with max depth, minimum samples per leaf or pruning.",
+      "Unstable: small data changes can change the tree a lot.",
+      "Basis of ensembles like random forest and gradient boosting."
+    ],
+    "steps": [
+      "Start with all data at the root.",
+      "For each feature, compute the impurity reduction of splitting on it.",
+      "Split on the best feature.",
+      "Repeat on each child until leaves are pure or a stopping rule is met.",
+      "Prune branches that do not improve validation accuracy."
+    ],
+    "examples": [
+      "Deciding whether to play cricket from outlook, humidity and wind.",
+      "Loan approval based on income, credit score and existing debts."
+    ],
+    "formulas": [
+      {
+        "formula": "Entropy(S) = −Σ pᵢ log₂ pᵢ",
+        "meaning": "impurity of a set; 0 means pure"
+      },
+      {
+        "formula": "Information gain = Entropy(parent) − Σ (|child|/|parent|) · Entropy(child)",
+        "meaning": "reduction in entropy from a split"
+      },
+      {
+        "formula": "Gini = 1 − Σ pᵢ²",
+        "meaning": "Gini impurity used by CART"
+      }
+    ],
+    "workedExample": {
+      "problem": "A node has 4 'yes' and 4 'no' examples. Find its entropy and Gini impurity.",
+      "steps": [
+        "p(yes) = p(no) = 0.5",
+        "Entropy = −(0.5 log₂ 0.5 + 0.5 log₂ 0.5) = 1",
+        "Gini = 1 − (0.25 + 0.25) = 0.5"
+      ],
+      "answer": "Entropy = 1, Gini = 0.5 (maximum impurity for two classes)."
+    },
+    "practice": [
+      {
+        "question": "What is the entropy of a node with all 'yes' examples?",
+        "hint": "Pure node.",
+        "answer": "0."
+      },
+      {
+        "question": "How do you stop a decision tree from overfitting?",
+        "hint": "Limit growth.",
+        "answer": "Limit max depth, set a minimum samples per leaf, prune, or use an ensemble like random forest."
+      }
+    ],
+    "commonMistakes": [
+      "Growing the tree fully, which memorises the training data."
+    ],
+    "followUps": [
+      "Random Forest and Ensemble Learning",
+      "Supervised Learning",
+      "Overfitting and Underfitting"
+    ],
+    "faq": [
+      {
+        "question": "What are the advantages and disadvantages of decision trees?",
+        "answer": "Advantages: easy to interpret, handles numerical and categorical data, no feature scaling needed, captures non-linear relationships. Disadvantages: overfits easily, unstable to small data changes, biased towards features with many levels, and a single tree is usually less accurate than an ensemble."
+      },
+      {
+        "question": "What is the difference between entropy and Gini index?",
+        "answer": "Both measure impurity. Entropy (used by ID3/C4.5) is −Σ p log₂ p and ranges 0 to 1 for two classes; Gini (used by CART) is 1 − Σ p² and ranges 0 to 0.5. Gini is slightly faster to compute; both usually give similar trees."
+      }
+    ]
+  },
+  {
+    "id": "random-forest-ensemble",
+    "subject": "Machine Learning",
+    "title": "Random Forest and Ensemble Learning",
+    "aliases": [
+      "random forest",
+      "ensemble learning",
+      "ensemble methods",
+      "bagging",
+      "boosting",
+      "bagging vs boosting",
+      "adaboost",
+      "gradient boosting",
+      "xgboost",
+      "lightgbm",
+      "stacking",
+      "bootstrap aggregating"
+    ],
+    "simpleExplanation": "Ensemble learning combines many models to get a better prediction than any single one. Random forest builds many decision trees on random samples of the data and random subsets of features, then takes a majority vote (classification) or average (regression). Boosting builds models one after another, each fixing the errors of the previous ones.",
+    "analogy": "Asking a crowd of people to guess the weight of a cow: the average guess is usually closer than most individual guesses.",
+    "keyPoints": [
+      "Bagging (bootstrap aggregating): train models in parallel on bootstrap samples and combine them; reduces variance.",
+      "Random forest = bagging of decision trees + random feature selection at each split.",
+      "Boosting: train models sequentially, giving more weight to misclassified examples; reduces bias (AdaBoost, Gradient Boosting, XGBoost, LightGBM).",
+      "Stacking: a meta-model learns how to combine the predictions of base models.",
+      "Random forest gives feature importance and resists overfitting better than one tree.",
+      "Trade-off: less interpretable and slower than a single model."
+    ],
+    "steps": [
+      "Draw many bootstrap samples from the training data.",
+      "Train a decision tree on each, considering a random subset of features at each split.",
+      "For a new input, get predictions from all trees.",
+      "Combine by majority vote or averaging."
+    ],
+    "examples": [
+      "Credit card fraud detection with random forest.",
+      "XGBoost is a frequent winner in Kaggle competitions on tabular data."
+    ],
+    "formulas": [],
+    "workedExample": null,
+    "practice": [
+      {
+        "question": "Does bagging mainly reduce bias or variance?",
+        "hint": "Averaging many noisy models.",
+        "answer": "Variance."
+      },
+      {
+        "question": "Is AdaBoost bagging or boosting?",
+        "hint": "Sequential.",
+        "answer": "Boosting."
+      }
+    ],
+    "commonMistakes": [
+      "Thinking more trees in a random forest causes overfitting; adding trees mostly just stabilises results."
+    ],
+    "followUps": [
+      "Decision Trees",
+      "Overfitting and Underfitting",
+      "Model Evaluation Metrics"
+    ],
+    "faq": [
+      {
+        "question": "What is the difference between bagging and boosting?",
+        "answer": "Bagging trains models independently in parallel on random bootstrap samples and averages or votes; it reduces variance (e.g. random forest). Boosting trains models sequentially, each focusing on the previous models' mistakes, and combines them with weights; it reduces bias (e.g. AdaBoost, XGBoost) but can overfit noisy data."
+      },
+      {
+        "question": "What are the advantages of random forest?",
+        "answer": "High accuracy, handles large data with many features, less overfitting than a single tree, works with missing values, gives feature importance, and needs little tuning."
+      }
+    ]
+  },
+  {
+    "id": "support-vector-machine",
+    "subject": "Machine Learning",
+    "title": "Support Vector Machine (SVM)",
+    "aliases": [
+      "support vector machine",
+      "svm",
+      "svms",
+      "kernel trick",
+      "hyperplane",
+      "margin",
+      "support vectors",
+      "rbf kernel"
+    ],
+    "simpleExplanation": "A Support Vector Machine is a classifier that finds the best boundary (hyperplane) separating two classes with the widest possible margin. The closest points to the boundary are the support vectors. With the kernel trick, SVM can also separate data that is not linearly separable by mapping it to a higher-dimensional space.",
+    "analogy": "Like drawing the widest possible road between two groups of houses so that no house is on the road.",
+    "keyPoints": [
+      "Hyperplane: w·x + b = 0; margin width = 2 / ||w||.",
+      "Maximising the margin improves generalisation.",
+      "Support vectors are the training points that define the margin.",
+      "Soft margin (parameter C) allows some misclassification for noisy data.",
+      "Kernels: linear, polynomial, RBF (Gaussian), sigmoid.",
+      "Works well in high dimensions (e.g. text) but is slow on very large datasets; needs feature scaling."
+    ],
+    "steps": [
+      "Scale the features.",
+      "Choose a kernel and the C parameter.",
+      "Solve the optimisation to find the maximum-margin hyperplane.",
+      "Classify new points by which side of the hyperplane they fall on."
+    ],
+    "examples": [
+      "Text and spam classification.",
+      "Handwritten digit recognition and face detection."
+    ],
+    "formulas": [
+      {
+        "formula": "w·x + b = 0",
+        "meaning": "separating hyperplane"
+      },
+      {
+        "formula": "Margin = 2 / ||w||",
+        "meaning": "distance between the two margin lines"
+      }
+    ],
+    "workedExample": null,
+    "practice": [
+      {
+        "question": "What are support vectors?",
+        "hint": "Closest points.",
+        "answer": "The training points nearest to the decision boundary; they alone determine the hyperplane."
+      },
+      {
+        "question": "What does the kernel trick do?",
+        "hint": "Higher dimensions.",
+        "answer": "It computes similarities as if the data were mapped into a higher-dimensional space, letting SVM learn non-linear boundaries cheaply."
+      }
+    ],
+    "commonMistakes": [
+      "Forgetting to scale features, which distorts the margin."
+    ],
+    "followUps": [
+      "Logistic Regression",
+      "K-Nearest Neighbors (KNN)",
+      "Supervised Learning"
+    ],
+    "faq": [
+      {
+        "question": "What are the advantages and disadvantages of SVM?",
+        "answer": "Advantages: effective in high-dimensional spaces, memory efficient (uses only support vectors), flexible with kernels, robust against overfitting with a good margin. Disadvantages: slow to train on large datasets, sensitive to the choice of kernel and C, needs scaling, and gives no direct probability estimates."
+      }
+    ]
+  },
+  {
+    "id": "knn",
+    "subject": "Machine Learning",
+    "title": "K-Nearest Neighbors (KNN)",
+    "aliases": [
+      "k nearest neighbors",
+      "k nearest neighbours",
+      "k-nearest neighbors",
+      "knn",
+      "k-nn",
+      "nearest neighbour",
+      "lazy learning",
+      "euclidean distance"
+    ],
+    "simpleExplanation": "KNN classifies a new point by looking at the K closest training points and taking a majority vote of their labels (or the average for regression). It does no real training; it just stores the data, so it is called a lazy learner.",
+    "analogy": "'Tell me who your friends are and I will tell you who you are': you are classified like your nearest neighbours.",
+    "keyPoints": [
+      "Distance measures: Euclidean, Manhattan, Minkowski, cosine.",
+      "Small K is sensitive to noise (overfits); large K over-smooths (underfits). Choose K with cross-validation, often an odd number.",
+      "Feature scaling is essential because distances depend on units.",
+      "Prediction is slow for big datasets since it compares with every stored point.",
+      "Suffers from the curse of dimensionality."
+    ],
+    "steps": [
+      "Choose K.",
+      "Compute the distance from the new point to every training point.",
+      "Pick the K nearest points.",
+      "Vote (classification) or average (regression)."
+    ],
+    "examples": [
+      "Recommending movies liked by similar users.",
+      "Classifying a fruit by size and colour."
+    ],
+    "formulas": [
+      {
+        "formula": "d = √((x₁ − x₂)² + (y₁ − y₂)²)",
+        "meaning": "Euclidean distance"
+      }
+    ],
+    "workedExample": {
+      "problem": "New point (3, 4). Training points: A(1, 1) class Red, B(4, 4) class Blue, C(3, 6) class Blue. Classify with K = 1.",
+      "steps": [
+        "d(A) = √(4 + 9) = 3.61",
+        "d(B) = √(1 + 0) = 1",
+        "d(C) = √(0 + 4) = 2",
+        "Nearest is B."
+      ],
+      "answer": "Blue."
+    },
+    "practice": [
+      {
+        "question": "Why is KNN called a lazy learner?",
+        "hint": "When does it work?",
+        "answer": "It does no training; all computation happens at prediction time."
+      }
+    ],
+    "commonMistakes": [
+      "Not scaling features, so a feature with large values dominates the distance."
+    ],
+    "followUps": [
+      "K-Means and Clustering",
+      "Support Vector Machine (SVM)",
+      "Supervised Learning"
+    ],
+    "faq": [
+      {
+        "question": "What is the difference between KNN and K-means?",
+        "answer": "KNN is a supervised classification/regression algorithm: K is the number of neighbours used to vote. K-means is an unsupervised clustering algorithm: K is the number of clusters to form. KNN needs labels; K-means does not."
+      }
+    ]
+  },
+  {
+    "id": "naive-bayes",
+    "subject": "Machine Learning",
+    "title": "Naive Bayes Classifier",
+    "aliases": [
+      "naive bayes",
+      "naive bayes classifier",
+      "naïve bayes",
+      "gaussian naive bayes",
+      "multinomial naive bayes",
+      "laplace smoothing"
+    ],
+    "simpleExplanation": "Naive Bayes is a probabilistic classifier based on Bayes' theorem. It assumes all features are independent of each other given the class (the 'naive' assumption), multiplies the probabilities of each feature for each class, and picks the class with the highest probability.",
+    "analogy": "Like guessing a fruit is an apple because it is red, round and sweet, treating each clue as separate evidence.",
+    "keyPoints": [
+      "P(class | features) ∝ P(class) × Π P(featureᵢ | class).",
+      "Types: Gaussian (continuous features), Multinomial (word counts), Bernoulli (binary features).",
+      "Very fast, works well with small data and text classification.",
+      "Laplace smoothing adds 1 to counts so unseen words do not give zero probability.",
+      "The independence assumption is rarely true but it still works well in practice."
+    ],
+    "steps": [
+      "Compute prior probabilities of each class.",
+      "Compute the likelihood of each feature value given each class.",
+      "Multiply prior and likelihoods for each class.",
+      "Choose the class with the highest result."
+    ],
+    "examples": [
+      "Spam filtering based on words in emails.",
+      "Sentiment analysis of reviews."
+    ],
+    "formulas": [
+      {
+        "formula": "P(C|X) = P(X|C) · P(C) / P(X)",
+        "meaning": "Bayes' theorem"
+      },
+      {
+        "formula": "P(w|C) = (count(w, C) + 1) / (total words in C + V)",
+        "meaning": "Laplace smoothing; V = vocabulary size"
+      }
+    ],
+    "workedExample": {
+      "problem": "P(spam) = 0.4, P(ham) = 0.6. P('free'|spam) = 0.5, P('free'|ham) = 0.1. An email contains 'free'. Which class?",
+      "steps": [
+        "Spam score = 0.4 × 0.5 = 0.20",
+        "Ham score = 0.6 × 0.1 = 0.06",
+        "0.20 > 0.06"
+      ],
+      "answer": "Spam (probability 0.20 / 0.26 ≈ 0.77)."
+    },
+    "practice": [
+      {
+        "question": "Why is it called 'naive'?",
+        "hint": "An assumption.",
+        "answer": "It assumes features are independent of each other given the class."
+      }
+    ],
+    "commonMistakes": [
+      "Forgetting Laplace smoothing, so one unseen word makes the whole probability zero."
+    ],
+    "followUps": [
+      "Probabilistic Reasoning and Bayesian Networks",
+      "Natural Language Processing (NLP)",
+      "Supervised Learning"
+    ],
+    "faq": [
+      {
+        "question": "What are the advantages of Naive Bayes?",
+        "answer": "Simple and very fast to train and predict, works with small data, handles many features (great for text), and is not badly affected by irrelevant features. Disadvantage: the independence assumption can hurt accuracy when features are strongly related."
+      }
+    ]
+  },
+  {
+    "id": "k-means-clustering",
+    "subject": "Machine Learning",
+    "title": "K-Means and Clustering",
+    "aliases": [
+      "k means",
+      "k-means",
+      "kmeans",
+      "k means clustering",
+      "clustering",
+      "clustering algorithms",
+      "types of clustering",
+      "hierarchical clustering",
+      "agglomerative clustering",
+      "dendrogram",
+      "dbscan",
+      "elbow method",
+      "silhouette score",
+      "centroid"
+    ],
+    "simpleExplanation": "Clustering groups similar data points without labels. K-means picks K cluster centres (centroids), assigns each point to its nearest centroid, moves each centroid to the mean of its points, and repeats until the clusters stop changing. Hierarchical clustering builds a tree of clusters (dendrogram), and DBSCAN finds dense regions of any shape.",
+    "analogy": "Like placing K shops in a city and moving each shop to the centre of the customers who go to it, until no one switches shops.",
+    "keyPoints": [
+      "K-means needs K chosen in advance: use the elbow method (inertia vs K) or silhouette score.",
+      "K-means minimises within-cluster sum of squared distances (inertia).",
+      "Sensitive to initial centroids (k-means++ helps) and to outliers; finds round clusters.",
+      "Hierarchical: agglomerative (bottom-up merging) or divisive (top-down splitting); linkage: single, complete, average, Ward.",
+      "DBSCAN: groups dense points using eps and minPts, marks outliers as noise, needs no K.",
+      "Scale features before clustering."
+    ],
+    "steps": [
+      "Choose K and initialise K centroids.",
+      "Assign each point to the nearest centroid.",
+      "Recompute each centroid as the mean of its assigned points.",
+      "Repeat steps 2-3 until assignments stop changing."
+    ],
+    "examples": [
+      "Customer segmentation by spending and income.",
+      "Grouping news articles by topic."
+    ],
+    "formulas": [
+      {
+        "formula": "Inertia = Σ ||xᵢ − μ_cluster(i)||²",
+        "meaning": "sum of squared distances to assigned centroids"
+      }
+    ],
+    "workedExample": {
+      "problem": "Points 1, 2, 9, 10 on a line, K = 2, initial centroids 1 and 10. Run one iteration.",
+      "steps": [
+        "Assign: 1, 2 → centroid 1; 9, 10 → centroid 10",
+        "New centroids: (1+2)/2 = 1.5 and (9+10)/2 = 9.5",
+        "Reassigning gives the same clusters, so it has converged."
+      ],
+      "answer": "Clusters {1, 2} and {9, 10} with centroids 1.5 and 9.5."
+    },
+    "practice": [
+      {
+        "question": "Which clustering method does not need K and detects noise?",
+        "hint": "Density based.",
+        "answer": "DBSCAN."
+      },
+      {
+        "question": "What is the elbow method?",
+        "hint": "Plot inertia.",
+        "answer": "Plot inertia for different K and choose the K where the curve bends (adding clusters stops helping much)."
+      }
+    ],
+    "commonMistakes": [
+      "Running K-means on unscaled features.",
+      "Expecting K-means to find non-spherical clusters."
+    ],
+    "followUps": [
+      "Unsupervised Learning",
+      "Principal Component Analysis (PCA)",
+      "K-Nearest Neighbors (KNN)"
+    ],
+    "faq": [
+      {
+        "question": "What are the types of clustering?",
+        "answer": "Partitioning (K-means, K-medoids), hierarchical (agglomerative, divisive), density-based (DBSCAN, OPTICS), distribution-based (Gaussian Mixture Models) and grid-based clustering."
+      },
+      {
+        "question": "What is the difference between K-means and hierarchical clustering?",
+        "answer": "K-means needs K in advance, is fast and scales to large data, and gives flat clusters. Hierarchical clustering does not need K upfront, produces a dendrogram you can cut at any level, but is slow (O(n²) or more) for large datasets."
+      }
+    ]
+  },
+  {
+    "id": "pca-dimensionality-reduction",
+    "subject": "Machine Learning",
+    "title": "Principal Component Analysis (PCA)",
+    "aliases": [
+      "pca",
+      "principal component analysis",
+      "dimensionality reduction",
+      "curse of dimensionality",
+      "feature extraction",
+      "eigenvalues",
+      "eigenvectors",
+      "t-sne",
+      "tsne",
+      "lda dimensionality"
+    ],
+    "simpleExplanation": "PCA is a dimensionality reduction technique that converts many correlated features into a few new uncorrelated features called principal components. The first component captures the most variance (spread) in the data, the second the next most, and so on, so you can keep only the top few with little information lost.",
+    "analogy": "Like taking a photo of a 3D object from the angle that shows the most detail, turning 3D into a useful 2D picture.",
+    "keyPoints": [
+      "Steps: standardise data → covariance matrix → eigenvectors and eigenvalues → keep top components → project data.",
+      "Eigenvectors give the directions of components; eigenvalues give how much variance each explains.",
+      "Explained variance ratio helps choose how many components to keep (e.g. 95%).",
+      "Reduces overfitting, speeds up training and allows 2D/3D visualisation.",
+      "Components are combinations of features, so they are harder to interpret.",
+      "Curse of dimensionality: with many features, data becomes sparse and distance-based methods degrade."
+    ],
+    "steps": [
+      "Standardise each feature (mean 0, variance 1).",
+      "Compute the covariance matrix.",
+      "Find its eigenvectors and eigenvalues.",
+      "Sort by eigenvalue and keep the top k eigenvectors.",
+      "Project the data onto those k components."
+    ],
+    "examples": [
+      "Compressing face images (eigenfaces).",
+      "Reducing 100 survey questions to a few underlying factors."
+    ],
+    "formulas": [
+      {
+        "formula": "Explained variance of component i = λᵢ / Σ λ",
+        "meaning": "λ = eigenvalue"
+      }
+    ],
+    "workedExample": {
+      "problem": "Eigenvalues are 4, 3, 2 and 1. How much variance do the first two components explain?",
+      "steps": [
+        "Total = 4 + 3 + 2 + 1 = 10",
+        "First two = 4 + 3 = 7",
+        "7 / 10"
+      ],
+      "answer": "70%."
+    },
+    "practice": [
+      {
+        "question": "Why standardise before PCA?",
+        "hint": "Units.",
+        "answer": "Otherwise features with large values dominate the variance and the components."
+      }
+    ],
+    "commonMistakes": [
+      "Applying PCA to categorical data or without scaling."
+    ],
+    "followUps": [
+      "Unsupervised Learning",
+      "Data Preprocessing and Feature Engineering",
+      "K-Means and Clustering"
+    ],
+    "faq": [
+      {
+        "question": "What are the advantages of dimensionality reduction?",
+        "answer": "Less storage and faster training, removes redundant and correlated features, reduces overfitting and noise, and allows visualising high-dimensional data in 2D or 3D."
+      }
+    ]
+  },
+  {
+    "id": "gradient-descent",
+    "subject": "Machine Learning",
+    "title": "Gradient Descent",
+    "aliases": [
+      "gradient descent",
+      "stochastic gradient descent",
+      "sgd",
+      "mini batch gradient descent",
+      "batch gradient descent",
+      "learning rate",
+      "cost function",
+      "loss function",
+      "optimizer",
+      "optimizers",
+      "adam optimizer",
+      "momentum"
+    ],
+    "simpleExplanation": "Gradient descent is the optimisation method used to train most ML models. It starts with random parameters, computes the gradient (slope) of the loss function, and moves the parameters a small step in the opposite direction to reduce the loss. The step size is the learning rate.",
+    "analogy": "Like walking down a foggy hill: you feel which way the ground slopes and take small steps downhill until you reach the bottom.",
+    "keyPoints": [
+      "Update rule: θ = θ − α · ∂J/∂θ.",
+      "Learning rate too large: overshoots or diverges; too small: very slow.",
+      "Batch GD uses all data per step; stochastic GD (SGD) uses one example; mini-batch uses small batches (most common).",
+      "Can get stuck in local minima or saddle points for non-convex losses (neural networks).",
+      "Improved optimisers: Momentum, RMSprop, Adam.",
+      "Feature scaling makes convergence faster."
+    ],
+    "steps": [
+      "Initialise parameters.",
+      "Compute predictions and the loss.",
+      "Compute the gradient of the loss with respect to each parameter.",
+      "Update parameters by subtracting learning rate × gradient.",
+      "Repeat until the loss stops decreasing."
+    ],
+    "examples": [
+      "Training linear regression by minimising mean squared error.",
+      "Backpropagation in neural networks uses gradient descent to update weights."
+    ],
+    "formulas": [
+      {
+        "formula": "θ := θ − α · ∇J(θ)",
+        "meaning": "α = learning rate, J = cost function"
+      }
+    ],
+    "workedExample": {
+      "problem": "Minimise J(w) = w². Start at w = 4 with learning rate 0.1. Find w after one step.",
+      "steps": [
+        "Gradient dJ/dw = 2w = 8",
+        "w = 4 − 0.1 × 8"
+      ],
+      "answer": "w = 3.2"
+    },
+    "practice": [
+      {
+        "question": "What happens if the learning rate is too high?",
+        "hint": "Overshoot.",
+        "answer": "The loss may oscillate or diverge instead of decreasing."
+      },
+      {
+        "question": "Which gradient descent variant updates after every single example?",
+        "hint": "Stochastic.",
+        "answer": "Stochastic Gradient Descent (SGD)."
+      }
+    ],
+    "commonMistakes": [
+      "Adding the gradient instead of subtracting it.",
+      "Not scaling features, which makes the descent zig-zag slowly."
+    ],
+    "followUps": [
+      "Linear Regression",
+      "Neural Networks and Deep Learning",
+      "Logistic Regression"
+    ],
+    "faq": [
+      {
+        "question": "What are the types of gradient descent?",
+        "answer": "Batch gradient descent (uses the full dataset per update; stable but slow), stochastic gradient descent (one example per update; fast and noisy, can escape shallow minima) and mini-batch gradient descent (small batches like 32 or 64; the usual choice, balancing speed and stability)."
+      }
+    ]
+  },
+  {
+    "id": "model-evaluation-metrics",
+    "subject": "Machine Learning",
+    "title": "Model Evaluation Metrics",
+    "aliases": [
+      "model evaluation",
+      "evaluation metrics",
+      "confusion matrix",
+      "accuracy",
+      "precision",
+      "recall",
+      "f1 score",
+      "f1-score",
+      "precision and recall",
+      "precision vs recall",
+      "roc curve",
+      "auc",
+      "roc auc",
+      "sensitivity",
+      "specificity",
+      "true positive",
+      "false positive",
+      "mae",
+      "rmse",
+      "r squared",
+      "r2 score",
+      "train test split"
+    ],
+    "simpleExplanation": "Evaluation metrics measure how good a model's predictions are on unseen data. For classification we use the confusion matrix and accuracy, precision, recall, F1 and ROC-AUC. For regression we use MAE, MSE, RMSE and R².",
+    "analogy": "Like grading an exam not just by total marks, but also by which kinds of questions were wrong.",
+    "keyPoints": [
+      "Confusion matrix: TP (correct positive), TN (correct negative), FP (false alarm), FN (missed positive).",
+      "Accuracy = (TP + TN) / total; misleading on imbalanced data.",
+      "Precision = TP / (TP + FP): of predicted positives, how many are right.",
+      "Recall (sensitivity) = TP / (TP + FN): of actual positives, how many were found.",
+      "F1 = harmonic mean of precision and recall.",
+      "ROC curve plots TPR vs FPR at all thresholds; AUC = 1 is perfect, 0.5 is random.",
+      "Regression: MAE, MSE, RMSE (same units as target) and R² (share of variance explained)."
+    ],
+    "steps": [
+      "Split data into training and test sets (or use cross-validation).",
+      "Predict on the test set.",
+      "Build the confusion matrix or compute errors.",
+      "Choose metrics that match the business goal."
+    ],
+    "examples": [
+      "Cancer screening needs high recall (do not miss patients).",
+      "Spam filtering needs high precision (do not hide real emails)."
+    ],
+    "formulas": [
+      {
+        "formula": "Accuracy = (TP + TN) / (TP + TN + FP + FN)",
+        "meaning": "share of correct predictions"
+      },
+      {
+        "formula": "Precision = TP / (TP + FP)",
+        "meaning": "correctness of positive predictions"
+      },
+      {
+        "formula": "Recall = TP / (TP + FN)",
+        "meaning": "coverage of actual positives"
+      },
+      {
+        "formula": "F1 = 2 · P · R / (P + R)",
+        "meaning": "balance of precision and recall"
+      },
+      {
+        "formula": "RMSE = √(Σ (y − ŷ)² / n)",
+        "meaning": "root mean squared error"
+      }
+    ],
+    "workedExample": {
+      "problem": "TP = 40, FP = 10, FN = 20, TN = 30. Find accuracy, precision, recall and F1.",
+      "steps": [
+        "Accuracy = (40 + 30) / 100 = 0.70",
+        "Precision = 40 / 50 = 0.80",
+        "Recall = 40 / 60 = 0.667",
+        "F1 = 2 × 0.8 × 0.667 / (0.8 + 0.667) = 0.727"
+      ],
+      "answer": "Accuracy 70%, precision 80%, recall 66.7%, F1 ≈ 0.73."
+    },
+    "practice": [
+      {
+        "question": "Why can accuracy be misleading?",
+        "hint": "Imbalanced classes.",
+        "answer": "If 99% of cases are negative, predicting 'negative' always gives 99% accuracy but finds no positives."
+      },
+      {
+        "question": "Which metric matters most when missing a positive is dangerous?",
+        "hint": "Do not miss.",
+        "answer": "Recall."
+      }
+    ],
+    "commonMistakes": [
+      "Reporting only accuracy on imbalanced data.",
+      "Measuring metrics on the training set."
+    ],
+    "followUps": [
+      "Overfitting and Underfitting",
+      "Supervised Learning",
+      "Logistic Regression"
+    ],
+    "faq": [
+      {
+        "question": "What is a confusion matrix?",
+        "answer": "A table comparing predicted and actual classes. For binary classification it has four cells: True Positive (predicted yes, actually yes), False Positive (predicted yes, actually no), False Negative (predicted no, actually yes) and True Negative (predicted no, actually no). All main classification metrics are computed from it."
+      },
+      {
+        "question": "What is the difference between precision and recall?",
+        "answer": "Precision asks: of everything the model flagged as positive, how much was really positive? (TP / (TP + FP)). Recall asks: of all real positives, how many did the model find? (TP / (TP + FN)). Raising the threshold usually increases precision and lowers recall."
+      }
+    ]
+  },
+  {
+    "id": "data-preprocessing",
+    "subject": "Machine Learning",
+    "title": "Data Preprocessing and Feature Engineering",
+    "aliases": [
+      "data preprocessing",
+      "preprocessing",
+      "feature engineering",
+      "feature scaling",
+      "normalization in ml",
+      "standardization",
+      "min max scaling",
+      "one hot encoding",
+      "label encoding",
+      "missing values",
+      "handling missing values",
+      "feature selection",
+      "outliers",
+      "data cleaning",
+      "imbalanced data",
+      "smote"
+    ],
+    "simpleExplanation": "Data preprocessing prepares raw data for machine learning: cleaning errors, filling missing values, encoding categories as numbers, scaling features and removing outliers. Feature engineering creates new useful features from existing ones. Good data usually matters more than the choice of algorithm.",
+    "analogy": "Like washing, cutting and measuring ingredients before cooking: the recipe only works if the ingredients are prepared.",
+    "keyPoints": [
+      "Missing values: drop rows/columns, or fill with mean, median, mode or a model.",
+      "Encoding: label encoding for ordered categories, one-hot encoding for unordered ones.",
+      "Scaling: min-max normalisation to [0, 1] or standardisation (z-score: mean 0, std 1).",
+      "Outliers: detect with IQR or z-score; remove, cap or transform.",
+      "Feature selection: filter (correlation, chi-square), wrapper (RFE) and embedded (L1, tree importance).",
+      "Imbalanced data: oversampling (SMOTE), undersampling or class weights.",
+      "Fit scalers only on training data to avoid data leakage."
+    ],
+    "steps": [
+      "Explore the data (EDA): types, distributions, missing values.",
+      "Clean errors and duplicates.",
+      "Handle missing values and outliers.",
+      "Encode categorical features.",
+      "Scale numerical features.",
+      "Create and select features, then split into train and test sets."
+    ],
+    "examples": [
+      "Creating 'age' from 'date of birth'.",
+      "One-hot encoding city names into separate 0/1 columns."
+    ],
+    "formulas": [
+      {
+        "formula": "x' = (x − min) / (max − min)",
+        "meaning": "min-max normalisation"
+      },
+      {
+        "formula": "z = (x − μ) / σ",
+        "meaning": "standardisation"
+      }
+    ],
+    "workedExample": {
+      "problem": "Marks range from 20 to 100. Normalise a mark of 60 with min-max scaling.",
+      "steps": [
+        "x' = (60 − 20) / (100 − 20)",
+        "= 40 / 80"
+      ],
+      "answer": "0.5"
+    },
+    "practice": [
+      {
+        "question": "When should you use one-hot encoding instead of label encoding?",
+        "hint": "Order.",
+        "answer": "When the categories have no natural order (e.g. colours, cities), so the model does not assume one is 'greater' than another."
+      }
+    ],
+    "commonMistakes": [
+      "Scaling using the whole dataset before splitting, which leaks test information.",
+      "Label-encoding unordered categories."
+    ],
+    "followUps": [
+      "Principal Component Analysis (PCA)",
+      "Supervised Learning",
+      "Machine Learning Workflow"
+    ],
+    "faq": [
+      {
+        "question": "What is the difference between normalization and standardization?",
+        "answer": "Normalisation (min-max scaling) rescales values to a fixed range, usually 0 to 1, using (x − min)/(max − min); it is sensitive to outliers. Standardisation rescales to mean 0 and standard deviation 1 using (x − mean)/std; it is preferred for algorithms that assume roughly normal data, like logistic regression, SVM and PCA."
+      },
+      {
+        "question": "How do you handle missing values?",
+        "answer": "Remove rows or columns with too many missing values; fill numbers with the mean or median and categories with the mode; use forward/backward fill for time series; predict them with a model (KNN imputer); or add an indicator column showing the value was missing."
+      }
+    ]
+  },
+  {
+    "id": "ml-workflow",
+    "subject": "Machine Learning",
+    "title": "Machine Learning Workflow",
+    "aliases": [
+      "machine learning workflow",
+      "ml workflow",
+      "ml lifecycle",
+      "machine learning lifecycle",
+      "steps in machine learning",
+      "machine learning process",
+      "ml pipeline",
+      "mlops",
+      "model deployment",
+      "hyperparameter tuning",
+      "hyperparameters",
+      "grid search",
+      "random search"
+    ],
+    "simpleExplanation": "A machine learning project follows a lifecycle: define the problem, collect and prepare data, choose and train a model, evaluate and tune it, deploy it, and monitor it in production. MLOps applies DevOps practices to automate and maintain this pipeline.",
+    "analogy": "Like building a product: plan, gather materials, build a prototype, test, launch and keep maintaining it.",
+    "keyPoints": [
+      "Problem definition: what to predict and how success is measured.",
+      "Data collection, cleaning and exploratory data analysis (EDA).",
+      "Feature engineering and train/validation/test split.",
+      "Model selection and training.",
+      "Hyperparameter tuning: grid search, random search, Bayesian optimisation with cross-validation.",
+      "Deployment as an API or batch job; monitoring for data drift and retraining.",
+      "Parameters are learned (weights); hyperparameters are set before training (learning rate, K, tree depth)."
+    ],
+    "steps": [
+      "Define the problem and metric.",
+      "Collect and prepare data.",
+      "Train baseline and candidate models.",
+      "Evaluate and tune hyperparameters.",
+      "Deploy and monitor."
+    ],
+    "examples": [
+      "A bank deploys a fraud model as an API that scores each transaction in milliseconds.",
+      "Retraining a recommendation model weekly with new user data."
+    ],
+    "formulas": [],
+    "workedExample": null,
+    "practice": [
+      {
+        "question": "Is the learning rate a parameter or a hyperparameter?",
+        "hint": "Is it learned?",
+        "answer": "A hyperparameter: it is set before training."
+      }
+    ],
+    "commonMistakes": [
+      "Tuning hyperparameters on the test set, which gives an over-optimistic score."
+    ],
+    "followUps": [
+      "Data Preprocessing and Feature Engineering",
+      "Model Evaluation Metrics",
+      "DevOps and CI/CD"
+    ],
+    "faq": [
+      {
+        "question": "What are the steps in machine learning?",
+        "answer": "1) Define the problem. 2) Collect data. 3) Clean and preprocess data. 4) Explore and engineer features. 5) Split into train/validation/test. 6) Choose and train a model. 7) Evaluate with suitable metrics. 8) Tune hyperparameters. 9) Deploy. 10) Monitor and retrain."
+      },
+      {
+        "question": "What is the difference between parameters and hyperparameters?",
+        "answer": "Parameters are learned from data during training, like the weights of a linear model or neural network. Hyperparameters are chosen before training and control how learning happens, like learning rate, number of trees, K in KNN or max depth of a tree."
+      }
+    ]
+  },
+  {
+    "id": "cnn",
+    "subject": "Machine Learning",
+    "title": "Convolutional Neural Networks (CNN)",
+    "aliases": [
+      "cnn",
+      "cnns",
+      "convolutional neural network",
+      "convolutional neural networks",
+      "convolution",
+      "pooling",
+      "max pooling",
+      "filter",
+      "kernel in cnn",
+      "feature map",
+      "stride",
+      "padding",
+      "resnet",
+      "vgg",
+      "transfer learning"
+    ],
+    "simpleExplanation": "A CNN is a deep neural network designed for images. Convolution layers slide small filters over the image to detect features like edges and textures, pooling layers shrink the feature maps, and fully connected layers at the end make the final prediction. Early layers find simple patterns and deeper layers find complex ones.",
+    "analogy": "Like scanning a picture with a small magnifying glass looking for specific shapes, then combining what you found to recognise the object.",
+    "keyPoints": [
+      "Layers: convolution → activation (ReLU) → pooling, repeated, then flatten → fully connected → softmax.",
+      "Filters (kernels) share weights across the image, so CNNs need far fewer parameters than dense networks.",
+      "Stride is how far the filter moves; padding adds a border to keep the size.",
+      "Max pooling keeps the largest value in each window, giving some translation invariance.",
+      "Famous architectures: LeNet, AlexNet, VGG, ResNet (skip connections), Inception, EfficientNet.",
+      "Transfer learning reuses a pre-trained CNN for a new task with little data."
+    ],
+    "steps": [
+      "Input image (height × width × channels).",
+      "Convolve with filters to produce feature maps.",
+      "Apply ReLU.",
+      "Pool to reduce size.",
+      "Repeat, then flatten and classify with dense layers."
+    ],
+    "examples": [
+      "Image classification (cats vs dogs), face recognition, medical image diagnosis.",
+      "Object detection models like YOLO use CNN backbones."
+    ],
+    "formulas": [
+      {
+        "formula": "Output size = (W − F + 2P) / S + 1",
+        "meaning": "W = input size, F = filter size, P = padding, S = stride"
+      }
+    ],
+    "workedExample": {
+      "problem": "A 32×32 image, 5×5 filter, padding 0, stride 1. What is the output size?",
+      "steps": [
+        "(32 − 5 + 0) / 1 + 1",
+        "= 28"
+      ],
+      "answer": "28 × 28"
+    },
+    "practice": [
+      {
+        "question": "What does max pooling do?",
+        "hint": "Downsampling.",
+        "answer": "It reduces the feature map size by keeping the maximum value in each small window."
+      },
+      {
+        "question": "Why do CNNs need fewer parameters than fully connected networks for images?",
+        "hint": "Weight sharing.",
+        "answer": "The same small filter is reused across the whole image (weight sharing and local connectivity)."
+      }
+    ],
+    "commonMistakes": [
+      "Forgetting that pooling layers have no learnable weights."
+    ],
+    "followUps": [
+      "Computer Vision",
+      "Neural Networks and Deep Learning",
+      "Recurrent Neural Networks (RNN and LSTM)"
+    ],
+    "faq": [
+      {
+        "question": "What are the layers of a CNN?",
+        "answer": "Input layer, convolution layers (filters create feature maps), activation layers (ReLU), pooling layers (max or average pooling to downsample), flatten layer, fully connected (dense) layers and the output layer (softmax for classification). Dropout and batch normalisation are often added."
+      }
+    ]
+  },
+  {
+    "id": "rnn-lstm",
+    "subject": "Machine Learning",
+    "title": "Recurrent Neural Networks (RNN and LSTM)",
+    "aliases": [
+      "rnn",
+      "rnns",
+      "recurrent neural network",
+      "recurrent neural networks",
+      "lstm",
+      "long short term memory",
+      "gru",
+      "vanishing gradient",
+      "vanishing gradient problem",
+      "sequence model",
+      "time series forecasting"
+    ],
+    "simpleExplanation": "An RNN processes sequences such as text, speech or time series one step at a time, keeping a hidden state that remembers earlier steps. Plain RNNs forget long-range information because of the vanishing gradient problem, so LSTM and GRU cells add gates that decide what to keep, forget and output.",
+    "analogy": "Like reading a story: you remember what happened earlier to understand the current sentence.",
+    "keyPoints": [
+      "Hidden state hₜ = f(W·xₜ + U·hₜ₋₁ + b) carries memory forward.",
+      "Trained with backpropagation through time (BPTT).",
+      "Vanishing gradients make plain RNNs forget long-term context; exploding gradients are fixed with gradient clipping.",
+      "LSTM has a cell state and three gates: forget, input and output.",
+      "GRU is a simpler version with update and reset gates.",
+      "Mostly replaced by transformers for language, but still used for some time series and on-device tasks."
+    ],
+    "steps": [
+      "Feed the first element of the sequence with an initial hidden state.",
+      "Compute the new hidden state and output.",
+      "Pass the hidden state to the next step.",
+      "Repeat for the whole sequence.",
+      "Compute the loss and update weights with BPTT."
+    ],
+    "examples": [
+      "Next-word prediction on phone keyboards.",
+      "Stock price and weather forecasting, speech recognition."
+    ],
+    "formulas": [
+      {
+        "formula": "hₜ = tanh(W·xₜ + U·hₜ₋₁ + b)",
+        "meaning": "basic RNN hidden state update"
+      }
+    ],
+    "workedExample": null,
+    "practice": [
+      {
+        "question": "What problem does LSTM solve?",
+        "hint": "Long sequences.",
+        "answer": "The vanishing gradient problem, letting the network remember long-term dependencies."
+      },
+      {
+        "question": "Name the three gates of an LSTM.",
+        "hint": "Forget...",
+        "answer": "Forget gate, input gate and output gate."
+      }
+    ],
+    "commonMistakes": [
+      "Thinking RNNs process the whole sequence in parallel; they are sequential, which makes them slow."
+    ],
+    "followUps": [
+      "Transformers and Large Language Models",
+      "Neural Networks and Deep Learning",
+      "Natural Language Processing (NLP)"
+    ],
+    "faq": [
+      {
+        "question": "What is the difference between RNN and LSTM?",
+        "answer": "A plain RNN has a single hidden state and struggles to remember information from many steps back because gradients vanish. An LSTM adds a cell state and forget/input/output gates that control what information is kept or discarded, so it can learn long-term dependencies."
+      },
+      {
+        "question": "What is the difference between CNN and RNN?",
+        "answer": "CNNs are designed for grid data like images and use convolution filters to find spatial patterns. RNNs are designed for sequential data like text and time series and use a hidden state to carry information across time steps."
+      }
+    ]
+  }
+]
