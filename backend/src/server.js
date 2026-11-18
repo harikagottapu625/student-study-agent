@@ -61,10 +61,16 @@ const upload = multer({
   limits: { fileSize: 50 * 1024 * 1024 },
 });
 
+// Browsers send an origin without a trailing slash, so tolerate one (and stray
+// quotes or spaces) in the configured value.
+const normalizeOrigin = (origin) => origin.trim().replace(/^["']|["']$/g, '').replace(/\/+$/, '').toLowerCase();
+
 const configuredOrigins = (process.env.FRONTEND_ORIGIN || '')
   .split(',')
-  .map((origin) => origin.trim())
+  .map(normalizeOrigin)
   .filter(Boolean);
+
+if (configuredOrigins.length) console.log(`Allowed frontend origin(s): ${configuredOrigins.join(', ')}`);
 
 const allowedOrigins = new Set([
   ...configuredOrigins,
@@ -77,7 +83,7 @@ const allowedOrigins = new Set([
 app.use(
   cors({
     origin(origin, callback) {
-      if (!origin || allowedOrigins.has(origin)) {
+      if (!origin || allowedOrigins.has(normalizeOrigin(origin))) {
         return callback(null, true);
       }
 
